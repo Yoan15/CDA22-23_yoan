@@ -1,7 +1,7 @@
 <?php
 
 if (($tutu <= $toto + 4) && ($tata != 'ok')) {
-    $tutu --
+    $tutu --;
 } else {
-    $tutu ++
+    $tutu ++;
 }
