@@ -11,12 +11,12 @@ function AfficherTableauDoubleDim($tab){
 
     for ($i=0; $i < $nbCol; $i++) { 
         $tirets .= "----";
-        $nomCol .= "| " . mb_chr(65+$i) . " "; // On utilise le code ASCII correspondant à la colonne
+        $nomCol .= "| " . mb_chr(65 + $i) . " "; // On utilise le code ASCII correspondant à la colonne
     }
     $tirets .= "\n"; //retour à la ligne après les tirets
-    echo $nomCol;
+    echo $nomCol . "|\n" . $tirets; //Entête colonne déclarée plus tôt + un pipe à la fin de la ligne
     foreach ($tab as $numLigne => $ligne) {
-        echo "| " . ($numLigne+1) . " "; //numéro ligne +1 pour donner la valeur 1 à la ligne 1 a la place de la valeur 0
+        echo "| " . ($numLigne + 1) . " "; //numéro ligne +1 pour donner la valeur 1 à la ligne 1 a la place de la valeur 0
         foreach ($ligne as $case) {
             echo "| " . $case . " "; // ajout d'un pipe à gauche de chaque valeur
         }
