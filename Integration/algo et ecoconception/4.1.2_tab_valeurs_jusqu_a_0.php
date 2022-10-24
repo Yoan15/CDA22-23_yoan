@@ -10,7 +10,7 @@ function SaisieTabZero(){
     } while ($saisie !=0);
     //retire le dernier élément du tableau
     array_pop($tab);
-    var_dump($tab);
+    return $tab;
 }
 
 SaisieTabZero();

@@ -1,0 +1,7 @@
+<?php
+
+function AfficherTableauDoubleDim(){
+
+}
+
+AfficherTableauDoubleDim();
