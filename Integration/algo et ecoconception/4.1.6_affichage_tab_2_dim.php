@@ -3,7 +3,6 @@
 $tab = [[1,2,3],[4,5,6]];
 
 function AfficherTableauDoubleDim($tab){
-    var_dump($tab);
 
     $tirets = "----"; //pour prendre en compte le numéro de la ligne
     $nomCol = "    "; 
