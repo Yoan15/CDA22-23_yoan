@@ -8,11 +8,11 @@ function SaisieTabDouble(){
     for ($x=0; $x < $nbValeurs; $x++) { 
         $objet = readline("Veuillez saisir le nom de votre objet : ");
         $tab[] = $objet;
-        $nbParametres = readline("Veuillez saisir le nombre de paramètre : ");
+        $nbParametres = readline("Veuillez saisir le nombre de paramètres : ");
         for ($y=0; $y < $nbParametres; $y++) { 
             $parametres = readline("Veuillez saisir les parametres de votre objet : ");
             $tab[$objet][] = $parametres;
-            var_dump($tab);
+            return $tab;
         }
     }
 }
