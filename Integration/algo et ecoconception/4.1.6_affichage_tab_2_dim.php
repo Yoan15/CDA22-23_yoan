@@ -6,9 +6,9 @@ function AfficherTableauDoubleDim($tab){
     var_dump($tab);
     foreach ($tab as $ligne) {
         foreach ($ligne as $case) {
-            echo $case;
+            echo "| ". $case . " ";
         }
-        echo "\n";
+        echo "|\n";
     }
 }
 
