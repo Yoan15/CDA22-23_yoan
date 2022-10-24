@@ -1,16 +1,18 @@
 <?php
 
 $tab = [];
-$invite;
-
-$invite = readline("veuillez saisir votre type de valeur : ");
+$longueur = 0;
+$invite = null;
 
 function SaisieTab(int $longueur, $invite)
 {
+    $longueur = readline("Veuillez saisir une longueur : ");
+    $invite = readline("Veuillez saisir un type : ");
     for ($i=0; $i < $longueur; $i++) { 
-        $invite = readline("Veuillez saisir une valeur : ");
-        echo $invite;
+        $valeur = readline("veuillez saisir une valeur : ");
+        $tab[] = $valeur;
     }
+    var_dump($tab);
 }
 
-SaisieTab(3, $invite);
+SaisieTab($longueur, $invite);
