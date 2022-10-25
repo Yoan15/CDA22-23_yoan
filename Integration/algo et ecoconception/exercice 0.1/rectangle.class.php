@@ -26,4 +26,30 @@ class Rectangle
     {
         $this->largeur = $largeur;
     }
+
+    public function __construct($longeur, $largeur)
+    {
+        $this->setLongueur($longeur);
+        $this->setLargeur($largeur);
+    }
+
+    public function perimetre()
+    {
+        return "Le périmètre du rectangle est ".($this->longueur+$this->largeur)*2;
+    }
+
+    public function aire()
+    {
+        return "L' aire du rectangle est ".$this->longueur*$this->largeur.".";
+    }
+
+    public function estCarre()
+    {
+        
+    }
+
+    public function afficherRectangle()
+    {
+        
+    }
 }

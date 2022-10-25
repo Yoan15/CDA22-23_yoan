@@ -72,4 +72,8 @@ class Voiture
         return "Cette voiture est un ". $this->modele ." de la marque ". $this->marque .", de couleur ". $this->couleur .", de motorisation ". $this->motorisation .", avec ". $this->nbKilometres ." kilomètres. ";
     }
 
+    public function rouler($kilometres)
+    {
+        return $this->setNbKilometres($this->nbKilometres + $kilometres);
+    }
 }
