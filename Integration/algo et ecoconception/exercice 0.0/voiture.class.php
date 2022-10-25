@@ -67,7 +67,10 @@ class Voiture
         $this->setMotorisation($motorisation);
     }
 
-    public function __
+    public function __toString()
+    {
+        
+    }
 
     public function descriptionVoiture()
     {
