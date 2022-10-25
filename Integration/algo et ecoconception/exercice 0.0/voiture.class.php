@@ -67,13 +67,9 @@ class Voiture
         $this->setMotorisation($motorisation);
     }
 
-    public function __toString()
-    {
-        
-    }
-
     public function descriptionVoiture()
     {
-        
+        return "Cette voiture est un ". $this->modele ." de la marque ". $this->marque .", de couleur ". $this->couleur .", de motorisation ". $this->motorisation .", avec ". $this->nbKilometres ." kilomètres. ";
     }
+
 }
