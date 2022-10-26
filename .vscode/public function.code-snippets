@@ -1,0 +1,10 @@
+{
+	"Create Public Function": {
+			"scope": "php",
+			"prefix": "puf",
+			"body": [
+				"public function $1($2)\n{\n\n}"
+			],
+			"description": "Créer une fonction publique"
+	}
+}

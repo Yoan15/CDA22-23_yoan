@@ -1,0 +1,10 @@
+{
+	"Create Public function": {
+		"scope": "php",
+		"prefix": "auto",
+		"body": [
+			"function chargerClasse('$classe')\n{\nrequire '$classe'. '.class.php';\n}\nspl_autoload_register('ChargerClasse');"
+		],
+		"description": "autoload"
+	}
+}

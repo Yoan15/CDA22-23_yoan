@@ -1,6 +1,6 @@
 <?php
 
-class Rectangle
+class Rectangles
 {
     private $longueur;
     private $largeur;
@@ -35,21 +35,24 @@ class Rectangle
 
     public function perimetre()
     {
-        return "Le périmètre du rectangle est ".($this->longueur+$this->largeur)*2;
+        return ($this->getLongueur() + $this->getLargeur())*2;
     }
 
     public function aire()
     {
-        return "L' aire du rectangle est ".$this->longueur*$this->largeur.".";
+        return $this->getLongueur() * $this->getLargeur();
     }
 
     public function estCarre()
     {
-        
+        if ($this->getLongueur() === $this->getLargeur()) {
+            return "Il s'agit d'un carré.";
+        }
+        return "Il ne s'agit pas d'un carré.";
     }
 
     public function afficherRectangle()
     {
-        
+        return "Longueur : [". $this->getLongueur() ."] - Largeur : [". $this->getLargeur() . "] - Périmètre : [".$this->perimetre()."] - Aire : [". $this->aire() ."] - ". $this->estCarre();
     }
 }
