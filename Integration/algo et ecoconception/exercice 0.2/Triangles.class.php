@@ -61,7 +61,7 @@ class Triangles
         return ($this->getHauteur() * $this->getBase())/2;
     }
 
-    public function afficherCercle()
+    public function afficherTriangle()
     {
         return "Base : [". $this->getBase() ."] - Hauteur : [". $this->getHauteur() ."] - Périmètre [". $this->perimetre() ."] - Aire [". $this->aire() ."]";
     }

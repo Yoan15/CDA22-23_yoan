@@ -9,9 +9,9 @@ spl_autoload_register("ChargerClasse");
 $triangle = new Triangles(["hauteur"=>8, "base"=>5]);
 echo $triangle->perimetre()."\n";
 echo $triangle->aire()."\n";
-echo $triangle->afficherCercle();
+echo $triangle->afficherTriangle()."\n";
 
 $triangle2 = new Triangles(["hauteur"=>15, "base"=>8]);
 echo $triangle2->perimetre()."\n";
 echo $triangle2->aire()."\n";
-echo $triangle2->afficherCercle();
+echo $triangle2->afficherTriangle();

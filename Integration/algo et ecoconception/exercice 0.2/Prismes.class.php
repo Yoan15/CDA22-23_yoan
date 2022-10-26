@@ -1,17 +1,18 @@
 <?php
 
-class Paves extends Rectangles
+class Prismes extends Triangles
 {
-    private $hauteur;
 
-    public function getHauteur()
+    private $profondeur;
+
+    public function getProfondeur()
     {
-        return $this->hauteur;
+        return $this->profondeur;
     }
 
-    public function setHauteur($hauteur)
+    public function setProfondeur($profondeur)
     {
-        $this->hauteur = $hauteur;
+        $this->profondeur = $profondeur;
     }
 
     public function __construct(array $options=[])
@@ -33,20 +34,20 @@ class Paves extends Rectangles
 
     public function __toString()
     {
-        return "Pavé - Longueur : ". $this->getLongueur() . ", Largeur : ". $this->getLargeur() . ", Hauteur : ". $this->getHauteur();
+        return "Prisme - Hauteur : ". $this->getHauteur() . ", Base : ". $this->getBase() . ", Profondeur : ". $this->getProfondeur();
     }
 
     public function perimetre()
     {
-        return parent::perimetre()*2 + 4*$this->getHauteur();
+        return parent::perimetre()*2 + 3*$this->getProfondeur();
     }
 
     public function volume()
     {
-        return parent::aire()*$this->getHauteur();
+        return parent::aire()*$this->getProfondeur();
     }
 
-    public function afficherPave()
+    public function afficherPrisme()
     {
         return "Périmètre : [". $this->perimetre() ."] - Volume : [". $this->volume() . "]";
     }
