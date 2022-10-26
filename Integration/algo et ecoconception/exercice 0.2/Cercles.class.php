@@ -36,6 +36,11 @@ class Cercles
         return "Cercle - Diamètre : ". $this->getDiametre();
     }
 
+    public function rayon()
+    {
+        return $this->getDiametre()/2;
+    }
+
     public function perimetre()
     {
         return $this->getDiametre()*pi();
@@ -43,8 +48,7 @@ class Cercles
 
     public function aire()
     {
-        $r = $this->getDiametre()/2;
-        return pi()*$r*$r;
+        return pi()*pow($this->rayon(), 2);
     }
 
     public function afficherCercle()
