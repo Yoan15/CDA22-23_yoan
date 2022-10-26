@@ -31,6 +31,11 @@ class Paves extends Rectangles
         }
     }
 
+    public function __toString()
+    {
+        return "Pavé - Longueur : ". $this->getLongueur() . ", Largeur : ". $this->getLargeur() . ", Hauteur : ". $this->getHauteur();
+    }
+
     public function perimetre()
     {
         return ;
@@ -38,7 +43,7 @@ class Paves extends Rectangles
 
     public function volume()
     {
-        return ;
+        return $this->getLongueur()*$this->getLargeur()*$this->getHauteur();
     }
 
     public function afficherPave()

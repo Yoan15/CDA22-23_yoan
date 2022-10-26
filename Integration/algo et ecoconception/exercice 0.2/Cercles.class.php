@@ -31,6 +31,11 @@ class Cercles
         }
     }
 
+    public function __toString()
+    {
+        return "Cercle - Diamètre : ". $this->getDiametre();
+    }
+
     public function perimetre()
     {
         return $this->getDiametre()*pi();

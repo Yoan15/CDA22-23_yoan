@@ -43,6 +43,11 @@ class Rectangles
         return $this->getLongueur() * $this->getLargeur();
     }
 
+    public function __toString()
+    {
+        return "Rectangle - Longueur : ". $this->getLongueur() . ", Largeur : ". $this->getLargeur();
+    }
+
     public function estCarre()
     {
         if ($this->getLongueur() === $this->getLargeur()) {
