@@ -107,7 +107,7 @@ class TestEmployes
 
     public function prime()
     {
-        $prime = (5*$this->getSalaire()/100) + ($this->anciennete()*$this->getSalaire()/100);
+        $prime = (5*$this->getSalaire()*1000/100) + ($this->anciennete()*$this->getSalaire()*1000/100);
         $ajd = new DateTime("2022-11-30");
         $ajd = $ajd->format("d-m");
         $dateVersement = new DateTime("2023-11-30");
