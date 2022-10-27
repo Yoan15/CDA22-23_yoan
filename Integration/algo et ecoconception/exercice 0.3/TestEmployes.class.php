@@ -124,6 +124,7 @@ class TestEmployes
         return "Il y a ". $nombreEmployes. " employés.";
     }
 
+    // fonctionne pour nom et prénom
     // public function infosAlphaNomPrenom($tabEmployes)
     // {
     //     sort($tabEmployes);
@@ -134,7 +135,7 @@ class TestEmployes
 
     public static function cmp_nom($a, $b)
     {
-        return strtolower($a->name) <=> strtolower($b->name);
+        return strtolower($a->nom) <=> strtolower($b->nom);
     }
 
     // public function infosAlphaNomPrenom($tabEmployes)
@@ -142,6 +143,7 @@ class TestEmployes
         
     // }
 
+    //ne fonctionne pas avec les services
     // public function infosAlphaServiceNomPrenom($tabEmployes)
     // {
     //     sort($tabEmployes);
