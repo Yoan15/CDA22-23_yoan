@@ -124,15 +124,34 @@ class TestEmployes
         return "Il y a ". $nombreEmployes. " employés.";
     }
 
-    public function infosAlphaNomPrenom($tabEmployes)
+    // public function infosAlphaNomPrenom($tabEmployes)
+    // {
+    //     sort($tabEmployes);
+    //     foreach ($tabEmployes as $value) {
+    //         echo "Nom : " . $value["nom"]. ", Prenom : ". $value["prenom"]."\n";
+    //     }
+    // }
+
+    public static function cmp_nom($a, $b)
     {
-        sort($tabEmployes);
-        //var_dump($tri);
-        // for ($i=0; $i < count($tabEmployes)-1; $i++) { 
-        //     echo "Nom : " . $tabEmployes[$i]. ", Prenom : ". $tabEmployes[$i];
-        // }
-        foreach ($tabEmployes as $key => $value) {
-            echo "Nom : " . $value["nom"]. ", Prenom : ". $value["prenom"]."\n";
-        }
+        return strtolower($a->name) <=> strtolower($b->name);
     }
+
+    // public function infosAlphaNomPrenom($tabEmployes)
+    // {
+        
+    // }
+
+    // public function infosAlphaServiceNomPrenom($tabEmployes)
+    // {
+    //     sort($tabEmployes);
+    //     foreach ($tabEmployes as $value) {
+    //         echo "Service : ".$value["service"].", Nom : " . $value["nom"]. ", Prenom : ". $value["prenom"]."\n";
+    //     }
+    // }
+
+    // public function masseSalariale()
+    // {
+        
+    // }
 }

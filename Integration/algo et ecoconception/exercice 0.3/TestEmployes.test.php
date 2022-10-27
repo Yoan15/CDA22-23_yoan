@@ -34,8 +34,8 @@ echo $employe->prime()."\n\n";
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 $tabEmployes = [
-    ["nom"=> "Dupont","prenom"=> "Claude","dateEmbauche"=> "2019-01-19","poste"=> "Comptable","salaire"=> 20000,"service"=> "Comptabilité"],
-    ["nom"=> "Dupond","prenom"=> "Charles","dateEmbauche"=> "2015-05-18","poste"=> "Vendeur","salaire"=> 17000,"service"=> "Commercial"],
+    ["nom"=> "Dupond","prenom"=> "David","dateEmbauche"=> "2019-01-19","poste"=> "Comptable","salaire"=> 20000,"service"=> "Comptabilité"],
+    ["nom"=> "Dupond","prenom"=> "Claude","dateEmbauche"=> "2015-05-18","poste"=> "Vendeur","salaire"=> 17000,"service"=> "Commercial"],
     ["nom"=> "Riviera","prenom"=> "Antonio","dateEmbauche"=> "2022-03-01","poste"=> "Responsable Réseaux","salaire"=> 35000,"service"=> "Informatique"],
     ["nom"=> "Wallace","prenom"=> "Marcelus","dateEmbauche"=> "2000-10-29","poste"=> "Agent de sécurité","salaire"=> 23000,"service"=> "Sécurité"],
     ["nom"=> "Doe","prenom"=> "John","dateEmbauche"=> "1980-12-06","poste"=> "Responsable","salaire"=> 50000,"service"=> "RH"]
@@ -43,5 +43,5 @@ $tabEmployes = [
 
 //var_dump($tabEmployes);
 echo $employe->nombreEmployes($tabEmployes)."\n\n";
-echo $employe->infosAlphaNomPrenom($tabEmployes). "\n\n";
-
+//echo $employe->infosAlphaNomPrenom($tabEmployes). "\n\n";
+//echo $employe->infosAlphaServiceNomPrenom($tabEmployes). "\n\n";
