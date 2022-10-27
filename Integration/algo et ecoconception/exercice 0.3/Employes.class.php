@@ -39,7 +39,7 @@ class Employes
 
     public function setDateEmbauche($dateEmbauche)
     {
-        $this->dateEmbauche = $dateEmbauche;
+        $this->dateEmbauche = $dateEmbauche->format("Y-m-d");
     }
 
     public function getPoste()
@@ -100,7 +100,21 @@ class Employes
     {
         $embauche = new DateTime($this->getDateEmbauche());
         $ajd = new DateTime();
-        $anciennte = $embauche->diff($ajd);
-        return $anciennte->format("L'employé a une ancienneté de %y ans.");
+        $anciennete = $embauche->diff($ajd);
+        $anciennete = $anciennete->format("%y");
+        return $anciennete;
+    }
+
+    public function prime()
+    {
+        $prime = (5*$this->getSalaire()/100) + ($this->anciennete()*$this->getSalaire()/100);
+        $ajd = new DateTime("2022-11-30");
+        $ajd = $ajd->format("d-m");
+        $dateVersement = new DateTime("2023-11-30");
+        $dateVersement = $dateVersement->format("d-m");
+        if ($ajd == $dateVersement) {
+            return "Ordre de transfert - à la banque d'un montant de ".$prime." euros confirmé.";
+        }
+        return "Pas de versement";
     }
 }

@@ -39,7 +39,7 @@ class TestEmployes
 
     public function setDateEmbauche($dateEmbauche)
     {
-        $this->dateEmbauche = $dateEmbauche;
+        $this->dateEmbauche = $dateEmbauche->format("Y-m-d");
     }
 
     public function getPoste()
@@ -100,12 +100,39 @@ class TestEmployes
     {
         $embauche = new DateTime($this->getDateEmbauche());
         $ajd = new DateTime();
-        $anciennte = $embauche->diff($ajd);
-        return $anciennte->format("L'employé a une ancienneté de %y ans.");
+        $anciennete = $embauche->diff($ajd);
+        $anciennete = $anciennete->format("%y");
+        return $anciennete;
     }
 
     public function prime()
     {
-        
+        $prime = (5*$this->getSalaire()/100) + ($this->anciennete()*$this->getSalaire()/100);
+        $ajd = new DateTime("2022-11-30");
+        $ajd = $ajd->format("d-m");
+        $dateVersement = new DateTime("2023-11-30");
+        $dateVersement = $dateVersement->format("d-m");
+        if ($ajd == $dateVersement) {
+            return "Ordre de transfert - à la banque d'un montant de ".$prime." euros confirmé.";
+        }
+        return "Pas de versement";
+    }
+
+    public function nombreEmployes($tabEmployes)
+    {
+        $nombreEmployes = count($tabEmployes);
+        return "Il y a ". $nombreEmployes. " employés.";
+    }
+
+    public function infosAlphaNomPrenom($tabEmployes)
+    {
+        sort($tabEmployes);
+        //var_dump($tri);
+        // for ($i=0; $i < count($tabEmployes)-1; $i++) { 
+        //     echo "Nom : " . $tabEmployes[$i]. ", Prenom : ". $tabEmployes[$i];
+        // }
+        foreach ($tabEmployes as $key => $value) {
+            echo "Nom : " . $value["nom"]. ", Prenom : ". $value["prenom"]."\n";
+        }
     }
 }
