@@ -3,7 +3,11 @@
 		"scope": "php",
 		"prefix": "auto",
 		"body": [
-			"function chargerClasse('$classe')\n{\nrequire '$classe'. '.class.php';\n}\nspl_autoload_register('ChargerClasse');"
+			"function chargerClasse($$classe)",
+			"{",
+			"    require $$classe. '.class.php';",
+			"}",
+			"\nspl_autoload_register('ChargerClasse');"
 		],
 		"description": "autoload"
 	}

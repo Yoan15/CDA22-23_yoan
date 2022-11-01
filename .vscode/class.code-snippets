@@ -1,0 +1,47 @@
+{
+	// Place your espace de travail CDA22-23_yoan snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "php",
+		"prefix": "class",
+		"body": [
+			"class ${1:Classe}",
+			"{",
+			"\n",
+			"    /************Attributs************/",
+			"\n",
+			"    /************Accesseurs************/",
+			"\n",
+			"    /************Constructeur************/",
+			"\n",
+			"    public function __construct(array $$options = [])",
+			"    {",
+			"        if (!empty($$options)) //empty : renvoi vrai si le tableau est vide",
+			"        {",
+			"             $$this->hydrate($$options);",
+			"        }",
+			"    }",
+			"\n",
+			"    public function hydrate($$data)",
+			"    {",
+			"        foreach ($$data as $$key => $$value)",
+			"        {",
+			"            $$methode = 'set' . ucfirst($$key); //ucfirst met la 1ere lettre en majuscule",
+			"            if (is_callable(([$$this, $$methode]))) // is_callable verifie que la methode existe",
+			"            {",
+			"                $$this->$$methode($$value);",
+			"            }",
+			"        }",
+			"    }",
+			"\n",
+			"    /************Autres Méthodes************/",
+			"}"
+		],
+		"description": "Création d'une classe PHP"
+	}
+}
