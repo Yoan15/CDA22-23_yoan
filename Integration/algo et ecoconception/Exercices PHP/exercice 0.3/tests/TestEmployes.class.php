@@ -3,73 +3,84 @@
 class TestEmployes
 {
     //attributs
-    private $nom;
-    private $prenom;
-    private $dateEmbauche;
-    private $poste;
-    private $salaire;
-    private $service;
+    private $_nom;
+    private $_prenom;
+    private $_dateEmbauche;
+    private $_poste;
+    private $_salaire;
+    private $_service;
+    private static $_compteur = 0 ;
 
     //getters & setters
 
     public function getNom()
     {
-        return $this->nom;
+        return $this->_nom;
     }
 
     public function setNom($nom)
     {
-        $this->nom = $nom;
+        $this->_nom = $nom;
     }
 
     public function getPrenom()
     {
-        return $this->prenom;
+        return $this->_prenom;
     }
 
     public function setPrenom($prenom)
     {
-        $this->prenom = $prenom;
+        $this->_prenom = $prenom;
     }
 
     public function getDateEmbauche()
     {
-        return $this->dateEmbauche;
+        return $this->_dateEmbauche;
     }
 
-    public function setDateEmbauche($dateEmbauche)
+    public function setDateEmbauche(DateTime $dateEmbauche)
     {
-        $this->dateEmbauche = $dateEmbauche->format("Y-m-d");
+        $this->_dateEmbauche = $dateEmbauche;
     }
 
     public function getPoste()
     {
-        return $this->poste;
+        return $this->_poste;
     }
 
     public function setPoste($poste)
     {
-        $this->poste = $poste;
+        $this->_poste = $poste;
     }
 
     public function getSalaire()
     {
-        return $this->salaire;
+        return $this->_salaire;
     }
 
     public function setSalaire($salaire)
     {
-        $this->salaire = $salaire;
+        $this->_salaire = $salaire;
     }
 
     public function getService()
     {
-        return $this->service;
+        return $this->_service;
     }
 
     public function setService($service)
     {
-        $this->service = $service;
+        $this->_service = $service;
+    }
+
+    public static function getCompteur()
+    {
+        return self::$_compteur;
+    }
+
+    public static function setCompteur($compteur)
+    {
+        self::$_compteur = $compteur;
     }
 
     //constructeur
@@ -78,6 +89,7 @@ class TestEmployes
         if (!empty($options)) {
             $this->hydrate($options);
         }
+        self::setCompteur(self::getCompteur() + 1); //on increment le compteur
     }
 
     public function hydrate($data)
@@ -93,12 +105,12 @@ class TestEmployes
     //autres fonctions
     public function __toString()
     {
-        return "Employé - Nom : [". $this->getNom() ."], Prenom : [". $this->getPrenom() ."], Date d'embauche : [". $this->getDateEmbauche() ."], Poste : [". $this->getPoste() ."], Salaire : [". $this->getSalaire() ."], Service : [". $this->getService() ."]";
+        return "Employé - Nom : [". $this->getNom() ."], Prenom : [". $this->getPrenom() ."], Date d'embauche : [". $this->getDateEmbauche()->format('Y-m-d') ."], Poste : [". $this->getPoste() ."], Salaire : [". $this->getSalaire() ."], Service : [". $this->getService() ."]";
     }
 
     public function anciennete()
     {
-        $embauche = new DateTime($this->getDateEmbauche());
+        $embauche = $this->getDateEmbauche();
         $ajd = new DateTime();
         $anciennete = $embauche->diff($ajd);
         $anciennete = $anciennete->format("%y");
@@ -118,12 +130,6 @@ class TestEmployes
         return "Pas de versement";
     }
 
-    public function nombreEmployes($tabEmployes)
-    {
-        $nombreEmployes = count($tabEmployes);
-        return "Il y a ". $nombreEmployes. " employés.";
-    }
-
     // fonctionne pour nom et prénom
     // public function infosAlphaNomPrenom($tabEmployes)
     // {
@@ -133,9 +139,12 @@ class TestEmployes
     //     }
     // }
 
-    public static function cmp_nom($a, $b)
+    public static function cmpNomPrenom($a, $b)
     {
-        return strtolower($a->nom) <=> strtolower($b->nom);
+        if (strcmp($a->getNom(), $b->getNom() == 0)) {
+            return strcmp($a->getPrenom(), $b->getPrenom() == 0);
+        }
+        return strcmp($a->getNom(), $b->getNom());
     }
 
     // public function infosAlphaNomPrenom($tabEmployes)
@@ -156,4 +165,6 @@ class TestEmployes
     // {
         
     // }
+
+    
 }

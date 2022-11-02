@@ -107,7 +107,7 @@ class Employes
 
     public function prime()
     {
-        $prime = (5*$this->getSalaire()/100) + ($this->anciennete()*$this->getSalaire()/100);
+        $prime = (5*$this->getSalaire()*1000/100) + ($this->anciennete()*$this->getSalaire()*1000/100);
         $ajd = new DateTime("2022-11-30");
         $ajd = $ajd->format("d-m");
         $dateVersement = new DateTime("2023-11-30");
@@ -116,5 +116,11 @@ class Employes
             return "Ordre de transfert - à la banque d'un montant de ".$prime." euros confirmé.";
         }
         return "Pas de versement";
+    }
+
+    public function nombreEmployes($tabEmployes)
+    {
+        $nombreEmployes = count($tabEmployes);
+        return "Il y a ". $nombreEmployes. " employés.";
     }
 }
