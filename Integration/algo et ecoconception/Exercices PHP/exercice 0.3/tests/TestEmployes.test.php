@@ -43,21 +43,41 @@ spl_autoload_register('ChargerClasse');
 function AfficherTab($tab)
 {
     echo "\n";
-    foreach ($tab as $elt) // le tableau est parcouru de la 1ere à la dernière case, les cases sont mises tour à tous dans $elt
+    foreach ($tab as $elmt) // le tableau est parcouru de la 1ere à la dernière case, les cases sont mises tour à tous dans $elt
     {
-        echo $elt->__toString() . "\n";
+        echo $elmt->__toString() . "\n";
     }
     echo "\n";
 
 }
-$e[] = new TestEmployes(["nom"=> "Dupond","prenom"=> "David","dateEmbauche"=> new DateTime("2019-01-19"),"poste"=> "Comptable","salaire"=> 20,"service"=> "Comptabilité"]);
-$e[] = new TestEmployes(["nom"=> "Dupond","prenom"=> "Claude","dateEmbauche"=> new DateTime("2015-05-18"),"poste"=> "Vendeur","salaire"=> 17,"service"=> "Commercial"]);
-$e[] = new TestEmployes(["nom"=> "Riviera","prenom"=> "Antonio","dateEmbauche"=> new DateTime("2022-03-01"),"poste"=> "Responsable Réseaux","salaire"=> 35,"service"=> "Informatique"]);
-$e[] = new TestEmployes(["nom"=> "Wallace","prenom"=> "Marcelus","dateEmbauche"=> new DateTime("2000-10-29"),"poste"=> "Agent de sécurité","salaire"=> 23,"service"=> "Sécurité"]);
-$e[] = new TestEmployes(["nom"=> "Doe","prenom"=> "John","dateEmbauche"=> new DateTime("1980-12-06"),"poste"=> "Responsable","salaire"=> 50,"service"=> "RH"]);
+
+$a1 = new TestAgences(["Nom" => "tutu", "adresse" => "12 rue toto","restauration" => "restaurant d'entreprise" ,"codePostal" => "59520" , "ville" => "Lille"]);
+$a2 = new TestAgences(["Nom" => "toto", "adresse" => "154 rue tata","restauration" =>"ticket restaurant" ,"codePostal" => "62102", "ville" => "Lens"]);
+$a3 = new TestAgences(["Nom" => "tata", "adresse" => "132 rue tutu","restauration" =>"restaurant d'entreprise" ,"codePostal" => "52013", "ville" => "Marseille"]);
+
+
+$e[] = new TestEmployes(["nom"=> "Dupond","prenom"=> "David","dateEmbauche"=> new DateTime("2019-01-19"),"poste"=> "Comptable","salaire"=> 20,"service"=> "Comptabilité", "agence"=>$a2]);
+$e[] = new TestEmployes(["nom"=> "Dupond","prenom"=> "Claude","dateEmbauche"=> new DateTime("2015-05-18"),"poste"=> "Vendeur","salaire"=> 17,"service"=> "Commercial", "agence"=>$a1]);
+$e[] = new TestEmployes(["nom"=> "Riviera","prenom"=> "Antonio","dateEmbauche"=> new DateTime("2022-03-01"),"poste"=> "Responsable Réseaux","salaire"=> 35,"service"=> "Informatique", "agence"=>$a2]);
+$e[] = new TestEmployes(["nom"=> "Wallace","prenom"=> "Marcelus","dateEmbauche"=> new DateTime("2000-10-29"),"poste"=> "Agent de sécurité","salaire"=> 23,"service"=> "Sécurité", "agence"=>$a3]);
+$e[] = new TestEmployes(["nom"=> "Doe","prenom"=> "John","dateEmbauche"=> new DateTime("1980-12-06"),"poste"=> "Responsable","salaire"=> 50,"service"=> "RH", "agence"=>$a3]);
 
 echo "Il y a " . TestEmployes::getCompteur() . " employés créé \n";
-AfficherTab($e);
 
 usort($e, array("TestEmployes", "cmpNomPrenom"));
-//echo $employe->infosAlphaServiceNomPrenom($tabEmployes). "\n\n";
+//usort($e, array("TestEmployes", "cmpServiceNomPrenom"));
+
+AfficherTab($e);
+$ajd = new DateTime("now");
+$jourPrime = (new DateTime())->setDate($ajd->format("Y"), 9, 30);
+
+if ($jourPrime < $ajd) //comparaison des dates
+{
+    foreach ($e as $elmt) {
+        echo "Ordre de transfert envoyé à ". $elmt->getNom() ." ". $elmt->getPrenom() ." pour un montant de ". $elmt->prime() ." euros.\n";
+    }
+} 
+else 
+{
+    echo "Ordre de transfert non envoyé.";
+}
