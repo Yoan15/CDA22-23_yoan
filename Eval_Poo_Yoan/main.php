@@ -8,7 +8,9 @@ function chargerClasse($classe)
 spl_autoload_register('ChargerClasse');
 
 $compte[] = new Compte(["numero"=>"50236R", "montant"=>120]);
-$livret[] = new Livret(["numeroLivret"=> "45789L", "montantLivret"=>1200]);
+$livret[] = new Livret(["numero"=>"50236R", "montant"=>120, "numeroLivret"=> "45789L", "montantLivret"=>1200]);
 $client[] = new Client(["nom"=>"Dupont", "prenom"=> "Paul", "compte"=>$compte[0], "livret"=>$livret[0]]);
 
-$data = Client::afficher();
+var_dump($compte);
+var_dump($livret);
+var_dump($client);

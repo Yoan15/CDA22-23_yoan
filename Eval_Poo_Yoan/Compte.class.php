@@ -61,7 +61,7 @@ class Compte
      */
     public function debiter()
     {
-        
+        return;
     }
 
     /**
@@ -69,6 +69,6 @@ class Compte
      */
     public function crediter()
     {
-        
+        return;
     }
 }

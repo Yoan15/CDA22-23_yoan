@@ -107,6 +107,6 @@ class Client
      */
     public function affiche()
     {
-        echo "Le client ".$this->getNom()." ".$this->getPrenom()." a ".$this->getCompte()->getMontant()." euros sur son compte".$this->getCompte()->getNumero()." et ".$this->getLivret()->getMontantLivret()." euros sur son livret".$this->getLivret()->getNumeroLivret();
+        return "Le client ".$this->getNom()." ".$this->getPrenom()." a ".$this->getCompte()->getMontant()." euros sur son compte".$this->getCompte()->getNumero()." et ".$this->getLivret()->getMontantLivret()." euros sur son livret".$this->getLivret()->getNumeroLivret();
     }
 }
