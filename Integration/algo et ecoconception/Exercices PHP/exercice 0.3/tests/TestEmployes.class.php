@@ -11,6 +11,7 @@ class TestEmployes
     private $_service;
     private static $_compteur = 0 ;
     private TestAgences $_agence;
+    private $_enfants = [];
 
     //getters & setters
 
@@ -94,6 +95,16 @@ class TestEmployes
         $this->_agence = $agence;
     }
 
+    public function getEnfants()
+    {
+        return $this->_enfants;
+    }
+
+    public function setEnfants(array $enfants)
+    {
+        $this->_enfants = $enfants;
+    }
+
     //constructeur
     public function __construct(array $options=[])
     {
@@ -117,7 +128,20 @@ class TestEmployes
     public function __toString()
     {
         $data = "*****EMPLOYE*****\n";
-        $data .= "Employé - Nom : [". $this->getNom() ."],\n Prenom : [". $this->getPrenom() ."],\n Date d'embauche : [". $this->getDateEmbauche()->format('Y-m-d') ."],\n Poste : [". $this->getPoste() ."],\n Salaire : [". $this->getSalaire() ."],\n Service : [". $this->getService() ."],\n Agence : [".$this->getAgence()->__toString()."]";
+        $data .= "Employé - Nom : [". $this->getNom() ."],\n Prenom : [". $this->getPrenom() ."],\n Date d'embauche : [". $this->getDateEmbauche()->format('Y-m-d') ."],\n Poste : [". $this->getPoste() ."],\n Salaire : [". $this->getSalaire() ."],\n Service : [". $this->getService() ."],\n";
+        $data .= $this->chequeVacances() ? "L'employé peut bénificier des chèques vacances.\n" : "L'employé ne peut pas bénificier des chèques vacances.\n";
+        $data .= "\n *****AGENCE*****\n ".$this->getAgence()->__toString();
+        $data .= "\n *****ENFANTS*****\n ";
+        if (count($this->getEnfants()) > 0) 
+        {
+            foreach ($this->getEnfants() as $enfant) {
+                $data .= $enfant->__toString();
+            }
+        }
+        else
+        {
+            $data .= "pas d'enfants";
+        }
         return $data;
     }
 
@@ -191,5 +215,8 @@ class TestEmployes
         }
     }
 
-    
+    public function chequeVacances()
+    {
+        return ($this->anciennete() >= 1); //verification si l'ancienneté est sup ou égale à 1 an
+    }
 }
