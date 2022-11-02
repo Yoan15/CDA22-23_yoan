@@ -105,7 +105,9 @@ class TestEmployes
     //autres fonctions
     public function __toString()
     {
-        return "Employé - Nom : [". $this->getNom() ."], Prenom : [". $this->getPrenom() ."], Date d'embauche : [". $this->getDateEmbauche()->format('Y-m-d') ."], Poste : [". $this->getPoste() ."], Salaire : [". $this->getSalaire() ."], Service : [". $this->getService() ."]";
+        $data = "*****EMPLOYE*****\n";
+        $data .= "Employé - Nom : [". $this->getNom() ."], Prenom : [". $this->getPrenom() ."], Date d'embauche : [". $this->getDateEmbauche()->format('Y-m-d') ."], Poste : [". $this->getPoste() ."], Salaire : [". $this->getSalaire() ."], Service : [". $this->getService() ."]";
+        return $data;
     }
 
     public function anciennete()

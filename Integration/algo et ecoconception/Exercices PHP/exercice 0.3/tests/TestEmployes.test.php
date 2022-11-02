@@ -45,7 +45,7 @@ function AfficherTab($tab)
     echo "\n";
     foreach ($tab as $elt) // le tableau est parcouru de la 1ere à la dernière case, les cases sont mises tour à tous dans $elt
     {
-        echo $elt->toString() . "\n";
+        echo $elt->__toString() . "\n";
     }
     echo "\n";
 
@@ -57,6 +57,7 @@ $e[] = new TestEmployes(["nom"=> "Wallace","prenom"=> "Marcelus","dateEmbauche"=
 $e[] = new TestEmployes(["nom"=> "Doe","prenom"=> "John","dateEmbauche"=> new DateTime("1980-12-06"),"poste"=> "Responsable","salaire"=> 50,"service"=> "RH"]);
 
 echo "Il y a " . TestEmployes::getCompteur() . " employés créé \n";
+AfficherTab($e);
 
 usort($e, array("TestEmployes", "cmpNomPrenom"));
 //echo $employe->infosAlphaServiceNomPrenom($tabEmployes). "\n\n";
