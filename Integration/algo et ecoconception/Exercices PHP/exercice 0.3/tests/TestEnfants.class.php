@@ -66,6 +66,9 @@ class TestEnfants
 
     /************Autres Méthodes************/
 
+    /**
+     * @return String
+     */
     public function __toString()
     {
         return "Nom de l'enfant : ". $this->getNom() ."\n Prenom de l'enfant : ". $this->getPrenom() . "\n Age : ". $this->getAge() ."\n";

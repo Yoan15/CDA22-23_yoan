@@ -134,13 +134,30 @@ class TestEmployes
         $data .= "\n *****ENFANTS*****\n ";
         if (count($this->getEnfants()) > 0) 
         {
-            foreach ($this->getEnfants() as $enfant) {
+            foreach ($this->getEnfants() as $enfant) 
+            {
                 $data .= $enfant->__toString();
             }
         }
         else
         {
             $data .= "pas d'enfants";
+        }
+        $data .= "\n*****CHEQUES NOEL*****\n";
+        $cheques = $this->chequeNoel();
+        if (array_sum($cheques) > 0) 
+        {
+            foreach ($cheques as $key => $nbCheque) 
+            {
+                if ($nbCheque > 0) 
+                {
+                    $data .= $nbCheque. " chèque(s) de  ".$key."\n";
+                }
+            }
+        }
+        else 
+        {
+            $data .= "pas de chèques noël";
         }
         return $data;
     }
@@ -218,5 +235,16 @@ class TestEmployes
     public function chequeVacances()
     {
         return ($this->anciennete() >= 1); //verification si l'ancienneté est sup ou égale à 1 an
+    }
+
+    public function chequeNoel()
+    {
+        $cheque = ["0" => 0, "20" => 0, "30" => 0, "50" => 0];
+        foreach ($this->getEnfants() as $enfant) 
+        {
+            $cheque[$enfant->montantChequeNoel()] += 1;
+        }
+        $cheque["0"] = 0;
+        return $cheque;
     }
 }
