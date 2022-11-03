@@ -1,10 +1,10 @@
-calcul1 = document.querySelectorAll("[data-calcul1]");
-//prix1 = document.querySelectorAll("[data-prix1]");
-calcul2 = document.querySelectorAll("[data-calcul2]");
+quantites = document.querySelectorAll("[data-quantites]");
+prix1 = document.querySelectorAll("[data-prix]");
+prixUnitaires = document.querySelectorAll("[data-prixunitaires]");
 //prix2 = document.querySelectorAll("[data-prix2]");
-prixTotal = document.querySelectorAll("[data-prixtotal]");
+//prixTotal = document.querySelectorAll("[data-prixtotal]");
 
-calcul1.forEach(element =>{
+quantites.forEach(element =>{
     element.addEventListener("blur", calculPrix1);
     console.log(element);
 });
@@ -45,24 +45,28 @@ function calculPrix2(event) {
     p2 = parseInt(qte2)*parseFloat(pu2);
     console.log(p2);
     document.getElementById("p2").value = p2; //arrive a mettre la valeur dans l'input
-}
-
-prixTotal.forEach(element =>{
-    element.addEventListener("blur", calculPrixTotal);
-    console.log(element);
-});
-
-function calculPrixTotal(event) {
-    
-    /*********TESTS********** */
     p1 = document.getElementById("p1").value; //arrive a récupérer la valeur
-    console.log(p1);
-    p2 = document.getElementById("p2").value; //arrive a récupérer la valeur
-    console.log(p2);
     pt = parseFloat(p1) + parseFloat(p2);
     console.log(pt);
     document.getElementById("pt").value = pt; //arrive a mettre la valeur dans l'input
 }
+
+// prixTotal.forEach(element =>{
+//     element.addEventListener("blur", calculPrixTotal);
+//     console.log(element);
+// });
+
+// function calculPrixTotal(event) {
+    
+//     /*********TESTS********** */
+//     p1 = document.getElementById("p1").value; //arrive a récupérer la valeur
+//     console.log(p1);
+//     p2 = document.getElementById("p2").value; //arrive a récupérer la valeur
+//     console.log(p2);
+//     pt = parseFloat(p1) + parseFloat(p2);
+//     console.log(pt);
+//     document.getElementById("pt").value = pt; //arrive a mettre la valeur dans l'input
+// }
 
 function disableTotal(){
     pt = document.getElementById("pt").disabled = true;

@@ -1,0 +1,18 @@
+.grid6
+{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+    row-gap: 0.5em;
+    background-color: darkseagreen;
+    padding: 0.5em;
+}
+
+.grid-span4
+{
+    grid-column: span 4;
+}
+
+input
+{
+    width: 85%;
+}
