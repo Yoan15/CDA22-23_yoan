@@ -8,7 +8,7 @@
     <title>Exercice 04 rebuild</title>
 </head>
 <body>
-    <div class="grid6">
+    <div class="grid6" id="grille">
         <label for="">Qté : </label>
         <input type="number" class="qte">
         <label for="">Prix unitaire : </label>
@@ -27,6 +27,15 @@
         <label for=""> Total : </label>
         <input type="number" disabled class="total">
     </div>
+
+    <template>
+        <label for="">Qté : </label>
+        <input type="number" class="qte">
+        <label for="">Prix unitaire : </label>
+        <input type="number" class="pu">
+        <label for=""> Prix : </label>
+        <input type="number" disabled class="prix">
+    </template>
     <script src="./script.js"></script>
 </body>
 </html>
