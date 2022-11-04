@@ -1,9 +1,24 @@
-/* .titre
+p
 {
-    color: red;
+    background-color: cyan;
 }
 
-.paragraphe
+.para2
 {
-    background-color: aqua;
-} */
+    background-color: blueviolet;
+}
+
+.titleA
+{
+    color: black;
+}
+
+.titleB
+{
+    color: green;
+}
+
+.titleC
+{
+    color: royalblue;
+}

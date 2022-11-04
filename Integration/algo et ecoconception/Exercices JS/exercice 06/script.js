@@ -1,30 +1,34 @@
-titre = document.querySelectorAll(".titre");
-para = document.querySelectorAll(".paragraphe");
+titre = document.querySelectorAll("h1, h2, h3");
+para = document.querySelectorAll("p");
 
-couleurTitre = ["brown", "blue", "green"];
-couleurPara = ["purple", "cyan"];
+couleursTitres = ["titleA", "titleB", "titleC"];
+couleursPara = ["purple", "cyan"];
+
+iteration = 1;
 
 titre.forEach(element => {
     element.addEventListener("click", changerCouleurTitre);
 });
 
-function changerCouleurTitre(event)
-{
-    index = 0;
-    // couleurTitre[index];
-    // titre = document.querySelectorAll(".titre");
-    titre.style.color = 'green';
-    // index = (index >= couleurTitre.length) ? 0 : index++;
-    console.log(titre);
-}
-
 para.forEach(element => {
     element.addEventListener("click", changerCouleurPara);
 });
 
+function changerCouleurTitre(event)
+{
+    titre = event.target;
+    allTitres = document.querySelectorAll(titre.localName);
+    allTitres.forEach(title =>{
+        for (let index = 0; index < couleursTitres.length; index++) {
+            const element = couleursTitres[index];
+            title.classList.toggle(element, iteration % couleursTitres.length == index);
+        }
+    })
+    iteration++;
+}
+
 function changerCouleurPara(event)
 {
-    index = 0;
-    // couleurPara[index];
-    para.style.backgroundColor = "royalblue";
+    paragraphe = event.target;
+    paragraphe.classList.toggle("para2");
 }
