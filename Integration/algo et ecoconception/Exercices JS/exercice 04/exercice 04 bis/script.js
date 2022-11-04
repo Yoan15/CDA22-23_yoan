@@ -28,7 +28,7 @@ function calcul(event)
     input = event.target;
     if (input.classList.contains("qte")) 
     {
-        index = Array.from(quantites).indexOf(input);    
+        index = Array.from(quantites).indexOf(input);  
     } 
     else
     {
