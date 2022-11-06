@@ -2,3 +2,13 @@
 {
     text-align: center;
 }
+
+#carre
+{
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    background-color: darkred;
+    left: 5vw;
+    top: 5vw;
+}
