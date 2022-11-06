@@ -7,3 +7,13 @@
     left: 5vw;
     top: 5vw;
 }
+
+#obstacle
+{
+    position: absolute;
+    height: 20vw;
+    width: 30vw;
+    background-color: black;
+    left: 20vw;
+    top: 20vw;
+}

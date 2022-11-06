@@ -2,20 +2,20 @@ document.addEventListener("keydown", function(event)
 {
     event = event,
     key = event.key;
-    console.log(key);
+    var vitesse = 10;
 
     switch (key) {
         case "ArrowUp":
-            deplacer(0, -10);
+            deplacer(0, -vitesse);
             break;
         case "ArrowLeft":
-            deplacer(-10, 0);
+            deplacer(-vitesse, 0);
             break;
         case "ArrowDown":
-            deplacer(0, 10);
+            deplacer(0, vitesse);
             break;
         case "ArrowRight":
-            deplacer(10, 0);
+            deplacer(vitesse, 0);
             break;
     }
 });
