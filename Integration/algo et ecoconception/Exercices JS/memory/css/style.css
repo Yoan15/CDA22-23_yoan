@@ -1,0 +1,12 @@
+.grid4
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    row-gap: 1em;
+    padding: 0.5em;
+}
+
+.noDisplay
+{
+    display: none;
+}
