@@ -1,0 +1,17 @@
+#grid3
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    background-color: grey;
+    row-gap: 1em;
+    padding: 0.5em;
+}
+
+.carre
+{
+    width: 30vw;
+    height: 30vh;
+    border: 1em solid red;
+    text-align: center;
+    vertical-align: center;
+}
