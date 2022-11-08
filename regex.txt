@@ -1,0 +1,5 @@
+regex Nom = ^[a-zA-Z]+$ ou /^[\p{L}\\ \-]{1,}$/u;
+regex numTel = /^0[1-9]\d{8}$/ ou /^[0|+33]\d((\.| )?\d{2}){4}$/;
+regex code postal = /^\d{5}$/;
+regex mot de passe = (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,};
+regex email = ^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*\.\w{2,5}$
