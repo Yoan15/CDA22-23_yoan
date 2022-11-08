@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulaires</title>
+</head>
+<body>
+    <form action="">
+        <div class="grid4">
+            <div id="nom">
+                <label for="inputNom">Nom : </label>
+                <input type="text" name="inputNom" id="inputNom" placeholder="Nom">
+                <span class="erreur" aria-live="polite"></span>
+            </div>
+            <div id="numTel">
+                <label for="inputNumTel">Numéro de téléphone : </label>
+                <!-- <input type="tel" pattern="[0-9]{10}" name="inputNumTel" id="inputNumTel" placeholder="0600000000"> -->
+                <input type="tel" name="inputNumTel" id="inputNumTel" placeholder="0600000000">
+                <span class="erreur" aria-live="polite"></span>
+            </div>
+            <div id="codePostal">
+                <label for="inputCodePostal">Code Postal : </label>
+                <input type="text" name="inputCodePostal" id="inputCodePostal" placeholder="59000">
+                <span class="erreur" aria-live="polite"></span>
+            </div>
+            <div id="adresseMail">
+                <label for="inputAdresseMail">Adresse Mail : </label>
+                <input type="email" name="inputAdresseMail" id="inputAdresseMail" placeholder="xx@xx.xx">
+                <span class="erreur" aria-live="polite"></span>
+            </div>
+            <div id="mdp">
+                <label for="inputMdp">Mot de passe : </label>
+                <input type="password" name="inputMdp" id="inputMdp" placeholder="********">
+                <span class="erreur" aria-live="polite"></span>
+            </div>
+            <div>
+                <button type="submit">Valider</button>
+            </div>
+        </div>
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.grid4
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: darkgray;
+    border-radius: 0.5em;
+    row-gap: 1em;
+    padding: 0.5em;
+}
+
+button
+{
+    background-color: green;
+    border-color: greenyellow;
+    color: white;
+}
