@@ -46,7 +46,7 @@ adresseMail.addEventListener("input", event =>{
 });
 
 motDePasse.addEventListener("input", event =>{
-    inputMot = event.target;
+    inputMotDePasse = event.target;
 });
 
 // form.addEventListener("submit", event =>{
