@@ -19,7 +19,7 @@ function control(event)
     isValid = reg.test(value);
     if (!isValid){
         console.log("pas bon");
-        alert("veuillez réessayer")
+        cible.preventDefault();
     }
     else {
         console.log("bon");
