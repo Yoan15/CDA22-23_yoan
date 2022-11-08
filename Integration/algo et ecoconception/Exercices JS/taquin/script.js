@@ -7,8 +7,9 @@ for (let i = 0; i < 8; i++) {
     //console.log(div);
     eltAjoute = grille.appendChild(element);
     div = document.createElement("div");
-    div.appendChild(document.createTextNode(i));
-    grid3.Childs(-1).appendChild(div);
+    //div.appendChild(document.createTextNode(i));
+    div.innerHTML = i;
+    grille.children[grille.children.length-1].appendChild(div);
     tableauOrigine[i] = i + 1;
 }
 
