@@ -19,7 +19,6 @@ function control(event)
     isValid = reg.test(value);
     if (!isValid){
         console.log("pas bon");
-        cible.preventDefault();
     }
     else {
         console.log("bon");
