@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulaires</title>
+</head>
+<body>
+    <h1>Formulaire 2</h1>
+    <form>
+        <div class="grid4">
+            <div id="nom">
+                <label for="inputNom">Nom : </label>
+                <input type="text" pattern="^[A-Z]+$" title="Uniquement des lettres majuscules." name="inputNom" id="inputNom" placeholder="Nom" required>
+                <!-- <div class="message"><img src="./img/icons8-ask-question-50.png" alt=""></div> -->
+                <div class="message"></div>
+            </div>
+            <div id="numTel">
+                <label for="inputNumTel">Numéro de téléphone : </label>
+                <input type="text" pattern="^[0|+33]\d((\.| )?\d{2}){4}$" title="Uniquement des chiffres, le numéro de téléphone doit être dans un format de téléphone français." name="inputNumTel" id="inputNumTel" placeholder="06.00.00.00.00" required>
+                <div class="message"></div>
+            </div>
+            <div id="codePostal">
+                <label for="inputCodePostal">Code Postal : </label>
+                <input type="text" pattern="^\d{5}$" title="Uniquement des chiffres, le code postal doit faire 5 caractères." name="inputCodePostal" id="inputCodePostal" placeholder="59000" required>
+                <div class="message"></div>
+            </div>
+            <div id="adresseMail">
+                <label for="inputAdresseMail">Adresse Mail : </label>
+                <input type="email" pattern="^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*\.\w{2,5}$" title="Le mail doit être dans un format valide." name="inputAdresseMail" id="inputAdresseMail" placeholder="xx@xx.xx" required>
+                <div class="message"></div>
+            </div>
+            <div id="mdp">
+                <label for="inputMdp">Mot de passe : </label>
+                <input type="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,}" title="Le mot de passe doit faire 8 caractères minimum et doit contenir au moins 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial." name="inputMdp" id="inputMdp" placeholder="********" required>
+                <div class="message"></div>
+            </div>
+            <div>
+                <button type="submit">Valider</button>
+            </div>
+        </div>
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>

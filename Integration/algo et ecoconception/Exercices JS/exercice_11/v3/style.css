@@ -1,0 +1,62 @@
+.grid4
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: darkgray;
+    border-radius: 0.5em;
+    row-gap: 1em;
+    padding: 0.5em;
+}
+
+button
+{
+    background-color: green;
+    border-color: greenyellow;
+    color: white;
+}
+
+.inputOk
+{
+    border: 2px solid greenyellow;
+    border-radius: 4px;
+}
+
+.inputKo
+{
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+input:required
+{
+    content: "*";
+    border-bottom: 3px solid blue;
+}
+
+input:focus
+{
+    zoom: 120%;
+}
+
+.messageKo
+{
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    font-weight: bold;
+    color: red;
+}
+
+.messageOk
+{
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    font-weight: bold;
+    color: green;
+}
+
+/* .erreur.active
+{
+    padding: 0.3em;
+} */
