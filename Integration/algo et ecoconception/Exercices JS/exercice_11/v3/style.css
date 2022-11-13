@@ -1,7 +1,6 @@
-.grid4
+form
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
     background-color: darkgray;
     border-radius: 0.5em;
     row-gap: 1em;
@@ -27,10 +26,10 @@ button
     border-radius: 4px;
 }
 
-input:required
+input[required]+div::before
 {
     content: "*";
-    border-bottom: 3px solid blue;
+    color: red;
 }
 
 input:focus

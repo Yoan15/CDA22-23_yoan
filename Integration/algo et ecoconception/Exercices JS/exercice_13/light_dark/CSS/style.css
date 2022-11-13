@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.light {
+    background-color: azure;
+}
+
+body.dark {
+    background-color: darkslategray;
+}
+
+h1 {
+    margin-bottom: 3vw;
+}
+
+.paragraphe {
+    width: 80%;
+    padding: 0.5vw;
+}
+
+.paragraphe.light {
+    background-color: aquamarine;
+    color: darkgrey;
+}
+
+.paragraphe.dark {
+    background-color: gray;
+    color: aquamarine;
+}
+
+.espace {
+    margin: 1vw;
+}
+
+
+/*==============================*/
+/* RANGE partie commune         */
+/*==============================*/
+
+input[type=range].custom-slider.custom-slider-bullet {
+    height: 2em;
+    color: #FFF;
+    background: transparent;
+    background-image: linear-gradient(to bottom, #FFF, #999, #FFF);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 25%;
+}
+
+
+/*==============================*/
+/* RANGE le curseur             */
+/*==============================*/
+
+
+/* CHROME */
+
+input[type=range].custom-slider.custom-slider-bullet::-webkit-slider-thumb {
+    width: 2em;
+    padding: 0.25em;
+    /* largeur du bord */
+    border: 1px solid #888;
+    border-radius: 50%;
+    box-shadow: 0 0 .5em #FFF inset;
+    background: linear-gradient(#888, #FFF) content-box, /* le centre */
+    linear-gradient(-90deg, #888, #DDD) border-box;
+    /* le bord */
+}
+
+
+/* MOZILLA */
+
+input[type=range].custom-slider.custom-slider-bullet::-moz-range-thumb {
+    width: 2em;
+    padding: 0.25em;
+    /* largeur du bord */
+    border: 1px solid #888;
+    border-radius: 50%;
+    box-shadow: 0 0 .5em #FFF inset;
+    background: linear-gradient(#888, #FFF) content-box, /* le centre */
+    linear-gradient(-90deg, #888, #DDD) border-box;
+    /* le bord */
+}
+
+
+/* EDGE / IE */
+
+input[type=range].custom-slider.custom-slider-bullet::-ms-thumb {
+    width: 2em;
+    padding: 0.25em;
+    /* largeur du bord */
+    border: 1px solid #888;
+    border-radius: 50%;
+    box-shadow: 0 0 .5em #FFF inset;
+    background: linear-gradient(#888, #FFF) content-box, /* le centre */
+    linear-gradient(-90deg, #888, #DDD) border-box;
+    /* le bord */
+}
