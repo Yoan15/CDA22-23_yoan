@@ -2,13 +2,12 @@ inputs = document.getElementsByClassName("checkValidity");
 
 var mdp = document.getElementById("mdp");
 var confirmMdp = document.getElementById("confirmMdp");
-submit = document.getElementsByClassName("submit")
+boutton = getElementsByTagName("button");
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("input", function (event){
         updateValidity(event.target);
     });
-    
 }
 
 //empecher le copier dans la zone mdp et confirm
@@ -16,6 +15,10 @@ mdp.addEventListener("contextmenu", annule);
 confirmMdp.addEventListener("contextmenu", annule);
 //empecher le coller dans la confirmation
 confirmMdp.addEventListener("paste", annule);
+
+// if (estValide) {
+//     boutton
+// }
 
 function updateValidity(input) 
 {
