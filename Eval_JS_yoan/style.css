@@ -1,0 +1,36 @@
+form{
+    text-align: center;
+    background-color: darkgray;
+    border-radius: 0.5em;
+    row-gap: 1em;
+    padding: 0.5em;
+}
+
+h1{
+    text-align: center;
+}
+
+button[disabled]
+{
+    background-color: red;
+    border-color: lightcoral;
+    color: white;
+}
+
+button
+{
+    background-color: green;
+    border-color: lightgreen;
+    color: white;
+}
+
+input[required]+div::before
+{
+    content: "*";
+    color: red;
+}
+
+input:focus
+{
+    zoom: 120%;
+}

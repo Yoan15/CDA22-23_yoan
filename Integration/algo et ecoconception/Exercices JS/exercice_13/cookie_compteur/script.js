@@ -1,26 +1,34 @@
 separateur = QuelNavigateur() == "firefox" ? "," : ";"
 var text = document.querySelector("p");
 var boutton = document.querySelector("button");
-visites = readCookie("compteur");
+//visites = readCookie("compteur");
 
-window.addEventListener("load", function () {
-    increment(visites);
-});
-
-boutton.addEventListener("click", function () {
-    init()
-});
-
-function increment(visites) {
-    visites = visites++;
-    console.log(visites);
-    text.innerHTML += visites + " fois";
-    createCookie("compteur", visites, 5);
+if (readCookie("compteur")) {
+    createCookie("compteur", readCookie("compteur")*1+1, 5);
+} else {
+    createCookie("compteur", 1, 5);
 }
 
-function init() {
+text.innerHTML += readCookie("compteur") + " fois.";
+
+boutton.addEventListener("click", () => {
     eraseCookie("compteur");
-}
+});
+
+// window.addEventListener("load", function () {
+//     increment(visites);
+// });
+
+// function increment(visites) {
+//     visites = visites++;
+//     console.log(visites);
+//     text.innerHTML += visites + " fois.";
+//     createCookie("compteur", visites, 5);
+// }
+
+// function init() {
+//     eraseCookie("compteur");
+// }
 
 function createCookie(name, value, days) {
     //creation du cookie

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Eval JS Yoan</title>
+</head>
+<body>
+    <h1>Formulaire</h1>
+    <form action="">
+        <div>
+            <label for="date">Date : </label>
+            <input type="date" class="checkValidity" name="date" id="date">
+            <h3></h3>
+        </div>
+
+        <div>
+            <label for="numTel">Numéro de téléphone : </label>
+            <input type="text" class="checkValidity" id="numTel" name="numTel" title="Le numéro de téléphone doit commencer par 33 (indicateur international français)." pattern="^0[1-9]([-./ ]?[\d]{2}){4}$" placeholder="+33000000000">
+            <h3></h3>
+        </div>
+
+        <div>
+            <label for="adresseMail">Adresse Mail : </label>
+            <input type="email" class="checkValidity" id="adresseMail" name="adresseMail" pattern="^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$" placeholder="xx.xx@xx.xx" required>
+            <h3></h3>
+        </div>
+        
+        <div>
+            <label for="nom">Nom : </label>
+            <input type="text" class="checkValidity" id="nom" name="nom" title="Le nom doit être en majuscule." pattern="^([A-ZÀ-Ý -]){2,}[^*x]$" placeholder="Nom" required>
+            <h3></h3>
+        </div>
+        
+        <div>
+            <label for="genre">Genre : </label>
+            <!-- <input type="text" class="checkValidity" id="genre" name="genre" required> -->
+            <select name="genre" id="genre" class="checkValidity" required>
+                <option value="null">Veuillez selectionner un genre</option>
+                <option value="Monsieur">M</option>
+                <option value="Madame">Mme</option>
+                <option value="Mademoiselle">Mlle</option>
+            </select>
+            <h3></h3>
+        </div>
+        
+        <div>
+            <label for="codePostal">Code Postal : </label>
+            <input type="text" class="checkValidity" id="codePostal" name="codePostal" title="Le code postal est uniquement composé de 5 chiffres." pattern="^\d{5}$" placeholder="Code Postal">
+            <h3></h3>
+        </div>
+        
+        <div>
+            <label for="mdp">Mot de passe : </label>
+            <input type="password" class="checkValidity" id="mdp" name="mdp" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#\$%\^&\*+])[a-zA-Z\d!@#\$%\^&\*+]{8,}$" placeholder="mot de passe" title="Le mot de passe doit faire 8 caractères minimum et doit comporter au moins 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial." required>
+            <h3></h3>
+        </div>
+        
+        <div>
+            <label for="confirmMdp">Confimation du mot de passe : </label>
+            <input type="password" class="checkValidity" id="confirmMdp" name="confirmMdp" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#\$%\^&\*+])[a-zA-Z\d!@#\$%\^&\*+]{8,}$" placeholder="mot de passe" title="Les mots de passe doivent correspondre." required>
+            <h3></h3>
+        </div>
+        
+        <div>
+            <button disabled class="submit">Valider</button>
+        </div>
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>
