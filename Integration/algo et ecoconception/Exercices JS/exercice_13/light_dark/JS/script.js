@@ -17,7 +17,7 @@ function switchLightDark(valeur) {
 
     paragraphes = document.getElementsByClassName("paragraphe");
     for (let i = 0; i < paragraphes.length; i++) {
-        paragraphes[i].setAttribute("class", "paragraphe " + newClass);
+        paragraphes[i].setAttribute("class", "paragraphe " + newClass); //ne pas oublier l'espace à "paragraphe " avant la variable "newClass"
     }
     document.body.setAttribute("class", newClass); //on passe "light" ou "dark" en attribut au body
     createCookie("couleur", range.value, 5);
