@@ -36,7 +36,6 @@ function impactValidity(input, estValide)
 {
     var message = input.parentNode.getElementsByTagName("h3")[0];
     message.classList.add("visible");
-    //image = input.parentNode.getElementsByTagName("i")[1];
 
     switch (estValide) { // si estValide
         case true: //vrai
