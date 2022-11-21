@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS inventaireDisques;
+
+USE inventaireDisques;
+
+DROP TABLE IF EXISTS Artistes;
+DROP TABLE IF EXISTS Labels;
+DROP TABLE IF EXISTS Disques;
+
+CREATE TABLE Artistes(
+   idArtiste INT AUTO_INCREMENT PRIMARY KEY,
+   nomArtiste VARCHAR(50)  NOT NULL
+);
+
+CREATE TABLE Labels(
+   idLabel INT AUTO_INCREMENT PRIMARY KEY,
+   nomLabel VARCHAR(50)  NOT NULL
+);
+
+CREATE TABLE Disques(
+   idDisque INT AUTO_INCREMENT PRIMARY KEY,
+   titreDisque VARCHAR(50)  NOT NULL,
+   anneeDisque INT NOT NULL
+);
