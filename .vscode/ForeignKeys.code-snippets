@@ -1,0 +1,11 @@
+{
+
+	"Foreign Key": {
+		"scope": "sql",
+		"prefix": "fk",
+		"body": [
+			"ALTER TABLE $1 ADD CONSTRAINT FK_$1_$2 FOREIGN KEY($3) REFERENCES $2($3);"
+		],
+		"description": "Faciliter le codage des clés étrangères"
+	}
+}
