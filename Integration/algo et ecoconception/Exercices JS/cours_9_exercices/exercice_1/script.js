@@ -1,6 +1,7 @@
 nombre = document.querySelector(".nombre");
 nombre.addEventListener("input", pairImpair);
 
+//commentaire
 function pairImpair(event) {
     nombreDonne = event.target.value;
     nombreCalcul = nombreDonne%2;
