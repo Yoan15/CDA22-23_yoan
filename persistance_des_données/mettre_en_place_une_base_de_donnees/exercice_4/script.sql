@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS clubDeChasse;
+USE clubDeChasse;
+
+DROP TABLE IF EXISTS Chasseurs;
+DROP TABLE IF EXISTS Chasses;
+DROP TABLE IF EXISTS Niveaux;
+DROP TABLE IF EXISTS Especes;
+
+CREATE TABLE Chasseurs(
+   idChasseur INT AUTO_INCREMENT PRIMARY KEY,
+   pseudo VARCHAR(25)  NOT NULL,
+   dateNaissance DATE
+);
+
+CREATE TABLE Chasses(
+   idChasse INT AUTO_INCREMENT PRIMARY KEY,
+   dateChasse DATE NOT NULL,
+   lieuChasse VARCHAR(50)  NOT NULL
+);
+
+CREATE TABLE Niveaux(
+   idNiveau INT AUTO_INCREMENT PRIMARY KEY,
+   libelleNiveau VARCHAR(25)  NOT NULL,
+   nbPoints INT
+);
+
+CREATE TABLE Especes(
+   idEspece INT AUTO_INCREMENT PRIMARY KEY,
+   nomEspece VARCHAR(20)  NOT NULL,
+   poidsMoyen DECIMAL(15,2)
+);
