@@ -40,7 +40,7 @@ CREATE TABLE Stagiaires(
    codePostal INT,
    telStagiaire VARCHAR(14) ,
    dateEntree DATE NOT NULL,
-   genreStagaire VARCHAR(1)  NOT NULL,
+   genreStagiaire VARCHAR(1)  NOT NULL,
    dateNaissance DATE NOT NULL,
    idFormation INT NOT NULL,
    idHebergement INT NOT NULL,
