@@ -22,8 +22,9 @@ CREATE TABLE Dates(
 )ENGINE=InnoDB;
 
 CREATE TABLE commande(
-   idModele INT PRIMARY KEY,
-   idDate INT PRIMARY KEY
+   idCommande INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+   idModele INT,
+   idDate INT
 )ENGINE=InnoDB;
 
 ALTER TABLE commande ADD CONSTRAINT FK_Commande_Modeles FOREIGN KEY(idModele) REFERENCES Modeles(idModele);
@@ -498,3 +499,45 @@ INSERT INTO Modeles (nomModele, idMarque) VALUES ("V70",43);
 INSERT INTO Modeles (nomModele, idMarque) VALUES ("XC60",43);
 INSERT INTO Modeles (nomModele, idMarque) VALUES ("XC70",43);
 INSERT INTO Modeles (nomModele, idMarque) VALUES ("XC90",43);
+
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2020-10-09","2021-03-09");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-05-15","2021-10-15");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-08-12","2022-01-12");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2022-05-18","2022-10-18");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2022-03-14","2022-08-14");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-12-03","2022-05-03");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2022-03-11","2022-08-11");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2020-01-31","2020-06-30");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2022-01-03","2022-06-03");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-04-20","2021-09-20");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2020-09-10","2021-02-10");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2022-06-22","2022-11-22");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-09-19","2022-02-19");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-02-10","2021-07-10");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-09-10","2022-02-10");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2022-04-05","2022-09-05");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2021-07-29","2021-12-29");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2020-05-14","2020-10-14");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2020-10-19","2021-03-19");
+INSERT INTO Dates (dateCommande, dateArrivee) VALUES ("2020-02-26","2020-07-26");
+
+INSERT INTO commande (idModele, idDate) VALUES (292,1);
+INSERT INTO commande (idModele, idDate) VALUES (3,2);
+INSERT INTO commande (idModele, idDate) VALUES (6,3);
+INSERT INTO commande (idModele, idDate) VALUES (6,4);
+INSERT INTO commande (idModele, idDate) VALUES (10,5);
+INSERT INTO commande (idModele, idDate) VALUES (7,6);
+INSERT INTO commande (idModele, idDate) VALUES (13,7);
+INSERT INTO commande (idModele, idDate) VALUES (12,8);
+INSERT INTO commande (idModele, idDate) VALUES (15,9);
+INSERT INTO commande (idModele, idDate) VALUES (14,10);
+INSERT INTO commande (idModele, idDate) VALUES (15,11);
+INSERT INTO commande (idModele, idDate) VALUES (16,12);
+INSERT INTO commande (idModele, idDate) VALUES (13,13);
+INSERT INTO commande (idModele, idDate) VALUES (16,14);
+INSERT INTO commande (idModele, idDate) VALUES (17,15);
+INSERT INTO commande (idModele, idDate) VALUES (28,16);
+INSERT INTO commande (idModele, idDate) VALUES (27,17);
+INSERT INTO commande (idModele, idDate) VALUES (19,18);
+INSERT INTO commande (idModele, idDate) VALUES (22,19);
+INSERT INTO commande (idModele, idDate) VALUES (33,20);
