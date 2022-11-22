@@ -20,20 +20,20 @@ CREATE TABLE Departements(
 
 ALTER TABLE Departements ADD CONSTRAINT FK_Departements_Regions FOREIGN KEY(idRegion) REFERENCES Regions(idRegion);
 
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (1,1,"Auvergne-Rhône-Alpes");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (2,2,"Bourgogne-Franche-Comté");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (3,3,"Bretagne");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (4,4,"Centre-Val de Loire");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (5,5,"Corse");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (6,6,"Grand-Est");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (7,7,"Hauts-de-France");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (8,8,"Ile-de-France");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (9,9,"Normandie");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (10,10,"Nouvelle-Aquitaine");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (11,11,"Occitanie");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (12,12,"Pays de la Loire");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (13,13,"Provence-Alpes-Côte d'Azur");
-INSERT INTO Regions (idRegion,  numRegion, nomRegion) VALUES (14,14,"DOM-TOM");
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (1,1,"Auvergne-Rhône-Alpes",12);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (2,2,"Bourgogne-Franche-Comté",8);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (3,3,"Bretagne",4);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (4,4,"Centre-Val de Loire",6);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (5,5,"Corse",2);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (6,6,"Grand-Est",10);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (7,7,"Hauts-de-France",5);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (8,8,"Ile-de-France",8);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (9,9,"Normandie",5);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (10,10,"Nouvelle-Aquitaine",12);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (11,11,"Occitanie",13);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (12,12,"Pays de la Loire",5);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (13,13,"Provence-Alpes-Côte d'Azur",6);
+INSERT INTO Regions (idRegion,  numRegion, nomRegion, nbDepartement) VALUES (14,14,"DOM-TOM",12);
 
 INSERT INTO Departements (numDepartement, nomDepartement,idRegion) VALUES ("1","Ain",1);
 INSERT INTO Departements (numDepartement, nomDepartement,idRegion) VALUES ("2","Aisne",7);
