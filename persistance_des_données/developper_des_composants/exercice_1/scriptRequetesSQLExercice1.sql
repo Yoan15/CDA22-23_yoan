@@ -64,6 +64,11 @@ SELECT CURRENT_DATE() AS dateActuelle, CURRENT_TIME() AS heureActuelle;
 --Affichez l'ancienneté des clients.
 --
 SELECT idClient, nomClient, prenomClient, dateEntreeClient FROM clients ORDER BY dateEntreeClient ASC;
+-- l-correction
+SELECT nomClient, prenomClient, DATEDIFF(NOW(), dateEntreeClient) as ancienneté
+FROM clients;
+--ou
+SELECT idClient, nomClient, prenomClient, TIMESTAMPDIFF(YEAR, dateEntreeClient, CURRENT_TIMESTAMP) AS Anciennete FROM Clients;
 
 --
 --Affichez la quantité maximale achetée par un client.
