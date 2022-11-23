@@ -28,7 +28,7 @@ SELECT idClient, nomClient, prenomClient, dateEntreeClient FROM clients WHERE pr
 --
 --Affichez les numéros des articles et leur quantité commandés par le client1.
 --
-SELECT idArticle, quantiteCommande FROM commandes WHERE idClient=1;
+SELECT idArticle, quantiteCommande FROM commandes WHERE idClient=2;
 
 --
 --Affichez les noms des clients en majuscules-.
@@ -48,7 +48,7 @@ SELECT nomClient FROM clients WHERE CHAR_LENGTH(nomClient)=5;
 --
 --Affichez les noms des clients qui commencent par « t » ou qui ont un « l » en troisième position.
 --
-SELECT nomClient FROM clients WHERE nomClient LIKE "t%" AND substring(nomClient, 3,1) = "l";
+SELECT nomClient FROM clients WHERE nomClient LIKE "t%" OR substring(nomClient, 3,1) = "l";
 
 --
 --Affichez le numéro de client, le numéro de commande, la date de commande et la date de paiement attendue des commandes (=date_cde+15jours).
@@ -73,7 +73,7 @@ SELECT MAX(quantiteCommande) as quantiteMaxAchetee FROM commandes;
 --
 --Affichez la quantité totale achetée par le client1.
 --
-SELECT SUM(quantiteCommande) FROM commandes WHERE idClient=1;
+SELECT SUM(quantiteCommande) FROM commandes WHERE idClient=2;
 
 --
 --Affichez la quantité moyenne achetée par le client 2.
