@@ -63,7 +63,7 @@ SELECT COUNT(idCommande) AS nbCommandeJour, dateCommande FROM commandes GROUP BY
 --
 --M.Afficher le nombre de clients dans la table.
 --
-SELECT COUNT(idClient) AS nbClient FROM commandes;
+SELECT COUNT(idClient) AS nbClient FROM clients;
 
 --
 --N.Afficher le nombre de clients différents qui ont passé commande.
