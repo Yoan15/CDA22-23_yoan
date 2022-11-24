@@ -74,6 +74,9 @@ CREATE TABLE IF NOT EXISTS `commandes` (
   PRIMARY KEY (`idCommande`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+ALTER TABLE Commandes ADD CONSTRAINT FK_Commandes_Clients FOREIGN KEY(idClient) REFERENCES Clients(idClient);
+ALTER TABLE Commandes ADD CONSTRAINT FK_Commandes_Articles FOREIGN KEY(idArticle) REFERENCES Articles(idArticle);
+
 --
 -- Déchargement des données de la table `commandes`
 --
