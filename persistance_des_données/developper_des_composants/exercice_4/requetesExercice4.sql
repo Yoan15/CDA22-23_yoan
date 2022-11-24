@@ -80,3 +80,83 @@ SELECT nom FROM employe WHERE nom LIKE "%n";
 --
 --17.Afficher le nom des employés contenant la lettre « u » en 3ème position.
 --
+SELECT nom FROM employe WHERE nom LIKE "__u%";
+
+--
+--18.Afficher le salaire et le nom des employés du service 41 classés par salaire croissant. 
+--
+SELECT nom, salaire FROM employe WHERE nodep=41 ORDER BY salaire ASC;
+
+--
+--19.Afficher le salaire et le nom des employés du service 41 classés par salaire décroissant. 
+--
+SELECT nom, salaire FROM employe WHERE nodep=41 ORDER BY salaire DESC;
+
+--
+--20.Afficher le titre, le salaire et le nom des employés classés par titre croissant et par salaire décroissant. 
+--
+SELECT nom, titre, salaire FROM employe ORDER BY titre ASC, salaire DESC;
+
+--
+--21.Afficher le taux de commission, le salaire et le nom des employés classés par taux de commission croissante. 
+--
+SELECT nom, salaire, tauxcom FROM employe ORDER BY tauxcom ASC;
+
+--
+--22.Afficher le nom, le salaire, le taux de commission et le titre des employés dont le taux de commission n'est pas renseigné. 
+--
+SELECT nom, salaire, titre, tauxcom FROM employe WHERE tauxcom IS NULL;
+
+--
+--23.Afficher le nom, le salaire, le taux de commission et le titre des employés dont le taux de commission est renseigné.
+--
+SELECT nom, salaire, titre, tauxcom FROM employe WHERE tauxcom IS NOT NULL;
+
+--
+--24.Afficher le nom, le salaire, le taux de commission, le titre des employés dont le taux de commission est inférieur à 15.
+--
+SELECT nom, salaire, titre, tauxcom FROM employe WHERE tauxcom IS NOT NULL AND tauxcom<15;
+
+--
+--25.Afficher le nom, le salaire, le taux de commission, le titre des employés dont le taux de commission est supérieur à 15
+--
+SELECT nom, salaire, titre, tauxcom FROM employe WHERE tauxcom IS NOT NULL AND tauxcom>15;
+
+--
+--26.Afficher le nom, le salaire, le taux de commission et la commission des employés dont le taux de commission n'est pas nul. (la commission est calculée en multipliant le salaire par le taux de commission)
+--
+SELECT nom, salaire, tauxcom, salaire*tauxcom AS commission FROM employe WHERE tauxcom IS NOT NULL;
+
+--
+--27. Afficher le nom, le salaire, le taux de commission, la commission des employés dont le taux de commission n'est pas nul, classé par taux de commission croissant. 
+--
+SELECT nom, salaire, tauxcom, salaire*tauxcom AS commission FROM employe WHERE tauxcom IS NOT NULL ORDER BY tauxcom ASC;
+
+--
+--28.Afficher le nom et le prénom (concaténés) des employés. Renommer les colonnes
+--
+SELECT CONCAT(nom, " ", prenom) AS employe FROM employe;
+--
+--ou
+--
+SELECT CONCAT(prenom, " ", nom) AS employe FROM employe;
+
+
+--
+--29.Afficher les 5 premières lettres du nom des employés.
+--
+
+
+--
+--30.Afficher le nom et le rang de la lettre « r » dans le nom des employés.
+--
+
+
+--
+--31.Afficher le nom, le nom en majuscule et le nom en minuscule de l'employé dont le nom est Vrante.
+--
+
+
+--
+--32.Afficher le nom et le nombre de caractères du nom des employés.
+--
