@@ -1,4 +1,7 @@
 --
+--Partie 1
+--
+--
 --1.Afficher toutes les informations concernant les employés
 --
 SELECT * FROM employe;
@@ -137,7 +140,7 @@ SELECT nom, salaire, tauxcom, salaire*tauxcom AS commission FROM employe WHERE t
 --
 SELECT CONCAT(nom, " ", prenom) AS employe FROM employe;
 --
---ou
+--ou pour les jeux de mots
 --
 SELECT CONCAT(prenom, " ", nom) AS employe FROM employe;
 
@@ -159,4 +162,12 @@ SELECT CONCAT(prenom, " ", nom) AS employe FROM employe;
 
 --
 --32.Afficher le nom et le nombre de caractères du nom des employés.
+--
+
+
+--
+--Partie 2
+--
+--
+--1.
 --
