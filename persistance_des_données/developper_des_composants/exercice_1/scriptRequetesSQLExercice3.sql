@@ -83,7 +83,7 @@ ALTER TABLE etudiants MODIFY prenomEtudiant VARCHAR(20) NOT NULL;
 --17,3,15 dans AVOIR_NOTE
 --
 INSERT INTO epreuves(idEpreuve, libelleEpreuve, idEnseignantEpreuve, idMatiereEpreuve, dateEpreuve, CoefficientEpreuve) VALUES (7,'interro écrite',9,1,"1996-10-21",1);
-INSERT INTO `avoir_note`(idEtudiant, idEpreuve, note) VALUES (1,7,10), (2,7,08), (3,7,05), (4,7,09), (17,7,09);
+INSERT INTO avoir_note(idEtudiant, idEpreuve, note) VALUES (1,7,10), (2,7,08), (3,7,05), (4,7,09), (17,7,09);
 
 
 --
@@ -99,24 +99,52 @@ UPDATE avoir_note SET note=note+1 WHERE idEtudiant = 1 AND idEpreuve = 7;
 --
 --L.Détruisez l'épreuve 7 qui a été annulée pour cause de tricherie et les notes qui lui correspondent. Vérifiez.
 --
-
+DELETE FROM avoir_note WHERE idEpreuve = 7;
+DELETE FROM epreuves WHERE idEpreuve = 7;
 
 --
 --M.Réflexion : N'y aurait-il pas eu moyen de détruire les notes de l'épreuve automatiquement dès la destruction de l'épreuve ?
 --
+ALTER TABLE `avoir_note` DROP FOREIGN KEY `FK_AvoirNote_Epreuves`; 
+ALTER TABLE `avoir_note` ADD CONSTRAINT `FK_AvoirNote_Epreuves` FOREIGN KEY (`idEpreuve`) REFERENCES `epreuves`(`idEpreuve`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
 --N.Changez toutes les notes de MARKE dans la matière « BASES DE DONNEES ». Suite à un mauvais comportement, elles diminuent toutes de 3 points. Attention, la requête doit intégrer le nom de la matière.
 --(et non chercher à repérer le numéro avant de la taper.)
 --
+UPDATE
+    avoir_note
+INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant
+INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve
+INNER JOIN matieres ON epreuves.idMatiereEpreuve = matieres.idMatiere
+SET
+    note = note - 3
+WHERE
+    etudiants.nomEtudiant = "MARKE" AND matieres.nomMatiere = "BD";
 
 --
 --O.DEWA a manqué l'épreuve 4. Vu son niveau, on décide de lui créer une entrée dans AVOIR_NOTE en lui
 --attribuant la moyenne des notes obtenues à cette épreuve par ses collègues*0.9. Attention, la requête doit
 --intégrer le nom de l'étudiant (et non chercher à repérer le numéro avant de la taper.)
 --
+INSERT INTO avoir_note
+VALUES(NULL,
+    (SELECT
+        etudiants.idEtudiant
+    FROM
+        etudiants
+    WHERE
+        etudiants.nomEtudiant = "DEWA"),4,
+(SELECT
+    (AVG(an.note) * 0.9)
+FROM
+    avoir_note AS an
+    WHERE
+        an.idEpreuve = 4)
+);
 
 --
 --P.Insérez un nouvel étudiant dont vous ne connaissez que le numéro, le nom, le prénom, le hobby et
 --l'année: 25, 'DARTE','REMY','SCULPTURE',1.
 --
+INSERT INTO etudiants(idEtudiant, nomEtudiant, prenomEtudiant, anneeEtudiant, Hobby) VALUES (25, "DARTE", "REMY", 1, "SCULPTURE");
