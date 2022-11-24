@@ -23,12 +23,12 @@ SELECT COUNT(*) AS nbCommande FROM commandes;
 --
 --E.Afficher le montant moyen de commande par client
 --
-SELECT idClient, ROUND(AVG(quantiteCommande*a.prixArticle),2) AS montantMoyenClient FROM commandes AS co INNER JOIN articles AS a ON co.idArticle = a.idArticle GROUP BY co.idClient;
+SELECT co.idClient, ROUND(AVG(quantiteCommande*a.prixArticle),2) AS montantMoyenClient FROM commandes AS co INNER JOIN articles AS a ON co.idArticle = a.idArticle GROUP BY co.idClient;
 
 --
 --F.Afficher le montant le plus élevé de commande par client.
 --
-SELECT idClient, MAX(quantiteCommande*a.prixArticle) AS montantMaxClient FROM commandes AS co INNER JOIN articles AS a ON co.idArticle = a.idArticle GROUP BY co.idClient;
+SELECT co.idClient, MAX(quantiteCommande*a.prixArticle) AS montantMaxClient FROM commandes AS co INNER JOIN articles AS a ON co.idArticle = a.idArticle GROUP BY co.idClient;
 
 --
 --G.Afficher le nombre de commandes par client.
