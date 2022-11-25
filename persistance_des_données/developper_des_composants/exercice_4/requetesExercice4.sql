@@ -179,3 +179,18 @@ SELECT e.prenom, d.noregion FROM employe AS e INNER JOIN dept AS d ON e.nodep = 
 --
 --2.Rechercher le numéro du département, le nom du département, le nom des employés classés par numéro de département (renommer les tables utilisées)
 --
+SELECT d.nodept, d.nom AS nomDept, e.nom AS nomEmp FROM employe AS e INNER JOIN dept AS d ON e.nodep = d.nodept ORDER BY d.nodept;
+
+--
+--3.Rechercher le nom des employés du département Distribution.
+--
+SELECT e.nom FROM employe AS e INNER JOIN dept AS d ON e.nodep = d.nodept WHERE d.nom="Distribution";
+
+--
+--4.Rechercher le nom et le salaire des employés qui gagnent plus que leur patron, et le nom et le salaire de leur patron.
+--
+SELECT nom, salaire, (SELECT nom FROM employe WHERE noemp=e.nosup) AS nomSup, (SELECT salaire FROM employe WHERE noemp=e.nosup) AS salaireSup FROM employe AS e WHERE salaire>(SELECT salaire FROM employe WHERE noemp=e.nosup);
+
+--
+--5.
+--
