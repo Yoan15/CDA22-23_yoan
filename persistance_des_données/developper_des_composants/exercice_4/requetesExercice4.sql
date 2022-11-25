@@ -227,5 +227,50 @@ SELECT nom, titre, salaire FROM employe WHERE NOT nom="fairent" AND (titre,salai
 SELECT e.nodep, d.nom, e.noemp FROM employe AS e RIGHT JOIN dept AS d ON e.nodep = d.nodept ORDER BY e.nodep ASC;
 
 --
---1.
+--1.Calculer le nombre d'employés de chaque titre.
+--
+SELECT titre, COUNT(*) AS nbEmp FROM employe GROUP BY titre;
+
+--
+--2.Calculer la moyenne des salaires et leur somme, par région.
+--
+SELECT d.noregion, SUM(e.salaire) AS sommeSalaire, ROUND(AVG(e.salaire),2) AS moyenneSalaire FROM employe AS e INNER JOIN dept AS d GROUP BY d.noregion;
+
+--
+--3.Afficher les numéros des départements ayant au moins 3 employés. 
+--
+SELECT nodep FROM employe GROUP BY nodep HAVING COUNT(nodep)>=3;
+
+--
+--4.Afficher les lettres qui sont l'initiale d'au moins trois employés
+--
+SELECT substring(nom,1,1) AS initial FROM `employe` GROUP BY initial HAVING COUNT(initial)>2;
+
+--
+--5.Rechercher le salaire maximum et le salaire minimum parmi tous les salariés et l'écart entre les deux.
+--
+SELECT MIN(salaire) AS salaireMin, MAX(salaire) AS salaireMax, MAX(salaire)-MIN(salaire) AS diff FROM employe;
+
+--
+--6.Rechercher le nombre de titres différents
+--
+SELECT COUNT(DISTINCT titre) AS nbTitre FROM employe;
+
+--
+--7.Pour chaque titre, compter le nombre d'employés possédant ce titre.
+--
+SELECT titre, COUNT(*) AS nbEmp FROM employe GROUP BY titre;
+
+--
+--8.Pour chaque nom de département, afficher le nom du département et le nombre d'employés.
+--
+SELECT d.nom, COUNT(e.noemp) AS nbEmp FROM employe AS e INNER JOIN dept AS d ON e.nodep=d.nodept GROUP BY d.nom;
+
+--
+--9.Rechercher les titres et la moyenne des salaires par titre dont la moyenne est supérieure à la moyenne des salaires des Représentants.
+--
+SELECT titre, ROUND(AVG(salaire),2) AS moyenneSalaire FROM employe GROUP BY titre HAVING moyenneSalaire>(SELECT AVG(salaire) FROM employe WHERE titre="représentant");
+
+--
+--10.Rechercher le nombre de salaires renseignés et le nombre de taux de commission renseignés.
 --
