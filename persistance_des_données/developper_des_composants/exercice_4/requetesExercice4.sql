@@ -274,3 +274,4 @@ SELECT titre, ROUND(AVG(salaire),2) AS moyenneSalaire FROM employe GROUP BY titr
 --
 --10.Rechercher le nombre de salaires renseignés et le nombre de taux de commission renseignés.
 --
+SELECT COUNT(salaire), COUNT(tauxcom) FROM employe;
