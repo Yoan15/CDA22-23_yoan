@@ -172,5 +172,10 @@ SELECT nom, LENGTH(nom) AS longueurNom FROM employe;
 --Partie 2
 --
 --
---1.
+--1.Rechercher le prénom des employés et le numéro de la région de leur département
+--
+SELECT e.prenom, d.noregion FROM employe AS e INNER JOIN dept AS d ON e.nodep = d.nodept;
+
+--
+--2.Rechercher le numéro du département, le nom du département, le nom des employés classés par numéro de département (renommer les tables utilisées)
 --
