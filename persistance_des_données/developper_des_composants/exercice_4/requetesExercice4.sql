@@ -148,21 +148,24 @@ SELECT CONCAT(prenom, " ", nom) AS employe FROM employe;
 --
 --29.Afficher les 5 premières lettres du nom des employés.
 --
-
+SELECT substring(nom,1,5) FROM employe;
 
 --
 --30.Afficher le nom et le rang de la lettre « r » dans le nom des employés.
 --
+SELECT nom, LOCATE("r", nom) AS "localisation lettre r" FROM employe;
 
 
 --
 --31.Afficher le nom, le nom en majuscule et le nom en minuscule de l'employé dont le nom est Vrante.
 --
+SELECT nom, UPPER(nom) AS "nom maj", LOWER(nom) AS "nom min" FROM employe WHERE nom="Vrante";
 
 
 --
 --32.Afficher le nom et le nombre de caractères du nom des employés.
 --
+SELECT nom, LENGTH(nom) AS longueurNom FROM employe;
 
 
 --
