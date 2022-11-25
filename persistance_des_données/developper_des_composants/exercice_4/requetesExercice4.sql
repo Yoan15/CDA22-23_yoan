@@ -192,5 +192,40 @@ SELECT e.nom FROM employe AS e INNER JOIN dept AS d ON e.nodep = d.nodept WHERE 
 SELECT nom, salaire, (SELECT nom FROM employe WHERE noemp=e.nosup) AS nomSup, (SELECT salaire FROM employe WHERE noemp=e.nosup) AS salaireSup FROM employe AS e WHERE salaire>(SELECT salaire FROM employe WHERE noemp=e.nosup);
 
 --
---5.
+--5.Rechercher le nom et le titre des employés qui ont le même titre que Amartakaldire. 
+--
+SELECT nom, titre FROM employe WHERE titre=(SELECT titre FROM employe WHERE nom="amartakaldire");
+
+--
+--6.Rechercher le nom, le salaire et le numéro de département des employés qui gagnent plus qu'un seul employé du département 31, classés par numéro de département et salaire.
+--
+SELECT nom, nodep, salaire FROM employe WHERE salaire>(SELECT MIN(salaire) FROM employe WHERE nodep=31) ORDER BY nodep, salaire;
+
+--
+--7.Rechercher le nom, le salaire et le numéro de département des employés qui gagnent plus que tous les employés du département 31, classés par numéro de département et salaire. 
+--
+SELECT nom, nodep, salaire FROM employe WHERE salaire>(SELECT MAX(salaire) FROM employe WHERE nodep=31) ORDER BY nodep, salaire;
+
+--
+--8.Rechercher le nom et le titre des employés du service 31 qui ont un titre que l'on trouve dans le département 32.
+--
+SELECT nom, titre FROM employe WHERE titre IN (SELECT titre FROM employe WHERE nodep=32) AND nodep=31;
+
+--
+--9.Rechercher le nom et le titre des employés du service 31 qui ont un titre l'on ne trouve pas dans le département 32. 
+--
+SELECT nom, titre FROM employe WHERE titre NOT IN (SELECT titre FROM employe WHERE nodep=32) AND nodep=31;
+
+--
+--10.Rechercher le nom, le titre et le salaire des employés qui ont le même titre et le même salaire que Fairant. 
+--
+SELECT nom, titre, salaire FROM employe WHERE NOT nom="fairent" AND (titre,salaire)=(SELECT titre, salaire FROM employe WHERE nom="fairent");
+
+--
+--11.Rechercher le numéro de département, le nom du département, le nom des employés, en affichant aussi les départements dans lesquels il n'y a personne, classés par numéro de département. 
+--
+SELECT e.nodep, d.nom, e.noemp FROM employe AS e RIGHT JOIN dept AS d ON e.nodep = d.nodept ORDER BY e.nodep ASC;
+
+--
+--1.
 --
