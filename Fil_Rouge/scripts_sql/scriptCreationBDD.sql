@@ -49,7 +49,7 @@ CREATE TABLE Utilisateurs(
    idRole INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idRole) REFERENCES Roles(idRole)
+ALTER TABLE Utilisateurs ADD CONSTRAINT FK_Utilisateurs_Roles FOREIGN KEY(idRole) REFERENCES Roles(idRole);
 
 CREATE TABLE Produits(
    idProduit INT AUTO_INCREMENT PRIMARY KEY,
@@ -62,7 +62,7 @@ CREATE TABLE Produits(
    idRubrique INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idRubrique) REFERENCES Rubriques(idRubrique)
+ALTER TABLE Produits ADD CONSTRAINT FK_Produits_Rubriques FOREIGN KEY(idRubrique) REFERENCES Rubriques(idRubrique);
 
 CREATE TABLE Clients(
    idClient INT AUTO_INCREMENT PRIMARY KEY,
@@ -71,7 +71,7 @@ CREATE TABLE Clients(
    idCatClient INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idCatClient) REFERENCES CategoriesClients(idCatClient)
+ALTER TABLE Clients ADD CONSTRAINT FK_Clients_CategoriesClients FOREIGN KEY(idCatClient) REFERENCES CategoriesClients(idCatClient);
 
 CREATE TABLE Adresses(
    idAdresse INT AUTO_INCREMENT PRIMARY KEY,
@@ -82,7 +82,7 @@ CREATE TABLE Adresses(
    idVille INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idVille) REFERENCES Villes(idVille)
+ALTER TABLE Adresses ADD CONSTRAINT FK_Adresses_Villes FOREIGN KEY(idVille) REFERENCES Villes(idVille);
 
 CREATE TABLE Commandes(
    idCommande INT AUTO_INCREMENT PRIMARY KEY,
@@ -92,8 +92,8 @@ CREATE TABLE Commandes(
    idAdresse INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idClient) REFERENCES Clients(idClient),
-FOREIGN KEY(idAdresse) REFERENCES Adresses(idAdresse)
+ALTER TABLE Commandes ADD CONSTRAINT FK_Commandes_Clients FOREIGN KEY(idClient) REFERENCES Clients(idClient);
+ALTER TABLE Commandes ADD CONSTRAINT FK_Commandes_Adresses FOREIGN KEY(idAdresse) REFERENCES Adresses(idAdresse);
 
 CREATE TABLE fourni(
    idFourni INT AUTO_INCREMENT PRIMARY KEY,
@@ -101,8 +101,8 @@ CREATE TABLE fourni(
    idFournisseur INT
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idProduit) REFERENCES Produits(idProduit),
-FOREIGN KEY(idFournisseur) REFERENCES Fournisseurs(idFournisseur)
+ALTER TABLE fourni ADD CONSTRAINT FK_fourni_Produits FOREIGN KEY(idProduit) REFERENCES Produits(idProduit);
+ALTER TABLE fourni ADD CONSTRAINT FK_fourni_Fournisseurs FOREIGN KEY(idFournisseur) REFERENCES Fournisseurs(idFournisseur);
 
 CREATE TABLE contient(
    idContient INT AUTO_INCREMENT PRIMARY KEY,
@@ -111,8 +111,8 @@ CREATE TABLE contient(
    quantiteProduit INT
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idProduit) REFERENCES Produits(idProduit),
-FOREIGN KEY(idCommande) REFERENCES Commandes(idCommande)
+ALTER TABLE contient ADD CONSTRAINT FK_contient_Produits FOREIGN KEY(idProduit) REFERENCES Produits(idProduit);
+ALTER TABLE contient ADD CONSTRAINT FK_contient_Commandes FOREIGN KEY(idCommande) REFERENCES Commandes(idCommande);
 
 CREATE TABLE applique(
    idApplique INT AUTO_INCREMENT PRIMARY KEY,
@@ -121,8 +121,8 @@ CREATE TABLE applique(
    dateTva DATE
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idProduit) REFERENCES Produits(idProduit),
-FOREIGN KEY(idTva) REFERENCES Tva(idTva)
+ALTER TABLE applique ADD CONSTRAINT FK_contient_Produits FOREIGN KEY(idProduit) REFERENCES Produits(idProduit);
+ALTER TABLE applique ADD CONSTRAINT FK_contient_Tva FOREIGN KEY(idTva) REFERENCES Tva(idTva);
 
 CREATE TABLE paie(
    idPaie INT AUTO_INCREMENT PRIMARY KEY,
@@ -132,8 +132,8 @@ CREATE TABLE paie(
    montantPaiement VARCHAR(50)  NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idReglement) REFERENCES Reglements(idReglement),
-FOREIGN KEY(idCommande) REFERENCES Commandes(idCommande)
+ALTER TABLE paie ADD CONSTRAINT FK_paie_Reglements FOREIGN KEY(idReglement) REFERENCES Reglements(idReglement);
+ALTER TABLE paie ADD CONSTRAINT FK_paie_Commandes FOREIGN KEY(idCommande) REFERENCES Commandes(idCommande);
 
 CREATE TABLE livre(
    idLivre INT AUTO_INCREMENT PRIMARY KEY,
@@ -143,5 +143,5 @@ CREATE TABLE livre(
    quantiteLivraison INT
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-FOREIGN KEY(idAdresse) REFERENCES Adresses(idAdresse),
-FOREIGN KEY(idCommande) REFERENCES Commandes(idCommande)
+ALTER TABLE livre ADD CONSTRAINT FK_livre_Adresses FOREIGN KEY(idAdresse) REFERENCES Adresses(idAdresse);
+ALTER TABLE livre ADD CONSTRAINT FK_livre_Commandes FOREIGN KEY(idCommande) REFERENCES Commandes(idCommande);
