@@ -121,8 +121,8 @@ CREATE TABLE applique(
    dateTva DATE
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-ALTER TABLE applique ADD CONSTRAINT FK_contient_Produits FOREIGN KEY(idProduit) REFERENCES Produits(idProduit);
-ALTER TABLE applique ADD CONSTRAINT FK_contient_Tva FOREIGN KEY(idTva) REFERENCES Tva(idTva);
+ALTER TABLE applique ADD CONSTRAINT FK_applique_Produits FOREIGN KEY(idProduit) REFERENCES Produits(idProduit);
+ALTER TABLE applique ADD CONSTRAINT FK_applique_Tva FOREIGN KEY(idTva) REFERENCES Tva(idTva);
 
 CREATE TABLE paie(
    idPaie INT AUTO_INCREMENT PRIMARY KEY,
