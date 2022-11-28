@@ -4,7 +4,7 @@ USE villageGreen;
 CREATE TABLE Rubriques(
    idRubrique INT AUTO_INCREMENT PRIMARY KEY,
    libRubrique VARCHAR(50)  NOT NULL,
-   idRubrique_1 INT NOT NULL
+   idRubrique_1 INT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 ALTER TABLE Rubriques ADD CONSTRAINT FK_Rubriques_Rubriques FOREIGN KEY(idRubrique_1) REFERENCES Rubriques(idRubrique);
@@ -67,7 +67,7 @@ ALTER TABLE Produits ADD CONSTRAINT FK_Produits_Rubriques FOREIGN KEY(idRubrique
 CREATE TABLE Clients(
    idClient INT AUTO_INCREMENT PRIMARY KEY,
    coefClient INT NOT NULL,
-   refClient VARCHAR(5)  NOT NULL,
+   refClient VARCHAR(5)  NOT NULL UNIQUE,
    idCatClient INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
