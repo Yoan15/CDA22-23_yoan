@@ -13,7 +13,7 @@ CREATE TABLE Individus(
    prenom VARCHAR(30)  NOT NULL,
    dateNaissance DATE,
    numTel VARCHAR(12)
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE Logements(
    idLogement INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,22 +21,22 @@ CREATE TABLE Logements(
    rue VARCHAR(60)  NOT NULL,
    superficie INT,
    loyer DECIMAL(15,2)
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE Quartiers(
    idQuartier INT AUTO_INCREMENT PRIMARY KEY,
    libelleQuartier VARCHAR(35)  NOT NULL
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE TypesLogements(
    idTypeLogement INT AUTO_INCREMENT PRIMARY KEY,
    classementLogement VARCHAR(25)  NOT NULL,
    chargeForfaitaire DECIMAL(15,2)   NOT NULL
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE Communes(
    idCommune INT AUTO_INCREMENT PRIMARY KEY,
    nomCommune VARCHAR(45)  NOT NULL,
    distanceAgence DECIMAL(15,2),
    nombreHabitants INT
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;

@@ -8,7 +8,7 @@ CREATE TABLE dept (
 	nodept varchar(50) NOT NULL PRIMARY KEY,
 	nom varchar(50) NOT NULL,
 	noregion varchar(50) NOT NULL
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE employe(
 	noemp int NOT NULL PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE employe(
 	nodep varchar(50) NOT NULL REFERENCES dept(nodept),
 	salaire decimal(18, 0) NOT NULL,
 	tauxcom decimal(18, 0) NULL
-);
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 INSERT INTO
 	dept (nodept, nom, noregion)
