@@ -8,5 +8,20 @@ namespace puissance4
 {
     class Cases
     {
+        public Joueurs Joueur { get; set; }
+        public bool IsVide { get; set; }
+        public Cases(Joueurs joueur, bool isVide)
+        {
+            Joueur = joueur;
+            IsVide = isVide;
+        }
+
+        public bool estJouable(Joueurs joueur)
+        {
+            if (true)
+            {
+                return true;
+            }
+        }
     }
 }

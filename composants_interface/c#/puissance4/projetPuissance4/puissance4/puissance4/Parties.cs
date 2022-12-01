@@ -1,13 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace puissance4
 {
     class Parties
     {
-        static void Main(string[] args)
+        public int NbJoueur { get; set; }
+        public List<String> listJoueur { get; set; }
+        public int nbAligne { get; set; }
+
+        public Parties(int nbJoueur, List<string> listJoueur, int nbAligne)
         {
-            private int nbJoueurs;
-            
+            NbJoueur = nbJoueur;
+            this.listJoueur = listJoueur;
+            this.nbAligne = nbAligne;
         }
+
+        
     }
 }

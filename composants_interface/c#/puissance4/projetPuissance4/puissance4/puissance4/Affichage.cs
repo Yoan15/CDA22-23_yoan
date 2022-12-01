@@ -8,5 +8,11 @@ namespace puissance4
 {
     class Affichage
     {
+        public int demandeNbJoueurs()
+        {
+            Console.WriteLine("Veuillez saisir combien de joueurs jouent : ");
+            Joueurs 
+            Joueurs joueur = Console.ReadLine();
+        }
     }
 }
