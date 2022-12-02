@@ -13,9 +13,13 @@ namespace Exercice1
             {
                 Console.WriteLine("Vous êtes majeur.");
             }
-            else
+            else if(age>0)
             {
                 Console.WriteLine("Vous êtes mineur.");
+            }
+            else
+            {
+                Console.WriteLine("Erreur");
             }
         }
     }
