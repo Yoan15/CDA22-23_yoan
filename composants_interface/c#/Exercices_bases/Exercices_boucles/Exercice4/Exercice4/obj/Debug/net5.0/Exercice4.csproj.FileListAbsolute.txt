@@ -1,0 +1,15 @@
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\Exercice4.exe
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\Exercice4.deps.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\Exercice4.runtimeconfig.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\Exercice4.runtimeconfig.dev.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\Exercice4.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\ref\Exercice4.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\bin\Debug\net5.0\Exercice4.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.AssemblyInfoInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.AssemblyInfo.cs
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.csproj.CoreCompileInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\ref\Exercice4.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_boucles\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.genruntimeconfig.cache
