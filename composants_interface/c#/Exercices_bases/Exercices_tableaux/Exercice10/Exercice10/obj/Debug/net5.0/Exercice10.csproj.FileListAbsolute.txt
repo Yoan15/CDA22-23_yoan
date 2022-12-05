@@ -1,0 +1,15 @@
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\Exercice10.exe
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\Exercice10.deps.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\Exercice10.runtimeconfig.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\Exercice10.runtimeconfig.dev.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\Exercice10.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\ref\Exercice10.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\bin\Debug\net5.0\Exercice10.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.AssemblyInfoInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.AssemblyInfo.cs
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.csproj.CoreCompileInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\ref\Exercice10.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice10\Exercice10\obj\Debug\net5.0\Exercice10.genruntimeconfig.cache
