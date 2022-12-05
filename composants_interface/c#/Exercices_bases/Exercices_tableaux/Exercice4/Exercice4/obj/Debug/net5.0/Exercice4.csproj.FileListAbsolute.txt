@@ -13,3 +13,4 @@ U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exerci
 U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice4\Exercice4\obj\Debug\net5.0\ref\Exercice4.dll
 U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.pdb
 U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.genruntimeconfig.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_tableaux\Exercice4\Exercice4\obj\Debug\net5.0\Exercice4.csproj.AssemblyReference.cache
