@@ -27,9 +27,11 @@ namespace Exercice1._2_1
         {
             if (n > 10)
             {
-                int n1 = n % 10;
-                Console.WriteLine(n);
-                Console.WriteLine("Le nombre comporte " + n + " dizaines.");
+                int n1 = n / 10;
+                int n2 = n % 10;
+                Console.WriteLine(n1);
+                Console.WriteLine(n2);
+                Console.WriteLine("Le nombre comporte " + n1 + " dizaines et "+ n2 + " unités.");
             }
             return n;
         }
