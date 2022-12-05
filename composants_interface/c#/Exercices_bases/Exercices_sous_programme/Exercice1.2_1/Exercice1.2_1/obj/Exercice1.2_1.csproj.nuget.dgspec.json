@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\59011-14-05\\source\\repos\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj": {}
+    "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_sous_programme\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\59011-14-05\\source\\repos\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj": {
+    "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_sous_programme\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\59011-14-05\\source\\repos\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj",
+        "projectUniqueName": "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_sous_programme\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj",
         "projectName": "Exercice1.2_1",
-        "projectPath": "C:\\Users\\59011-14-05\\source\\repos\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj",
+        "projectPath": "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_sous_programme\\Exercice1.2_1\\Exercice1.2_1\\Exercice1.2_1.csproj",
         "packagesPath": "C:\\Users\\59011-14-05\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\59011-14-05\\source\\repos\\Exercice1.2_1\\Exercice1.2_1\\obj\\",
+        "outputPath": "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_sous_programme\\Exercice1.2_1\\Exercice1.2_1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
