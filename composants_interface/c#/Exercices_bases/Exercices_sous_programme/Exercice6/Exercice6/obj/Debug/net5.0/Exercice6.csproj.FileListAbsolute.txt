@@ -1,0 +1,15 @@
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\Exercice6.exe
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\Exercice6.deps.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\Exercice6.runtimeconfig.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\Exercice6.runtimeconfig.dev.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\Exercice6.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\ref\Exercice6.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\bin\Debug\net5.0\Exercice6.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.AssemblyInfoInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.AssemblyInfo.cs
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.csproj.CoreCompileInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\ref\Exercice6.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice6\Exercice6\obj\Debug\net5.0\Exercice6.genruntimeconfig.cache

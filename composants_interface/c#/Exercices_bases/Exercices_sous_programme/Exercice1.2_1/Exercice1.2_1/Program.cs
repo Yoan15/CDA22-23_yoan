@@ -29,8 +29,6 @@ namespace Exercice1._2_1
             {
                 int n1 = n / 10;
                 int n2 = n % 10;
-                Console.WriteLine(n1);
-                Console.WriteLine(n2);
                 Console.WriteLine("Le nombre comporte " + n1 + " dizaines et "+ n2 + " unités.");
             }
             return n;
@@ -38,6 +36,7 @@ namespace Exercice1._2_1
 
         public static int Extrait(int n, int p)
         {
+
             return n;
         }
 

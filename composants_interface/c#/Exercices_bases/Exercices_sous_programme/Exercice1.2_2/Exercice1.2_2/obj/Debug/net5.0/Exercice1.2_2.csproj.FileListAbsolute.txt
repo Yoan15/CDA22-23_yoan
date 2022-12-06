@@ -1,0 +1,15 @@
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\Exercice1.2_2.exe
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\Exercice1.2_2.deps.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\Exercice1.2_2.runtimeconfig.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\Exercice1.2_2.runtimeconfig.dev.json
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\Exercice1.2_2.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\ref\Exercice1.2_2.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\bin\Debug\net5.0\Exercice1.2_2.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.AssemblyInfoInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.AssemblyInfo.cs
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.csproj.CoreCompileInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\ref\Exercice1.2_2.dll
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_bases\Exercices_sous_programme\Exercice1.2_2\Exercice1.2_2\obj\Debug\net5.0\Exercice1.2_2.genruntimeconfig.cache
