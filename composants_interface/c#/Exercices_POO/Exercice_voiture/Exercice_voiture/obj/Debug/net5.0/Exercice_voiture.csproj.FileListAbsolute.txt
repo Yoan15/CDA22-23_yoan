@@ -1,0 +1,16 @@
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\Exercice_voiture.exe
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\Exercice_voiture.deps.json
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\Exercice_voiture.runtimeconfig.json
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\Exercice_voiture.runtimeconfig.dev.json
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\Exercice_voiture.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\ref\Exercice_voiture.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\bin\Debug\net5.0\Exercice_voiture.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.csproj.AssemblyReference.cache
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.AssemblyInfoInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.AssemblyInfo.cs
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.csproj.CoreCompileInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\ref\Exercice_voiture.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_voiture\Exercice_voiture\obj\Debug\net5.0\Exercice_voiture.genruntimeconfig.cache

@@ -16,9 +16,9 @@ namespace Exercice_voiture
 
         public int NbKilometres { get; set; }
 
-        public String Motorisation { get; set; }
+        public MotorisationEnum Motorisation { get; set; }
 
-        public Voiture(String couleur, String marque, String modele, int nbKilometres, String motorisation)
+        public Voiture(String couleur, String marque, String modele, int nbKilometres, MotorisationEnum motorisation)
         {
             Couleur = couleur;
             Marque = marque;
@@ -27,9 +27,24 @@ namespace Exercice_voiture
             Motorisation = motorisation;
         }
 
-        public static String Description(String couleur, String marque, String modele, int nbKilometres, String motorisation)
+        //public static String Description(String couleur, String marque, String modele, int nbKilometres, String motorisation)
+        //{
+        //    Console.WriteLine("Cette voiture est une " + modele + " de la marque " + marque + ", de couleur " + couleur + ", de motorisation " + motorisation + ", avec " + nbKilometres + " Kilomètres");
+        //}
+        public String Description()
         {
-            Console.WriteLine("Cette voiture est une " + modele + " de la marque " + marque + ", de couleur " + couleur + ", de motorisation " + motorisation + ", avec " + nbKilometres + " Kilomètres");
+            return "Cette voiture est une " + this.Modele + " de la marque " + this.Marque + ", de couleur " + this.Couleur + ", de motorisation " + this.Motorisation + ", avec " + this.NbKilometres + " Kilomètres.";
         }
+
+        public int Rouler(int nbKilometres)
+        {
+            return NbKilometres = this.NbKilometres + nbKilometres;
+        }
+    }
+
+    public enum MotorisationEnum
+    {
+        Essence,
+        Diesel
     }
 }
