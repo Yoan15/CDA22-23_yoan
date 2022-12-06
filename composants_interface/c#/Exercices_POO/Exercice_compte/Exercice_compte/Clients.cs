@@ -8,13 +8,13 @@ namespace Exercice_compte
 {
     class Clients
     {
-        public String Cin { get; set; }
+        public string Cin { get; set; }
 
-        public String Nom { get; set; }
+        public string Nom { get; set; }
 
-        public String Prenom { get; set; }
+        public string Prenom { get; set; }
 
-        public String Tel { get; set; }
+        public string Tel { get; set; }
 
         public Clients(string cin, string nom, string prenom, string tel)
         {
@@ -31,7 +31,7 @@ namespace Exercice_compte
             Prenom = prenom;
         }
 
-        public String Afficher()
+        public string Afficher()
         {
             return $"CIN : {Cin}\nNom : {Nom}\nPrénom : {Prenom}\nTéléphone : {Tel}";
         }

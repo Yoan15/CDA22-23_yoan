@@ -26,6 +26,7 @@ namespace Exercice_compte
         public void Crediter(double somme)
         {
             this.Solde += somme;
+            Console.WriteLine($"Compte approvisionné de {somme} euros");
         }
 
         public void Crediter(double somme, Comptes compte)
@@ -37,6 +38,7 @@ namespace Exercice_compte
         public void Debiter(double somme)
         {
             this.Solde -= somme;
+            Console.WriteLine($"Débit de {somme} euros effectué");
         }
 
         public void Debiter(double somme, Comptes compte)
@@ -47,7 +49,8 @@ namespace Exercice_compte
 
         public string Afficher()
         {
-            return $"Code : {Code}\nSolde : {Solde}\nPropriétaire du compte : {Proprietaire}";
+            //return $"Code : {Code}\nSolde : {Solde}\nPropriétaire du compte :\n{Proprietaire}";
+            return $"Code : {Code}\nSolde : {Solde}\nPropriétaire du compte :\nCIN : {Proprietaire.Cin}\nNom : {Proprietaire.Nom}\nPrenom : {Proprietaire.Prenom}\nTéléphone : {Proprietaire.Tel}";
         }
 
         public static void AfficheNbDeComptes()
