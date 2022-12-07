@@ -25,15 +25,35 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-            <Button Grid.Column="0" Grid.Row="0" Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="21"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="21"/>
+            <Button Grid.Column="2" Grid.Row="1" Content="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="21"/>
+            <Button Grid.Column="3" Grid.Row="1" Content="CE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            
+            <Button Grid.Column="0" Grid.Row="2" Content="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="1" Grid.Row="2" Content="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="2" Grid.Row="2" Content="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="3" Grid.Row="2" Content="+" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            
+            <Button Grid.Column="0" Grid.Row="3" Content="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="1" Grid.Row="3" Content="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="2" Grid.Row="3" Content="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="3" Grid.Row="3" Content="-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+
+            <Button Grid.Column="0" Grid.Row="4" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="1" Grid.Row="4" Content="," HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="2" Grid.Row="4" Content="/" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Button Grid.Column="3" Grid.Row="4" Content="x" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
         </Grid>
         <Button Grid.Column="1" Grid.Row="3" Content="=" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30"/>
     </Grid>
