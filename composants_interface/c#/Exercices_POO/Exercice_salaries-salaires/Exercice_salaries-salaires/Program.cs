@@ -7,30 +7,16 @@ namespace Exercice_salaries_salaires
     {
         static void Main(string[] args)
         {
-            //Employes empTest;
-            //empTest = new Employes("Dupont", "David", 35, 50);
-            //Console.WriteLine(empTest);
-
-            Representants rep1 = new Representants("Dupont", "Giselle", 35, 5, 14);
-            Representants rep2 = new Representants("Dupont", "Georges", 29, 10, 2);
-            Vendeurs ven1 = new Vendeurs("Doe", "Paul", 26, 12);
-            Vendeurs ven2 = new Vendeurs("Doe", "Pierre", 37, 5);
-            Vendeurs ven3 = new Vendeurs("Doe", "Jacques", 42, 1);
-
-            List<Commerciaux> comm = new List<Commerciaux>();
-            comm.Add(ven1);
-            comm.Add(ven2);
-            comm.Add(ven3);
-            comm.Add(rep1);
-            comm.Add(rep2);
-            foreach (var c in comm)
-            {
-                Console.WriteLine(c);
-            }
-
-            //Techniciens techTest;
-            //techTest = new Techniciens("Dupuis", "Claude", 26, 50);
-            //Console.WriteLine(techTest);
+            Entreprise e = new Entreprise("Promo IRIS");
+            e.Embaucher(new Representants("Dupont", "Giselle", 35, 5, 14));
+            e.Embaucher(new Representants("Dupont", "Georges", 29, 10, 2));
+            e.Embaucher(new Vendeurs("Doe", "Paul  ", 26, 12));
+            e.Embaucher(new Vendeurs("Doe", "Pierre", 37, 5));
+            e.Embaucher(new Vendeurs("Doe", "Jacques", 42, 1));
+            e.Embaucher(new Techniciens("Noble", "Robert", 46));
+            e.Embaucher(new Techniciens("Noble", "Raymond", 58));
+            e.Embaucher(new Interimaires("Bon", "Jean-Claude", 28, 80));
+            Console.WriteLine(e);
         }
     }
 }

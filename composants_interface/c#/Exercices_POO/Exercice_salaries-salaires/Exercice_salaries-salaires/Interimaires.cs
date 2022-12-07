@@ -8,12 +8,17 @@ namespace Exercice_salaries_salaires
 {
     class Interimaires : Techniciens
     {
-        const double ValSal = 0.5;
+        const double VALSAL = 0.5;
+
         public int NbHeure { get; set; }
 
-        public Interimaires(string nom, string prenom, int age, double salaire, int nbHeure) : base(nom, prenom, age, salaire)
+        public Interimaires(string nom, string prenom, int age, int nbHeure) : base(nom, prenom, age)
         {
-            NbHeure = nbHeure;
+        }
+
+        public override double CalculerSalaire()
+        {
+            return NbHeure * VALSAL;
         }
     }
 }

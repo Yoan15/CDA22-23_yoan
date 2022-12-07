@@ -26,7 +26,7 @@ namespace Exercice_salaries_salaires
 
         public override string ToString()
         {
-            return $"Nom : {Nom}\tPrenom : {Prenom}\tAge : {Age}\tSalaire : {Salaire}";
+            return $"Nom : {Nom} \tPrenom : {Prenom} \tAge : {Age} \tSalaire : {Salaire}";
         }
 
         public void Afficher()

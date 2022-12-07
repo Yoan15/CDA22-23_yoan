@@ -8,9 +8,16 @@ namespace Exercice_salaries_salaires
 {
     class Techniciens : Employes
     {
-        const double Salaire = 40;
-        public Techniciens(string nom, string prenom, int age, double salaire) : base(nom, prenom, age, salaire)
+        const double SALAIRE = 40;
+
+
+        public Techniciens(string nom, string prenom, int age) : base(nom, prenom, age, SALAIRE)
         {
+        }
+
+        public override double CalculerSalaire()
+        {
+            return SALAIRE;
         }
     }
 }
