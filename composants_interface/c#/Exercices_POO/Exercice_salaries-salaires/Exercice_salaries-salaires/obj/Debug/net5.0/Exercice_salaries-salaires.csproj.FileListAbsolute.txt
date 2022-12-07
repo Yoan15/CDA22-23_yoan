@@ -1,0 +1,16 @@
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.csproj.AssemblyReference.cache
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.AssemblyInfoInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.AssemblyInfo.cs
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.csproj.CoreCompileInputs.cache
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\Exercice_salaries-salaires.exe
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\Exercice_salaries-salaires.deps.json
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\Exercice_salaries-salaires.runtimeconfig.json
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\Exercice_salaries-salaires.runtimeconfig.dev.json
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\Exercice_salaries-salaires.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\ref\Exercice_salaries-salaires.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\bin\Debug\net5.0\Exercice_salaries-salaires.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\ref\Exercice_salaries-salaires.dll
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.pdb
+U:\59011-14-05\composants_interface\c#\Exercices_POO\Exercice_salaries-salaires\Exercice_salaries-salaires\obj\Debug\net5.0\Exercice_salaries-salaires.genruntimeconfig.cache
