@@ -80,7 +80,7 @@
                             <RowDefinition Height="0,5"></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Programme:" HorizontalAlignment="Right"/>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Programme:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
                         <Label Grid.Column="0" Grid.Row="2" Content="Stratégie:" HorizontalAlignment="Right"/>
                         <TextBox Grid.Column="1" Grid.Row="0" Text="SIH-OBSMER"/>
                         <TextBox Grid.Column="1" Grid.Row="2" Text="BOSMER démarre"/>
@@ -139,8 +139,37 @@
                                     <Label Grid.Column="0" Grid.Row="1" Content="Date et heure:"/>
                                     <Label Grid.Column="0" Grid.Row="2" Content="Latitude:"/>
                                     <Label Grid.Column="0" Grid.Row="3" Content="Longitude:"/>
-                                    <StackPanel Grid.Column="1" Grid.Row="1">
-                                        
+                                    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" x:Name="DateHeure" Margin="0,0,0,2">
+                                        <DatePicker SelectedDate="01.22.2013" SelectedDateFormat="Long"></DatePicker>
+                                        <ComboBox>
+                                            <ComboBoxItem IsSelected="True">18:30</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Grid.Row="2" x:Name="Latitude" Orientation="Horizontal">
+                                        <TextBox Text="+4914.100"/>
+                                        <Button x:Name="HelpLat" Width="25" Margin="5,0,0,0" BorderThickness="0">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/questions.png"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="LatDupli" Width="25" Margin="5,0,0,0" BorderThickness="0">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/Fleche.png"/>
+                                            </Button.Background>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                                        <TextBox x:Name="TextLong" Text="-148.320"/>
+                                        <Button x:Name="HelpLong" Width="25" BorderThickness="0">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/questions.png"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="LongDupli" Width="25" Margin="5,0,0,0" BorderThickness="0">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/Fleche.png"/>
+                                            </Button.Background>
+                                        </Button>
                                     </StackPanel>
                                 </Grid>
                             </GroupBox>
