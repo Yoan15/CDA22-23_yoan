@@ -1,0 +1,120 @@
+﻿<Window x:Class="Exercice4_adhesion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercice4_adhesion"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Nom/Prenom : " HorizontalContentAlignment="Left" x:Name="LblNomPrenom" FontSize="15"/>
+            <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtBoxNomPrenom" Margin="10,0,10,0" Text="DENRY Didier" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Adresse : " HorizontalContentAlignment="Left" x:Name="LblAdresse" FontSize="15"/>
+            <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtAdresse" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" Text="2, Rue des Fleurs&#x0a;59190 Lille" FontSize="15"/>
+        </Grid>
+        
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.55*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Date de naissance : " x:Name="LblDateNaissance" FontSize="15" HorizontalAlignment="Left"/>
+                <DatePicker Grid.Column="1" Grid.Row="0" Margin="0,0,10,10" x:Name="DatePickerNaissance" VerticalContentAlignment="Center" SelectedDate="12.15.1954" SelectedDateFormat="Long" Background="White"></DatePicker>
+            </Grid>
+            <GroupBox Grid.Column="1" Header="Genre" Margin="5,0,5,0" BorderThickness="2">
+                <StackPanel x:Name="LblGenre" Margin="10,5,0,0">
+                    <RadioButton IsChecked="True" FontSize="15">Masculin</RadioButton>
+                    <RadioButton FontSize="15" Margin="0,10,0,0">Féminin</RadioButton>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Activité :" x:Name="LblActivite"/>
+            <ListBox Grid.Row="1" Grid.Column="0">
+                <ListBoxItem IsSelected="True">Water Polo</ListBoxItem>
+                <ListBoxItem>Natation</ListBoxItem>
+                <ListBoxItem>Aqua Gym</ListBoxItem>
+                <ListBoxItem>Loisir</ListBoxItem>
+            </ListBox>
+            <Label Grid.Row="0" Grid.Column="2" Content="Niveau :" x:Name="LblNiveau"/>
+            <ListBox Grid.Row="1" Grid.Column="2">
+                <ListBoxItem>Débutant</ListBoxItem>
+                <ListBoxItem>Minime</ListBoxItem>
+                <ListBoxItem>Cadet</ListBoxItem>
+                <ListBoxItem>Junior</ListBoxItem>
+                <ListBoxItem IsSelected="True">Senior</ListBoxItem>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Row="7" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="Documents fournis" Grid.Row="0" Grid.Column="0" BorderThickness="2">
+                <StackPanel Margin="5,0,5,0">
+                    <CheckBox IsChecked="True" Margin="2">Certificat médical</CheckBox>
+                    <CheckBox IsChecked="True" Margin="2">5 enveloppes timbrées</CheckBox>
+                    <CheckBox Margin="2">2 photos récentes</CheckBox>
+                </StackPanel>
+            </GroupBox>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="1" Content="Enregistrer" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Padding="5" BorderThickness="1,1,3,3" Width="72" Height="32"/>
+                <Button Grid.Row="3" Content="Annuler" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Padding="5" BorderThickness="1,1,3,3" Width="72" Height="32"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
