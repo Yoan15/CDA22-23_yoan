@@ -124,7 +124,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <GroupBox Header="Début de l'opération (filage)" BorderThickness="2">
+                            <GroupBox Header="Début de l'opération (Filage)" BorderThickness="2">
                                 <Grid x:Name="Filage">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -171,6 +171,11 @@
                                             </Button.Background>
                                         </Button>
                                     </StackPanel>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Column="1" Grid.Row="0" Header="Fin de l'opération (Virage)" BorderThickness="2">
+                                <Grid>
+                                    
                                 </Grid>
                             </GroupBox>
                         </Grid>
