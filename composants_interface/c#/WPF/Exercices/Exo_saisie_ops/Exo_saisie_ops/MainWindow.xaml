@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exo_saisie_ops"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900">
+        Title="MainWindow" Height="650" Width="1100">
     <Grid x:Name="All">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0" x:Name="InfosNav">
@@ -27,9 +27,7 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-
                 <GroupBox Grid.Column="0" Header="Navire" BorderThickness="2">
-
                     <Grid x:Name="Navire">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
@@ -43,9 +41,9 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Column="0" Grid.Row="0" Content="Immatriculation: " HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Label Grid.Column="0" Grid.Row="2" Content="Nom:" HorizontalAlignment="Right"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Text="639451"/>
-                        <TextBox Grid.Column="1" Grid.Row="2" Text="PHILCATHAN"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Nom:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="639451" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="PHILCATHAN" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
                     </Grid>
                 </GroupBox>
 
@@ -61,10 +59,10 @@
                             <RowDefinition Height="0,5"></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Départ:" HorizontalAlignment="Left"/>
-                        <Label Grid.Column="0" Grid.Row="2" Content="Retour:" HorizontalAlignment="Left"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Text="22/01/2013 - UCH - Granville"/>
-                        <TextBox Grid.Column="1" Grid.Row="2" Text="23/01/2013 - UCH - Granville"/>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Départ:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Retour:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="22/01/2013 - UCH - Granville" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="23/01/2013 - UCH - Granville" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
                     </Grid>
                 </GroupBox>
 
@@ -80,10 +78,10 @@
                             <RowDefinition Height="0,5"></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Programme:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
-                        <Label Grid.Column="0" Grid.Row="2" Content="Stratégie:" HorizontalAlignment="Right"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Text="SIH-OBSMER"/>
-                        <TextBox Grid.Column="1" Grid.Row="2" Text="BOSMER démarre"/>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Programme:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}" VerticalAlignment="Center"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Stratégie:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="SIH-OBSMER" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="OBSMER démarre" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
                     </Grid>
                 </GroupBox>
 
@@ -99,10 +97,10 @@
                             <RowDefinition Height="0,5"></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Opérateur de saisie:" HorizontalAlignment="Right"/>
-                        <Label Grid.Column="0" Grid.Row="2" Content="Dernière modification:" HorizontalAlignment="Right"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Text="TETARD Xavier"/>
-                        <TextBox Grid.Column="1" Grid.Row="2" Text="25/11/2013 10:16:37"/>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Opérateur de saisie:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Dernière modification:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="TETARD Xavier" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="25/11/2013 10:16:37" VerticalContentAlignment="Center" Margin="3,3,3,2" IsEnabled="False" Background="{DynamicResource BackgroundDisabled}"/>
                     </Grid>
                 </GroupBox>
             </Grid>
@@ -113,7 +111,7 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="3*"></RowDefinition>
-                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="0.7*"></RowDefinition>
                             <RowDefinition Height="3*"></RowDefinition>
                             <RowDefinition Height="3*"></RowDefinition>
                         </Grid.RowDefinitions>
@@ -136,51 +134,102 @@
                                         <RowDefinition Height="1*"></RowDefinition>
                                         <RowDefinition Height="1*"></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <Label Grid.Column="0" Grid.Row="1" Content="Date et heure:"/>
-                                    <Label Grid.Column="0" Grid.Row="2" Content="Latitude:"/>
-                                    <Label Grid.Column="0" Grid.Row="3" Content="Longitude:"/>
-                                    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" x:Name="DateHeure" Margin="0,0,0,2">
+                                    <Label Grid.Column="0" Grid.Row="1" Content="Date et heure:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Content="Latitude:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Content="Longitude:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
+                                    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" x:Name="DateHeureFil" Margin="1">
                                         <DatePicker SelectedDate="01.22.2013" SelectedDateFormat="Long"></DatePicker>
                                         <ComboBox>
+                                            <ComboBoxItem>17:00</ComboBoxItem>
+                                            <ComboBoxItem>17:30</ComboBoxItem>
+                                            <ComboBoxItem>18:00</ComboBoxItem>
                                             <ComboBoxItem IsSelected="True">18:30</ComboBoxItem>
+                                            <ComboBoxItem>19:00</ComboBoxItem>
+                                            <ComboBoxItem>19:30</ComboBoxItem>
                                         </ComboBox>
                                     </StackPanel>
-                                    <StackPanel Grid.Column="1" Grid.Row="2" x:Name="Latitude" Orientation="Horizontal">
-                                        <TextBox Text="+4914.100"/>
-                                        <Button x:Name="HelpLat" Width="25" Margin="5,0,0,0" BorderThickness="0">
-                                            <Button.Background>
-                                                <ImageBrush ImageSource="/questions.png"/>
-                                            </Button.Background>
-                                        </Button>
-                                        <Button x:Name="LatDupli" Width="25" Margin="5,0,0,0" BorderThickness="0">
-                                            <Button.Background>
-                                                <ImageBrush ImageSource="/Fleche.png"/>
-                                            </Button.Background>
-                                        </Button>
+                                    <StackPanel Grid.Column="1" Grid.Row="2" x:Name="LatitudeFil" Orientation="Horizontal">
+                                        <TextBox Text="+4914.100" MinWidth="208" Margin="1" VerticalContentAlignment="Center"/>
+                                        <Button Background="{DynamicResource HelpMark}" x:Name="HelpLat" Width="25" Margin="5,0,0,0" BorderThickness="0"/>
+                                        <Button Background="{DynamicResource DupliBtn}" x:Name="LatDupli" Width="25" Margin="5,0,0,0" BorderThickness="0"/>
                                     </StackPanel>
-                                    <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-                                        <TextBox x:Name="TextLong" Text="-148.320"/>
-                                        <Button x:Name="HelpLong" Width="25" BorderThickness="0">
-                                            <Button.Background>
-                                                <ImageBrush ImageSource="/questions.png"/>
-                                            </Button.Background>
-                                        </Button>
-                                        <Button x:Name="LongDupli" Width="25" Margin="5,0,0,0" BorderThickness="0">
-                                            <Button.Background>
-                                                <ImageBrush ImageSource="/Fleche.png"/>
-                                            </Button.Background>
-                                        </Button>
+                                    <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" x:Name="LatFil">
+                                        <TextBox x:Name="TextLong" Text="-148.320" MinWidth="208" Margin="1" VerticalContentAlignment="Center"/>
+                                        <Button Background="{DynamicResource HelpMark}" x:Name="HelpLong" Width="25" Margin="5,0,0,0" BorderThickness="0"/>
+                                        <Button Background="{DynamicResource DupliBtn}" x:Name="LongDupli" Width="25" Margin="5,0,0,0" BorderThickness="0"/>
                                     </StackPanel>
                                 </Grid>
                             </GroupBox>
                             <GroupBox Grid.Column="1" Grid.Row="0" Header="Fin de l'opération (Virage)" BorderThickness="2">
                                 <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                    </Grid.RowDefinitions>
                                     
+                                    <Label Grid.Row="0" Grid.Column="0" Content="Durée (h):" x:Name="LblDuree" HorizontalAlignment="Right"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Content="Date et heure:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Content="Latitude:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
+                                    <Label Grid.Row="3" Grid.Column="0" Content="Longitude:" HorizontalAlignment="Right" Foreground="{DynamicResource TextRed}"/>
+
+                                    <TextBox Grid.Row="0" Grid.Column="1" Text="2:00" VerticalContentAlignment="Center" Margin="1"/>
+                                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" x:Name="DateHeureVir" Margin="1">
+                                        <DatePicker SelectedDate="01.22.2013" SelectedDateFormat="Long"></DatePicker>
+                                        <ComboBox>
+                                            <ComboBoxItem>19:30</ComboBoxItem>
+                                            <ComboBoxItem>20:00</ComboBoxItem>
+                                            <ComboBoxItem IsSelected="True">20:30</ComboBoxItem>
+                                            <ComboBoxItem>21:00</ComboBoxItem>
+                                            <ComboBoxItem>21:30</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" x:Name="LatVir">
+                                        <TextBox Text="+4914.200" MinWidth="208" Margin="1"/>
+                                        <Button Background="{DynamicResource HelpMark}" x:Name="HelpLatVir" Width="25" Margin="5,0,0,0" BorderThickness="0"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" x:Name="LongVir">
+                                        <TextBox Text="-148.390" MinWidth="208" Margin="1"/>
+                                        <Button Background="{DynamicResource HelpMark}" x:Name="HelpLongVir" Width="25" Margin="5,0,0,0" BorderThickness="0"/>
+                                    </StackPanel>
                                 </Grid>
                             </GroupBox>
                         </Grid>
+                        <Grid Grid.Row="1" x:Name="ZoneAct" Margin="1">
+                            <Border Background="{DynamicResource BorderBackgroundCat}" BorderThickness="{DynamicResource BorderThicknessCat}" CornerRadius="{DynamicResource BorderCornerRadiusCat}" BorderBrush="{DynamicResource BorderBrushCat}">
+                                <Label Content="Zones d'activité:27E8" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource TitreOnglets}"/>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="2" x:Name="AutresCaracOps" Margin="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="3*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Background="{DynamicResource BorderBackgroundCat}" BorderThickness="{DynamicResource BorderThicknessCat}" CornerRadius="{DynamicResource BorderCornerRadiusCat}" BorderBrush="{DynamicResource BorderBrushCat}">
+                                <Label Content="Autres caractéristiques de l'opération" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource TitreOnglets}"/>
+                            </Border>
+                            <Grid Grid.Row="1" x:Name="DataGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
+                                    <Button Background="{DynamicResource BtnPlus}" Width="25" Height="25" Margin="5" VerticalAlignment="Center" BorderThickness="1"/>
+                                    <Button Background="{DynamicResource BtnMoins}" Width="25" Height="25" Margin="5" VerticalAlignment="Center" BorderThickness="1"/>
+                                </StackPanel>
+                                <DataGrid Grid.Column="1">
+                                    
+                                </DataGrid>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </TabItem>
+                
                 <TabItem Header="Engin">
 
                 </TabItem>

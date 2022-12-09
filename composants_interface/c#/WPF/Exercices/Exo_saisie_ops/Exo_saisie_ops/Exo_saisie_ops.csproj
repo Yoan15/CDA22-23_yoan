@@ -8,11 +8,15 @@
 
   <ItemGroup>
     <None Remove="Fleche.png" />
+    <None Remove="moins.png" />
+    <None Remove="plus.png" />
     <None Remove="questions.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Fleche.png" />
+    <Resource Include="moins.png" />
+    <Resource Include="plus.png" />
     <Resource Include="questions.png" />
   </ItemGroup>
 
