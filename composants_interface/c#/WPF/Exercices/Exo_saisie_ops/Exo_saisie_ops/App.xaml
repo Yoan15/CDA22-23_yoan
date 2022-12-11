@@ -4,7 +4,19 @@
              xmlns:local="clr-namespace:Exo_saisie_ops"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
         <SolidColorBrush x:Key="TextRed" Color="Red"/>
+        <ImageBrush x:Key="HelpMark" ImageSource="/questions.png"/>
+        <ImageBrush x:Key="DupliBtn" ImageSource="/Fleche.png"/>
+        <SolidColorBrush x:Key="TitreOnglets" Color="DarkBlue"/>
+        <LinearGradientBrush x:Key="BorderBackgroundCat" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEEEEEE" Offset="0.88"/>
+            <GradientStop Color="#FFAFDAEE" Offset="0"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="BorderBrushCat" Color="#FF5B9EFF"/>
+        <Thickness x:Key="BorderThicknessCat">1,1,1,0</Thickness>
+        <CornerRadius x:Key="BorderCornerRadiusCat">2,0,0,0</CornerRadius>
+        <SolidColorBrush x:Key="BackgroundDisabled" Color="LightGray"/>
+        <ImageBrush x:Key="BtnPlus" ImageSource="/plus.png"/>
+        <ImageBrush x:Key="BtnMoins" ImageSource="/moins.png"/>
     </Application.Resources>
 </Application>
