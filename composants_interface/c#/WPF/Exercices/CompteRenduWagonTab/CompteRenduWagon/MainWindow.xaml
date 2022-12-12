@@ -62,7 +62,7 @@
                                 <TextBox Grid.Column="1" Margin="2" VerticalAlignment="Center" Text="Contrôle initial" HorizontalAlignment="Stretch" Height="50"  FontSize="20"/>
                                 <StackPanel Grid.Row="0" Grid.Column="2" x:Name="EtatWag" Orientation="Vertical" HorizontalAlignment="Center">
                                     <Label Content="Etat du wagon:" FontSize="20"/>
-                                    <CheckBox FontSize="20">Pas de réparations à effectuer</CheckBox>
+                                    <CheckBox FontSize="20" Checked="CheckBox_Checked">Pas de réparations à effectuer</CheckBox>
                                     <CheckBox FontSize="20">Réparations mineures à effectuer</CheckBox>
                                     <CheckBox IsChecked="True" FontSize="20">Réparations majeures à effectuer</CheckBox>
                                 </StackPanel>
