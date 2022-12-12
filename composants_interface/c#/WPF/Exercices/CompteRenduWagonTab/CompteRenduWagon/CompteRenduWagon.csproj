@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\essieux_wagon.jpg" />
+    <None Remove="moins.png" />
+    <None Remove="plus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\essieux_wagon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="moins.png" />
+    <Resource Include="plus.png" />
+  </ItemGroup>
+
+</Project>

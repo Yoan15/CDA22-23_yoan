@@ -12,5 +12,9 @@
             <GradientStop Color="White" Offset="1"/>
         </LinearGradientBrush>
         <SolidColorBrush x:Key="NonEditable" Color="LightGray"/>
+        <SolidColorBrush x:Key="BtnBorduresReinitialiser" Color="#FFFFC500"/>
+        <SolidColorBrush x:Key="BtnBorduresAnnuler" Color="#FFFF0707"/>
+        <SolidColorBrush x:Key="BtnBorduresValider" Color="#FF5DFF00"/>
+        <SolidColorBrush x:Key="BtnBorduresImport" Color="#FF2435E4"/>
     </Application.Resources>
 </Application>

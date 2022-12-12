@@ -1,11 +1,11 @@
-﻿<Window x:Class="CompteRenduWagon.MainWindow"
+﻿<Window Background="{DynamicResource BackGroundApp}" x:Class="CompteRenduWagon.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CompteRenduWagon"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="Maintenance Wagons" Height="550" Width="800">
     <Grid x:Name="All">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -40,7 +40,7 @@
             <TextBlock Grid.Row="0" Grid.Column="0">Compte-rendu</TextBlock>
 
         </Grid>
-        <TabControl Grid.Row="1" x:Name="WagEquipe">
+        <TabControl Grid.Row="1" x:Name="WagEquipe" Background="{DynamicResource BackGroundApp}">
             <TabItem Header="Wagon" x:Name="Wagon">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
                         <Label Grid.Column="0" Content="Observations:" x:Name="LblObsWag" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         <TextBox Grid.Column="1" AcceptsReturn="True" TextWrapping="Wrap" x:Name="TextBoxObsMultiline" Text="Les essieux du wagon sont pas mal endomagés il faut penser à en commander des nouveaux." Margin="2"/>
                     </Grid>
-                    <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid Grid.Row="0" Grid.Column="1" x:Name="PretRepartir">
                         <StackPanel HorizontalAlignment="Center">
                             <Label Content="Prêt à repartir:"/>
                             <RadioButton>Oui</RadioButton>
@@ -99,6 +99,7 @@
                             <RowDefinition Height="1*"></RowDefinition>
                             <RowDefinition Height="3*"></RowDefinition>
                         </Grid.RowDefinitions>
+                        <Label Content="Images:" VerticalAlignment="Center"/>
                         <Button x:Name="BtnLoadImg" Content="Importer une image..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <Image Grid.Row="1" Source="img/essieux_wagon.jpg"/>
                     </Grid>
@@ -223,9 +224,9 @@
         </TabControl>
         <Grid Grid.Row="2" x:Name="Bouttons">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="Reinitialiser" VerticalAlignment="Center" x:Name="BtnReinitialiser" Margin="5" />
-                <Button Content="Annuler" VerticalAlignment="Center" x:Name="BtnAnnuler" Margin="5"/>
-                <Button Content="Valider" VerticalAlignment="Center" x:Name="BtnValider" Margin="5"/>
+                <Button Content="Reinitialiser" VerticalAlignment="Center" x:Name="BtnReinitialiser" Margin="5" BorderBrush="#FFFFC500" Foreground="Black" Background="White" />
+                <Button Content="Annuler" VerticalAlignment="Center" x:Name="BtnAnnuler" Margin="5" Background="White" BorderBrush="#FFFF0707"/>
+                <Button Content="Valider" VerticalAlignment="Center" x:Name="BtnValider" Margin="5" Background="White" BorderBrush="#FF5DFF00"/>
             </StackPanel>
         </Grid>
     </Grid>
