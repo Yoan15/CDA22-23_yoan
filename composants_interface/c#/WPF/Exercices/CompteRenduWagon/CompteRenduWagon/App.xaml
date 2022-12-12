@@ -1,0 +1,12 @@
+﻿<Application x:Class="CompteRenduWagon.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CompteRenduWagon"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+        <ImageBrush x:Key="BtnMoins" ImageSource="/moins.png"/>
+        <ImageBrush x:Key="BtnPlus" ImageSource="/plus.png"/>
+        <SolidColorBrush x:Key="NonEditable" Color="LightGray"/>
+    </Application.Resources>
+</Application>

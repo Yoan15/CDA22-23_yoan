@@ -1,0 +1,232 @@
+﻿<Window x:Class="CompteRenduWagon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompteRenduWagon"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid x:Name="All">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="InfosWagon">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="0" x:Name="MatWagon">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Matricule wagon:" x:Name="LblMatWag" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Column="1" Text="ME879-75F6D-4F7ZE" VerticalContentAlignment="Center" Margin="2" MaxWidth="200" HorizontalAlignment="Stretch" IsReadOnly="True" Background="{DynamicResource NonEditable}" BorderThickness="2"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" x:Name="TypeWagon">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Type wagon:" x:Name="LblTypeWag" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Column="1" Text="Industriel" VerticalContentAlignment="Center" Margin="2" MaxWidth="350" HorizontalAlignment="Stretch" IsReadOnly="True" Background="{DynamicResource NonEditable}" BorderThickness="2"/>
+            </Grid>
+            <TextBlock Grid.Row="0" Grid.Column="0">Compte-rendu</TextBlock>
+
+        </Grid>
+        <TabControl Grid.Row="1" x:Name="WagEquipe">
+            <TabItem Header="Wagon" x:Name="Wagon">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="MotifWag">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Motif:" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblMotifWag"/>
+                        <TextBox Grid.Column="1" Margin="2" VerticalAlignment="Center" Text="Contrôle initial" MaxWidth="350" HorizontalAlignment="Stretch"/>
+                        <StackPanel Grid.Row="0" Grid.Column="2" x:Name="EtatWag" Orientation="Vertical" HorizontalAlignment="Right">
+                            <Label Content="Etat du wagon:"/>
+                            <CheckBox>Pas de réparations à effectuer</CheckBox>
+                            <CheckBox>Réparations mineures à effectuer</CheckBox>
+                            <CheckBox IsChecked="True">Réparations majeures à effectuer</CheckBox>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1" x:Name="DatesWag">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Date Début:" VerticalAlignment="Center" x:Name="LblDateDebutWag" HorizontalAlignment="Left"/>
+                        <DatePicker Grid.Column="1" Margin="2" VerticalAlignment="Center" x:Name="DateDebutWag" SelectedDate="10.28.2020" SelectedDateFormat="Long"/>
+                        <Label Grid.Column="2" Content="Date Fin:" VerticalAlignment="Center" x:Name="LblDateFinWag" HorizontalAlignment="Center"/>
+                        <DatePicker Grid.Column="3" Margin="2" VerticalAlignment="Center" x:Name="DateFinWag" SelectedDate="10.30.2020" SelectedDateFormat="Long"/>
+                    </Grid>
+                    <Grid Grid.Row="2" x:Name="ObsWag">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Observations:" x:Name="LblObsWag" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox Grid.Column="1" AcceptsReturn="True" TextWrapping="Wrap" x:Name="TextBoxObsMultiline" Text="Les essieux du wagon sont pas mal endomagés il faut penser à en commander des nouveaux." Margin="2"/>
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.Column="1">
+                        <StackPanel HorizontalAlignment="Center">
+                            <Label Content="Prêt à repartir:"/>
+                            <RadioButton>Oui</RadioButton>
+                            <RadioButton IsChecked="True">Non</RadioButton>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" x:Name="ImagesWag">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="BtnLoadImg" Content="Importer une image..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Grid.Row="1" Source="img/essieux_wagon.jpg"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Equipe" x:Name="Equipe">
+                <Grid x:Name="Emp">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Background="{DynamicResource BtnMoins}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25"/>
+                    <Grid Grid.Row="0" Grid.Column="1" x:Name="Emp1Nom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Nom:" x:Name="LblNomEmp1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" x:Name="TxtBxNomEmp1" Text="Dupont"/>
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.Column="2" x:Name="Emp1Prenom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Prenom:" x:Name="LblPrenomEmp1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" x:Name="TxtBxPrenomEmp1" Text="David"/>
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.Column="3" x:Name="Emp1Poste">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Poste:" x:Name="LblPosteEmp1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <ComboBox>
+                                <ComboBoxItem>Soudeur</ComboBoxItem>
+                                <ComboBoxItem>Charpentier</ComboBoxItem>
+                                <ComboBoxItem>Peintre</ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">Conducteur</ComboBoxItem>
+                                <ComboBoxItem>Cariste</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                    <Button Background="{DynamicResource BtnMoins}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25"/>
+                    <Grid Grid.Row="1" Grid.Column="1" x:Name="Emp2Nom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Nom:" x:Name="LblNomEmp2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" x:Name="TxtBxNomEmp2" Text="Doe"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="2" x:Name="Emp2Prenom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Prenom:" x:Name="LblPrenomEmp2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" x:Name="TxtBxPrenomEmp2" Text="Joe"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="3" x:Name="Emp2Poste">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Poste:" x:Name="LblPosteEmp2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <ComboBox>
+                                <ComboBoxItem IsSelected="True">Soudeur</ComboBoxItem>
+                                <ComboBoxItem>Charpentier</ComboBoxItem>
+                                <ComboBoxItem>Peintre</ComboBoxItem>
+                                <ComboBoxItem>Conducteur</ComboBoxItem>
+                                <ComboBoxItem>Cariste</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                    <Button Background="{DynamicResource BtnMoins}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25"/>
+                    <Grid Grid.Row="2" Grid.Column="1" x:Name="Emp3Nom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Nom:" x:Name="LblNomEmp3" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" x:Name="TxtBxNomEmp3" Text="Lariviere"/>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="2" x:Name="Emp3Prenom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Prenom:" x:Name="LblPrenomEmp3" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" x:Name="TxtBxPrenomEmp3" Text="Jacques"/>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="3" x:Name="Emp3Poste">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Poste:" x:Name="LblPosteEmp3" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <ComboBox>
+                                <ComboBoxItem>Soudeur</ComboBoxItem>
+                                <ComboBoxItem>Charpentier</ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">Peintre</ComboBoxItem>
+                                <ComboBoxItem>Conducteur</ComboBoxItem>
+                                <ComboBoxItem>Cariste</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                    <Button Background="{DynamicResource BtnPlus}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="2" x:Name="Bouttons">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Reinitialiser" VerticalAlignment="Center" x:Name="BtnReinitialiser" Margin="5" />
+                <Button Content="Annuler" VerticalAlignment="Center" x:Name="BtnAnnuler" Margin="5"/>
+                <Button Content="Valider" VerticalAlignment="Center" x:Name="BtnValider" Margin="5"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
