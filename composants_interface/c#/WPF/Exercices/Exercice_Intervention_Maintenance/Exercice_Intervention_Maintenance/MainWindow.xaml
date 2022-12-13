@@ -1,0 +1,146 @@
+﻿<Window x:Class="Exercice_Intervention_Maintenance.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercice_Intervention_Maintenance"
+        mc:Ignorable="d"
+        Title="Interventions maintenance" Height="550" Width="1000">
+    <Grid x:Name="App">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1" x:Name="Annee">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.06*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Année:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <ComboBox Grid.Column="1" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center">
+                <ComboBoxItem>2018</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">2019</ComboBoxItem>
+                <ComboBoxItem>2020</ComboBoxItem>
+                <ComboBoxItem>2021</ComboBoxItem>
+                <ComboBoxItem>2022</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2" x:Name="Interventions">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <GroupBox Header="Interventions">
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Num" Width="*"/>
+                        <DataGridTextColumn Header="Prestataire" Width="*"/>
+                        <DataGridTextColumn Header="CodeUEM" Width="*"/>
+                        <DataGridTextColumn Header="TypeTravail" Width="*"/>
+                        <DataGridTextColumn Header="PointsKm" Width="*"/>
+                        <DataGridTextColumn Header="Volume" Width="*"/>
+                        <DataGridTextColumn Header="PrixUnitaire" Width="*"/>
+                        <DataGridTextColumn Header="DateReception" Width="*"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                </DataGrid>
+            </GroupBox>
+            <Grid Grid.Row="1" x:Name="Details">
+                <TabControl>
+                    <TabItem Header="UEM">
+                        <Grid x:Name="TabUEM">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.05*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <GroupBox Header="Accès UEM" BorderThickness="2" Grid.Row="0">
+                                    <StackPanel>
+                                        <RadioButton>Tous</RadioButton>
+                                        <RadioButton>Canal</RadioButton>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Code UEM" Grid.Row="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Code UEM:" Margin="1"/>
+                                        <TextBox Grid.Column="1" Text="Nid-Ari-ND8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5"/>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                            <GroupBox Grid.Column="2" Header="Canal">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Content="Type de canal:" VerticalAlignment="Center"/>
+                                    <ComboBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                                        <ComboBoxItem IsSelected="True">distributeur</ComboBoxItem>
+                                    </ComboBox>
+                                    <Label Grid.Row="1" Grid.Column="0" Content="Canal:" VerticalAlignment="Top"/>
+                                    <ComboBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                                        <ComboBoxItem IsSelected="True">Nd-Dis-NDebouchage</ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Prévisions">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+                                <Label Content="Type de travail:" x:Name="LblTypeTravail"/>
+                                <TextBox x:Name="TxtBxTypeTravail" isR/>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Réalisations">
+                        <Grid>
+
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="3" x:Name="bouttons">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+        </Grid>
+    </Grid>
+</Window>
