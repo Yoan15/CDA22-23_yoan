@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exercice_Intervention_Maintenance"
         mc:Ignorable="d"
-        Title="Interventions maintenance" Height="550" Width="1000">
+        Title="Interventions maintenance" Height="550" Width="1200">
     <Grid x:Name="App">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*" />
@@ -71,7 +71,7 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <GroupBox Header="Accès UEM" BorderThickness="2" Grid.Row="0">
-                                    <StackPanel>
+                                    <StackPanel VerticalAlignment="Center">
                                         <RadioButton>Tous</RadioButton>
                                         <RadioButton>Canal</RadioButton>
                                     </StackPanel>
@@ -82,8 +82,8 @@
                                             <ColumnDefinition Width="1*"/>
                                             <ColumnDefinition Width="3*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Content="Code UEM:" Margin="1"/>
-                                        <TextBox Grid.Column="1" Text="Nid-Ari-ND8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5"/>
+                                        <Label Grid.Column="0" Content="Code UEM:" Margin="1" VerticalAlignment="Center"/>
+                                        <TextBox Grid.Column="1" Text="Nid-Ari-ND8/1d" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" BorderThickness="2"/>
                                     </Grid>
                                 </GroupBox>
                             </Grid>
@@ -109,30 +109,205 @@
                             </GroupBox>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Prévisions">
-                        <Grid>
+                    <TabItem Header="Prévisions/Réalisation">
+                        <Grid x:Name="PrevReal">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="3*"/>
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*" />
-                                <RowDefinition Height="1*" />
-                            </Grid.RowDefinitions>
-                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-                                <Label Content="Type de travail:" x:Name="LblTypeTravail" VerticalAlignment="Center"/>
-                                <TextBox x:Name="TxtBxTypeTravail" IsReadOnly="True" VerticalAlignment="Center" Text="Déblai pour remblai compacté" Background="{DynamicResource BackgroundDesactivate}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
-                                <Label Content="Type d'entretien:" x:Name="LblTypeEntretien" VerticalAlignment="Center"/>
-                                <TextBox x:Name="TxtBxTypeEntretien" IsReadOnly="True" VerticalAlignment="Center" Text="Courant" Background="{DynamicResource BackgroundDesactivate}"/>
-                            </StackPanel>
-                        </Grid>
-                    </TabItem>
-                    <TabItem Header="Réalisations">
-                        <Grid>
-
+                            <GroupBox Grid.Column="0" Header="Prévisions" Margin="0,0,10,2">
+                                <Grid x:Name="Prev">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Column="0" Grid.Row="0" x:Name="TypeTravailPrev">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Type de travail:" VerticalAlignment="Center" x:Name="LblTypeTravail"/>
+                                        <TextBox Grid.Column="1" Background="{DynamicResource BackgroundDesactivate}" VerticalAlignment="Center" Text="Nettoyage/Faucardage" x:Name="TxtBxTypeTravail" IsReadOnly="True"/>
+                                    </Grid>
+                                    <Grid Grid.Column="0" Grid.Row="1" x:Name="TypeEntretienPrev">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Type d'entretien:" VerticalAlignment="Center" x:Name="LblTypeEntretien"/>
+                                        <TextBox Grid.Column="1" Background="{DynamicResource BackgroundDesactivate}" VerticalAlignment="Center" Text="courant" x:Name="TxtBxTypeEntretien" IsReadOnly="True"/>
+                                    </Grid>
+                                    <Grid Grid.Column="0" Grid.Row="2" x:Name="PointsKmPrev">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Points Km Début:" VerticalAlignment="Center" x:Name="LblPointsKmDeb"/>
+                                        <TextBox Grid.Column="1" Grid.Row="0" Background="{DynamicResource BackgroundDesactivate}" VerticalAlignment="Center" Text="0" x:Name="TxtBxPointsKmDeb" IsReadOnly="True"/>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Points Km Fin:" VerticalAlignment="Center" x:Name="LblPointsKmFin"/>
+                                        <TextBox Grid.Column="1" Grid.Row="1" Background="{DynamicResource BackgroundDesactivate}" VerticalAlignment="Center" Text="320" x:Name="TxtBxPointsKmFin" IsReadOnly="True"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Grid.Row="0" x:Name="QuantitePrixUni">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" Content="Quantité:" VerticalAlignment="Center" x:Name="LblQuantitePrev"/>
+                                        <TextBox Grid.Row="0" Grid.Column="1" Background="{DynamicResource BackgroundDesactivate}" Text="2" VerticalAlignment="Center" x:Name="TxtBxQuantitePrev" IsReadOnly="True"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Content="Prix Unitaire:" VerticalAlignment="Center" x:Name="LblPrixUniPrev"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" Background="{DynamicResource BackgroundDesactivate}" Text="1900" VerticalAlignment="Center" x:Name="TxtBxPrixUniPrev" IsReadOnly="True"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="1" x:Name="Montant">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Montant:" VerticalAlignment="Center" x:Name="LblMontantPrev"/>
+                                        <TextBox Grid.Column="1" VerticalAlignment="Center" Text="3800" Background="{DynamicResource BackgroundDesactivate}" x:Name="TxtBxMontantPrev" IsReadOnly="True"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="1" x:Name="NatDefect">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1.1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Nature défectuosité:" VerticalAlignment="Top" x:Name="LblNatDefectPrev"/>
+                                        <TextBox Grid.Column="1" VerticalAlignment="Top" Text="3800" Background="{DynamicResource BackgroundDesactivate}" x:Name="TxtBxNatDefectPrev" IsReadOnly="True"/>
+                                    </Grid>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Column="1" Header="Réalisations" Margin="0,0,5,2">
+                                <Grid x:Name="Real">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Column="0" Grid.Row="0" x:Name="TypeTravailReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Type de travail:" VerticalAlignment="Center" x:Name="LblTypeTravailReal"/>
+                                        <ComboBox Grid.Column="1" VerticalAlignment="Center" x:Name="CmbBxTypeTravailReal">
+                                            <ComboBoxItem IsSelected="True">Nettoyage/Faucardage</ComboBoxItem>
+                                            <ComboBoxItem >Deblai pour remblai compacté</ComboBoxItem>
+                                        </ComboBox>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Partie Concernée:" VerticalAlignment="Center" x:Name="LblPartieConcerne"/>
+                                        <ComboBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" x:Name="CmbBxTypeTravailPartieConcerneeReal">
+                                            <ComboBoxItem IsSelected="True">Partie Concernée</ComboBoxItem>
+                                            <ComboBoxItem>Autre Partie Concernée</ComboBoxItem>
+                                        </ComboBox>
+                                    </Grid>
+                                    <Grid Grid.Column="0" Grid.Row="1" x:Name="TypeEntretienReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Type d'entretien:" VerticalAlignment="Center" x:Name="LblTypeEntretienReal"/>
+                                        <ComboBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" x:Name="CmbBxTypeEntretienReal">
+                                            <ComboBoxItem IsSelected="True">courant</ComboBoxItem>
+                                            <ComboBoxItem >préventif</ComboBoxItem>
+                                        </ComboBox>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Prestataire:" x:Name="LblPrestataireReal"/>
+                                        <ComboBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" x:Name="CmbBxPrestataireReal">
+                                            <ComboBoxItem IsSelected="True">Ent-0854665544A</ComboBoxItem>
+                                            <ComboBoxItem >Ent-0410000126J</ComboBoxItem>
+                                        </ComboBox>
+                                    </Grid>
+                                    <Grid Grid.Column="0" Grid.Row="2" x:Name="PointsKmReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Content="Points Km Début:" VerticalAlignment="Center" x:Name="LblPointsKmDebReal"/>
+                                        <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Text="0" x:Name="TxtBxPointsKmDebReal"/>
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Points Km Fin:" VerticalAlignment="Center" x:Name="LblPointsKmFinReal"/>
+                                        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Text="320" x:Name="TxtBxPointsKmFinReal"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Grid.Row="0" x:Name="QuantitePrixUniReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" Content="Quantité:" VerticalAlignment="Center" x:Name="LblQuantiteReal"/>
+                                        <TextBox Grid.Row="0" Grid.Column="1" Text="2" VerticalAlignment="Center" x:Name="TxtBxQuantiteReal"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Content="Prix Unitaire:" VerticalAlignment="Center" x:Name="LblPrixUniReal"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" Text="1900" VerticalAlignment="Center" x:Name="TxtBxPrixUniReal"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="1" x:Name="MontantReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Montant:" VerticalAlignment="Top" x:Name="LblMontantReal"/>
+                                        <TextBox Grid.Column="1" VerticalAlignment="Top" Text="3800" x:Name="TxtBxMontantReal"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="1" x:Name="PointsKmSuiteReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" Content="Numéro de contrat:" VerticalAlignment="Center"/>
+                                        <TextBox Grid.Row="0" Grid.Column="1" Text="588467" VerticalAlignment="Center"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Content="Date associée:" VerticalAlignment="Center"/>
+                                        <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="10.25.2020" SelectedDateFormat="Short" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="0" Grid.Column="2" x:Name="ObsReal">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Observations:" VerticalAlignment="Top" x:Name="LblObsReal"/>
+                                        <TextBox Grid.Column="1" AcceptsReturn="True" TextWrapping="Wrap" Text="Rien à dire." x:Name="TxtBxObsReal"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="2" x:Name="DateUpdate">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Content="Date mise à jour:" x:Name="LblDateUpdate" VerticalAlignment="Center"/>
+                                        <DatePicker Grid.Column="1" SelectedDate="10.31.2020" SelectedDateFormat="Short" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Grid>
+                            </GroupBox>
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -144,7 +319,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Valider" VerticalAlignment="Center" HorizontalAlignment="Right" Background="White" BorderBrush="{DynamicResource BtnValider}"/>
+                <Button Grid.Column="1" Content="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" BorderBrush="{DynamicResource BtnAnnuler}"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

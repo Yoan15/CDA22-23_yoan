@@ -6,5 +6,7 @@
     <Application.Resources>
          
         <SolidColorBrush x:Key="BackgroundDesactivate" Color="#FFCFCECE"/>
+        <SolidColorBrush x:Key="BtnValider" Color="#FF2BAA0F"/>
+        <SolidColorBrush x:Key="BtnAnnuler" Color="#FFA60707"/>
     </Application.Resources>
 </Application>
