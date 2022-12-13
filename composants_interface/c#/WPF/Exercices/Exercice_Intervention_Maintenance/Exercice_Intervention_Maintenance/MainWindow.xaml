@@ -121,8 +121,12 @@
                                 <RowDefinition Height="1*" />
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-                                <Label Content="Type de travail:" x:Name="LblTypeTravail"/>
-                                <TextBox x:Name="TxtBxTypeTravail" isR/>
+                                <Label Content="Type de travail:" x:Name="LblTypeTravail" VerticalAlignment="Center"/>
+                                <TextBox x:Name="TxtBxTypeTravail" IsReadOnly="True" VerticalAlignment="Center" Text="Déblai pour remblai compacté" Background="{DynamicResource BackgroundDesactivate}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+                                <Label Content="Type d'entretien:" x:Name="LblTypeEntretien" VerticalAlignment="Center"/>
+                                <TextBox x:Name="TxtBxTypeEntretien" IsReadOnly="True" VerticalAlignment="Center" Text="Courant" Background="{DynamicResource BackgroundDesactivate}"/>
                             </StackPanel>
                         </Grid>
                     </TabItem>
