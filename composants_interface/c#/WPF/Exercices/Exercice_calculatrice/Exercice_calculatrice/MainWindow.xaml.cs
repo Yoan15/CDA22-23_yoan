@@ -25,22 +25,9 @@ namespace Exercice_calculatrice
             InitializeComponent();
         }
 
-        double nb1;
-        double nb2;
-        string numbers;
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             LblContent.Text = (string)LblContent.Text + ((Button)sender).Content;
-            //nb1 = Convert.ToDouble(LblContent.Text);
-            //test.Content = LblContent.Text;
-            //char[] operand = { '+', '-', '*', '/' };
-            //numbers = Convert.ToString(LblContent.Text.Split(operand));
-            //foreach (var num in numbers)
-            //{
-            //    test.Content = $"{num}";
-            //}
-
         }
 
         private void Clear(object sender, RoutedEventArgs e)
@@ -50,12 +37,50 @@ namespace Exercice_calculatrice
 
         private void Equals(object sender, RoutedEventArgs e)
         {
-            LblContent.Text = "";
+            //LblContent.Text = "";
+            string ope;
+            double nb1;
+            double nb2;
+            int nbOpe = 0;
+
+            if (LblContent.Text.Contains("+"))
+            {
+                nbOpe = LblContent.Text.IndexOf("+");
+            }
+            else if (LblContent.Text.Contains("-"))
+            {
+                nbOpe = LblContent.Text.IndexOf("-");
+            }
+            else if (LblContent.Text.Contains("*"))
+            {
+                nbOpe = LblContent.Text.IndexOf("*");
+            }
+            else if (LblContent.Text.Contains("/"))
+            {
+                nbOpe = LblContent.Text.IndexOf("/");
+            }
+
+            ope = LblContent.Text.Substring(nbOpe, 1);
+            nb1 = Convert.ToDouble(LblContent.Text.Substring(0, nbOpe));
+            nb2 = Convert.ToDouble(LblContent.Text.Substring(nbOpe + 1, LblContent.Text.Length - nbOpe - 1));
+
+            if (ope == "+")
+            {
+                LblContent.Text += "=" + (nb1 + nb2);
+            }
+            else if (ope == "-")
+            {
+                LblContent.Text += "=" + (nb1 - nb2);
+            }
+            else if (ope == "*")
+            {
+                LblContent.Text += "=" + (nb1 * nb2);
+            }
+            else if (ope == "/")
+            {
+                LblContent.Text += "=" + (nb1 / nb2);
+            }
+
         }
-
-        //private void Operand(object sender, RoutedEventArgs e)
-        //{
-
-        //}
     }
 }
