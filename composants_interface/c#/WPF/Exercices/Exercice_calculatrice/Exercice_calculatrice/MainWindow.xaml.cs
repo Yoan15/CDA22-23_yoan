@@ -25,11 +25,37 @@ namespace Exercice_calculatrice
             InitializeComponent();
         }
 
+        double nb1;
+        double nb2;
+        string numbers;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             LblContent.Text = (string)LblContent.Text + ((Button)sender).Content;
+            //nb1 = Convert.ToDouble(LblContent.Text);
+            //test.Content = LblContent.Text;
+            //char[] operand = { '+', '-', '*', '/' };
+            //numbers = Convert.ToString(LblContent.Text.Split(operand));
+            //foreach (var num in numbers)
+            //{
+            //    test.Content = $"{num}";
+            //}
+
         }
 
+        private void Clear(object sender, RoutedEventArgs e)
+        {
+            LblContent.Text = String.Empty;
+        }
 
+        private void Equals(object sender, RoutedEventArgs e)
+        {
+            LblContent.Text = "";
+        }
+
+        //private void Operand(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }
