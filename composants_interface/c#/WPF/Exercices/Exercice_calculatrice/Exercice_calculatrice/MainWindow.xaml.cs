@@ -25,103 +25,63 @@ namespace Exercice_calculatrice
             InitializeComponent();
         }
 
-        double nb1 = 0;
-        double nb2;
-        double res;
-        string op;
+        public string operateur { get; set; }
+        public string nb1 { get; set; }
+        public string nb2 { get; set; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //LblContent.Text = (string)LblContent.Text + ((Button)sender).Content;
             //LblHistorique.Text = (string)LblHistorique.Text + ((Button)sender).Content;
 
-            if (nb1 == 0)
+            if (nb1 == null)
             {
-                nb1 = Convert.ToDouble((string)LblContent.Text + ((Button)sender).Content);
+                nb1 += (string)((Button)sender).Content;
+                LblHistorique.Content = nb1;
+                LblContent.Content = nb1;
             }
-            //else
-            //{
-            //    nb2 = Convert.ToDouble((string)LblContent.Text + ((Button)sender).Content);
-            //}
-            test.Content = nb1;
-
-            LblContent.Text = (string)LblContent.Text + ((Button)sender).Content;
-            //LblHistorique.Text = nb1 + op + nb2 + "=" + res;
+            else
+            {
+                nb2 += (string)((Button)sender).Content;
+                LblHistorique.Content = nb1 + operateur + nb2;
+                LblContent.Content = nb2;
+            }
+            //LblHistorique.Content = (string)LblHistorique.Content + ((Button)sender).Content;
+            //LblContent.Content = (string)LblContent.Content + ((Button)sender).Content;
         }
 
         private void Clear(object sender, RoutedEventArgs e)
         {
-            LblContent.Text = String.Empty;
+            nb1 = null;
+            nb2 = null;
+            LblContent.Content = null;
+            LblHistorique.Content = null;
         }
 
         private void Equals(object sender, RoutedEventArgs e)
         {
-            ////Test
-            //string op;
-            //double nb1;
-            //double nb2;
-            //int nbOp = 0;
-
-            //if (LblContent.Text.Contains("+"))
-            //{
-            //    nbOp = LblContent.Text.IndexOf("+");
-            //}
-            //else if (LblContent.Text.Contains("-"))
-            //{
-            //    nbOp = LblContent.Text.IndexOf("-");
-            //}
-            //else if (LblContent.Text.Contains("*"))
-            //{
-            //    nbOp = LblContent.Text.IndexOf("*");
-            //}
-            //else if (LblContent.Text.Contains("/"))
-            //{
-            //    nbOp = LblContent.Text.IndexOf("/");
-            //}
-
-            //op = LblContent.Text.Substring(nbOp, 1);
-            //nb1 = Convert.ToDouble(LblContent.Text.Substring(0, nbOp));
-            //nb2 = Convert.ToDouble(LblContent.Text.Substring(nbOp + 1, LblContent.Text.Length - nbOp - 1));
-
-            //if (op == "+")
-            //{
-            //    LblHistorique.Text += "=" + (nb1 + nb2);
-            //}
-            //else if (op == "-")
-            //{
-            //    LblHistorique.Text += "=" + (nb1 - nb2);
-            //}
-            //else if (op == "*")
-            //{
-            //    LblHistorique.Text += "=" + (nb1 * nb2);
-            //}
-            //else if (op == "/")
-            //{
-            //    LblHistorique.Text += "=" + (nb1 / nb2);
-            //}
-
-            
-
-            switch (op)
+            switch (operateur)
             {
                 case "+":
-                    res = nb1 + nb2;
+                    LblContent.Content = Convert.ToDouble(nb1) + Convert.ToDouble(nb2);
                     break;
                 case "-":
-                    res = nb1 - nb2;
+                    LblContent.Content = Convert.ToDouble(nb1) - Convert.ToDouble(nb2);
                     break;
                 case "*":
-                    res = nb1 * nb2;
+                    LblContent.Content = Convert.ToDouble(nb1) * Convert.ToDouble(nb2);
                     break;
                 case "/":
-                    res = nb1 / nb2;
+                    LblContent.Content = Convert.ToDouble(nb1) / Convert.ToDouble(nb2);
                     break;
             }
         }
 
         private void Operator(object sender, RoutedEventArgs e)
         {
-            op = Convert.ToString(((Button)sender).Content);
+            operateur = (string)((Button)sender).Content;
+            LblContent.Content = operateur;
+            LblHistorique.Content = (string)LblHistorique.Content + operateur;
         }
     }
 }
