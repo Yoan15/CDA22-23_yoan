@@ -28,6 +28,7 @@ namespace Exercice_calculatrice
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             LblContent.Text = (string)LblContent.Text + ((Button)sender).Content;
+            LblHistorique.Text = (string)LblHistorique.Text + ((Button)sender).Content;
         }
 
         private void Clear(object sender, RoutedEventArgs e)
@@ -38,49 +39,48 @@ namespace Exercice_calculatrice
         private void Equals(object sender, RoutedEventArgs e)
         {
             //LblContent.Text = "";
-            string ope;
+            string op;
             double nb1;
             double nb2;
-            int nbOpe = 0;
+            int nbOp = 0;
 
             if (LblContent.Text.Contains("+"))
             {
-                nbOpe = LblContent.Text.IndexOf("+");
+                nbOp = LblContent.Text.IndexOf("+");
             }
             else if (LblContent.Text.Contains("-"))
             {
-                nbOpe = LblContent.Text.IndexOf("-");
+                nbOp = LblContent.Text.IndexOf("-");
             }
             else if (LblContent.Text.Contains("*"))
             {
-                nbOpe = LblContent.Text.IndexOf("*");
+                nbOp = LblContent.Text.IndexOf("*");
             }
             else if (LblContent.Text.Contains("/"))
             {
-                nbOpe = LblContent.Text.IndexOf("/");
+                nbOp = LblContent.Text.IndexOf("/");
             }
 
-            ope = LblContent.Text.Substring(nbOpe, 1);
-            nb1 = Convert.ToDouble(LblContent.Text.Substring(0, nbOpe));
-            nb2 = Convert.ToDouble(LblContent.Text.Substring(nbOpe + 1, LblContent.Text.Length - nbOpe - 1));
+            op = LblContent.Text.Substring(nbOp, 1);
+            nb1 = Convert.ToDouble(LblContent.Text.Substring(0, nbOp));
+            nb2 = Convert.ToDouble(LblContent.Text.Substring(nbOp + 1, LblContent.Text.Length - nbOp - 1));
 
-            if (ope == "+")
+            if (op == "+")
             {
-                LblContent.Text += "=" + (nb1 + nb2);
+                LblHistorique.Text += "=" + (nb1 + nb2);
             }
-            else if (ope == "-")
+            else if (op == "-")
             {
-                LblContent.Text += "=" + (nb1 - nb2);
+                LblHistorique.Text += "=" + (nb1 - nb2);
             }
-            else if (ope == "*")
+            else if (op == "*")
             {
-                LblContent.Text += "=" + (nb1 * nb2);
+                LblHistorique.Text += "=" + (nb1 * nb2);
             }
-            else if (ope == "/")
+            else if (op == "/")
             {
-                LblContent.Text += "=" + (nb1 / nb2);
+                LblHistorique.Text += "=" + (nb1 / nb2);
             }
-
         }
     }
 }
