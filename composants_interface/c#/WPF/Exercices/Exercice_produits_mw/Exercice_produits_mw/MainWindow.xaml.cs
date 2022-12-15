@@ -52,7 +52,10 @@ namespace Exercice_produits_mw
             return liste;
         }
 
-        
-
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow row = sender as DataGridRow;
+            Produits produit = (Produits)row.Item;
+        }
     }
 }

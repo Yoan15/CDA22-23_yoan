@@ -18,6 +18,12 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Content="Liste de produits:" FontSize="15"/>
-        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="dgProduits"/>
+        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="dgProduits" AlternatingRowBackground="DarkSeaGreen" IsReadOnly="True">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
     </Grid>
 </Window>
