@@ -1,10 +1,14 @@
 {
-  {
-    "idProduit": 1,
-    "nomProduit": "produit 1"
-  },
-  {
-    "idProduit": 2,
-    "nomProduit": "produit 2"
-  }
+  "produits": [
+    {
+      "idProduit": 1,
+      "nomProduit": "Produit 1",
+      "quantite": 279
+    },
+    {
+      "idProduit": 2,
+      "nomProduit": "Produit 2",
+      "quantite": 467
+    }
+  ]
 }

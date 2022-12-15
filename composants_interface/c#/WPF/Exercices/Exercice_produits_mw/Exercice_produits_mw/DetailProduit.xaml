@@ -7,6 +7,53 @@
         mc:Ignorable="d"
         Title="Detail Produit" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Détails du Produit" Grid.Row="0" Grid.Column="1" FontSize="15" VerticalAlignment="Bottom" FontWeight="Bold"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Id du produit: " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Nom du produit: " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Quantité du produit: " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Modifier" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}" BorderBrush="{DynamicResource ButtonBorderValid}" FontSize="15"/>
+                <Button Grid.Column="1" Content="Annuler" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}" BorderBrush="{DynamicResource ButtonBorderCancel}" FontSize="15"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

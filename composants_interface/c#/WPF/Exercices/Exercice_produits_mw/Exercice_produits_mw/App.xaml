@@ -5,5 +5,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
+        <SolidColorBrush x:Key="BackgroundBtn" Color="White"/>
+        <SolidColorBrush x:Key="ButtonBorderValid" Color="#FF2C8511"/>
+        <SolidColorBrush x:Key="ButtonBorderCancel" Color="#FFA61010"/>
     </Application.Resources>
 </Application>
