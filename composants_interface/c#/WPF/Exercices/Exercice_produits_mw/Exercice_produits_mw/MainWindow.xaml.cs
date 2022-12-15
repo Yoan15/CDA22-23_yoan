@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,16 +37,22 @@ namespace Exercice_produits_mw
             List<Produits> liste = new List<Produits>();
 
             string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
-            string[] produits = System.IO.File.ReadAllLines(filename);
-            foreach (string produit in produits)
+            using (StreamReader reader = new StreamReader(filename))
             {
-                //Produits p = new Produits();
-                //liste.Add(p);
-                test.Content = produit;
-            }
+                string currentLine = reader.ReadLine();
 
+                while (currentLine != null)
+                {
+                    string[] sousProduit = currentLine.Split(",");
+                    Produits produit = new Produits(int.Parse(sousProduit[0]), sousProduit[1], int.Parse(sousProduit[2]));
+                    liste.Add(produit);
+                    currentLine = reader.ReadLine();
+                }
+            }
             return liste;
         }
+
+        
 
     }
 }
