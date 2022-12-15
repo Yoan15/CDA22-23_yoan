@@ -24,5 +24,19 @@ namespace Exercice_produits_mw
         {
             InitializeComponent();
         }
+
+        public void remplirDataGrid()
+        {
+            dgProduits.ItemsSource = creerListe();
+        }
+
+        private List<Produits> creerListe()
+        {
+            List<Produits> liste = new List<Produits>();
+
+
+
+            return liste;
+        }
     }
 }

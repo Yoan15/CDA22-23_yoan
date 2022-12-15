@@ -26,6 +26,8 @@ namespace Exercice_produits_mw
             string filename = "produits.json";
             string jsonString = File.ReadAllText(filename);
             var produit = JsonSerializer.Deserialize<Produits>(jsonString);
+
+            produit.Dump();
         }
     }
 }
