@@ -31,6 +31,7 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Id du produit: " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="textBoxIdProduit" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -38,6 +39,7 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Nom du produit: " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="textBoxNomProduit" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -45,14 +47,15 @@
                     <ColumnDefinition Width="4*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Quantité du produit: " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="textBoxQuantiteProduit" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Modifier" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}" BorderBrush="{DynamicResource ButtonBorderValid}" FontSize="15"/>
-                <Button Grid.Column="1" Content="Annuler" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}" BorderBrush="{DynamicResource ButtonBorderCancel}" FontSize="15"/>
+                <Button Grid.Column="0" Content="Modifier" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}"  FontSize="15" BorderBrush="{DynamicResource ButtonBorderModif}" BorderThickness="3" FontWeight="Bold" Padding="2"/>
+                <Button Grid.Column="1" Content="Annuler" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}" BorderBrush="{DynamicResource ButtonBorderCancel}" FontSize="15" BorderThickness="3" FontWeight="Bold" Padding="2"/>
             </Grid>
         </Grid>
     </Grid>

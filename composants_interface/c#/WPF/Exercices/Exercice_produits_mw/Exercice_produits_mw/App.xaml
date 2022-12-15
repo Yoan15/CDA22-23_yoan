@@ -8,5 +8,6 @@
         <SolidColorBrush x:Key="BackgroundBtn" Color="White"/>
         <SolidColorBrush x:Key="ButtonBorderValid" Color="#FF2C8511"/>
         <SolidColorBrush x:Key="ButtonBorderCancel" Color="#FFA61010"/>
+        <SolidColorBrush x:Key="ButtonBorderModif" Color="#FFBF8E23"/>
     </Application.Resources>
 </Application>

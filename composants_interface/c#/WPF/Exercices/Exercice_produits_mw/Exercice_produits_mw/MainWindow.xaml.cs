@@ -23,20 +23,29 @@ namespace Exercice_produits_mw
         public MainWindow()
         {
             InitializeComponent();
+            RemplirDataGrid();
         }
 
-        public void remplirDataGrid()
+        public void RemplirDataGrid()
         {
-            dgProduits.ItemsSource = creerListe();
+            dgProduits.ItemsSource = CreerListe();
         }
 
-        private List<Produits> creerListe()
+        private List<Produits> CreerListe()
         {
             List<Produits> liste = new List<Produits>();
 
-
+            string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
+            string[] produits = System.IO.File.ReadAllLines(filename);
+            foreach (string produit in produits)
+            {
+                //Produits p = new Produits();
+                //liste.Add(p);
+                test.Content = produit;
+            }
 
             return liste;
         }
+
     }
 }

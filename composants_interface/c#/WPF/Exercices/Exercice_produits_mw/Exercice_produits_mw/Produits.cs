@@ -21,13 +21,13 @@ namespace Exercice_produits_mw
             Quantite = quantite;
         }
 
-        private void produitsJson()
-        {
-            string filename = "produits.json";
-            string jsonString = File.ReadAllText(filename);
-            var produit = JsonSerializer.Deserialize<Produits>(jsonString);
+        //private void produitsJson()
+        //{
+        //    string filename = "produits.json";
+        //    string jsonString = File.ReadAllText(filename);
+        //    var produit = JsonSerializer.Deserialize<Produits>(jsonString);
 
-            produit.Dump();
-        }
+        //    produit.Dump();
+        //}
     }
 }
