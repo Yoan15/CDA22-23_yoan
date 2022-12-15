@@ -1,0 +1,39 @@
+﻿<Window x:Class="Exercice_multifenetres.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exercice_multifenetres"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid x:Name="Window">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="window1GridTop">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" x:Name="window1GridTextBox">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="TextBox:" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" x:Name="gridButtonMultiWindow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="Fermer la fenêtre" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Close_Window"/>
+        </Grid>
+    </Grid>
+</Window>
