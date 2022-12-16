@@ -19,9 +19,28 @@ namespace Exercice_produits_mw
     /// </summary>
     public partial class DetailProduit : Window
     {
-        public DetailProduit()
+        public DetailProduit(Produits produit, Window window)
         {
             InitializeComponent();
+            RemplirChamps(produit);
+        }
+
+        public void RemplirChamps(Produits produit)
+        {
+            labelIdProduit.Content = produit.IdProduit;
+            textBoxNomProduit.Text = produit.NomProduit;
+            textBoxQuantiteProduit.Text = produit.Quantite.ToString();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Produits produits = new Produits(Int32.Parse((string)labelIdProduit.Content), textBoxNomProduit.Text, Int32.Parse(textBoxQuantiteProduit.Text));
+            
+        }
+
+        private void CancelUpdate(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
