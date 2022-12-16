@@ -37,7 +37,6 @@ namespace Exercice_produits_mw
             List<Produits> liste = new List<Produits>();
 
             string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
-            //string filename = @"../../produits.txt";
             using (StreamReader reader = new StreamReader(filename))
             {
                 string currentLine = reader.ReadLine();
@@ -45,7 +44,7 @@ namespace Exercice_produits_mw
                 while (currentLine != null)
                 {
                     string[] sousProduit = currentLine.Split(",");
-                    Produits produit = new Produits(int.Parse(sousProduit[0]), sousProduit[1], int.Parse(sousProduit[2]));
+                    Produits produit = new Produits(int.Parse(sousProduit[0]), sousProduit[1], sousProduit[2], int.Parse(sousProduit[3]));
                     liste.Add(produit);
                     currentLine = reader.ReadLine();
                 }

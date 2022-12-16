@@ -25,5 +25,12 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
+        <Grid Grid.Row="2" Grid.Column="1" x:Name="bottomGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Name="btnAdd" Content="Ajouter un produit" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{DynamicResource ButtonBorderValid}" BorderThickness="2" Background="White" Padding="5"/>
+        </Grid>
     </Grid>
 </Window>

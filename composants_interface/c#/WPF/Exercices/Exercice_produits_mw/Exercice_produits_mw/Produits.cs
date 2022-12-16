@@ -12,12 +12,14 @@ namespace Exercice_produits_mw
     {
         public int IdProduit { get; set; }
         public string NomProduit { get; set; }
+        public string NumProduit { get; set; }
         public int Quantite { get; set; }
 
-        public Produits(int idProduit, string nomProduit, int quantite)
+        public Produits(int idProduit, string nomProduit, string numProduit, int quantite)
         {
             IdProduit = idProduit;
             NomProduit = nomProduit;
+            NumProduit = numProduit;
             Quantite = quantite;
         }
     }

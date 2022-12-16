@@ -30,12 +30,13 @@ namespace Exercice_produits_mw
         {
             labelIdProduit.Content = produit.IdProduit;
             textBoxNomProduit.Text = produit.NomProduit;
+            textBoxNumProduit.Text = produit.NumProduit;
             textBoxQuantiteProduit.Text = produit.Quantite.ToString();
         }
 
         private void ModifProduit(object sender, RoutedEventArgs e)
         {
-            Produits produits = new Produits(Int32.Parse((string)labelIdProduit.Content.ToString()), textBoxNomProduit.Text, Int32.Parse(textBoxQuantiteProduit.Text));
+            Produits produits = new Produits(Int32.Parse((string)labelIdProduit.Content.ToString()), textBoxNomProduit.Text, textBoxNumProduit.Text, Int32.Parse(textBoxQuantiteProduit.Text));
             ProduitsService.ModifProduit(produits);
             this.Close();
         }
