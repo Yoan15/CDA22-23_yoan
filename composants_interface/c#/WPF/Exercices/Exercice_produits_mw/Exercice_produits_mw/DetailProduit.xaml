@@ -54,7 +54,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Modifier" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}"  FontSize="15" BorderBrush="{DynamicResource ButtonBorderModif}" BorderThickness="3" FontWeight="Bold" Padding="2" Click="Button_Click"/>
+                <Button Grid.Column="0" Content="Modifier" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}"  FontSize="15" BorderBrush="{DynamicResource ButtonBorderModif}" BorderThickness="3" FontWeight="Bold" Padding="2" Click="ModifProduit"/>
                 <Button Grid.Column="1" Content="Annuler" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource BackgroundBtn}" BorderBrush="{DynamicResource ButtonBorderCancel}" FontSize="15" BorderThickness="3" FontWeight="Bold" Padding="2" Click="CancelUpdate"/>
             </Grid>
         </Grid>

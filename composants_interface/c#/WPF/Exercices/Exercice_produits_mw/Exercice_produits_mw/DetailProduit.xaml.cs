@@ -19,6 +19,7 @@ namespace Exercice_produits_mw
     /// </summary>
     public partial class DetailProduit : Window
     {
+        //static string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
         public DetailProduit(Produits produit, Window window)
         {
             InitializeComponent();
@@ -32,10 +33,11 @@ namespace Exercice_produits_mw
             textBoxQuantiteProduit.Text = produit.Quantite.ToString();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ModifProduit(object sender, RoutedEventArgs e)
         {
-            Produits produits = new Produits(Int32.Parse((string)labelIdProduit.Content), textBoxNomProduit.Text, Int32.Parse(textBoxQuantiteProduit.Text));
-            
+            Produits produits = new Produits(Int32.Parse((string)labelIdProduit.Content.ToString()), textBoxNomProduit.Text, Int32.Parse(textBoxQuantiteProduit.Text));
+            ProduitsService.ModifProduit(produits);
+            this.Close();
         }
 
         private void CancelUpdate(object sender, RoutedEventArgs e)
