@@ -18,7 +18,7 @@ namespace Exercice_produits_mw
             tab = File.ReadAllLines(filename);
             foreach (var item in tab)
             {
-                line = item.Split(",");
+                line = item.Split(";");
                 tabLine.Add(line);
             }
             return tabLine;

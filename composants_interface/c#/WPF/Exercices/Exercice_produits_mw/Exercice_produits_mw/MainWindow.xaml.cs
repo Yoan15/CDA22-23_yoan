@@ -43,7 +43,7 @@ namespace Exercice_produits_mw
 
                 while (currentLine != null)
                 {
-                    string[] sousProduit = currentLine.Split(",");
+                    string[] sousProduit = currentLine.Split(";");
                     Produits produit = new Produits(int.Parse(sousProduit[0]), sousProduit[1], sousProduit[2], int.Parse(sousProduit[3]));
                     liste.Add(produit);
                     currentLine = reader.ReadLine();
