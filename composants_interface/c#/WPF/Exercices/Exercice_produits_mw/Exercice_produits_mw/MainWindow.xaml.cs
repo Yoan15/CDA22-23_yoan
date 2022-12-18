@@ -36,7 +36,7 @@ namespace Exercice_produits_mw
         {
             List<Produits> liste = new List<Produits>();
 
-            string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
+            string filename = @"../../produits.txt";
             using (StreamReader reader = new StreamReader(filename))
             {
                 string currentLine = reader.ReadLine();

@@ -14,7 +14,7 @@ namespace Exercice_produits_mw
             string[] tab;
             string[] line;
             List<string[]> tabLine = new List<string[]>();
-            string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
+            string filename = @"../../../produits.txt";
             tab = File.ReadAllLines(filename);
             foreach (var item in tab)
             {

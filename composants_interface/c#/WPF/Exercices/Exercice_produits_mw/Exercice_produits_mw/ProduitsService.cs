@@ -9,7 +9,7 @@ namespace Exercice_produits_mw
     class ProduitsService
     {
 
-        static string filename = @"U:\59011-14-05\composants_interface\c#\WPF\Exercices\Exercice_produits_mw\Exercice_produits_mw\produits.txt";
+        static string filename = @"../../produits.txt";
         static public List<Produits> ListeProduits()
         {
             Produits produits;
