@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Exercice_CRUD_JSON
+namespace CrudProduitsProgression
 {
     /// <summary>
-    /// Interaction logic for GestionProduits.xaml
+    /// Logique d'interaction pour gestionProduits.xaml
     /// </summary>
     public partial class GestionProduits : Window
     {
@@ -24,7 +24,6 @@ namespace Exercice_CRUD_JSON
             InitializeComponent();
             RemplirDataGrid();
         }
-
         public void RemplirDataGrid()
         {
             dGProduits.ItemsSource = ProduitsService.ListProduits();

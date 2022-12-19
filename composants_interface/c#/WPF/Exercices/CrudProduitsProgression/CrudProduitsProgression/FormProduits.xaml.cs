@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Exercice_CRUD_JSON
+namespace CrudProduitsProgression
 {
     /// <summary>
-    /// Interaction logic for FormProduits.xaml
+    /// Logique d'interaction pour FormProduits.xaml
     /// </summary>
     public partial class FormProduits : Window
     {
@@ -58,19 +58,19 @@ namespace Exercice_CRUD_JSON
                     // on met un id par défaut, il sera écrasé dans ProduitsService
                     idProduit.Content = 0;
                     // on constitue un produit
-                    p = RemplirProduit();
+                    p = remplirProduit();
                     // on ajoute le produit
                     ProduitsService.AddProduit(p);
                     break;
                 case "modifier":
                     // on constitue un produit
-                    p = RemplirProduit();
+                    p = remplirProduit();
                     // on ajoute le produit
                     ProduitsService.UpdateProduit(p);
                     break;
                 case "supprimer":
                     // on constitue un produit
-                    p = RemplirProduit();
+                    p = remplirProduit();
                     // on ajoute le produit
                     ProduitsService.DeleteProduit(p);
                     break;
@@ -79,7 +79,7 @@ namespace Exercice_CRUD_JSON
             }
             this.Close();
         }
-        public Produits RemplirProduit()
+        public Produits remplirProduit()
         {
             Produits p = new Produits();
             p.IdProduit = (int)idProduit.Content;
@@ -96,7 +96,7 @@ namespace Exercice_CRUD_JSON
             tbxQuantite.Text = p.Quantite.ToString();
         }
 
-        public void DisabledInputs()
+        public void  DisabledInputs()
         {
             tbxLibelleProduit.IsEnabled = false;
             tbxNumeroProduit.IsEnabled = false;

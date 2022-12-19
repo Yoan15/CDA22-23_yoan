@@ -6,5 +6,8 @@
     <Application.Resources>
          
         <SolidColorBrush x:Key="ButtonSelect" Color="#FF16F4FF"/>
+        <SolidColorBrush x:Key="ButtonBorderAdd" Color="#FF42952A"/>
+        <SolidColorBrush x:Key="ButtonBorderModify" Color="#FFD3B324"/>
+        <SolidColorBrush x:Key="ButtonBorderDelete" Color="#FFAA0F0F"/>
     </Application.Resources>
 </Application>
