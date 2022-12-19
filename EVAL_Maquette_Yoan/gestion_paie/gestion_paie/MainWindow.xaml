@@ -48,7 +48,7 @@
         </Grid>
         <Grid x:Name="GridMid" Grid.Row="2" Grid.Column="1">
             <TabControl Grid.Row="1" Background="{DynamicResource BackgroundApp}">
-                <TabItem Header="Employe" Background="#FF70B689" x:Name="TabEmp">
+                <TabItem Header="Employe" Background="{DynamicResource BackgroundOnglet}" x:Name="TabEmp">
                     <GroupBox Header="Informations salarié" x:Name="InfosEmp" Margin="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -91,7 +91,10 @@
                                     <ColumnDefinition Width="2*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Content="Genre:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblGenre"/>
-                                <TextBox Grid.Column="1" x:Name="TxtBxGenre" VerticalAlignment="Center" Text="M" HorizontalAlignment="Left"/>
+                                <ComboBox Grid.Column="1" x:Name="CmbBxGenre" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <ComboBoxItem IsSelected="True">M</ComboBoxItem>
+                                    <ComboBoxItem>F</ComboBoxItem>
+                                </ComboBox>
                             </Grid>
                             <Grid x:Name="GridDateNaissance" Grid.Row="1" Grid.Column="1">
                                 <Grid.ColumnDefinitions>
@@ -131,7 +134,7 @@
                         </Grid>
                     </GroupBox>
                 </TabItem>
-                <TabItem Header="Fiche de paie" Background="#FF70B689" x:Name="TabFichePaie">
+                <TabItem Header="Fiche de paie" Background="{DynamicResource BackgroundOnglet}" x:Name="TabFichePaie">
                     <GroupBox Header="Données fiche de paie" x:Name="DataFichePaie" Margin="1">
                         <Grid x:Name="GridDataFichePaie">
                             <Grid.ColumnDefinitions>
@@ -410,7 +413,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="BtnModifier" Grid.Column="0" Content="Modifier" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderModifier}"/>
-                <Button x:Name="BtnValider" Grid.Column="1" Content="Valider" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderValider}"/>
+                <Button x:Name="BtnValider" Grid.Column="1" Content="Enregistrer" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderValider}"/>
                 <Button x:Name="BtnAnnuler" Grid.Column="2" Content="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderAnnuler}"/>
             </Grid>
         </Grid>

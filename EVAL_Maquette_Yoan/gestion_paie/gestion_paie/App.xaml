@@ -13,5 +13,6 @@
         </LinearGradientBrush>
         <SolidColorBrush x:Key="BtnBorderAnnuler" Color="#FFC31F1F"/>
         <SolidColorBrush x:Key="TextBoxDesactivated" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="BackgroundOnglet" Color="#FF70B689"/>
     </Application.Resources>
 </Application>
