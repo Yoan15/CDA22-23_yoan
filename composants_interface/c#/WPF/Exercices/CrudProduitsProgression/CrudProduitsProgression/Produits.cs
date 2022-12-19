@@ -37,8 +37,18 @@ namespace CrudProduitsProgression
         /// <returns>vrai si les objets sont égaux (même Id)</returns>
         public override bool Equals(object obj)
         {
-            if (this.IdProduit == ((Produits) obj).IdProduit)
-                return true;
+            try
+            {
+                if (this.IdProduit == ((Produits) obj).IdProduit)
+                {
+                    return true;
+                }
+                
+            }
+            catch (Exception)
+            {
+
+            }
             return false;
         }
         
