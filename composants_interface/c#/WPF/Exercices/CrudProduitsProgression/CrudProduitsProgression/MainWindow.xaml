@@ -20,7 +20,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Button x:Name="btnProduits" Content="Produits"  Grid.Row="1" Grid.Column="1" Background="White" BorderBrush="{DynamicResource BtnSelect}" Click="AfficherProduits"/>
-        <Button x:Name="btnCategories" Content="Categories"   Grid.Row="3" Grid.Column="1" Background="White" BorderBrush="{DynamicResource BtnSelect}"/>
+        <Button x:Name="btnCategories" Content="Categories"   Grid.Row="3" Grid.Column="1" Background="White" BorderBrush="{DynamicResource BtnSelect}" Click="AfficherCategories"/>
         
     </Grid>
     

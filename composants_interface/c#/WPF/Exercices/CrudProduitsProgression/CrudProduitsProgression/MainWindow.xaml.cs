@@ -31,5 +31,11 @@ namespace CrudProduitsProgression
             Window gestionProduits = new GestionProduits();
             gestionProduits.ShowDialog();
         }
+
+        private void AfficherCategories(object sender, RoutedEventArgs e)
+        {
+            Window gestionCategories = new GestionCategories();
+            gestionCategories.ShowDialog();
+        }
     }
 }
