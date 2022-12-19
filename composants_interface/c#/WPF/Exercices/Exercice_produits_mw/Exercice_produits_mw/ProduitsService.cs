@@ -9,7 +9,7 @@ namespace Exercice_produits_mw
     class ProduitsService
     {
 
-        static string filename = @"../../produits.txt";
+        static string filename = @"../../../produits.txt";
         static public List<Produits> ListeProduits()
         {
             Produits produits;

@@ -36,7 +36,7 @@ namespace Exercice_produits_mw
         {
             List<Produits> liste = new List<Produits>();
 
-            string filename = @"../../produits.txt";
+            string filename = @"../../../produits.txt";
             using (StreamReader reader = new StreamReader(filename))
             {
                 string currentLine = reader.ReadLine();
