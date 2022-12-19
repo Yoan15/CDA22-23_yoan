@@ -24,6 +24,6 @@ namespace CrudProduitsProgression
             return liste;
         }
 
-
+        
     }
 }
