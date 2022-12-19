@@ -28,5 +28,6 @@ namespace CrudProduitsProgression
         {
             dGCategories.ItemsSource = CategoriesService.ListCategories();
         }
+
     }
 }

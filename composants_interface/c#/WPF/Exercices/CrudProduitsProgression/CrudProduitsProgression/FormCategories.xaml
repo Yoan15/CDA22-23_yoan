@@ -25,9 +25,10 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Label Content="Libelle Catégorie" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Libelle Catégorie:" Grid.Row="1" Grid.Column="1"/>
         <TextBox x:Name="tbxLibelleCategorie" Grid.Row="1" Grid.Column="3"/>
-        
+        <Label Content="Description Catégorie:" Grid.Row="3" Grid.Column="1"/>
+        <TextBox x:Name="txtbxDescCategorie" Grid.Row="3" Grid.Column="3"/>
         <Button x:Name="btnValider" Content="Valider" Grid.Column="1" Grid.Row="7" Background="White" BorderBrush="{DynamicResource BtnBorderAdd}"/>
         <Button x:Name="annuler" Content="Annuler" Grid.Column="3" Grid.Row="7" Background="White" BorderBrush="{DynamicResource BtnBorderDeleteOrCancel1}"/>
         <Label x:Name="idCategorie" Grid.Column="1"/>
