@@ -7,6 +7,10 @@
          
         <SolidColorBrush x:Key="BtnBorderModifier" Color="#FFD18414"/>
         <SolidColorBrush x:Key="BtnBorderValider" Color="#FF3AC12D"/>
+        <LinearGradientBrush x:Key="BackgroundApp" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF70B689" Offset="0"/>
+            <GradientStop Color="#FFF7F7F7" Offset="1"/>
+        </LinearGradientBrush>
         <SolidColorBrush x:Key="BtnBorderAnnuler" Color="#FFC31F1F"/>
         <SolidColorBrush x:Key="TextBoxDesactivated" Color="#FFE6E6E6"/>
     </Application.Resources>
