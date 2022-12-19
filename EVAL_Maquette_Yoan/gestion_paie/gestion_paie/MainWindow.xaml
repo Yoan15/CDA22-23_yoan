@@ -1,0 +1,386 @@
+﻿<Window x:Class="gestion_paie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gestion_paie"
+        mc:Ignorable="d"
+        Title="Gestion Paie" Height="550" Width="1000">
+    <Grid x:Name="App">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="TopGrid" Grid.Column="1" Grid.Row="1">
+            <GroupBox Header="Informations salarié" x:Name="InfosEmp">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="GridMatricule" Grid.Row="0" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Matricule:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblMatricule"/>
+                        <TextBox Grid.Column="1" x:Name="TxtBxMatricule" VerticalAlignment="Center" Text="856325" HorizontalAlignment="Left" IsReadOnly="True" Background="{DynamicResource TextBoxDesactivated}" VerticalContentAlignment="Center"/>
+                    </Grid>
+                    <Grid x:Name="GridNom" Grid.Row="0" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Nom:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblNom"/>
+                        <TextBox Grid.Column="1" x:Name="TxtBxNom" VerticalAlignment="Center" Text="TIKDAM"/>
+                    </Grid>
+                    <Grid x:Name="GridPrenom" Grid.Row="0" Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Prenom:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblPrenom"/>
+                        <TextBox Grid.Column="1" x:Name="TxtBxPrenom" VerticalAlignment="Center" Text="Ahmed"/>
+                    </Grid>
+                    <Grid x:Name="GridGenre" Grid.Row="1" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Genre:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblGenre"/>
+                        <TextBox Grid.Column="1" x:Name="TxtBxGenre" VerticalAlignment="Center" Text="M" HorizontalAlignment="Left"/>
+                    </Grid>
+                    <Grid x:Name="GridDateNaissance" Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Date de naissance:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblDateNaissance"/>
+                        <DatePicker Grid.Column="1" x:Name="DatePickerNaissance" VerticalAlignment="Center" SelectedDate="10.01.1981" SelectedDateFormat="Short"/>
+                    </Grid>
+                    <Grid x:Name="GridSituFamille" Grid.Row="1" Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Situation familliale:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="LblSituFamille"/>
+                        <ComboBox Grid.Column="1" x:Name="CmbBxSituFamille" VerticalAlignment="Center">
+                            <ComboBoxItem IsSelected="True">Célibataire</ComboBoxItem>
+                            <ComboBoxItem>Marié(e)</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                    <Grid x:Name="GridNbEnfants" Grid.Row="2" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Nombre d'enfant(s):" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="LblNbEnfants"/>
+                        <TextBox x:Name="TxtBxNbEnfants" Grid.Column="1" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </Grid>
+                    <Grid x:Name="GridAdresse" Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Adresse:" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="LblAdresse"/>
+                        <TextBox x:Name="TxtBxAdresse" Grid.Column="1" Text="215 BLD Ch de Gaulle 95000 Paris" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid x:Name="GridMid" Grid.Row="2" Grid.Column="1">
+            <GroupBox Header="Données fiche de paie" x:Name="DataFichePaie">
+                <Grid x:Name="GridDataFichePaie">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.ColumnSpan="3" x:Name="GridMoisNbHeure">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="GridMois">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Mois de:" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="LblMois"/>
+                            <ComboBox x:Name="CmbBxMois" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <ComboBoxItem IsSelected="True">Janvier</ComboBoxItem>
+                                <ComboBoxItem>Février</ComboBoxItem>
+                                <ComboBoxItem>Mars</ComboBoxItem>
+                                <ComboBoxItem>Avril</ComboBoxItem>
+                                <ComboBoxItem>Mai</ComboBoxItem>
+                                <ComboBoxItem>Juin</ComboBoxItem>
+                                <ComboBoxItem>Juillet</ComboBoxItem>
+                                <ComboBoxItem>Aout</ComboBoxItem>
+                                <ComboBoxItem>Septembre</ComboBoxItem>
+                                <ComboBoxItem>Octobre</ComboBoxItem>
+                                <ComboBoxItem>Novembre</ComboBoxItem>
+                                <ComboBoxItem>Décembre</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                        <Grid Grid.Column="1" x:Name="GridNbHeure">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Nombre d'heures effectuées:" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblNbHeures"/>
+                            <TextBox x:Name="TxtBxNbHeures" Grid.Column=" 1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="191"/>
+                        </Grid>
+                    </Grid>
+                    <GroupBox Header="Salaire de base" Grid.Row="1" Grid.Column="0" Margin="1" x:Name="DataSalaireBase">
+                        <Grid x:Name="GridSalaireBase">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="GridBaseSalaireBase" Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Base:" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" x:Name="LblBaseSalaireBase"/>
+                                <TextBox x:Name="TxtBxBaseSalaireBase" Grid.Column="1" VerticalAlignment="Center" Text="191"/>
+                            </Grid>
+                            <Grid x:Name="GridTauxSalaireBase" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Taux:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblTauxSalaireBase"/>
+                                <TextBox x:Name="TxtBxTauxSalaireBase" Grid.Column="1" VerticalAlignment="Center" Text="36,65"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Prime Anciennté" Grid.Row="1" Grid.Column="1" Margin="1" x:Name="DataPrimeAnciennte">
+                        <Grid x:Name="GridPrimeAnciennte">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="GridBasePrimeAnciennte" Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Base:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblBasePrimeAnciennte"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxBasePrimeAnciennte" VerticalAlignment="Center" Text="7000"/>
+                            </Grid>
+                            <Grid x:Name="GridTauxPrimeAnciennte" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Taux:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblTauxPrimeAnciennte"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxTauxPrimeAnciennte" VerticalAlignment="Center" Text="10"/>
+                            </Grid>
+                            <Grid x:Name="GridAPayerPrimeAnciennte" Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="A Payer:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblAPayerPrimeAnciennte"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxAPayerPrimeAnciennte" VerticalAlignment="Center" Text="7000"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Salaire Brut" Grid.Row="1" Grid.Column="3" Margin="1" x:Name="DataSalaireBrut">
+                        <Grid x:Name="GridSalaireBrut">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="A payer:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblAPayerSalaireBrut"/>
+                            <TextBox Grid.Column="1" x:Name="TxtBxAPayerSalaireBrut" VerticalAlignment="Center" HorizontalAlignment="Left" Text="7700"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Cotisation CNSS" Grid.Row="2" Grid.Column="0" Margin="1" x:Name="DataCotisationCNSS">
+                        <Grid x:Name="GridCotisationCNSS">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="GridBaseCotisationCNSS" Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Base:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblBaseCotisationCNSS"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxBaseCotisationCNSS" VerticalAlignment="Center" Text="7000"/>
+                            </Grid>
+                            <Grid x:Name="GridTauxCotisationCNSS" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Taux:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblTauxCotisationCNSS"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxTauxCotisationCNSS" VerticalAlignment="Center" Text="4,48"/>
+                            </Grid>
+                            <Grid x:Name="GridARetenirCotisationCNSS" Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="A Retenir:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblARetenirCotisationCNSS"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxARetenirCotisationCNSS" VerticalAlignment="Center" Text="313,60"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="AMO" Grid.Row="2" Grid.Column="1" Margin="1" x:Name="DataAMO">
+                        <Grid x:Name="GridAMO">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="GridBaseAMO" Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Base:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblBaseAMO"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxBaseAMO" VerticalAlignment="Center" Text="7000"/>
+                            </Grid>
+                            <Grid x:Name="GridTauxAMO" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Taux:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblTauxAMO"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxTauxAMO" VerticalAlignment="Center" Text="2,26"/>
+                            </Grid>
+                            <Grid x:Name="GridARetenirAMO" Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="A Retenir:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblARetenirAMO"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxARetenirAMO" VerticalAlignment="Center" Text="158,20"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="IGR" Grid.Row="2" Grid.Column="2" Margin="1" x:Name="DataIGR">
+                        <Grid x:Name="GridIGR">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="GridBaseIGR" Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Base:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblBaseIGR"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxBaseIGR" VerticalAlignment="Center" Text="7000"/>
+                            </Grid>
+                            <Grid x:Name="GridTauxIGR" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Taux:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblTauxIGR"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxTauxIGR" VerticalAlignment="Center" Text="20"/>
+                            </Grid>
+                            <Grid x:Name="GridARetenirIGR" Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="A Retenir:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblARetenirIGR"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxARetenirIGR" VerticalAlignment="Center" Text="1400"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Mutuelle" Grid.Row="3" Grid.Column="0" Margin="1" x:Name="DataMutuelle">
+                        <Grid x:Name="GridMutuelle">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="GridBaseMutuelle" Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Base:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblBaseMutuelle"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxBaseMutuelle" VerticalAlignment="Center" Text="20"/>
+                            </Grid>
+                            <Grid x:Name="GridTauxMutuelle" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Taux:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblTauxMutuelle"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxTauxMutuelle" VerticalAlignment="Center" Text="1"/>
+                            </Grid>
+                            <Grid x:Name="GridARetenirMutuelle" Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="A Retenir:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblARetenirMutuelle"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxARetenirMutuelle" VerticalAlignment="Center" Text="20"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Net à payer" Grid.Row="4" Grid.Column="2" Margin="1" x:Name="DataNetAPayer">
+                        <Grid x:Name="GridNetAPayer">
+                            <Grid x:Name="GridAPayerNetAPayer">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="A payer:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LblAPayerNetAPayer"/>
+                                <TextBox Grid.Column="1" x:Name="TxtBxAPayerNetAPayer" VerticalAlignment="Center" Text="5808,20"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid x:Name="BotGrid" Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="GridBtn" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BtnModifier" Grid.Column="0" Content="Modifier" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderModifier}"/>
+                <Button x:Name="BtnValider" Grid.Column="1" Content="Valider" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderValider}"/>
+                <Button x:Name="BtnAnnuler" Grid.Column="2" Content="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" BorderThickness="2" Background="White" BorderBrush="{DynamicResource BtnBorderAnnuler}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
