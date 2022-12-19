@@ -51,7 +51,5 @@ namespace CrudProduitsProgression
             }
             return false;
         }
-        
-        
     }
 }

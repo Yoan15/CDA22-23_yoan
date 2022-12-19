@@ -85,6 +85,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Categories.cs" />
+    <Compile Include="CategoriesService.cs" />
     <Compile Include="DaoJson.cs" />
     <Compile Include="FormCategories.xaml.cs">
       <DependentUpon>FormCategories.xaml</DependentUpon>

@@ -22,6 +22,11 @@ namespace CrudProduitsProgression
         public GestionCategories()
         {
             InitializeComponent();
+            RemplirDataGrid();
+        }
+        public void RemplirDataGrid()
+        {
+            dGCategories.ItemsSource = CategoriesService.ListCategories();
         }
     }
 }

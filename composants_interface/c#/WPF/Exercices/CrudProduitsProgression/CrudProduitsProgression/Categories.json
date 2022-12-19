@@ -1,3 +1,22 @@
-{
-
-}
+[
+  {
+    "IdCategorie": 1,
+    "LibelleCategorie": "Categorie1",
+    "DescCategorie":  "Ceci est la categorie numero 1."
+  },
+  {
+    "IdCategorie": 2,
+    "LibelleCategorie": "Categorie2",
+    "DescCategorie": "Ceci est la categorie numero 2."
+  },
+  {
+    "IdCategorie": 3,
+    "LibelleCategorie": "Categorie3",
+    "DescCategorie": "Ceci est la categorie numero 3."
+  },
+  {
+    "IdCategorie": 4,
+    "LibelleCategorie": "Categorie4",
+    "DescCategorie": "Ceci est la categorie numero 4."
+  }
+]
