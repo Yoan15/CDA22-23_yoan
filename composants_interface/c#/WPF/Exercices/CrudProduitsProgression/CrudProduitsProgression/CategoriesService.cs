@@ -24,7 +24,7 @@ namespace CrudProduitsProgression
             return liste;
         }
 
-        public static void EcrireProduits(List<Categories> liste)
+        public static void EcrireCategories(List<Categories> liste)
         {
             // on tranforme la liste en string
             string contenu = JsonConvert.SerializeObject(liste);
@@ -35,20 +35,20 @@ namespace CrudProduitsProgression
         public static void AddCategorie(Categories cat)
         {
             List<Categories> liste;
-            // on extrait la liste des produits
+            // on extrait la liste des catégories
             liste = ListCategories();
-            // on ajoute le produit concerné
+            // on ajoute la catégorie concernée
             liste.Add(cat);
             // on enregistre les modifications
-            EcrireProduits(liste);
+            EcrireCategories(liste);
         }
 
         public static void UpdateCategorie(Categories cat)
         {
             List<Categories> liste;
-            // on extrait la liste des produits
+            // on extrait la liste des catégories
             liste = ListCategories();
-            // on modifie le produit concerné
+            // on modifie la catégorie concernée
             foreach (var elt in liste)
             {
                 if (cat.IdCategorie == elt.IdCategorie)
@@ -58,7 +58,19 @@ namespace CrudProduitsProgression
                 }
             }
             // on enregistre les modifications
-            EcrireProduits(liste);
+            EcrireCategories(liste);
+        }
+
+        public static void DeleteCategorie(Categories cat)
+        {
+            List<Categories> liste;
+            // on extrait la liste des catégories
+            liste = ListCategories();
+            // on supprime la catégorie concerné
+            // pour utiliser Remove, il faut une méthode de comparaison
+            liste.Remove(cat);
+            // on enregistre les modifications
+            EcrireCategories(liste);
         }
     }
 }

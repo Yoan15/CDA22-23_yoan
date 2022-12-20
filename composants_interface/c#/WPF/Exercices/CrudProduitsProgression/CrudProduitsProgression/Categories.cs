@@ -28,6 +28,25 @@ namespace CrudProduitsProgression
         {
         }
 
+        /// <summary>
+        /// Méthode de comparaison du produit avec celui passé en paramètre
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>vrai si les objets sont égaux (même Id)</returns>
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                if (this.IdCategorie == ((Categories)obj).IdCategorie)
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
 
+            }
+            return false;
+        }
     }
 }

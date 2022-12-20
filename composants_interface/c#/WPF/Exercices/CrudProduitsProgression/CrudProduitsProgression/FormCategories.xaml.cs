@@ -48,7 +48,7 @@ namespace CrudProduitsProgression
             this.Close();
         }
 
-        private void btnValider_Click(object sender, RoutedEventArgs e)
+        private void valider_Click(object sender, RoutedEventArgs e)
         {
             Categories cat;
             switch (Mode)
@@ -61,6 +61,10 @@ namespace CrudProduitsProgression
                 case "modifier":
                     cat = RemplirCategorie();
                     CategoriesService.UpdateCategorie(cat);
+                    break;
+                case "supprimer":
+                    cat = RemplirCategorie();
+                    CategoriesService.DeleteCategorie(cat);
                     break;
                 default:
                     break;
