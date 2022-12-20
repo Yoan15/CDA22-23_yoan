@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityApi", "EntityApi\EntityApi.csproj", "{482843E9-1797-407A-93B3-D62A60C0A960}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{482843E9-1797-407A-93B3-D62A60C0A960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482843E9-1797-407A-93B3-D62A60C0A960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482843E9-1797-407A-93B3-D62A60C0A960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482843E9-1797-407A-93B3-D62A60C0A960}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1714F642-77E9-4DF3-8055-67A1EEBA13B4}
+	EndGlobalSection
+EndGlobal
