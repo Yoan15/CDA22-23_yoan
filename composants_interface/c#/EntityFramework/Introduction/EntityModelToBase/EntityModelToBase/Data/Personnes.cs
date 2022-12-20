@@ -9,8 +9,12 @@ namespace EntityModelToBase.Data
     public class Personnes
     {
         public int Id { get; set; }
+
+        // 2e façon de changer le type des données
         [MaxLength(50)]
         public string Prenom { get; set; }
+
+        
         [MaxLength(50)]
         public string Nom { get; set; }
         public int Age { get; set; }
