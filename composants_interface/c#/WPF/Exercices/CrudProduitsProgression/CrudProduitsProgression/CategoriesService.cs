@@ -24,6 +24,21 @@ namespace CrudProduitsProgression
             return liste;
         }
 
+        public static Categories FindById(Categories cat)
+        {
+            List<Categories> liste;
+            // on extrait la liste des catégories
+            liste = ListCategories();
+            // on boucle pour trouver l'élément
+            foreach (var elt in liste)
+            {
+                if (cat.IdCategorie == elt.IdCategorie)
+                    return elt;
+            }
+            // si la catégorie n'est pas trouvé, on renvoi une catégorie vide
+            return new Categories();
+        }
+
         public static void EcrireCategories(List<Categories> liste)
         {
             // on tranforme la liste en string
