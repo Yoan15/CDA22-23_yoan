@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="ObjectHelper.cs" />
     <Compile Include="Produits.cs" />
+    <Compile Include="ProduitsDTO.cs" />
     <Compile Include="ProduitsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

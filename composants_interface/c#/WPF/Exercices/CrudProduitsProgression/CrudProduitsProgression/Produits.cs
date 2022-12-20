@@ -12,8 +12,17 @@ namespace CrudProduitsProgression
         public string LibelleProduit { get; set; }
         public int NumeroProduit { get; set; }
         public int Quantite { get; set; }
+        public int IdCategorie { get; set; }
 
 
+        public Produits(int idProduit, string libelleProduit, int numeroProduit, int quantite, int idCategorie)
+        {
+            IdProduit = idProduit;
+            LibelleProduit = libelleProduit;
+            NumeroProduit = numeroProduit;
+            Quantite = quantite;
+            IdCategorie = idCategorie;
+        }
         public Produits(int idProduit, string libelleProduit, int numeroProduit, int quantite)
         {
             IdProduit = idProduit;
