@@ -28,22 +28,22 @@ namespace CrudProduitsProgression
         {
             dGCategories.ItemsSource = CategoriesService.ListCategories();
         }
-
+        private void dGCategories_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            AfficherForm("modifier");
+        }
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             AfficherForm("ajouter");
         }
-
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
             AfficherForm("modifier");
         }
-
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             AfficherForm("supprimer");
         }
-
         public void AfficherForm(string mode)
         {
             //on vérifie si une ligne est selectionnée

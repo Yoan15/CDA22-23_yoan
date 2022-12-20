@@ -35,6 +35,7 @@ namespace CrudProduitsProgression
                     break;
                 case "supprimer":
                     btnValider.Content = "Supprimer";
+                    DisableInputs();
                     RemplirInputs(cat);
                     break;
                 default:
@@ -66,6 +67,12 @@ namespace CrudProduitsProgression
             idCategorie.Content = cat.IdCategorie;
             tbxLibelleCategorie.Text = cat.LibelleCategorie;
             txtbxDescCategorie.Text = cat.DescCategorie;
+        }
+
+        public void DisableInputs()
+        {
+            tbxLibelleCategorie.IsEnabled = false;
+            txtbxDescCategorie.IsEnabled = false;
         }
     }
 }
