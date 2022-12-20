@@ -50,17 +50,31 @@ namespace CrudProduitsProgression
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
+            Categories cat;
+            switch (Mode)
+            {
+                //case "ajouter":
+                //    idCategorie.Content = 0;
+                //    cat = RemplirCategorie();
+                    
+                case "modifier":
+                    cat = RemplirCategorie();
+                    CategoriesService.UpdateCategorie(cat);
+                    break;
+                default:
+                    break;
+            }
             this.Close();
         }
 
-        //public Categories RemplirCategorie()
-        //{
-        //    Categories cat = new Categories();
-        //    cat.IdCategorie = (int)idCategorie.Content;
-        //    cat.LibelleCategorie = tbxLibelleCategorie.Text;
-        //    cat.DescCategorie = txtbxDescCategorie.Text;
-        //    return cat;
-        //}
+        public Categories RemplirCategorie()
+        {
+            Categories cat = new Categories();
+            cat.IdCategorie = (int)idCategorie.Content;
+            cat.LibelleCategorie = tbxLibelleCategorie.Text;
+            cat.DescCategorie = txtbxDescCategorie.Text;
+            return cat;
+        }
 
         public void RemplirInputs(Categories cat)
         {
