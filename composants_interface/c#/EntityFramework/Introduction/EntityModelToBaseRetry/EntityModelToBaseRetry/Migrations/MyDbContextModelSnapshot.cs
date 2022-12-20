@@ -23,10 +23,10 @@ namespace EntityModelToBaseRetry.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Desc")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Libelle")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(25)");
 
                     b.Property<int>("Prix")
                         .HasColumnType("int");

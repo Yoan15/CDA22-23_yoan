@@ -3,7 +3,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace EntityModelToBaseRetry.Migrations
 {
-    public partial class Initiate : Migration
+    public partial class Initiale : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +13,8 @@ namespace EntityModelToBaseRetry.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Libelle = table.Column<string>(type: "text", nullable: true),
-                    Desc = table.Column<string>(type: "text", nullable: true),
+                    Libelle = table.Column<string>(type: "varchar(25)", nullable: true),
+                    Desc = table.Column<string>(type: "varchar(100)", nullable: true),
                     Prix = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

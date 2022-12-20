@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityModelToBaseRetry.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20221220160923_Initiate")]
-    partial class Initiate
+    [Migration("20221220161449_Initiale")]
+    partial class Initiale
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,10 +25,10 @@ namespace EntityModelToBaseRetry.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Desc")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Libelle")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(25)");
 
                     b.Property<int>("Prix")
                         .HasColumnType("int");
