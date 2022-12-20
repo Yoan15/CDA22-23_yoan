@@ -32,6 +32,17 @@ namespace CrudProduitsProgression
             DaoJson.EcrireFichier(PATH, contenu);
         }
 
+        public static void AddCategorie(Categories cat)
+        {
+            List<Categories> liste;
+            // on extrait la liste des produits
+            liste = ListCategories();
+            // on ajoute le produit concerné
+            liste.Add(cat);
+            // on enregistre les modifications
+            EcrireProduits(liste);
+        }
+
         public static void UpdateCategorie(Categories cat)
         {
             List<Categories> liste;

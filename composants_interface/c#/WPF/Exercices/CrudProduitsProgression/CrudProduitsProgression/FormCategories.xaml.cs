@@ -53,10 +53,11 @@ namespace CrudProduitsProgression
             Categories cat;
             switch (Mode)
             {
-                //case "ajouter":
-                //    idCategorie.Content = 0;
-                //    cat = RemplirCategorie();
-                    
+                case "ajouter":
+                    idCategorie.Content = 0;
+                    cat = RemplirCategorie();
+                    CategoriesService.AddCategorie(cat);
+                    break;
                 case "modifier":
                     cat = RemplirCategorie();
                     CategoriesService.UpdateCategorie(cat);
