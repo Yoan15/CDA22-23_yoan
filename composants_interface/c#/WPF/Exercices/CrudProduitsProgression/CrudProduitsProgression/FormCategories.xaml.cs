@@ -19,9 +19,53 @@ namespace CrudProduitsProgression
     /// </summary>
     public partial class FormCategories : Window
     {
-        public FormCategories()
+        public string Mode { get; set; }
+        public FormCategories(Categories cat, string mode)
         {
             InitializeComponent();
+            Mode = mode;
+            switch (Mode)
+            {
+                case "ajouter":
+                    btnValider.Content = "Ajouter";
+                    break;
+                case "modifier":
+                    btnValider.Content = "Modifier";
+                    RemplirInputs(cat);
+                    break;
+                case "supprimer":
+                    btnValider.Content = "Supprimer";
+                    RemplirInputs(cat);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void annuler_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnValider_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        //public Categories RemplirCategorie()
+        //{
+        //    Categories cat = new Categories();
+        //    cat.IdCategorie = (int)idCategorie.Content;
+        //    cat.LibelleCategorie = tbxLibelleCategorie.Text;
+        //    cat.DescCategorie = txtbxDescCategorie.Text;
+        //    return cat;
+        //}
+
+        public void RemplirInputs(Categories cat)
+        {
+            idCategorie.Content = cat.IdCategorie;
+            tbxLibelleCategorie.Text = cat.LibelleCategorie;
+            txtbxDescCategorie.Text = cat.DescCategorie;
         }
     }
 }

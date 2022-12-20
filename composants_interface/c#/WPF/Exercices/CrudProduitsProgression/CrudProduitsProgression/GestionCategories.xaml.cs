@@ -29,5 +29,32 @@ namespace CrudProduitsProgression
             dGCategories.ItemsSource = CategoriesService.ListCategories();
         }
 
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AfficherForm("ajouter");
+        }
+
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
+        {
+            AfficherForm("modifier");
+        }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            AfficherForm("supprimer");
+        }
+
+        public void AfficherForm(string mode)
+        {
+            //on vérifie si une ligne est selectionnée
+            if (dGCategories.SelectedItem != null || mode == "ajouter")
+            {
+                Categories cat = (Categories)dGCategories.SelectedValue;
+                FormCategories f = new FormCategories(cat, mode);
+                f.ShowDialog();
+                // a la fermeture de la fenetre form, on remet le datagrid à jour
+                RemplirDataGrid();
+            }
+        }
     }
 }

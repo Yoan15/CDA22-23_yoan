@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrudProduitsProgression
 {
-    class Categories
+    public class Categories
     {
         public int IdCategorie { get; set; }
         public string LibelleCategorie { get; set; }

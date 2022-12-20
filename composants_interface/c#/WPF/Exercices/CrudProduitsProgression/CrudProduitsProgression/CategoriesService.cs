@@ -24,6 +24,12 @@ namespace CrudProduitsProgression
             return liste;
         }
 
-        
+        public static void EcrireProduits(List<Categories> liste)
+        {
+            // on tranforme la liste en string
+            string contenu = JsonConvert.SerializeObject(liste);
+            // on écrit dans le fichier
+            DaoJson.EcrireFichier(PATH, contenu);
+        }
     }
 }

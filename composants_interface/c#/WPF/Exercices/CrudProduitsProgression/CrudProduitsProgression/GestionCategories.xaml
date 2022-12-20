@@ -24,8 +24,8 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <DataGrid x:Name="dGCategories" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" IsReadOnly="True" SelectionMode="Single"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" Grid.Column="1" Grid.Row="3" Background="White" BorderBrush="{DynamicResource BtnBorderAdd}"/>
-        <Button x:Name="btnModifier" Content="Modifier" Grid.Column="3" Grid.Row="3" Background="White" BorderBrush="{DynamicResource BtnBorderModify}"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Grid.Column="5" Grid.Row="3" Background="White" BorderBrush="{DynamicResource BtnBorderDeleteOrCancel1}"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Grid.Column="1" Grid.Row="3" Background="White" BorderBrush="{DynamicResource BtnBorderAdd}" Click="btnAjouter_Click"/>
+        <Button x:Name="btnModifier" Content="Modifier" Grid.Column="3" Grid.Row="3" Background="White" BorderBrush="{DynamicResource BtnBorderModify}" Click="btnModifier_Click"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Grid.Column="5" Grid.Row="3" Background="White" BorderBrush="{DynamicResource BtnBorderDeleteOrCancel1}" Click="btnSupprimer_Click"/>
     </Grid>
 </Window>
