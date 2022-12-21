@@ -40,6 +40,9 @@ namespace EntityApi.Data.Services
             return _context.Personnes.ToList();
         }
 
-
+        public Personne GetPersonneById(int id)
+        {
+            return _context.Personnes.FirstOrDefault(p => p.Id == id);
+        }
     }
 }
