@@ -73,7 +73,7 @@ namespace EntityApi.Controllers
 
         //PATCH api/personnes/{id}
         [HttpPatch("{id}")]
-        public ActionResult PatchPersonne(int id, JsonPatchDocument<Personne> patchDoc)
+        public ActionResult PartialUpdatePersonne(int id, JsonPatchDocument<Personne> patchDoc)
         {
             var personneFromRepo = _service.GetPersonneById(id);
             if (personneFromRepo == null)
@@ -82,6 +82,15 @@ namespace EntityApi.Controllers
             }
 
             var personneToPatch = _mapper.Map<Personne>(personneFromRepo);
+            patchDoc.ApplyTo(personneToPatch, ModelState);
+
+            if (!TryValidateModel(personneToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(personneToPatch, personneFromRepo);
+            _service.UpdatePersonne(personneFromRepo);
 
             return NoContent();
         }
