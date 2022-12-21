@@ -2,6 +2,7 @@
 using EntityApi.Data.Dtos;
 using EntityApi.Data.Models;
 using EntityApi.Data.Services;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,40 @@ namespace EntityApi.Controllers
         {
             _service.AddPersonnes(personne);
             return CreatedAtRoute(nameof(GetPersonneById), new { Id = personne.Id }, personne);
+        }
+
+        //PUT api/personnes/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdatePersonne(int id, PersonnesDTO personne)
+        {
+            //pour trouver la personne a modifier on appelle la fonction GetPersonneById
+            var personneFromRepo = _service.GetPersonneById(id);
+            //si la variable personneFromRepo est vide, on renvoie NotFound()
+            if (personneFromRepo == null)
+            {
+                return NotFound();
+            }
+            personneFromRepo.Dump();
+            _mapper.Map(personne, personneFromRepo);
+            personneFromRepo.Dump();
+            //inutile mais gardé pour la cohérence
+            _service.UpdatePersonne(personneFromRepo);
+            return NoContent();
+        }
+
+        //PATCH api/personnes/{id}
+        [HttpPatch("{id}")]
+        public ActionResult PatchPersonne(int id, JsonPatchDocument<Personne> patchDoc)
+        {
+            var personneFromRepo = _service.GetPersonneById(id);
+            if (personneFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            var personneToPatch = _mapper.Map<Personne>(personneFromRepo);
+
+            return NoContent();
         }
     }
 }
