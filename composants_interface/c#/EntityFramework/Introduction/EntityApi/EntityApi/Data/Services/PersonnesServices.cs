@@ -15,12 +15,15 @@ namespace EntityApi.Data.Services
             _context = context;
         }
 
-        //public void AddPersonnes(Personne p)
-        //{
-        //    if (p == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(p));
-        //    }
-        //}
+        public void AddPersonnes(Personne p)
+        {
+            if (p == null)
+            {
+                throw new ArgumentNullException(nameof(p));
+            }
+            _context.Personnes.Remove(p);
+            _context.SaveChanges();
+        }
+
     }
 }
