@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EntityApi.Data.Dtos;
+using EntityApi.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,8 @@ namespace EntityApi.Data.Profiles
     {
         public PersonnesProfile()
         {
-            CreateMap<Personne, PersonnesDTO>
+            CreateMap<Personne, PersonnesDTO>();
+            CreateMap<PersonnesDTO, Personne>();
         }
     }
 }
