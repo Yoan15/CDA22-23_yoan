@@ -34,5 +34,12 @@ namespace EntityApi.Data.Services
             _context.Personnes.Remove(p);
             _context.SaveChanges();
         }
+
+        public IEnumerable<Personne> GetAllPersonnes()
+        {
+            return _context.Personnes.ToList();
+        }
+
+
     }
 }
