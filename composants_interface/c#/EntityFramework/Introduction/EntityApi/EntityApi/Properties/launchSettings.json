@@ -12,14 +12,14 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api/Personnes",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "EntityApi": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "api/Personnes",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",

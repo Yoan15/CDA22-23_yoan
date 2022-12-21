@@ -22,11 +22,24 @@ namespace EntityApi.Controllers
             _mapper = mapper;
         }
 
+        //GET api/personnes
         [HttpGet]
         public ActionResult<IEnumerable<PersonnesDTO>> getAllPersonnes()
         {
             var listePersonnes = _service.GetAllPersonnes();
             return Ok(_mapper.Map<IEnumerable<PersonnesDTO>>(listePersonnes));
+        }
+
+        //GET api/personnes/{id}
+        [HttpGet("{id}", Name = "GetPersonneById")]
+        public ActionResult<PersonnesDTO> GetPersonneById(int id)
+        {
+            var commandItem = _service.GetPersonneById(id);
+            if (commandItem != null)
+            {
+                return Ok(_mapper.Map<PersonnesDTO>(commandItem));
+            }
+            return NotFound();
         }
     }
 }
