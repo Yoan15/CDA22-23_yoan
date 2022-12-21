@@ -44,5 +44,10 @@ namespace EntityApi.Data.Services
         {
             return _context.Personnes.FirstOrDefault(p => p.Id == id);
         }
+
+        public void UpdatePersonne(Personne p)
+        {
+            //mettre à jour le context dans le constructeur par mapping et donner les modifs à la bdd
+        }
     }
 }
