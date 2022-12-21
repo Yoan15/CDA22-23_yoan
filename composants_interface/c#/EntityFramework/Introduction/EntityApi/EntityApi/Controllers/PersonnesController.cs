@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EntityApi.Data.Dtos;
+using EntityApi.Data.Models;
 using EntityApi.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -40,6 +41,14 @@ namespace EntityApi.Controllers
                 return Ok(_mapper.Map<PersonnesDTO>(commandItem));
             }
             return NotFound();
+        }
+
+        //POST api/personnes
+        [HttpPost]
+        public ActionResult<PersonnesDTO> CreatePersonne(Personne personne)
+        {
+            _service.AddPersonnes(personne);
+            return CreatedAtRoute(nameof(GetPersonneById), new { Id = personne.Id }, personne);
         }
     }
 }
