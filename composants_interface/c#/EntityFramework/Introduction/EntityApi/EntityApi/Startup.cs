@@ -1,4 +1,5 @@
 using EntityApi.Data;
+using EntityApi.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,7 @@ namespace EntityApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
+            services.AddTransient<PersonnesServices>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
