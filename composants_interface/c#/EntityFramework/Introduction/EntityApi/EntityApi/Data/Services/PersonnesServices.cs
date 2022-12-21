@@ -21,9 +21,18 @@ namespace EntityApi.Data.Services
             {
                 throw new ArgumentNullException(nameof(p));
             }
-            _context.Personnes.Remove(p);
+            _context.Personnes.Add(p);
             _context.SaveChanges();
         }
 
+        public void DeletePersonne(Personne p)
+        {
+            if (p == null)
+            {
+                throw new ArgumentNullException(nameof(p));
+            }
+            _context.Personnes.Remove(p);
+            _context.SaveChanges();
+        }
     }
 }
