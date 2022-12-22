@@ -30,6 +30,7 @@ namespace EntityApiDeuxTables
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<CategoriesServices>();
+            services.AddTransient<ProduitsServices>();
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
