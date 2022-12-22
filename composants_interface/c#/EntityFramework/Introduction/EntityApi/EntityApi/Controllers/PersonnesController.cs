@@ -94,5 +94,18 @@ namespace EntityApi.Controllers
 
             return NoContent();
         }
+
+        //DELETE api/personnes/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeletePersonne(int id)
+        {
+            var personneModelFromRepo = _service.GetPersonneById(id);
+            if (personneModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            _service.DeletePersonne(personneModelFromRepo);
+            return NoContent();
+        }
     }
 }
