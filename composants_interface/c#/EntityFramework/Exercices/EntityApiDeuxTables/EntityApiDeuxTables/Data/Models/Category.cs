@@ -9,5 +9,6 @@ namespace EntityApiDeuxTables.Data.Models
     {
         public int Id { get; set; }
         public string LibelleCategorie { get; set; }
+        public ICollection<Produit> Produits { get; set; }
     }
 }

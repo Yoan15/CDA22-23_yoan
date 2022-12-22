@@ -11,5 +11,6 @@ namespace EntityApiDeuxTables.Data.Models
         public string LibelleProduit { get; set; }
         public int Qte { get; set; }
         public int? IdCategorie { get; set; }
+        public Category Categorie { get; set; }
     }
 }
