@@ -26,7 +26,7 @@ namespace EntityApiDeuxTables.Controllers
 
         //GET toutes les catégories
         [HttpGet]
-        public ActionResult<IEnumerable<ProduitsDTO>> getAllCategories()
+        public ActionResult<IEnumerable<CategoriesDTO>> getAllCategories()
         {
             var listeCategories = _service.GetAllCategories();
             return Ok(_mapper.Map<IEnumerable<CategoriesDTO>>(listeCategories));

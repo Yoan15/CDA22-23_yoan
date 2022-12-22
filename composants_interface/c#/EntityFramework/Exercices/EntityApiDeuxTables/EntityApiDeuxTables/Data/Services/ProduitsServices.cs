@@ -21,7 +21,7 @@ namespace EntityApiDeuxTables.Data.Services
             {
                 throw new ArgumentNullException(nameof(p));
             }
-            _context.Produit.Add(p);
+            _context.Produits.Add(p);
             _context.SaveChanges();
         }
 
@@ -31,18 +31,18 @@ namespace EntityApiDeuxTables.Data.Services
             {
                 throw new ArgumentNullException(nameof(p));
             }
-            _context.Produit.Remove(p);
+            _context.Produits.Remove(p);
             _context.SaveChanges();
         }
 
         public IEnumerable<Produit> GetAllProduits()
         {
-            return _context.Produit.ToList();
+            return _context.Produits.ToList();
         }
 
         public Produit GetProduitById()
         {
-            return _context.Produit.FirstOrDefault();
+            return _context.Produits.FirstOrDefault();
         }
 
         public void UpdateProduit(Produit p)

@@ -9,7 +9,7 @@ namespace EntityApiDeuxTables.Data
 {
     public class MyDbContext:DbContext
     {
-        public DbSet<Produit> Produit { get; set; }
+        public DbSet<Produit> Produits { get; set; }
         public DbSet<Category> Categories { get; set; }
         public MyDbContext(DbContextOptions<MyDbContext> options):base(options)
         {

@@ -11,6 +11,6 @@ namespace EntityApiDeuxTables.Data.Dtos
         public string LibelleProduit { get; set; }
         public int Qte { get; set; }
         //public int IdCategorie { get; set; }
-        //public CategoriesDTO categorie { get; set; }
+        public CategoriesDTO categorie { get; set; }
     }
 }
