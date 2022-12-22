@@ -31,7 +31,9 @@ namespace EntityApiDeuxTables
         {
             services.AddTransient<CategoriesServices>();
             services.AddTransient<ProduitsServices>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
+            services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

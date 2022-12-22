@@ -31,18 +31,18 @@ namespace EntityApiDeuxTables.Data.Services
                 throw new ArgumentNullException(nameof(cat));
             }
 
-            _context.Categorie.Remove(cat);
+            _context.Categories.Remove(cat);
             _context.SaveChanges();
         }
 
         public IEnumerable<Category> GetAllCategories()
         {
-            return _context.Categorie.ToList();
+            return _context.Categories.ToList();
         }
 
         public Category GetCategoryById(int id)
         {
-            return _context.Categorie.FirstOrDefault(cat => cat.Id == id);
+            return _context.Categories.FirstOrDefault(cat => cat.Id == id);
         }
 
         public void UpdateCategorie(Category cat)
