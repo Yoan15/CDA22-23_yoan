@@ -8,5 +8,6 @@ namespace GestionStock.Data.Services
 {
     class ArticlesServices
     {
+        
     }
 }

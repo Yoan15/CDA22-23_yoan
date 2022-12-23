@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Class Services snippet</Title>
+			<Author>Alexandre Bertrand</Author>
+			<Description>Create a class services</Description>
+			<Shortcut>serv</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[private readonly $dbcontext$ _context;
+
+        public $entity$sServices($dbcontext$ context)
+        {
+            _context = context;
+        }
+
+        public void Add$entity$($poco$ $varpoco$)
+        {
+            if ($varpoco$ == null)
+            {
+                throw new ArgumentNullException(nameof($varpoco$));
+            }
+            _context.$entity$s.Add($varpoco$);
+            _context.SaveChanges();
+        }
+
+        public void Delete$entity$($poco$ $varpoco$)
+        {
+            if ($varpoco$ == null)
+            {
+                throw new ArgumentNullException(nameof($varpoco$));
+            }
+            _context.$entity$s.Remove($varpoco$);
+            _context.SaveChanges();
+        }
+
+        public IEnumerable<$poco$> GetAll$entity$s()
+        {
+            return _context.$entity$s.ToList();
+        }
+
+        public $poco$ Get$entity$ById(int id)
+        {
+            return _context.$entity$s.FirstOrDefault($varpoco$ => $varpoco$.Id$entity$ == id);
+        }
+
+        public void Update$entity$($poco$ $varpoco$)
+        {
+            if ($varpoco$ == null)
+            {
+                throw new ArgumentNullException(nameof($varpoco$));
+            }
+            _context.SaveChanges();
+        }]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>dbcontext</ID>
+					<ToolTip>Name of the Db Context Class</ToolTip>
+					<Default>MyDbContext</Default>
+				</Literal>
+				<Literal>
+					<ID>entity</ID>
+					<ToolTip>Name of the entity</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>poco</ID>
+					<ToolTip>Poco</ToolTip>
+					<Default>p</Default>
+				</Literal>
+				<Literal>
+					<ID>varpoco</ID>
+					<ToolTip>variable of Poco</ToolTip>
+					<Default>v</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
