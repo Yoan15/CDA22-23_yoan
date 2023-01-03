@@ -43,7 +43,7 @@ namespace testRelationsEntity.Data.Services
 
         public Contient GetContientById(int id)
         {
-            return _context.Contients.FirstOrDefault(c => c.IdContient == id);
+            return _context.Contients.FirstOrDefault(c => c.IdProduit == id);
         }
 
         public void UpdateContient(Contient c)

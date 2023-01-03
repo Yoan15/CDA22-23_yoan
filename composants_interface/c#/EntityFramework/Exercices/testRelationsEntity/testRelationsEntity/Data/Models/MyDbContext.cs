@@ -1,23 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using testRelationsEntity.Data.Models;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace testRelationsEntity.Data
+#nullable disable
+
+namespace testRelationsEntity.Data.Models
 {
-    public partial class MyDbContext:DbContext
+    public partial class MyDbContext : DbContext
     {
-
         public MyDbContext()
         {
-
         }
 
-        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)
+        public MyDbContext(DbContextOptions<MyDbContext> options)
+            : base(options)
         {
-
         }
 
         public virtual DbSet<Category> Categories { get; set; }
@@ -55,35 +52,31 @@ namespace testRelationsEntity.Data
 
             modelBuilder.Entity<Contient>(entity =>
             {
-                entity.HasKey(e => e.IdContient)
+                entity.HasKey(e => new { e.IdProduit, e.IdCategorie })
                     .HasName("PRIMARY");
 
                 entity.ToTable("contient");
 
                 entity.HasIndex(e => e.IdCategorie, "FK_contient_Categories");
 
-                entity.HasIndex(e => e.IdProduit, "FK_contient_Produits");
-
-                entity.Property(e => e.IdContient)
+                entity.Property(e => e.IdProduit)
                     .HasColumnType("int(11)")
-                    .HasColumnName("idContient");
+                    .HasColumnName("idProduit");
 
                 entity.Property(e => e.IdCategorie)
                     .HasColumnType("int(11)")
                     .HasColumnName("idCategorie");
 
-                entity.Property(e => e.IdProduit)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("idProduit");
-
                 entity.HasOne(d => d.Categorie)
                     .WithMany(p => p.Contients)
                     .HasForeignKey(d => d.IdCategorie)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_contient_Categories");
 
                 entity.HasOne(d => d.Produit)
                     .WithMany(p => p.Contients)
                     .HasForeignKey(d => d.IdProduit)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_contient_Produits");
             });
 
@@ -177,4 +170,3 @@ namespace testRelationsEntity.Data
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
-

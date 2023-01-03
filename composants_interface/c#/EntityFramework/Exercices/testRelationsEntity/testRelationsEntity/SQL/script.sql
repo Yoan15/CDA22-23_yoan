@@ -30,10 +30,16 @@ CREATE TABLE Villes(
    idPays INT NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+-- CREATE TABLE contient(
+--    idContient INT PRIMARY KEY,
+--    idProduit INT,
+--    idCategorie INT
+-- )ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 CREATE TABLE contient(
-   idContient INT PRIMARY KEY,
    idProduit INT,
-   idCategorie INT
+   idCategorie INT,
+   PRIMARY KEY(idProduit, idCategorie)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 ALTER TABLE Villes ADD CONSTRAINT FK_Villes_Pays FOREIGN KEY(idPays) REFERENCES Pays(idPays);
@@ -55,10 +61,14 @@ INSERT INTO Categories (idCategorie, nomCategorie) VALUES (1,"categorie1");
 INSERT INTO Categories (idCategorie, nomCategorie) VALUES (2,"categorie2");
 INSERT INTO Categories (idCategorie, nomCategorie) VALUES (3,"categorie3");
 
-INSERT INTO Produits (idProduit, nomProduit, quantiteProduit) VALUES (1,"produit1", 50);
-INSERT INTO Produits (idProduit, nomProduit, quantiteProduit) VALUES (2,"produit2", 450);
-INSERT INTO Produits (idProduit, nomProduit, quantiteProduit) VALUES (3,"produit3", 31);
+INSERT INTO Produits (idProduit, libelleProduit, quantiteProduit) VALUES (1,"produit1", 50);
+INSERT INTO Produits (idProduit, libelleProduit, quantiteProduit) VALUES (2,"produit2", 450);
+INSERT INTO Produits (idProduit, libelleProduit, quantiteProduit) VALUES (3,"produit3", 31);
 
-INSERT INTO contient (idContient, idProduit, idCategorie) VALUES (1, 2, 1);
-INSERT INTO contient (idContient, idProduit, idCategorie) VALUES (2, 1, 3);
-INSERT INTO contient (idContient, idProduit, idCategorie) VALUES (3, 3, 2);
+-- INSERT INTO contient (idContient, idProduit, idCategorie) VALUES (1, 2, 1);
+-- INSERT INTO contient (idContient, idProduit, idCategorie) VALUES (2, 1, 3);
+-- INSERT INTO contient (idContient, idProduit, idCategorie) VALUES (3, 3, 2);
+
+INSERT INTO contient (idProduit, idCategorie) VALUES (2, 1);
+INSERT INTO contient (idProduit, idCategorie) VALUES (1, 3);
+INSERT INTO contient (idProduit, idCategorie) VALUES (3, 2);
