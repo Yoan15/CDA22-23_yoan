@@ -33,6 +33,9 @@ namespace testRelationsEntity
             services.AddTransient<PersonnesServices>();
             services.AddTransient<VillesServices>();
             services.AddTransient<PaysServices>();
+            services.AddTransient<ProduitsServices>();
+            services.AddTransient<CategoriesServices>();
+            services.AddTransient<ContientsServices>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
