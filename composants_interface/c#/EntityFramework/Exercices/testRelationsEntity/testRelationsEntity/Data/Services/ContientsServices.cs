@@ -41,9 +41,9 @@ namespace testRelationsEntity.Data.Services
             return _context.Contients.ToList();
         }
 
-        public Contient GetContientById(int id)
+        public Contient GetContientById(int idProduit, int idCategorie)
         {
-            return _context.Contients.FirstOrDefault(c => c.IdProduit == id);
+            return _context.Contients.FirstOrDefault(c => c.IdProduit == idProduit && c.IdCategorie == idCategorie);
         }
 
         public void UpdateContient(Contient c)
