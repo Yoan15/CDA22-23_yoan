@@ -7,5 +7,6 @@ namespace testRelationsEntity.Data.Dtos
 {
     public class PaysDTO
     {
+        public string NomPays { get; set; }
     }
 }
