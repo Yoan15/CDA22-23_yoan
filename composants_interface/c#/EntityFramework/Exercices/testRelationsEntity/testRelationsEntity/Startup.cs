@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using testRelationsEntity.Data;
+using testRelationsEntity.Data.Services;
 
 namespace testRelationsEntity
 {
@@ -29,6 +30,9 @@ namespace testRelationsEntity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
+            services.AddTransient<PersonnesServices>();
+            services.AddTransient<VillesServices>();
+            services.AddTransient<PaysServices>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
