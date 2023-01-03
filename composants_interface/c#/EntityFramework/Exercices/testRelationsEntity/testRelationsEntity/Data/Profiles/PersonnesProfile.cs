@@ -13,6 +13,7 @@ namespace testRelationsEntity.Data.Profiles
         public PersonnesProfile()
         {
             CreateMap<Personne, PersonnesDTO>();
+            CreateMap<PersonnesDTO, Personne>();
         }
     }
 }
