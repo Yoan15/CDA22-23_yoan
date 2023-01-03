@@ -11,6 +11,6 @@ namespace testRelationsEntity.Data.Models
         public string NomVille { get; set; }
         public int IdPays { get; set; }
 
-        public virtual Pays IdPaysNavigation { get; set; }
+        public virtual Pays Pays { get; set; }
     }
 }

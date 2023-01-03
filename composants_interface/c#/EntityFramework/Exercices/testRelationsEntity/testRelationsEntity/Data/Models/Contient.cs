@@ -11,7 +11,7 @@ namespace testRelationsEntity.Data.Models
         public int? IdProduit { get; set; }
         public int? IdCategorie { get; set; }
 
-        public virtual Category IdCategorieNavigation { get; set; }
-        public virtual Produit IdProduitNavigation { get; set; }
+        public virtual Category Categorie { get; set; }
+        public virtual Produit Produit { get; set; }
     }
 }
