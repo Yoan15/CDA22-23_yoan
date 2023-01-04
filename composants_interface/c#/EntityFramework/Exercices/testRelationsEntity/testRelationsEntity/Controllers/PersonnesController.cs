@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using testRelationsEntity.Data.Dtos;
+using testRelationsEntity.Data.Models;
 using testRelationsEntity.Data.Services;
 
 namespace testRelationsEntity.Controllers
@@ -40,6 +41,14 @@ namespace testRelationsEntity.Controllers
                 return Ok(_mapper.Map<PersonnesDTO>(personneItem));
             }
             return NotFound();
+        }
+
+        //POST api/personnes
+        [HttpPost]
+        public ActionResult<PersonnesDTO> CreatePersonne(Personne personne)
+        {
+            _service.AddPersonne(personne);
+            return CreatedAtRoute(nameof(GetPersonneById), new { Id = personne.IdPersonne }, personne);
         }
     }
 }
