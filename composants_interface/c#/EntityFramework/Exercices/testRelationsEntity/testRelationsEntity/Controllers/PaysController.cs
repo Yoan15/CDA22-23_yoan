@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using testRelationsEntity.Data.Dtos;
+using testRelationsEntity.Data.Models;
 using testRelationsEntity.Data.Services;
 
 namespace testRelationsEntity.Controllers
@@ -42,6 +43,13 @@ namespace testRelationsEntity.Controllers
             return NotFound();
         }
 
+        //POST api/pays
+        [HttpPost]
+        public ActionResult<PaysDTO> CreatePays(Pays pays)
+        {
+            _service.AddPays(pays);
+            return CreatedAtRoute(nameof(GetPaysById), new { Id = pays.IdPays }, pays);
 
+        }
     }
 }
