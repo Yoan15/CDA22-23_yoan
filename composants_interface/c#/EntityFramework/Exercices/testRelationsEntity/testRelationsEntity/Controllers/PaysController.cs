@@ -49,7 +49,21 @@ namespace testRelationsEntity.Controllers
         {
             _service.AddPays(pays);
             return CreatedAtRoute(nameof(GetPaysById), new { Id = pays.IdPays }, pays);
-
         }
+
+        //PUT api/pays
+        [HttpPut("{id}")]
+        public ActionResult UpdatePays(int id, PaysDTO pays)
+        {
+            var paysFromRepo = _service.GetPaysById(id);
+            if (paysFromRepo == null)
+            {
+                return NotFound();
+            }
+            _mapper.Map(pays, paysFromRepo);
+            _service.UpdatePays(paysFromRepo);
+            return NoContent();
+        }
+
     }
 }
