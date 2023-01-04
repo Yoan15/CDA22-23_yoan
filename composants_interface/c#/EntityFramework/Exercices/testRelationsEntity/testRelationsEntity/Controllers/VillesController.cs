@@ -32,8 +32,8 @@ namespace testRelationsEntity.Controllers
             return Ok(_mapper.Map<IEnumerable<VillesDTO>>(listeVilles));
         }
 
-        [HttpGet("{id}", Name = "GetVillesById")]
-        public ActionResult<VillesDTO> GetVillesById(int id)
+        [HttpGet("{id}", Name = "GetVilleById")]
+        public ActionResult<VillesDTO> GetVilleById(int id)
         {
             var villeItem = _service.GetVilleById(id);
             if (villeItem != null)
@@ -44,14 +44,14 @@ namespace testRelationsEntity.Controllers
         }
 
         [HttpPost]
-        public ActionResult<VillesDTO> CreateVilles(Ville ville)
+        public ActionResult<VillesInDTO> CreateVille(Ville ville)
         {
             _service.AddVille(ville);
-            return CreatedAtRoute(nameof(GetVillesById), new { Id = ville.IdVille, ville });
+            return CreatedAtRoute(nameof(GetVilleById), new { Id = ville.IdVille }, ville);
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateVilles(int id, Ville ville)
+        public ActionResult UpdateVille(int id, Ville ville)
         {
             var villeFromRepo = _service.GetVilleById(id);
             if (villeFromRepo == null)
@@ -64,7 +64,7 @@ namespace testRelationsEntity.Controllers
         }
 
         [HttpPatch("{id}")]
-        public ActionResult PartialVillesUpdate(int id, JsonPatchDocument<Ville> patchDoc)
+        public ActionResult PartialVilleUpdate(int id, JsonPatchDocument<Ville> patchDoc)
         {
             var villeFromRepo = _service.GetVilleById(id);
             if (villeFromRepo == null)
@@ -87,7 +87,7 @@ namespace testRelationsEntity.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteVilles(int id)
+        public ActionResult DeleteVille(int id)
         {
             var villeModelFromRepo = _service.GetVilleById(id);
             if (villeModelFromRepo == null)

@@ -7,14 +7,14 @@ namespace testRelationsEntity.Data.Dtos
 {
     public class VillesDTO
     {
-        public int IdVille { get; set; }
         public string NomVille { get; set; }
-        public PaysDTO Pays { get; set; }
+        public virtual PaysDTO Pays { get; set; }
     }
 
-    //public class VillesDTOOther
-    //{
-    //    public int IdVille { get; set; }
-    //    public string NomVille { get; set; }
-    //}
+    public class VillesInDTO
+    {
+        public string NomVille { get; set; }
+
+        public int IdPays { get; set; }
+    }
 }

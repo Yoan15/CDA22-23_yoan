@@ -44,7 +44,7 @@ namespace testRelationsEntity.Data.Services
 
         public Ville GetVilleById(int id)
         {
-            return _context.Villes.FirstOrDefault(v => v.IdVille == id);
+            return _context.Villes.Include("Pays").FirstOrDefault(v => v.IdVille == id);
         }
 
         public void UpdateVille(Ville v)

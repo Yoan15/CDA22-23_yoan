@@ -40,7 +40,7 @@
         public ActionResult<$dtoname$DTO> Create$dtoname$($dtoname$ $val$)
         {
             _service.Add$dtoname$($val$);
-            return CreatedAtRoute(nameof(Get$dtoname$ById), new { Id = $val$.Id$dtoname$, $val$ });
+            return CreatedAtRoute(nameof(Get$dtoname$ById), new { Id = $val$.Id$dtoname$}, $val$);
         }
 
         [HttpPut("{id}")]
