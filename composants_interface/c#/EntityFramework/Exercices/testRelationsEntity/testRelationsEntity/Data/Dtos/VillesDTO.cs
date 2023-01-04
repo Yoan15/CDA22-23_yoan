@@ -9,6 +9,12 @@ namespace testRelationsEntity.Data.Dtos
     {
         public int IdVille { get; set; }
         public string NomVille { get; set; }
-        //public int IdPays { get; set; }
+        public PaysDTO Pays { get; set; }
     }
+
+    //public class VillesDTOOther
+    //{
+    //    public int IdVille { get; set; }
+    //    public string NomVille { get; set; }
+    //}
 }

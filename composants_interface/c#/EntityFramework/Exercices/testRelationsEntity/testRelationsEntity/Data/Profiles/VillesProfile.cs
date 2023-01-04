@@ -12,8 +12,8 @@ namespace testRelationsEntity.Data.Profiles
     {
         public VillesProfile()
         {
-            CreateMap<Ville, VillesDTO>();
-            //CreateMap<Ville, VillesDTO>().ForMember(vD => vD.IdPays, act => act.MapFrom(v => v.Pays.IdPays));
+            //CreateMap<Ville, VillesDTO>();
+            CreateMap<Ville, VillesDTO>().ForMember(vD => vD.Pays, act => act.MapFrom(v => v.Pays));
             CreateMap<VillesDTO, Ville>();
         }
     }

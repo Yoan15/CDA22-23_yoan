@@ -39,7 +39,7 @@ namespace testRelationsEntity.Data.Services
 
         public IEnumerable<Ville> GetAllVilles()
         {
-            return _context.Villes.ToList();
+            return _context.Villes.Include("Pays").ToList();
         }
 
         public Ville GetVilleById(int id)
