@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Class Controller snippet</Title>
+			<Author>Alexandre Bertrand</Author>
+			<Description>Create a class controller</Description>
+			<Shortcut>ctrlr</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[private readonly $entities$sServices _service;
+        private readonly IMapper _mapper;
+
+        public $entities$sController($entities$sServices service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<$dtoname$DTO>> GetAll$entities$s()
+        {
+            var liste$entities$s = _service.GetAll$entities$s();
+            return Ok(_mapper.Map<IEnumerable<$dtoname$DTO>>(liste$entities$s));
+        }
+
+        [HttpGet("{id}", Name = "Get$dtoname$ById")]
+        public ActionResult<$dtoname$DTO> Get$dtoname$ById(int id)
+        {
+            var $val$Item = _service.Get$dtoname$ById(id);
+            if ($val$Item != null)
+            {
+                return Ok(_mapper.Map<$dtoname$DTO>($val$Item));
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<$dtoname$DTO> Create$dtoname$($dtoname$ $val$)
+        {
+            _service.Add$dtoname$($val$);
+            return CreatedAtRoute(nameof(Get$dtoname$ById), new { Id = $val$.Id$dtoname$, $val$ });
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult Update$dtoname$(int id, $dtoname$ $val$)
+        {
+            var $val$FromRepo = _service.Get$dtoname$ById(id);
+            if ($val$FromRepo == null)
+            {
+                return NotFound();
+            }
+            _mapper.Map($val$, $val$FromRepo);
+            _service.Update$dtoname$($val$FromRepo);
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult Partial$dtoname$Update(int id, JsonPatchDocument<$dtoname$> patchDoc)
+        {
+            var $val$FromRepo = _service.Get$dtoname$ById(id);
+            if ($val$FromRepo == null)
+            {
+                return NotFound();
+            }
+
+            var $val$ToPatch = _mapper.Map<$dtoname$>($val$FromRepo);
+            patchDoc.ApplyTo($val$ToPatch, ModelState);
+
+            if (!TryValidateModel($val$ToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map($val$ToPatch, $val$FromRepo);
+            _service.Update$dtoname$($val$FromRepo);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete$dtoname$(int id)
+        {
+            var $val$ModelFromRepo = _service.Get$dtoname$ById(id);
+            if($val$ModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            _service.Delete$dtoname$($val$ModelFromRepo);
+            return NoContent();
+        }]]>
+			</Code>
+			<Declarations>
+                <Literal>
+					<ID>entities</ID>
+					<ToolTip>Name of the entity with ucfirst</ToolTip>
+                    <Default>es</Default>
+				</Literal>
+				<Literal>
+					<ID>dtoname</ID>
+					<ToolTip>Name of the DTO</ToolTip>
+                    <Default>dt</Default>
+				</Literal>
+				<Literal>
+					<ID>val</ID>
+					<ToolTip>Name of the entity without ucfirst</ToolTip>
+					<Default>v</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
