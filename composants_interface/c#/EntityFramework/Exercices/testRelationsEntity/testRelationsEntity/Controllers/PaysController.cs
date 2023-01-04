@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -65,5 +66,28 @@ namespace testRelationsEntity.Controllers
             return NoContent();
         }
 
+        //PATCH api/pays
+        [HttpPatch("{id}")]
+        public ActionResult UpdatePartialPays(int id, JsonPatchDocument<Pays> patchDoc)
+        {
+            var paysFromRepo = _service.GetPaysById(id);
+            if (paysFromRepo == null)
+            {
+                return NotFound();
+            }
+            var paysToPatch = _mapper.Map<Pays>(paysFromRepo);
+            patchDoc.ApplyTo(paysToPatch, ModelState);
+            if (!TryValidateModel(paysToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+            _mapper.Map(paysToPatch, paysFromRepo);
+            _service.UpdatePays(paysFromRepo);
+            return NoContent();
+        }
+
+        //DELETE api/pays
+        [HttpDelete("{id}")]
+        public ActionResult DeletePays()
     }
 }
