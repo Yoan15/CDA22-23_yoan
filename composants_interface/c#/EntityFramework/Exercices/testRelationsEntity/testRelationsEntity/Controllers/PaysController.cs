@@ -30,6 +30,18 @@ namespace testRelationsEntity.Controllers
             return Ok(_mapper.Map<IEnumerable<PaysDTO>>(listePays));
         }
 
+        //GET api/pays/{id}
+        [HttpGet("{id}", Name = "GetPaysById")]
+        public ActionResult<PaysDTO> GetPaysById(int id)
+        {
+            var paysItem = _service.GetPaysById(id);
+            if (paysItem != null)
+            {
+                return Ok(_mapper.Map<PaysDTO>(paysItem));
+            }
+            return NotFound();
+        }
+
 
     }
 }
