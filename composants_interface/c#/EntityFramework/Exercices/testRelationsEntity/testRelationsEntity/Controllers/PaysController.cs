@@ -88,6 +88,15 @@ namespace testRelationsEntity.Controllers
 
         //DELETE api/pays
         [HttpDelete("{id}")]
-        public ActionResult DeletePays()
+        public ActionResult DeletePays(int id)
+        {
+            var paysFromRepo = _service.GetPaysById(id);
+            if (paysFromRepo == null)
+            {
+                return NotFound();
+            }
+            _service.DeletePays(paysFromRepo);
+            return NoContent();
+        }
     }
 }
