@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,12 +39,12 @@ namespace testRelationsEntity.Data.Services
 
         public IEnumerable<Contient> GetAllContients()
         {
-            return _context.Contients.ToList();
+            return _context.Contients.Include("Produits").Include("Categories").ToList();
         }
 
         public Contient GetContientById(int idProduit, int idCategorie)
         {
-            return _context.Contients.FirstOrDefault(c => c.IdProduit == idProduit && c.IdCategorie == idCategorie);
+            return _context.Contients.Include("Produits").Include("Categories").FirstOrDefault(c => c.IdProduit == idProduit && c.IdCategorie == idCategorie);
         }
 
         public void UpdateContient(Contient c)

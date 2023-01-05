@@ -7,5 +7,8 @@ namespace testRelationsEntity.Data.Dtos
 {
     public class ContientsDTO
     {
+        public virtual ProduitsDTO Produits { get; set; }
+
+        public virtual CategoriesDTO Categories { get; set; }
     }
 }
