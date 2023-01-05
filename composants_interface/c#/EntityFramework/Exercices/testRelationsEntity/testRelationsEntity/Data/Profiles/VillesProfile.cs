@@ -13,7 +13,7 @@ namespace testRelationsEntity.Data.Profiles
         public VillesProfile()
         {
             //CreateMap<Ville, VillesInDTO>();
-            CreateMap<Ville, VillesDTO>().ForMember(vD => vD.Pays, act => act.MapFrom(v => v.Pays));
+            CreateMap<Ville, VillesDTO>().ForMember(vD => vD.Pays, act => act.MapFrom(v => v.Pays)).ForMember(vD => vD.Codepostal, act => act.MapFrom(v => v.CodePostal));
             CreateMap<VillesDTO, Ville>();
         }
     }

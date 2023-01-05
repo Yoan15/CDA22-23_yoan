@@ -39,12 +39,12 @@ namespace testRelationsEntity.Data.Services
 
         public IEnumerable<Ville> GetAllVilles()
         {
-            return _context.Villes.Include("Pays").ToList();
+            return _context.Villes.Include("Pays").Include("CodePostal").ToList();
         }
 
         public Ville GetVilleById(int id)
         {
-            return _context.Villes.Include("Pays").FirstOrDefault(v => v.IdVille == id);
+            return _context.Villes.Include("Pays").Include("CodePostal").FirstOrDefault(v => v.IdVille == id);
         }
 
         public void UpdateVille(Ville v)
