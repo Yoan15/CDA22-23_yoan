@@ -18,6 +18,7 @@ namespace testRelationsEntity.Data.Models
         }
 
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Codepostal> Codepostal { get; set; }
         public virtual DbSet<Contient> Contients { get; set; }
         public virtual DbSet<Pays> Pays { get; set; }
         public virtual DbSet<Personne> Personnes { get; set; }
@@ -48,6 +49,22 @@ namespace testRelationsEntity.Data.Models
                 entity.Property(e => e.NomCategorie)
                     .HasMaxLength(50)
                     .HasColumnName("nomCategorie");
+            });
+
+            modelBuilder.Entity<Codepostal>(entity =>
+            {
+                entity.HasKey(e => e.IdCodePostal)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("codepostal");
+
+                entity.Property(e => e.IdCodePostal)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("idCodePostal");
+
+                entity.Property(e => e.NumCodePostal)
+                    .HasMaxLength(5)
+                    .HasColumnName("numCodePostal");
             });
 
             modelBuilder.Entity<Contient>(entity =>
@@ -143,11 +160,17 @@ namespace testRelationsEntity.Data.Models
 
                 entity.ToTable("villes");
 
+                entity.HasIndex(e => e.IdCodePostal, "FK_Villes_CodePostal");
+
                 entity.HasIndex(e => e.IdPays, "FK_Villes_Pays");
 
                 entity.Property(e => e.IdVille)
                     .HasColumnType("int(11)")
                     .HasColumnName("idVille");
+
+                entity.Property(e => e.IdCodePostal)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("idCodePostal");
 
                 entity.Property(e => e.IdPays)
                     .HasColumnType("int(11)")
@@ -156,6 +179,11 @@ namespace testRelationsEntity.Data.Models
                 entity.Property(e => e.NomVille)
                     .HasMaxLength(50)
                     .HasColumnName("nomVille");
+
+                entity.HasOne(d => d.CodePostal)
+                    .WithMany(p => p.Villes)
+                    .HasForeignKey(d => d.IdCodePostal)
+                    .HasConstraintName("FK_Villes_CodePostal");
 
                 entity.HasOne(d => d.Pays)
                     .WithMany(p => p.Villes)

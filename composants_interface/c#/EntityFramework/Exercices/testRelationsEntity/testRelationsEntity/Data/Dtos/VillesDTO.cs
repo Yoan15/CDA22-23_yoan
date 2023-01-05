@@ -9,6 +9,8 @@ namespace testRelationsEntity.Data.Dtos
     {
         public string NomVille { get; set; }
         public virtual PaysDTO Pays { get; set; }
+
+        public virtual CodepostalDTO Codepostal { get; set; }
     }
 
     public class VillesInDTO
@@ -16,5 +18,7 @@ namespace testRelationsEntity.Data.Dtos
         public string NomVille { get; set; }
 
         public int IdPays { get; set; }
+
+        public int IdCodePostal { get; set; }
     }
 }

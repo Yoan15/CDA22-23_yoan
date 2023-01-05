@@ -33,6 +33,7 @@ namespace testRelationsEntity
             services.AddControllersWithViews().AddNewtonsoftJson(); //pour le PATCH
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("Default")));
+            services.AddTransient<CodepostalServices>();
             services.AddTransient<PersonnesServices>();
             services.AddTransient<VillesServices>();
             services.AddTransient<PaysServices>();
