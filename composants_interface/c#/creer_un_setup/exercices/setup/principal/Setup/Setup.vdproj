@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D1A015F160F94C03AE7E2320A140A1C8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -43,6 +49,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -59,6 +81,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -90,6 +128,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
+            {
+            "SourcePath" = "8:D:\\Downloads\\aa5c730b8f7608898e916cecabc28cac.ico"
+            "TargetName" = "8:aa5c730b8f7608898e916cecabc28cac.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_90CC2B5C0182442D94CC05C1045AE2D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -120,7 +178,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_90CC2B5C0182442D94CC05C1045AE2D1"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:C:\\[Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -156,9 +214,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup"
+        "ProductName" = "8:Hello World"
         "ProductCode" = "8:{6C6ED996-D888-4785-B74A-F345D815F3BC}"
-        "PackageCode" = "8:{F2DDE891-E3A6-439F-9D95-275B2D153AAD}"
+        "PackageCode" = "8:{9922DBEB-CE00-4F3E-AF4D-814A14A6F750}"
         "UpgradeCode" = "8:{26DB0ECF-6DF9-43E9-B0C2-6B3BB5ECF6AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -166,16 +224,16 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:CDA AFPA DUNKERQUE"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Setup"
+        "Title" = "8:Hello World Installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:CDA AFPA DUNKERQUE"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -280,7 +338,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3C732B2223D24C0BB7BEC2416B24E31A"
             {
-            "Name" = "8:Shortcut to PublishItemsOutputGroup from principal (Active)"
+            "Name" = "8:Hello World"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -289,12 +347,12 @@
             "Target" = "8:_3111A337EFFA4390B47695C6C3741E4F"
             "Folder" = "8:_74B48C08D5274E97A14D5734FD5444EC"
             "WorkingFolder" = "8:_4E498659017049CC98275E3FF3B29852"
-            "Icon" = "8:"
+            "Icon" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8B278043C77A4C0CA5B9C14798958337"
             {
-            "Name" = "8:Shortcut to PublishItemsOutputGroup from principal (Active)"
+            "Name" = "8:Hello World"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -303,7 +361,7 @@
             "Target" = "8:_3111A337EFFA4390B47695C6C3741E4F"
             "Folder" = "8:_794DC6AFDA0E4FDF8CD4FAB1E52264C6"
             "WorkingFolder" = "8:_4E498659017049CC98275E3FF3B29852"
-            "Icon" = "8:"
+            "Icon" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
             "Feature" = "8:"
             }
         }
@@ -319,7 +377,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6809B68163B64165992E9CB5C1C66071"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Welcome"
+                    "DisplayName" = "8:Bienvenue"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -367,7 +425,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_A59488F82A6F4EBFA25529717BEE9FDB"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installation Folder"
+                    "DisplayName" = "8:Dossier d'installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -402,7 +460,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D92EFEAD93F54DF8A2723F2C2F1C2CF7"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Textboxes   (A)"
+                    "DisplayName" = "8:Zones de texte   (A)"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdCustomText1Dlg.wid"
@@ -658,7 +716,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_EEB5CF4176CA424DA766291A55706CAD"
                     {
                     "Sequence" = "3:400"
-                    "DisplayName" = "8:Confirm Installation"
+                    "DisplayName" = "8:Confirmer l'installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -689,7 +747,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7B64FC3A18AF4E35B548B7D4AB8BA5C1"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
+                    "DisplayName" = "8:Progression"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -733,7 +791,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_12F083FA18164C30A603B6C5B60DFDDB"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
+                    "DisplayName" = "8:Terminé"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -783,7 +841,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_150BBBB5F1E543D3B91F00832BF4EF96"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
+                    "DisplayName" = "8:Terminé"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -814,7 +872,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_0754E27C6ABB4C8D809F89E81A4C2E0F"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
+                    "DisplayName" = "8:Progression"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -864,7 +922,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_02D489986B7D4C65A6B2CBD809513FE8"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirm Installation"
+                    "DisplayName" = "8:Confirmer l'installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -886,7 +944,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7295F6A2DE2F446C9BEFD29211F4745C"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installation Folder"
+                    "DisplayName" = "8:Dossier d'installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -908,7 +966,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_F281F17DB7AF4536AA796BF90468ACD6"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Welcome"
+                    "DisplayName" = "8:Bienvenue"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"

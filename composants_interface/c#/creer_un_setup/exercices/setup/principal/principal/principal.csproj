@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>aa5c730b8f7608898e916cecabc28cac.ico</ApplicationIcon>
   </PropertyGroup>
 
 </Project>
