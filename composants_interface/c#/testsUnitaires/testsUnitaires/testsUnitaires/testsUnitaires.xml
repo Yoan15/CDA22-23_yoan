@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>testsUnitaires</name>
+    </assembly>
+    <members>
+        <member name="T:testsUnitaires.Compte">
+            <summary>
+            classe compte
+            </summary>
+        </member>
+        <member name="P:testsUnitaires.Compte.Client">
+            <summary>
+            getter et setter du client
+            </summary>
+        </member>
+        <member name="P:testsUnitaires.Compte.Solde">
+            <summary>
+            getter et setter du solde
+            </summary>
+        </member>
+        <member name="M:testsUnitaires.Compte.#ctor(System.String,System.Double)">
+            <summary>
+            constructeur du compte
+            </summary>
+            <param name="client"></param>
+            <param name="solde"></param>
+        </member>
+        <member name="F:testsUnitaires.Compte.DebitMontantSuperieurSoldeMessage">
+            <summary>
+            constante qui affiche un message si le montant à débiter est plus élevé que le solde client
+            </summary>
+        </member>
+        <member name="F:testsUnitaires.Compte.DebitMontantNegatifMessage">
+            <summary>
+            constante qui affiche un message si le montant est négatif
+            </summary>
+        </member>
+        <member name="M:testsUnitaires.Compte.Debit(System.Double)">
+            <summary>
+            Test sandcastle Debit
+            </summary>
+            <param name="montant"></param>
+        </member>
+        <member name="M:testsUnitaires.Compte.Credit(System.Double)">
+            <summary>
+            test sandcastle Credit
+            </summary>
+            <param name="montant"></param>
+        </member>
+    </members>
+</doc>
