@@ -56,7 +56,7 @@ namespace testsUnitaires
                 throw new ArgumentOutOfRangeException("montant", montant, DebitMontantNegatifMessage);
             }
 
-            Solde += montant;
+            Solde -= montant;
         }
 
         /// <summary>
