@@ -15,7 +15,19 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3111A337EFFA4390B47695C6C3741E4F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_80C1FE12D5594457B0FAA36001EE0980"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -28,6 +40,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D1A015F160F94C03AE7E2320A140A1C8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FE5A06B4207246928B89D00AB6ED7F2A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -128,6 +146,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_09A1BEAC3FDF4B978957623011E4D9E5"
+            {
+            "SourcePath" = "8:D:\\Pictures\\it just works.jpg"
+            "TargetName" = "8:it just works.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_90CC2B5C0182442D94CC05C1045AE2D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_80C1FE12D5594457B0FAA36001EE0980"
+            {
+            "SourcePath" = "8:C:\\Users\\night\\Desktop\\uninstall.bat"
+            "TargetName" = "8:uninstall.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_90CC2B5C0182442D94CC05C1045AE2D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
             {
             "SourcePath" = "8:D:\\Downloads\\aa5c730b8f7608898e916cecabc28cac.ico"
@@ -141,6 +199,26 @@
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FE5A06B4207246928B89D00AB6ED7F2A"
+            {
+            "SourcePath" = "8:C:\\Windows\\SysWOW64\\msiexec.exe"
+            "TargetName" = "8:msiexec.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_BE3AEF3A388E460DB6F393CA9043311E"
+            "Condition" = "8:Not Installed"
+            "Transitive" = "11:TRUE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:TRUE"
+            "Permanent" = "11:TRUE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
@@ -163,6 +241,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_DF235F8532BB4EDCA435ED702E0D5DC2"
+                    {
+                    "Name" = "8:Hello World"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B8D385F2A1A0413AB9A4D447499B9BA8"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_794DC6AFDA0E4FDF8CD4FAB1E52264C6"
@@ -199,6 +288,17 @@
                     }
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_BE3AEF3A388E460DB6F393CA9043311E"
+            {
+            "Name" = "8:#1914"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:SystemFolder"
+                "Folders"
+                {
+                }
+            }
         }
         "LaunchCondition"
         {
@@ -216,7 +316,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Hello World"
         "ProductCode" = "8:{6C6ED996-D888-4785-B74A-F345D815F3BC}"
-        "PackageCode" = "8:{9922DBEB-CE00-4F3E-AF4D-814A14A6F750}"
+        "PackageCode" = "8:{6AE441C3-66B6-477D-8B04-B398FBABF33A}"
         "UpgradeCode" = "8:{26DB0ECF-6DF9-43E9-B0C2-6B3BB5ECF6AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -257,6 +357,78 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_1FA3C430461243948AC125C921002A7F"
+                            {
+                            "Name" = "8:Microsoft"
+                            "Condition" = "8:"
+                            "AlwaysCreate" = "11:FALSE"
+                            "DeleteAtUninstall" = "11:FALSE"
+                            "Transitive" = "11:FALSE"
+                                "Keys"
+                                {
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_C4631B3D73E445DDBCBA84042284EDAA"
+                                    {
+                                    "Name" = "8:Windows"
+                                    "Condition" = "8:"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "Transitive" = "11:FALSE"
+                                        "Keys"
+                                        {
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_1EB07CC5254748A2BAD2C432BC57104D"
+                                            {
+                                            "Name" = "8:CurrentVersion"
+                                            "Condition" = "8:"
+                                            "AlwaysCreate" = "11:FALSE"
+                                            "DeleteAtUninstall" = "11:FALSE"
+                                            "Transitive" = "11:FALSE"
+                                                "Keys"
+                                                {
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_1A98950CBE8847A693C114C20DC76698"
+                                                    {
+                                                    "Name" = "8:principal.exe"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                        }
+                                                        "Values"
+                                                        {
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_15D85AE40F7843658716709E304F5597"
+                                                            {
+                                                            "Name" = "8:Default"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:[Manufacturer]\\[ProductName]\\principal.exe"
+                                                            }
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_A91911802CFF487A8F18251B720295D1"
+                                                            {
+                                                            "Name" = "8:Path"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:[Manufacturer]\\[ProductName]"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                "Values"
+                                                {
+                                                }
+                                            }
+                                        }
+                                        "Values"
+                                        {
+                                        }
+                                    }
+                                }
+                                "Values"
+                                {
+                                }
+                            }
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_A52F8826E9AC4FECA9CD1F06C88BC66D"
                             {
                             "Name" = "8:[Manufacturer]"
@@ -336,6 +508,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0600226BDF634C3395DE6DF8E6C00312"
+            {
+            "Name" = "8:Uninstaller"
+            "Arguments" = "8:/x {6C6ED996-D888-4785-B74A-F345D815F3BC}"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_FE5A06B4207246928B89D00AB6ED7F2A"
+            "Folder" = "8:_DF235F8532BB4EDCA435ED702E0D5DC2"
+            "WorkingFolder" = "8:_BE3AEF3A388E460DB6F393CA9043311E"
+            "Icon" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3C732B2223D24C0BB7BEC2416B24E31A"
             {
             "Name" = "8:Hello World"
@@ -345,8 +531,22 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_3111A337EFFA4390B47695C6C3741E4F"
-            "Folder" = "8:_74B48C08D5274E97A14D5734FD5444EC"
+            "Folder" = "8:_DF235F8532BB4EDCA435ED702E0D5DC2"
             "WorkingFolder" = "8:_4E498659017049CC98275E3FF3B29852"
+            "Icon" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5E6824A177394EBC8682C23E31C1FB64"
+            {
+            "Name" = "8:Uninstall"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_80C1FE12D5594457B0FAA36001EE0980"
+            "Folder" = "8:_DF235F8532BB4EDCA435ED702E0D5DC2"
+            "WorkingFolder" = "8:_90CC2B5C0182442D94CC05C1045AE2D1"
             "Icon" = "8:_D0DDFC2C41614A8CB7F6E1F676A19FCD"
             "Feature" = "8:"
             }
@@ -391,7 +591,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -439,7 +640,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -474,7 +676,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "BannerText"
@@ -730,7 +933,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -761,7 +965,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -805,7 +1010,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -855,7 +1061,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -886,7 +1093,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -936,7 +1144,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -958,7 +1167,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -980,7 +1190,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_09A1BEAC3FDF4B978957623011E4D9E5"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
