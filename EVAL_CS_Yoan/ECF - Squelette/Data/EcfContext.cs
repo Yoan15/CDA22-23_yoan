@@ -25,7 +25,7 @@ namespace ECF.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Name=Default");
+                optionsBuilder.UseMySQL("server=localhost;user=root;database=ecf;port=3306;ssl mode=none");
             }
         }
 

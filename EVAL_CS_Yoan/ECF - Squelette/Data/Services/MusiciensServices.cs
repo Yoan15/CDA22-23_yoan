@@ -1,4 +1,5 @@
 ﻿using ECF.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,12 +40,12 @@ namespace ECF.Data.Services
 
         public IEnumerable<Musicien> GetAllMusiciens()
         {
-            return _context.Musiciens.ToList();
+            return _context.Musiciens.Include("Groupe").ToList();
         }
 
         public Musicien GetMusicienById(int id)
         {
-            return _context.Musiciens.FirstOrDefault(musicien => musicien.IdMusicien == id);
+            return _context.Musiciens.Include("Groupe").FirstOrDefault(musicien => musicien.IdMusicien == id);
         }
 
         public void UpdateMusicien(Musicien musicien)

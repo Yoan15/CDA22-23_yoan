@@ -19,7 +19,7 @@ namespace ECF.Data.Profiles
             CreateMap<Musicien, MusiciensDTOOut>();
             CreateMap<MusiciensDTOOut, Musicien>();
 
-            CreateMap<Musicien, MusiciensDTOOutAvecGroupe>();
+            CreateMap<Musicien, MusiciensDTOOutAvecGroupe>().ForMember(c => c.NomDuGroupe, act => act.MapFrom(s => s.Groupe.NomDuGroupe));
             CreateMap<MusiciensDTOOutAvecGroupe, Musicien>();
         }
     }

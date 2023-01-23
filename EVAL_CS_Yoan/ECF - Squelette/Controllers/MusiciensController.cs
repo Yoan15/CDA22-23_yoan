@@ -42,7 +42,7 @@ namespace ECF.Controllers
         [HttpGet]
         public IEnumerable<MusiciensDTOOutAvecGroupe> GetAllMusiciensAvecGroupe()
         {
-            var listeMusiciens = _service.GetAllMusiciens();
+            IEnumerable<Musicien> listeMusiciens = _service.GetAllMusiciens();
             return _mapper.Map<IEnumerable<MusiciensDTOOutAvecGroupe>>(listeMusiciens);
         }
 
