@@ -58,16 +58,17 @@ namespace ECF.Controllers
         }
 
         [HttpPost]
-        public ActionResult<GroupesDTOIn> CreateGroupe(Groupe groupe)
+        public ActionResult<GroupesDTOOut> CreateGroupe(GroupesDTOIn groupeIn)
         {
+            Groupe groupe = _mapper.Map<Groupe>(groupeIn);
             _service.AddGroupe(groupe);
             return CreatedAtRoute(nameof(GetGroupeById), new { Id = groupe.IdGroupe }, groupe);
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateGroupe(int id, Groupe groupe)
+        public ActionResult UpdateGroupe(int id, GroupesDTOIn groupe)
         {
-            var groupeFromRepo = _service.GetGroupeById(id);
+            Groupe groupeFromRepo = _service.GetGroupeById(id);
             if (groupeFromRepo == null)
             {
                 return NotFound();

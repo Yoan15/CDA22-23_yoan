@@ -15,7 +15,7 @@ namespace ECF.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    class MusiciensController
+    class MusiciensController: ControllerBase
     {
 
         private readonly MusiciensServices _service;
@@ -47,27 +47,28 @@ namespace ECF.Controllers
         }
 
         [HttpGet("{id}", Name = "GetMusiciensById")]
-        public ActionResult<MusiciensDTOOut> GetMusicienById(int id)
+        public MusiciensDTOOut GetMusicienById(int id)
         {
             var musicienItem = _service.GetMusicienById(id);
             if (musicienItem != null)
             {
                 return _mapper.Map<MusiciensDTOOut>(musicienItem);
             }
-            return NotFound();
+            return null;
         }
 
         [HttpPost]
-        public ActionResult<MusiciensDTOIn> CreateMusicien(Musicien musicien)
+        public ActionResult<MusiciensDTOOut> CreateMusicien(MusiciensDTOIn musicienIn)
         {
+            Musicien musicien = _mapper.Map<Musicien>(musicienIn);
             _service.AddMusicien(musicien);
             return CreatedAtRoute(nameof(GetMusicienById), new { Id = musicien.IdMusicien }, musicien);
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateMusicien(int id, Musicien musicien)
+        public ActionResult UpdateMusicien(int id, MusiciensDTOIn musicien)
         {
-            var musicienFromRepo = _service.GetMusicienById(id);
+            Musicien musicienFromRepo = _service.GetMusicienById(id);
             if (musicienFromRepo == null)
             {
                 return NotFound();
