@@ -1,0 +1,6 @@
+[{
+    "mysql:host": "localhost",
+    "dbname": "personne",
+    "user": "root",
+    "password": ""
+}]
