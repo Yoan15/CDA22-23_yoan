@@ -4,3 +4,4 @@ spl_autoload_register('chargerClasse');
 
 Parametres::init();
 DBConnect::Connect();
+var_dump(PersonnesManager::GetAllPersonnes());

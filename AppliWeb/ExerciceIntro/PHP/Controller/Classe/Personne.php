@@ -52,5 +52,10 @@ class Personne
         return $this;
     }
 
+    public function __construct()
+    {
+        
+    }
 
+    
 }
