@@ -1,6 +1,7 @@
-[{
-    "mysql:host": "localhost",
+{
+    "host": "localhost",
     "dbname": "personne",
     "user": "root",
-    "password": ""
-}]
+    "password": "",
+    "port": "3306"
+}
