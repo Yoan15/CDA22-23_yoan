@@ -3,7 +3,7 @@
 class PersonnesManager
 {
     /**
-     * fonction qui récupère les personnes
+     * fonction qui récupère les personnes dans la BDD
      *
      * 
      */
@@ -19,8 +19,11 @@ class PersonnesManager
      *
      * 
      */
-    public function AddPersonne()
+    public static function AddPersonne($nom, $prenom)
     {
-
+        $stmt = DBConnect::getDb()->prepare("INSERT INTO client (nom, prenom) VALUES (?,?)");
+        $stmt->bindParam(1, $nom, PDO::PARAM_STR);
+        $stmt->bindParam(2, $prenom, PDO::PARAM_STR);
+        $stmt->execute();
     }
 }
