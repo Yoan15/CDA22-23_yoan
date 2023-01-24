@@ -4,44 +4,45 @@ class Parametres
 {
     private static $_host;
     private static $_dbname;
+    private static $_port;
     private static $_user;
+    private static $_password;
     
-    /**
-     * Get the value of _host
-     *
-     * @return $_host
-     */
+    
     public static function get_host()
     {
         return self::$_host;
     }
 
-    /**
-     * Get the value of _dbname
-     *
-     * @return $_dbname
-     */
     public static function get_dbname()
     {
         return self::$_dbname;
     }
 
-    /**
-     * Get the value of _user
-     *
-     * @return $_user
-     */
+    public static function get_port()
+    {
+        return self::$_port;
+    }
+
     public static function get_user()
     {
         return self::$_user;
     }
 
-    static function parameters()
+    public static function get_password()
     {
-        $json = './config.json';
-        $file = json_decode(file_get_contents($json));
-        $_host = $file->host;
-        $_dbname = $file->dbname;
-        $_user = $file->user;
+        return self::$_password;
+    }
+
+    static function init()
+    {
+        $json = './config.json'; //on va chercher le fichier JSON
+        $file = json_decode(file_get_contents($json)); //On transforme le JSON en objet
+        //On fournit aux variables les valeurs de l'objet JSON
+        self::$_host = decode($file->host);
+        self::$_dbname = decode($file->dbname);
+        self::$_port = $file->port;
+        self::$_user = decode($file->user);
+        self::$_password = decode($file->password);
     }
 }
