@@ -45,15 +45,15 @@ class PersonnesManager
      */
     public static function DeletePersonne($id)
     {
-        DAO::Delete("Personne", $id);
+        return DAO::Delete("Personne", $id);
     }
 
     /**
      * Fontion qui permet de modifier une personne en BDD
      */
-    public static function UpdatePersonne($nom, $prenom, $id)
+    public static function UpdatePersonne($personne, $id)
     {
-        DAO::Update("Personne", $nom, $prenom, $id);
+        return DAO::Update($personne, $id);
     }
     
 }

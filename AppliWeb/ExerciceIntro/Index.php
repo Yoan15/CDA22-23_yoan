@@ -10,13 +10,10 @@ Parametres::init();
 //persmet de se connecter à la base de donnée
 DBConnect::Connect();
 var_dump(PersonnesManager::ListePersonnes());
-$id=4;
-//$nom="Soie";
-//$prenom="titi";
-//var_dump(PersonnesManager::UpdatePersonne($nom, $prenom, $id));
+$id=6;
+$personne = new Personne(["nom"=>"Champi", "prenom"=>"Toad"]);
+var_dump(PersonnesManager::UpdatePersonne($personne, $id));
 //var_dump(PersonnesManager::GetPersonneById($id));
 //var_dump(PersonnesManager::DeletePersonne($id));
-// $nom = "Eude";
-// $prenom = "Jean";
-$personne = new Personne(["nom"=>"Champ", "prenom"=>"Toad"]);
-var_dump(PersonnesManager::AddPersonne($personne));
+
+//var_dump(PersonnesManager::AddPersonne($personne));
