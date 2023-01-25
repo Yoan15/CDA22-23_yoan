@@ -53,10 +53,10 @@ class PersonnesManager
      */
     public static function UpdatePersonne($nom, $prenom, $id)
     {
-        $stmt = DBConnect::getDb()->prepare("UPDATE client SET 'nom'=?, 'prenom'=? WHERE 'id'=?");
-        $stmt->bindParam(1, $nom, PDO::PARAM_STR);
-        $stmt->bindParam(2, $prenom, PDO::PARAM_STR);
-        $stmt->bindParam(3, $id, PDO::PARAM_INT);
+        $stmt = DBConnect::getDb()->prepare("UPDATE client SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
+        $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
     
