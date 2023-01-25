@@ -55,4 +55,9 @@ class Personne
             }
         }
     }
+
+    public function getAttibutes()
+    {
+        return get_class_vars(get_class($this));
+    }
 }

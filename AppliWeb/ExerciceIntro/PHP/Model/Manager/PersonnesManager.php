@@ -34,9 +34,9 @@ class PersonnesManager
      *
      * 
      */
-    public static function AddPersonne($nom, $prenom)
+    public static function AddPersonne($personne)
     {
-        $personne = DAO::Add("Personne", $nom, $prenom);
+        $personne = DAO::Add("Personne", $personne);
         return $personne;
     }
 
@@ -53,11 +53,7 @@ class PersonnesManager
      */
     public static function UpdatePersonne($nom, $prenom, $id)
     {
-        $stmt = DBConnect::getDb()->prepare("UPDATE personne SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
-        $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
-        $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
+        DAO::Update("Personne", $nom, $prenom, $id);
     }
     
 }

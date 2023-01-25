@@ -29,11 +29,12 @@ class DAO
      *
      * 
      */
-    public static function Add($table, $nom, $prenom)
+    public static function Add($table, $obj)
     {
-        $stmt = DBConnect::getDb()->prepare("INSERT INTO " . $table ." (nom, prenom) VALUES (?,?)");
-        $stmt->bindParam(1, $nom, PDO::PARAM_STR);
-        $stmt->bindParam(2, $prenom, PDO::PARAM_STR);
+        var_dump($obj->getAttibutes());
+            $stmt = DBConnect::getDb()->prepare("INSERT INTO " . $table ." (nom, prenom) VALUES (?,?)");
+        $stmt->bindParam(1, $table->getNom(), PDO::PARAM_STR);
+        $stmt->bindParam(2, $table->getPrenom(), PDO::PARAM_STR);
         $stmt->execute();
     }
 
@@ -50,9 +51,9 @@ class DAO
     /**
      * Fontion qui permet de modifier une personne en BDD
      */
-    public static function UpdatePersonne($nom, $prenom, $id)
+    public static function Update($table, $nom, $prenom, $id)
     {
-        $stmt = DBConnect::getDb()->prepare("UPDATE personne SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
+        $stmt = DBConnect::getDb()->prepare("UPDATE " . $table . " SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
         $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
