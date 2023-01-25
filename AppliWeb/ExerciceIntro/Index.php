@@ -18,5 +18,5 @@ $id=4;
 //var_dump(PersonnesManager::DeletePersonne($id));
 // $nom = "Eude";
 // $prenom = "Jean";
-$personne = new Personne(["nom"=>"Doe", "prenom"=>"John"]);
+$personne = new Personne(["nom"=>"Champ", "prenom"=>"Toad"]);
 var_dump(PersonnesManager::AddPersonne($personne));

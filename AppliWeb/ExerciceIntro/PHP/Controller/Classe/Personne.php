@@ -6,6 +6,8 @@ class Personne
     private $_nom;
     private $_prenom;
 
+    private static $_attribut = ["id", "nom", "prenom"];
+
     public function getId()
     {
         return $this->_id;
@@ -36,6 +38,11 @@ class Personne
         $this->_prenom = $prenom;
     }
 
+    public static function getAttributes()
+    {
+        return self::$_attribut;
+    }
+
     public function __construct(array $options = [])
     {
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
@@ -54,10 +61,5 @@ class Personne
                 $this->$methode($value);
             }
         }
-    }
-
-    public function getAttibutes()
-    {
-        return get_class_vars(get_class($this));
     }
 }

@@ -36,7 +36,7 @@ class PersonnesManager
      */
     public static function AddPersonne($personne)
     {
-        $personne = DAO::Add("Personne", $personne);
+        $personne = DAO::Add($personne);
         return $personne;
     }
 
