@@ -1,6 +1,6 @@
 {
     "host": "localhost",
-    "dbname": "personne",
+    "dbname": "exerciceframeworkphp",
     "port": "3306",
     "user": "root",
     "password": ""

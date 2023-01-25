@@ -1,17 +1,19 @@
 <?php
 
+//require "./PHP/Model/Manager/PersonnesDAO.php";
+
 class PersonnesManager
 {
     /**
      * fonction qui récupère les personnes dans la BDD
-     *
-     * 
      */
-    public static function GetAllPersonnes()
+    public static function ListePersonnes()
     {
-        $stmt = DBConnect::getDb()->prepare("SELECT * FROM client");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // $stmt = DBConnect::getDb()->prepare("SELECT * FROM client");
+        // $stmt->execute();
+        // return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $personnes = DAO::GetAll("Personne");
+        return $personnes;
     }
 
     /**
@@ -19,10 +21,12 @@ class PersonnesManager
      */
     public static function GetPersonneById($id)
     {
-        $stmt = DBConnect::getDb()->prepare("SELECT * FROM client WHERE id=?");
-        $stmt->bindParam(1, $id, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        //$stmt = DBConnect::getDb()->prepare("SELECT * FROM personne WHERE id=?");
+        //$stmt->bindParam(1, $id, PDO::PARAM_INT);
+        //$stmt->execute();
+        //return $stmt->fetch(PDO::FETCH_ASSOC);
+        $personne = DAO::GetById("Personne", $id);
+        return $personne;
     }
 
     /**
@@ -32,10 +36,8 @@ class PersonnesManager
      */
     public static function AddPersonne($nom, $prenom)
     {
-        $stmt = DBConnect::getDb()->prepare("INSERT INTO client (nom, prenom) VALUES (?,?)");
-        $stmt->bindParam(1, $nom, PDO::PARAM_STR);
-        $stmt->bindParam(2, $prenom, PDO::PARAM_STR);
-        $stmt->execute();
+        $personne = DAO::Add("Personne", $nom, $prenom);
+        return $personne;
     }
 
     /**
@@ -43,9 +45,7 @@ class PersonnesManager
      */
     public static function DeletePersonne($id)
     {
-        $stmt = DBConnect::getDb()->prepare("DELETE FROM client WHERE id=?");
-        $stmt->bindParam(1, $id, PDO::PARAM_INT);
-        $stmt->execute();
+        DAO::Delete("Personne", $id);
     }
 
     /**
@@ -53,7 +53,7 @@ class PersonnesManager
      */
     public static function UpdatePersonne($nom, $prenom, $id)
     {
-        $stmt = DBConnect::getDb()->prepare("UPDATE client SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
+        $stmt = DBConnect::getDb()->prepare("UPDATE personne SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
         $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);

@@ -6,56 +6,53 @@ class Personne
     private $_nom;
     private $_prenom;
 
-    
-
-    /**
-     * Get the value of _id
-     */
-    public function get_id()
+    public function getId()
     {
         return $this->_id;
     }
 
-    /**
-     * Get the value of _nom
-     */
-    public function get_nom()
+    public function setId($id)
+    {
+        $this->_id = $id;
+    }
+
+    public function getNom()
     {
         return $this->_nom;
     }
 
-    /**
-     * Set the value of _nom
-     */
-    public function set_nom($_nom): self
+    public function setNom($nom)
     {
-        $this->_nom = $_nom;
-
-        return $this;
+        $this->_nom = $nom;
     }
 
-    /**
-     * Get the value of _prenom
-     */
-    public function get_prenom()
+    public function getPrenom()
     {
         return $this->_prenom;
     }
 
-    /**
-     * Set the value of _prenom
-     */
-    public function set_prenom($_prenom): self
+    public function setPrenom($prenom)
     {
-        $this->_prenom = $_prenom;
-
-        return $this;
+        $this->_prenom = $prenom;
     }
 
-    public function __construct()
+    public function __construct(array $options = [])
     {
-        
+        if (!empty($options)) // empty : renvoi vrai si le tableau est vide
+        {
+            $this->hydrate($options);
+        }
     }
 
-    
+    public function hydrate($data)
+    {
+        foreach ($data as $key => $value)
+        {
+            $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
+            if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
+            {
+                $this->$methode($value);
+            }
+        }
+    }
 }

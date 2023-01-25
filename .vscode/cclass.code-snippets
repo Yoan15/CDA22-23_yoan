@@ -1,0 +1,89 @@
+{
+	// Place your 59011-14-06 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	
+	"Create class": {
+		"scope": "php",
+		"prefix": "cclass",
+		"body": [
+			"class $1{",
+			"\t////////////////////////////////////",
+			"\t// Attributs\n",
+			"\tprivate $$_$2;\n",
+			"\t////////////////////////////////////",
+			"\t#region Accesseurs\n\n\t\n\n\t#endregion Accesseurs",			
+			"\t////////////////////////////////////",
+			"\t// Constructeur\n",
+			"\tpublic function __construct(array $$options = [])",
+    		"\t{",
+        	"\t\tif (!empty($$options)) // empty : renvoi vrai si le tableau est vide",
+        	"\t\t{",
+            "\t\t\t$$this->hydrate($$options);",
+        	"\t\t}",
+    		"\t}\n",
+    		"\tpublic function hydrate($$data)",
+    		"\t{",
+        	"\t\tforeach ($$data as $$key => $$value)",
+        	"\t\t{",
+            "\t\t\t$$methode = \"set\" . ucfirst($$key); //ucfirst met la 1ere lettre en majuscule",
+            "\t\t\tif (is_callable(([$$this, $$methode]))) // is_callable verifie que la methode existe",
+            "\t\t\t{",
+        	"\t\t\t\t$$this->$$methode($$value);",
+            "\t\t\t}",
+        	"\t\t}",
+    		"\t}",			
+			"\n\t////////////////////////////////////",
+			"\t// Autres méthodes\n",
+			"\t/**",
+     		"\t* Transforme l'objet en chaine de caractères",
+			"\t*",
+			"\t* @return String",
+			"\t*/",
+			"\tpublic function __toString()",
+			"\t{",
+			"\t\treturn \"\";",
+			"\t}",		
+			"\n\t/**",
+			"\t* Renvoi vrai si l'objet en paramètre est égal à l'objet appelant",
+			"\t*",
+			"\t* @param [type] $$obj",
+			"\t* @return bool",
+			"\t*/",
+			"\tpublic function equalsTo($$obj)",
+			"\t{",
+			"\t\treturn true;",
+			"\t}",
+			"\n\t/**",
+			"\t* Compare 2 objets",
+			"\t* Renvoi 1 si le 1er est >",
+			"\t*        0 si ils sont égaux",
+			"\t*        -1 si le 1er est <",
+			"\t*",
+			"\t* @param [type] $$obj1",
+			"\t* @param [type] $$obj2",
+			"\t* @return void",
+			"\t*/",
+			"\tpublic static function compareTo($$obj1, $$obj2)",
+			"\t{",
+				"\t\treturn 0;",
+			"\t}",
+			"}"
+		],
+		"description": "Creation de classe"
+	}
+}
