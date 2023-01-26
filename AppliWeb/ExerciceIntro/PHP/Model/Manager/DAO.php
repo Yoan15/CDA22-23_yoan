@@ -7,7 +7,8 @@ class DAO
         $stmt = DBConnect::getDb()->prepare("SELECT * FROM " . $table);
         $stmt->execute();
         $liste = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($liste as $value) {
+        foreach ($liste as $value)
+        {
             $res[] = new $table($value);
         }
         return $res;
@@ -35,7 +36,8 @@ class DAO
         $listeColonnes = "";
         $listeVariablesSql = "";
         //On fait un for pour récupérer les noms des attributs, on commence à 1 car on ne prend pas l'Id
-        for ($i=1; $i < count($obj->getAttributes()); $i++) { 
+        for ($i=1; $i < count($obj->getAttributes()); $i++)
+        { 
             $listeColonnes .= $obj->getAttributes()[$i] . ", ";
             //On concatène ":" avec le nom des attributs 
             $listeVariablesSql .= ":" . $obj->getAttributes()[$i] . ", ";
@@ -43,7 +45,8 @@ class DAO
         //On récupère les attributs de la classe stockée par la variable $listeColonnes 
         //et on utilise un substr sur celle-ci pour enlever les caractères non désirés de fin.
         $stmt = DBConnect::getDb()->prepare("INSERT INTO " . $class ." (" . substr($listeColonnes, 0, -2) . ") VALUES (" . substr($listeVariablesSql, 0, -2) . ")");
-        for ($i=1; $i < count($obj->getAttributes()); $i++) { 
+        for ($i=1; $i < count($obj->getAttributes()); $i++)
+        { 
             //On met dans la variable $get la concaténation du mot "get" avec le nom de l'attribut en mettant la première lettre de l'attribut en majuscule.
             //Résultat de l'exemple : getNom
             $get = "get" . ucfirst($obj->getAttributes()[$i]);
@@ -70,14 +73,16 @@ class DAO
     {
         $class = get_class($obj);
         $listeColonnes = "";
-        for ($i=1; $i < count($obj->getAttributes()); $i++) { 
+        for ($i=1; $i < count($obj->getAttributes()); $i++)
+        { 
             $listeColonnes .= $obj->getAttributes()[$i] . " = :" . $obj->getAttributes()[$i] . ", ";
             //On concatène ":" avec le nom des attributs 
         }
         //$stmt = DBConnect::getDb()->prepare("UPDATE " . $class . " SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
         var_dump("UPDATE " . $class . " SET ". substr($listeColonnes, 0, -2) . " WHERE `id`=".$id);
         $stmt = DBConnect::getDb()->prepare("UPDATE " . $class . " SET ". substr($listeColonnes, 0, -2) . " WHERE `id`=".$id);
-        for ($i=1; $i < count($obj->getAttributes()); $i++) { 
+        for ($i=1; $i < count($obj->getAttributes()); $i++)
+        { 
             //On met dans la variable $get la concaténation du mot "get" avec le nom de l'attribut en mettant la première lettre de l'attribut en majuscule.
             //Résultat de l'exemple : getNom
             $get = "get" . ucfirst($obj->getAttributes()[$i]);
@@ -122,10 +127,126 @@ class DAO
 	 */
 	public static function select(?array $nomColonnes=null, string $table, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
     {
-        //pour le $debug
-        if ($debug == true) {
-            //afficher la requête
-            //echo $request
+        $colsSlt="";
+        $from= "";
+        $orderBy ="";
+        $limit="";
+
+        $db = DbConnect::getDb();
+        //On mets tous les paramètres à plat à l'aide json_encode
+        $string = json_encode($nomColonnes) . $table . json_encode($conditions) . $orderBy . $limit . $debug;
+        //Cherche si 1 des paramètres contient un ";" si oui, on stop pour éviter les injections SQL
+        //IMPORTANT!!!
+        if (strpos($string, ";"))
+        {
+            return false;
         }
+        else if(!empty($nomColonnes) && ($table != null && $table != ""))
+        {
+            //Insère "Select", indiquant l'action de la requête
+            $colsSlt = self::elementSelect($nomColonnes);
+
+            //Insère "FROM" à la requête
+            $from = " FROM " . $table;
+
+            //Choix de conditions (en tableau assoc)
+            if($conditions != null)
+            {
+                $conditions = self::conditionsSelect($conditions);
+            }
+
+            //Insère "ORDER BY" pour les tris + le type (ASC ou DESC)
+            if($orderBy != null)
+            {
+            $orderBy = " ORDER BY ". $orderBy;
+            }
+
+            //Crée "LIMIT" + indication chiffré (de type string) pour délimitation (ex: "1" ou "3,2") /// OFFSET ?
+            if($limit != null)
+            {
+                $limit = " LIMIT ". $limit;
+            }
+            
+            //Constitution  de la requête
+            $sql = $colsSlt . $from . $conditions . $orderBy . $limit;
+            $stmtRequete = $db->prepare($sql); //ou Querry
+            $stmtRequete->execute();
+            
+            //pour le $debug
+            if ($debug == true)
+            {
+                //Affiche les infos concernant les variables constituant le requêtes
+                var_dump($colsSlt . $from . $conditions . $orderBy . $limit);
+            }
+
+            $liste=[];
+
+            //API
+            while ($donnees = $stmtRequete->fetch(PDO::FETCH_ASSOC))
+            { // on récupère les enregistrements de la BDD
+                if ($donnees != false)
+                {
+                    if ($api)
+                	{ // On vérifie si api est a true, on renvoie un string sinon des objets liés a à la table donnée en paramètres.
+                        $liste[] = $donnees;
+                    }
+					else
+                    {
+                        $liste[] = new $table($donnees);
+                    }
+                }
+            }
+            return $liste;
+        }
+        return false;
+            
+    }
+
+    /**
+     * Permet de constituer la 1er partie de la requête "SELECT" et indiquant l'ensemble des colonnes sur lesquelles on s'appuie (cet ensemble est sous forme de tableau)
+     * Pour éclater chaque element de l'ensemble sélectionné on l'entre dans la boucle, puis on concatène chaque élement afin de constituer la 1er partie de la requête.
+     * @param array $ensembleSelect => l'ensemble de colonnes sélectionnés qui seront utiles pour manipuler la requête.  
+     * @return string $slt => résultat donne une énumération de chaines de caractères séparées par une "," et enlève ","+espace en dernière position. 
+     */
+    private static function elementSelect($tab)
+    {
+        $slt = "SELECT ";
+        foreach($tab as $colSelect)
+        {
+            $slt .= $colSelect . ", ";
+        }
+        return substr($slt, 0, strlen($slt)-2);
+    }
+
+    private static function ConditionsSelect($conditions)
+    {
+        $where = " WHERE ";
+        foreach($conditions as $nomColonne => $value)
+        {
+            if(is_array($value))
+            {
+                //_SELECT prenom, nom, mail _FROM users 
+                //_WHERE    _|prenom|     IN (|'Pierre', 'Victor'|) +
+                $where .= $nomColonne . " IN (" .implode(",",$value) . ") AND ";
+            } 
+            else if (!(strpos($value, "%")===false))
+            {
+                //_WHERE    _|prenom|   | LIKE '|     %r% |'     +
+                $where .= $nomColonne . ' LIKE "' . $value . '" AND ';
+            } 
+            else if (strpos($value, "->"))
+            {//_WHERE    _|prenom|     BETWEEN       'F'       AND     'Joly'
+                $tab = explode("->", $value);
+                $where .= $nomColonne . " BETWEEN " . $tab[0] . " AND " . $tab[1] . " AND ";
+            } 
+            else 
+            {
+                //_WHERE    _|prenom| 
+                $where .= $nomColonne . " = \"" . $value . "\" AND ";
+            }
+        }
+        $where = substr($where, 0, strlen($where)-4);
+        return $where;
+        
     }
 }
