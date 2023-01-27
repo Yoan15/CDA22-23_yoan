@@ -7,8 +7,9 @@ spl_autoload_register('chargerClasse');
 
 //permet de récupérer les données du config.json
 Parametres::init();
-//persmet de se connecter à la base de donnée
+//permet de se connecter à la base de donnée
 DBConnect::Connect();
+
 // var_dump(PersonnesManager::ListePersonnes());
 //$id=6;
 //$personne = new Personne(["nom"=>"Champi", "prenom"=>"Toad"]);
@@ -17,11 +18,11 @@ DBConnect::Connect();
 //var_dump(PersonnesManager::DeletePersonne($id));
 
 //var_dump(PersonnesManager::AddPersonne($personne));
-$nomColonnes = ["nom", "prenom" ];
+$nomColonnes = ["id", "nom", "prenom", "idVille" ];
 $conditions = ["id" => "1->5", "nom" => "%d%"]; 
 $orderBy = null;
 $limit = null;
 $api = true;
 $debug = true;
 
-var_dump(PersonnesManager::getList($nomColonnes,"Personne",   $conditions ,  $orderBy,  $limit ,  $api,  $debug ));
+var_dump(PersonnesManager::getList($nomColonnes, "personne", $conditions , $orderBy, $limit , $api, $debug));

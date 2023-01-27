@@ -19,3 +19,13 @@ function decode($texte)
     return $texte;
 }
 
+/**
+ * 
+ */
+function combobox($obj)
+{
+    echo'<select name="idPersonne" id="idPersonne">
+            <option value="" selected=""></option>
+        </select>';
+    
+}

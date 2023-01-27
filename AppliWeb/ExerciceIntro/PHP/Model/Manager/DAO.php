@@ -247,6 +247,5 @@ class DAO
         }
         $where = substr($where, 0, strlen($where)-4);
         return $where;
-        
     }
 }

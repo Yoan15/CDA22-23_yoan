@@ -51,7 +51,7 @@ class PersonnesManager
 	{
 		$nomColonnes = ($nomColonnes==null)?Personne::getAttributes():$nomColonnes;
 		var_dump($nomColonnes);
-		return DAO::select($nomColonnes, $table,   $conditions ,  $orderBy,  $limit ,  $api,  $debug );
+		return DAO::select($nomColonnes, $table, $conditions, $orderBy, $limit, $api, $debug);
 	}
     
 }
