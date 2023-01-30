@@ -19,10 +19,18 @@ DBConnect::Connect();
 
 //var_dump(PersonnesManager::AddPersonne($personne));
 $nomColonnes = ["id", "nom", "prenom", "idVille" ];
-$conditions = ["id" => "1->5", "nom" => "%d%"]; 
+//$conditions = ["id" => "1->5", "nom" => "%d%"]; 
+$conditions = null;
 $orderBy = null;
 $limit = null;
 $api = true;
 $debug = true;
 
-var_dump(PersonnesManager::getList($nomColonnes, "personne", $conditions , $orderBy, $limit , $api, $debug));
+$nomVilles = ["idVille", "nomVille"];
+$conditionsVilles = null; 
+
+//var_dump(PersonnesManager::getList($nomColonnes, "personne", $conditions , $orderBy, $limit , $api, $debug));
+
+//var_dump(VillesManager::getList($nomVilles, "ville", $conditionsVilles, $orderBy, $limit, $api, $debug));
+
+combobox($nomColonnes, "personne", $conditions , $orderBy, $limit , $api, $debug);

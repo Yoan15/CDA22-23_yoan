@@ -22,10 +22,16 @@ function decode($texte)
 /**
  * 
  */
-function combobox($obj)
+function combobox($nomColonnes, $table, $conditions, $orderBy, $limit, $api, $debug)
 {
-    echo'<select name="idPersonne" id="idPersonne">
-            <option value="" selected=""></option>
-        </select>';
+    $personnes = PersonnesManager::getList($nomColonnes, $table, $conditions, $orderBy, $limit, $api, $debug);
+    var_dump($personnes);
+    //$nomColonnesVille = ["idVille", "nomVille"];
+
+    echo'<select name="id'.ucFirst($table).'" id="id'.ucFirst($table).'">';
+    foreach ($personnes as $elt) {
+        echo'<option value="'.$elt["nom"].'">'.$elt["nom"].'</option>';
+    }
+    echo'</select>';
     
 }
