@@ -1,7 +1,0 @@
-{
-    "Host": "localhost",
-    "Port": "3306",
-    "DbName": "baseProduits",
-    "Login": "root",
-    "Pwd": ""
-}
