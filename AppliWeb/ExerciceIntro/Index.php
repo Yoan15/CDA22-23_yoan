@@ -9,13 +9,8 @@ spl_autoload_register('chargerClasse');
 Parametres::init();
 //permet de se connecter à la base de donnée
 DBConnect::Connect();
-
-// var_dump(PersonnesManager::ListePersonnes());
 //$id=6;
 //$personne = new Personne(["nom"=>"Champi", "prenom"=>"Toad"]);
-//var_dump(PersonnesManager::UpdatePersonne($personne, $id));
-//var_dump(PersonnesManager::GetPersonneById($id));
-//var_dump(PersonnesManager::DeletePersonne($id));
 
 //var_dump(PersonnesManager::AddPersonne($personne));
 //$nomColonnes = ["id", "nom", "prenom", "idVille" ];
@@ -26,12 +21,8 @@ DBConnect::Connect();
 // $limit = null;
 // $api = true;
 // $debug = true;
-
-//$nomVilles = ["idVille", "nomVille"];
-// $conditionsVilles = null; 
-
 //var_dump(PersonnesManager::getList($nomColonnes, "personne", $conditions , $orderBy, $limit , $api, $debug));
 
 //var_dump(VillesManager::getList($nomVilles, "ville", $conditionsVilles, $orderBy, $limit, $api, $debug));
 
-combobox(null, "Ville", ["idVille", "nomVille"]);
+echo combobox(null, "Ville", ["idVille", "nomVille"]);

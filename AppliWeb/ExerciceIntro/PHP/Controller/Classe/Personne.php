@@ -5,15 +5,16 @@ class Personne
     private $_id;
     private $_nom;
     private $_prenom;
+    private $_idVille;
 
-    private static $_attribut = ["id", "nom", "prenom"];
+    private static $_attribut = ["id", "nom", "prenom", "idVille"];
 
     public function getId()
     {
         return $this->_id;
     }
 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->_id = $id;
     }
@@ -23,7 +24,7 @@ class Personne
         return $this->_nom;
     }
 
-    public function setNom($nom)
+    public function setNom(string $nom)
     {
         $this->_nom = $nom;
     }
@@ -33,9 +34,19 @@ class Personne
         return $this->_prenom;
     }
 
-    public function setPrenom($prenom)
+    public function setPrenom(string $prenom)
     {
         $this->_prenom = $prenom;
+    }
+
+    public function getIdVille()
+    {
+        return $this->_idVille;
+    }
+
+    public function setIdVille(?int $idVille)
+    {
+        $this->_idVille = $idVille;
     }
 
     public static function getAttributes()

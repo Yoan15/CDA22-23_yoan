@@ -47,11 +47,11 @@ class PersonnesManager
         return DAO::Update($personne, $id);
     }
 
-    public static function getList(array $nomColonnes=null, string $table, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
+    public static function getList(array $nomColonnes=null, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
 	{
 		$nomColonnes = ($nomColonnes==null)?Personne::getAttributes():$nomColonnes;
 		var_dump($nomColonnes);
-		return DAO::select($nomColonnes, $table, $conditions, $orderBy, $limit, $api, $debug);
+		return DAO::select($nomColonnes, "personne", $conditions, $orderBy, $limit, $api, $debug);
 	}
     
 }

@@ -19,6 +19,12 @@ function decode($texte)
     return $texte;
 }
 
+function appelGet($obj, $chaine)
+{
+    $methode = "get" . ucfirst($chaine);
+    return call_user_func(array($obj, $methode));
+}
+
 /**
  * Fonction qui permet de générer des combobox
  * 
@@ -48,27 +54,41 @@ function decode($texte)
  * 
  * @return string 
  */
-function combobox(?int $valeur, string $table, array $nomColonnes = null, array $conditions = null , ?string $attributs = "", string $orderby = null)
+function combobox(?int $valeur, string $table, array $nomColonnes, array $conditions = null , ?string $attributs = "", string $orderby = null)
 {
+    //on initialise une variable selected à une valeur vide
+    $selected = "";
     //Crée un tableau de colonnes vides
     $colonnes = [];
-    //on récupère les attributs de la classe
-    $attributs = $table::getAttributes();
-    //var_dump($attributs);
+    //on récupère les attributs de la classe que l'on stocke dans une variable
+    $id = $table::getAttributes()[0];
     //on insère dans le tableau $colonnes le nom des colonnes de la table pour en faire une copie
     $colonnes = $nomColonnes;
-    //var_dump($colonnes);
     //On met l'id dans le tableau $colonnes
-    $colonnes[] = $attributs[0];
-    //var_dump($colonnes);
+    $colonnes[] = $id;
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = ($table.'sManager')::getList($colonnes, $conditions, $orderby, null, false, true);
-    var_dump($conditions);
-    
+
     //on stocke le <select> dans une variable qui sera contruite plus tard
-    $select = '<select name="" id="">';
-        $select .= '<option value=""></option>';
-        $select .= '<option value=""></option>';
+    $select = '<select id="'. $id .'" name="'. $id .'" '. $attributs .'>';
+    //si la valeur est égale à null alors on ajoute l'attribut "selected" à l'option
+    if ($valeur == null) 
+    {
+        $selected = " selected ";
+    }
+    $select .= '<option value="" '.$selected.'>Choisir une valeur...</option>';
+    //pour chaque donnée en tant que valeur, on regarde si la valeur fournie est égale à l'id et si cela est le cas alors on met l'attribut selected à l'option correspondante
+    foreach ($data as $value) 
+    {
+        $selected = (appelGet($value, $id) == $valeur)?" selected ":"";
+        $contenu = "";
+        foreach ($nomColonnes as $col) 
+        {
+            $contenu .= appelGet($value, $col) . " ";
+        }
+        $select .= '<option value="'. appelGet($value, $id).'" '. $selected .'>'. $contenu .'</option>';
+    }
     //on concatène la balise fermante du <select> dans la variable créée précédement
     $select .= '</select>';
+    return $select;
 }
