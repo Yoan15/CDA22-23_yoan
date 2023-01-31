@@ -1,6 +1,6 @@
 <?php
 
-function afficheListePersonne()
+function afficheListePersonne(string $table, array $conditions = null , string $orderby = null)
 {
     //début du tableau
     $table = '<table>
@@ -13,6 +13,14 @@ function afficheListePersonne()
                 </thead>
                 <tbody>';
 
+    //$data = ($table.'sManager')::getList($colonnes, $conditions, $orderby, null, false, true);
+    // foreach ($data as $value) {
+    //     $table .= '<tr>';
+    //     for ($i=0; $i < $value; $i++) { 
+    //         $table .= '<td>'.$value[$i].'</td>';
+    //     }
+    //     $table .= '</tr>';
+    // }
     $table .= '</tbody>
             </table>';
     return $table;

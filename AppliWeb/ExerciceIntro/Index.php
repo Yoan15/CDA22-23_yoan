@@ -33,5 +33,5 @@ DBConnect::Connect();
 
 echo head();
 echo test();
-echo afficheListePersonne();
+echo afficheListePersonne("personne_ville");
 echo footer();
