@@ -1,0 +1,17 @@
+h1
+{
+    text-align: center;
+    color: rgba(50, 95, 163, 0.637);
+}
+
+table,
+td
+{
+    border: 1px solid #000;
+}
+
+thead
+{
+    background-color: #000;
+    color: #fff;
+}

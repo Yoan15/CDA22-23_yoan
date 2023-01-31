@@ -12,6 +12,15 @@ function chargerClasse($classe)
     if (file_exists("PHP/MODEL/MANAGER/" . $classe . ".php")) {
         require "PHP/MODEL/MANAGER/" . $classe . ".php";
     }
+    if (file_exists("PHP/VIEW/FORM/Form". $classe . ".php")) {
+        require "PHP/VIEW/FORM/Form" . $classe . ".php";
+    }
+    // if (file_exists("PHP/VIEW/GENERAL/head.php")) {
+    //     require "VIEW/GENERAL/head.php";
+    // }
+    // if (file_exists("PHP/VIEW/GENERAL/footer.php")) {
+    //     require "VIEW/GENERAL/footer.php";
+    // }
 }
 
 function decode($texte)

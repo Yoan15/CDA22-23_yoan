@@ -1,0 +1,1 @@
+CREATE VIEW personne_ville AS SELECT p.nom, p.prenom, v.nomVille FROM personne AS p INNER JOIN ville AS v WHERE p.idVille = v.idVille;
