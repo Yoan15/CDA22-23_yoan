@@ -37,12 +37,21 @@ class Parametres
     static function init()
     {
         $json = './config.json'; //on va chercher le fichier JSON
-        $file = json_decode(file_get_contents($json)); //On transforme le JSON en objet
-        //On fournit aux variables les valeurs de l'objet JSON
-        self::$_host = decode($file->host);
-        self::$_dbname = decode($file->dbname);
-        self::$_port = $file->port;
-        self::$_user = decode($file->user);
-        self::$_password = decode($file->password);
+        if (file_exists('./config.json')) {
+            $file = json_decode(file_get_contents($json)); //On transforme le JSON en objet
+            //On fournit aux variables les valeurs de l'objet JSON
+            self::$_host = decode($file->host);
+            self::$_dbname = decode($file->dbname);
+            self::$_port = $file->port;
+            self::$_user = decode($file->user);
+            if (strlen($file->password) == 0) 
+            {
+                self::$_password = $file->password; //développement pas besoin de décoder
+            }
+            else 
+            {
+                self::$_password = decode($file->password); //production
+            }
+        }
     }
 }

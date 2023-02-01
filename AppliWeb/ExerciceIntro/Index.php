@@ -28,6 +28,8 @@ DBConnect::Connect();
 
 //echo starthtml();
 
+//var_dump(VillesManager::GetVilleById(2));
+
 echo combobox(null, "Ville", ["idVille", "nomVille"]);
 
 //echo footer();

@@ -11,13 +11,21 @@ class VillesManager
         return $villes;
     }
 
+     /**
+      * Permet de récupérer une ville par son ID
+      */
+    // public static function GetVilleById($id)
+    // {
+    //     $ville = DAO::GetById("Ville", $id);
+    //     return $ville;
+    // }
+
     /**
      * Permet de récupérer une ville par son ID
      */
     public static function GetVilleById($id)
     {
-        $ville = DAO::GetById("Ville", $id);
-        return $ville;
+        return DAO::select(Ville::getAttributes(), "Ville", ["idVille" => $id])[0];
     }
 
     /**
