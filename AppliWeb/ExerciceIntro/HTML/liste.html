@@ -1,5 +1,6 @@
 <?php 
-    require "./../PHP/View/Liste/liste.php"
+    require "./../PHP/Controller/Outils.php";
+    require "./../PHP/View/Liste/liste.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +20,10 @@
     </main>
 
     <main class="column">
-
-    </main>
     <?php 
         echo liste("Personne", ["id", "nom", "prenom", "idVille"]);
     ?>
+    </main>
+    
 </body>
 </html>

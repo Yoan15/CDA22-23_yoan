@@ -6,6 +6,11 @@ function liste(array $colonnes, string $table, array $conditions = null, string 
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = ($table.'sManager')::getList($colonnes, $conditions, $orderby, null, false, true);
     var_dump($data);
+    foreach ($data as $value) {
+        // foreach ($variable as $key => $value) {
+        //     # code...
+        // }
+    }
     //$liste .= '</body>';
     //return $liste;
 }
