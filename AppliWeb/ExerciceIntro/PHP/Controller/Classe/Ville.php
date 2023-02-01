@@ -51,8 +51,4 @@ class ville
             }
         }
     }
-
-    
-
-    
 }

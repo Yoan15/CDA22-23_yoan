@@ -12,15 +12,6 @@ function chargerClasse($classe)
     if (file_exists("PHP/MODEL/MANAGER/" . $classe . ".php")) {
         require "PHP/MODEL/MANAGER/" . $classe . ".php";
     }
-    if (file_exists("PHP/VIEW/FORM/Form". $classe . ".php")) {
-        require "PHP/VIEW/FORM/Form" . $classe . ".php";
-    }
-    // if (file_exists("PHP/VIEW/GENERAL/head.php")) {
-    //     require "VIEW/GENERAL/head.php";
-    // }
-    // if (file_exists("PHP/VIEW/GENERAL/footer.php")) {
-    //     require "VIEW/GENERAL/footer.php";
-    // }
 }
 
 function decode($texte)
@@ -69,14 +60,14 @@ function combobox(?int $valeur, string $table, array $nomColonnes, array $condit
     $selected = "";
     //Crée un tableau de colonnes vides
     $colonnes = [];
-    //on récupère les attributs de la classe que l'on stocke dans une variable
+    //on récupère le premier attribut de la classe que l'on stocke dans une variable
     $id = $table::getAttributes()[0];
     //on insère dans le tableau $colonnes le nom des colonnes de la table pour en faire une copie
     $colonnes = $nomColonnes;
     //On met l'id dans le tableau $colonnes
     $colonnes[] = $id;
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
-    $data = ($table.'sManager')::getList($colonnes, $conditions, $orderby, null, false, true);
+    $data = ($table.'sManager')::getList($colonnes, $conditions, $orderby, null, false, false);
 
     //on stocke le <select> dans une variable qui sera contruite plus tard
     $select = '<select id="'. $id .'" name="'. $id .'" '. $attributs .'>';
