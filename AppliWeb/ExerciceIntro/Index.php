@@ -1,10 +1,6 @@
 <?php
 //On require les outils pour pouvoir avoir accès à l'autoload ainsi que d'autres outils nécessaires
 require "./PHP/Controller/Outils.php";
-require "./PHP/View/General/head.php";
-require "./PHP/View/Liste/ListePersonne.php";
-require "./PHP/View/Form/FormPersonne.php";
-require "./PHP/View/General/footer.php";
 
 //appel de l'autoload
 spl_autoload_register('chargerClasse');
@@ -29,9 +25,4 @@ DBConnect::Connect();
 
 //var_dump(VillesManager::getList($nomVilles, "ville", $conditionsVilles, $orderBy, $limit, $api, $debug));
 
-//echo combobox(null, "Ville", ["idVille", "nomVille"]);
-
-echo head();
-echo test();
-echo afficheListePersonne("personne_ville");
-echo footer();
+echo combobox(null, "Ville", ["idVille", "nomVille"]);
