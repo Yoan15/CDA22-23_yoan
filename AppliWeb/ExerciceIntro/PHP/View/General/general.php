@@ -10,6 +10,8 @@ function startHtml()
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./CSS/liste.css">
         <link rel="stylesheet" href="./CSS/form.css">
+        <link rel="stylesheet" href="./CSS/root.css">
+        <link rel="stylesheet" href="./CSS/style.css">
         <title>Framework</title>
     </head>
     <body>';

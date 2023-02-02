@@ -8,12 +8,13 @@ function liste(array $nomColonnes, string $table, array $conditions = null, stri
 
     
     $liste .= '<main class="column borderBlack">';
+    //affichage du titre de la liste
     $liste .= '<div>
                     <h1>Liste de '. $table .'</h1>
                 </div>';
     //affichage du bouton ajouter
     $liste .= '<div><section>
-                    <a href="index.php?page=./PHP/View/Form/form.php">
+                    <a href="index.php?page=form">
                         <button class="ajouter">Ajouter</button>
                     </a>
                 </section></div>';
