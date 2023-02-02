@@ -9,10 +9,17 @@ function starthtml()
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./CSS/liste.css">
-        <title>test</title>
+        <link rel="stylesheet" href="./CSS/form.css">
+        <title>Framework</title>
     </head>
     <body>';
     return $head;
+}
+
+function headerHtml()
+{
+    $header = '<header></header>';
+    return $header;
 }
 
 function nav()

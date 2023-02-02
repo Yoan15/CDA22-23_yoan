@@ -1,19 +1,68 @@
-.grid
+html, body 
 {
-    display: grid;
-    border: 0.5px solid red;
-    grid-template-columns: 2fr 2fr 2fr;
+    margin: 0;
+    padding: 0;
 }
 
-body
+div, a, header, footer, nav, article, section, body, html,main 
 {
-    width: 50%;
-}
-
-article
-{
-    /* border: 0.5px solid blue; */
     display: flex;
+    flex: 1;
+}
+
+.column
+{
+    flex-direction: column;
+}
+
+.borderBlack
+{
+    border: 3px solid black;
+    padding: 1em;
+}
+
+.espaceH
+{
+    flex: none;
+    height: 5vh;
+}
+
+.espaceHMedium
+{
+    flex: none;
+    height: 2.5vh;
+}
+
+.center 
+{
     justify-content: center;
     align-items: center;
+}
+
+.detail
+{
+    background-color: blue;
+    color: white;
+}
+
+.update
+{
+    background-color: rgb(218, 178, 4);
+    color: white;
+}
+
+.delete
+{
+    background-color: rgb(153, 7, 7);
+    color: white;
+}
+
+button
+{
+    cursor: pointer;
+}
+
+a
+{
+    text-decoration: none;
 }

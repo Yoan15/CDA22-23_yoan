@@ -30,7 +30,7 @@ echo starthtml();
 
 //var_dump(VillesManager::GetVilleById(2));
 
-echo combobox(null, "Ville", ["idVille", "nomVille"]);
+//echo combobox(null, "Ville", ["idVille", "nomVille"]);
 
 echo liste(["idVille", "nomVille"], "Ville");
 
