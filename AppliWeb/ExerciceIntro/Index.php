@@ -26,10 +26,12 @@ DBConnect::Connect();
 
 //var_dump(VillesManager::getList($nomVilles, "ville", $conditionsVilles, $orderBy, $limit, $api, $debug));
 
-//echo starthtml();
+echo starthtml();
 
 //var_dump(VillesManager::GetVilleById(2));
 
 echo combobox(null, "Ville", ["idVille", "nomVille"]);
 
-//echo footer();
+echo liste(["idVille", "nomVille"], "Ville");
+
+echo footer();
