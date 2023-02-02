@@ -73,4 +73,9 @@ class Personne
             }
         }
     }
+
+    public function __toString()
+    {
+        return "[id]: ". $this->_id . "[nom]: ". $this->_nom . "[prenom]: ". $this->_prenom . "[idVille]: ". $this->_idVille;
+    }
 }

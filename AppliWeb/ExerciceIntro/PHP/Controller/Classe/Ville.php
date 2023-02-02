@@ -51,4 +51,9 @@ class ville
             }
         }
     }
+    
+    public function __toString()
+    {
+        return "[idVille]: ". $this->_idVille . "[nomVille]: ". $this->_nomVille;
+    }
 }
