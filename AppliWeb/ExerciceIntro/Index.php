@@ -3,6 +3,7 @@
 require "./PHP/Controller/Outils.php";
 require "./PHP/View/General/general.php";
 require "./PHP/View/Liste/liste.php";
+require "./PHP/View/Form/form.php";
 
 //appel de l'autoload
 spl_autoload_register('chargerClasse');
@@ -32,6 +33,17 @@ echo startHtml();
 
 //echo combobox(null, "Ville", ["idVille", "nomVille"]);
 
-echo liste(["idVille", "nomVille"], "Ville");
+if (isset($_GET["page"]) && $_GET["page"] == "form")
+{
+    echo form();
+}
+elseif (isset($_GET["page"]) && $_GET["page"] == "liste") 
+{
+    echo liste(["id", "nom", "prenom", "idVille"], "Personne");
+}
+else 
+{
+    echo liste(["id", "nom", "prenom", "idVille"], "Personne");
+}
 
 echo footer();

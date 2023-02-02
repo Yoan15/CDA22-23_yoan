@@ -21,12 +21,12 @@ function liste(array $nomColonnes, string $table, array $conditions = null, stri
     $liste .= '<div>';
         //affichage des nom des colonnes
         foreach ($nomColonnes as $col) {
-            $liste .= '<section>'. $col .'</section>';
+            $liste .= '<section class="nomColonnes">'. $col .'</section>';
         }
         //sections pour les colonnes les boutons détails, modifier et supprimer
-        $liste .= '<section></section>';
-        $liste .= '<section></section>';
-        $liste .= '<section></section>';
+        $liste .= '<section class="nomColonnes"></section>';
+        $liste .= '<section class="nomColonnes"></section>';
+        $liste .= '<section class="nomColonnes"></section>';
 
     $liste .= '</div>';
     //ajout d'un espace entre l'en-tête et les données
@@ -40,19 +40,19 @@ function liste(array $nomColonnes, string $table, array $conditions = null, stri
             }
             //affichage des boutons détails, modifier et supprimer
             $liste .= '<section>
-                            <a href="index.php?page=./PHP/View/Form/form.php">
+                            <a href="index.php?page=form">
                                 <button class="detail">Voir</button>
                             </a>
                         </section>';
 
             $liste .= '<section>
-                            <a href="index.php?page=./PHP/View/Form/form.php">
+                            <a href="index.php?page=form">
                                 <button class="update">Modifier</button>
                             </a>
                         </section>';
                         
             $liste .= '<section>
-                            <a href="index.php?page=./PHP/View/Form/form.php">
+                            <a href="index.php?page=form">
                                 <button class="delete">Supprimer</button>
                             </a>
                         </section>';

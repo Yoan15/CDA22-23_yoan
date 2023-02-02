@@ -67,6 +67,15 @@ div, a, header, footer, nav, article, section, body, html,main
     color: white;
 }
 
+.nomColonnes
+{
+    display: flex;
+    flex: 1;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
 button
 {
     cursor: pointer;
