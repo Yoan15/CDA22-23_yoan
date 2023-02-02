@@ -43,17 +43,20 @@ div, a, header, footer, nav, article, section, body, html,main
 {
     background-color: blue;
     color: white;
+    border-color: blue;
 }
 
 .update
 {
     background-color: rgb(218, 178, 4);
+    border-color: rgb(218, 178, 4);
     color: white;
 }
 
 .delete
 {
     background-color: rgb(153, 7, 7);
+    border-color: rgb(153, 7, 7);
     color: white;
 }
 
