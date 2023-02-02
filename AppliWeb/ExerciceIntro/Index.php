@@ -35,7 +35,7 @@ echo startHtml();
 
 if (isset($_GET["page"]) && $_GET["page"] == "form")
 {
-    echo form();
+    echo form(["id", "nom", "prenom", "idVille"], "Personne");
 }
 elseif (isset($_GET["page"]) && $_GET["page"] == "liste") 
 {
