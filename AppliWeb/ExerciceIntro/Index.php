@@ -26,7 +26,7 @@ DBConnect::Connect();
 
 //var_dump(VillesManager::getList($nomVilles, "ville", $conditionsVilles, $orderBy, $limit, $api, $debug));
 
-echo starthtml();
+echo startHtml();
 
 //var_dump(VillesManager::GetVilleById(2));
 

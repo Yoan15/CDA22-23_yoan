@@ -39,24 +39,31 @@ div, a, header, footer, nav, article, section, body, html,main
     align-items: center;
 }
 
+.ajouter
+{
+    background-color: green;
+    color: white;
+    border-color: rgb(6, 161, 6);
+}
+
 .detail
 {
     background-color: blue;
     color: white;
-    border-color: blue;
+    border-color: rgb(63, 63, 250);
 }
 
 .update
 {
     background-color: rgb(218, 178, 4);
-    border-color: rgb(218, 178, 4);
+    border-color: rgb(228, 188, 9);
     color: white;
 }
 
 .delete
 {
     background-color: rgb(153, 7, 7);
-    border-color: rgb(153, 7, 7);
+    border-color: rgb(182, 12, 12);
     color: white;
 }
 

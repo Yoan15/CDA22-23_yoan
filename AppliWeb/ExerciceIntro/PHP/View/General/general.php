@@ -1,6 +1,6 @@
 <?php
 
-function starthtml()
+function startHtml()
 {
     $head = '<!DOCTYPE html>
     <html lang="en">
