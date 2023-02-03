@@ -16,6 +16,20 @@ Parametres::init();
 //permet de se connecter à la base de donnée
 DBConnect::Connect();
 
+$routes = [
+    //routes pour la liste
+    "listePersonne" => "?page=liste",
+    "listeVille" => "?page=liste",
+
+    //routes pour le formulaire
+    "ajouterPersonne" => "?page=form&action=ajouter",
+    "modifierPersonne" => "?page=form&action=modifier",
+    "supprimerPersonne" => "?page=form&action=supprimer",
+    "ajouterVille" => "?page=form&action=ajouter",
+    "modifierVille" => "?page=form&action=modifier",
+    "supprimerVille" => "?page=form&action=supprimer",
+];
+
 echo startHtml();
 
 //echo combobox(null, "Ville", ["idVille", "nomVille"]);

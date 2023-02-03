@@ -3,6 +3,11 @@
 function form(array $nomColonnes, string $table)
 {
     $form = '<main class="column">';
+    if (isset($_GET["action"]) && $_GET["action"] == "modifier")
+    {
+        
+    }
+    
     $form .= '<div>
                 <h1>Formulaire d\'ajout de '. $table .'</h1>
             </div>';
