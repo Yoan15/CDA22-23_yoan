@@ -17,23 +17,3 @@ function startHtml()
     <body>';
     return $head;
 }
-
-function headerHtml()
-{
-    $header = '<header></header>';
-    return $header;
-}
-
-function nav()
-{
-    $nav = '<nav></nav>';
-    return $nav;
-}
-
-function footer()
-{
-    $footer = '</body>
-            <footer></footer>
-        </html>';
-    return $footer;
-}

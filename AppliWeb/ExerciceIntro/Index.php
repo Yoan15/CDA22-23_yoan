@@ -1,7 +1,10 @@
 <?php
 //On require les outils pour pouvoir avoir accès à l'autoload ainsi que d'autres outils nécessaires
 require "./PHP/Controller/Outils.php";
-require "./PHP/View/General/general.php";
+require "./PHP/View/General/head.php";
+require "./PHP/View/General/header.php";
+require "./PHP/View/General/nav.php";
+require "./PHP/View/General/footer.php";
 require "./PHP/View/Liste/liste.php";
 require "./PHP/View/Form/form.php";
 

@@ -14,7 +14,7 @@ function liste(array $nomColonnes, string $table, array $conditions = null, stri
                 </div>';
     //affichage du bouton ajouter
     $liste .= '<div><section>
-                    <a href="index.php?page=form">
+                    <a href="index.php?page=form&action=ajouter">
                         <button class="ajouter">Ajouter</button>
                     </a>
                 </section></div>';
@@ -47,13 +47,13 @@ function liste(array $nomColonnes, string $table, array $conditions = null, stri
                         </section>';
 
             $liste .= '<section>
-                            <a href="index.php?page=form">
+                            <a href="index.php?page=form&action=modifier">
                                 <button class="update">Modifier</button>
                             </a>
                         </section>';
                         
             $liste .= '<section>
-                            <a href="index.php?page=form">
+                            <a href="index.php?page=form&action=supprimer">
                                 <button class="delete">Supprimer</button>
                             </a>
                         </section>';
