@@ -5,21 +5,20 @@
 class PersonnesManager
 {
     /**
-     * fonction qui récupère les personnes dans la BDD
+     * Fonction qui permet de faire un select qui peut posséder des conditions 
      */
-    public static function ListePersonnes()
-    {
-        $personnes = DAO::GetAll("Personne");
-        return $personnes;
-    }
+    public static function getList(array $nomColonnes=null, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
+	{
+		$nomColonnes = ($nomColonnes==null)?Personne::getAttributes():$nomColonnes;
+		return DAO::select($nomColonnes, "personne", $conditions, $orderBy, $limit, $api, $debug);
+	}
 
     /**
      * Permet de récupérer une personne par son ID
      */
     public static function GetPersonneById($id)
     {
-        $personne = DAO::GetById("Personne", $id);
-        return $personne;
+        return DAO::select(Personne::getAttributes(), "Personne", ["id" => $id])[0];
     }
 
     /**
@@ -46,11 +45,4 @@ class PersonnesManager
     {
         return DAO::Update($personne, $id);
     }
-
-    public static function getList(array $nomColonnes=null, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
-	{
-		$nomColonnes = ($nomColonnes==null)?Personne::getAttributes():$nomColonnes;
-		return DAO::select($nomColonnes, "personne", $conditions, $orderBy, $limit, $api, $debug);
-	}
-    
 }

@@ -3,22 +3,13 @@
 class VillesManager
 {
     /**
-     * fonction qui récupère les villes dans la BDD
+     * Fonction qui permet de faire un select qui peut posséder des conditions 
      */
-    public static function ListeVilles()
-    {
-        $villes = DAO::GetAll("Ville");
-        return $villes;
-    }
-
-     /**
-      * Permet de récupérer une ville par son ID
-      */
-    // public static function GetVilleById($id)
-    // {
-    //     $ville = DAO::GetById("Ville", $id);
-    //     return $ville;
-    // }
+    public static function getList(array $nomColonnes=null, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
+	{
+		$nomColonnes = ($nomColonnes==null)?Ville::getAttributes():$nomColonnes;
+		return DAO::select($nomColonnes, "Ville", $conditions, $orderBy, $limit, $api, $debug);
+	}
 
     /**
      * Permet de récupérer une ville par son ID
@@ -52,11 +43,4 @@ class VillesManager
     {
         return DAO::Update($ville, $id);
     }
-
-    public static function getList(array $nomColonnes=null, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
-	{
-		$nomColonnes = ($nomColonnes==null)?Ville::getAttributes():$nomColonnes;
-		return DAO::select($nomColonnes, "Ville", $conditions, $orderBy, $limit, $api, $debug);
-	}
-    
 }
