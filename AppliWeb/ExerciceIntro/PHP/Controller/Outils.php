@@ -67,7 +67,7 @@ function appelGet($obj, $chaine)
  * @param string|null $orderBy => null par défaut, contient un string qui contient les noms de colonnes et le type de tri
  * Exemple :"nomColonne1 , nomColonne2 DESC" => "Order By nomColonne1 , nomColonne2 DESC"
  * 
- * @return string 
+ * @return void 
  */
 function combobox(?int $valeur, string $table, array $nomColonnes, array $conditions = null , ?string $attributs = "", string $orderby = null)
 {

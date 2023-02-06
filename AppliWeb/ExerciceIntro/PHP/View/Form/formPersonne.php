@@ -31,7 +31,7 @@
         echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom">';
         echo '<label>Ville : </label>';
         if ($mode == "voir" || $mode == "supprimer") {
-            echo '<input type="text" '. $disabled .' value="'. VillesManager::GetVilleById($elm->getIdVille())->getNomVille() .'" name="idVille">';
+            echo combobox($elm->getIdVille(), "Ville", ["nomVille"], null, "disabled");
         } else {
             echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
         }
