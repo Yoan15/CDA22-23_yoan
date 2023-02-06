@@ -17,4 +17,4 @@ switch ($_GET['mode']) {
 	}
 }
 
-header("location:index.php?page=listePersonnes");
+header("location:index.php?page=listePersonne");
