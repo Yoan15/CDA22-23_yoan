@@ -1,67 +1,71 @@
 <?php
 
-function ListeVille()
-{
-    $liste = "";
+// function ListeVille()
+// {
+    //$liste = "";
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = VillesManager::getList();
 
     
-    $liste .= '<main class="column borderBlack">';
+    echo '<main class="column borderBlack">';
     //affichage du titre de la liste
-    $liste .= '<div>
+    echo '<div>
                     <h1>Liste de Villes</h1>
                 </div>';
     //affichage du bouton ajouter
-    $liste .= '<div><section>
+    echo '<div><section>
                     <a href="index.php?page=formVille&mode=ajouter">
                         <button class="ajouter">Ajouter</button>
                     </a>
                 </section></div>';
-    $liste .= '<div class="espaceHMedium"></div>';
-    $liste .= '<div>';
+    echo '<div class="espaceHMedium"></div>';
+    echo '<div>';
         //affichage des nom des colonnes
         //foreach ($nomColonnes as $col) {
-            $liste .= '<section class="nomColonnes">idVille</section>';
-            $liste .= '<section class="nomColonnes">nomVille</section>';
+            echo '<section class="nomColonnes">idVille</section>';
+            echo '<section class="nomColonnes">nomVille</section>';
         //}
         //sections pour les colonnes les boutons détails, modifier et supprimer
-        $liste .= '<section class="nomColonnes"></section>';
-        $liste .= '<section class="nomColonnes"></section>';
-        $liste .= '<section class="nomColonnes"></section>';
+        echo '<section class="nomColonnes"></section>';
+        echo '<section class="nomColonnes"></section>';
+        echo '<section class="nomColonnes"></section>';
 
-    $liste .= '</div>';
+    echo '</div>';
     //ajout d'un espace entre l'en-tête et les données
-    $liste .= '<div class="espaceH"></div>';
+    echo '<div class="espaceH"></div>';
     //affichage des données
     foreach ($data as $value) {
-        $liste .= '<div>';
+        echo '<div>';
             // foreach ($nomColonnes as $col) 
             // {
-                $liste .= '<section>'. $value->getIdVille() .'</section>';
-                $liste .= '<section>'. $value->getNomVille() .'</section>';
+                echo '<section>'. $value->getIdVille() .'</section>';
+                echo '<section>'. $value->getNomVille() .'</section>';
             //}
             //affichage des boutons détails, modifier et supprimer
-            $liste .= '<section>
+            echo '<section>
                             <a href="index.php?page=formVille&mode=voir&id='. $value->getIdVille() .'">
                                 <button class="detail">Voir</button>
                             </a>
                         </section>';
 
-            $liste .= '<section>
+            echo '<section>
                             <a href="index.php?page=formVille&mode=modifier&id='. $value->getIdVille() .'">
                                 <button class="update">Modifier</button>
                             </a>
                         </section>';
                         
-            $liste .= '<section>
+            echo '<section>
                             <a href="index.php?page=formVille&mode=supprimer&id='. $value->getIdVille() .'">
                                 <button class="delete">Supprimer</button>
                             </a>
                         </section>';
-        $liste .= '</div>';
-        $liste .= '<div class="espaceHMedium"></div>';
+        echo '</div>';
+        echo '<div class="espaceHMedium"></div>';
     }
-    $liste .= '</main>';
-    return $liste;
-}
+    echo  '<div class="espaceHMedium"></div>';
+    echo '<a href="index.php">
+                    <button class="detail">Retour vers l\'accueil</button>
+                </a>';
+    echo '</main>';
+//     return $liste;
+// }

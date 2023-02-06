@@ -1,5 +1,6 @@
 <?php
 $elm = new Ville($_POST);
+var_dump($elm,$_POST);
 
 switch ($_GET['mode']) {
 	case "ajouter": {
@@ -11,9 +12,9 @@ switch ($_GET['mode']) {
 		break;
 	}
 	case "supprimer": {
-		$elm = VillesManager::DeleteVille($elm);
+		$elm = VillesManager::DeleteVille($elm->getIdVille());
 		break;
 	}
 }
 
-header("location:index.php?page=listeVilles");
+//header("location:index.php?page=listeVilles");

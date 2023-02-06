@@ -107,3 +107,14 @@ function combobox(?int $valeur, string $table, array $nomColonnes, array $condit
     $select .= '</select>';
     return $select;
 }
+
+function afficherPage($page)
+{
+    $chemin = $page[0];
+    $nom = $page[1];
+    $titre = $page[2];
+    $api = $page[3];
+
+    include $chemin . $nom . '.php';
+
+}

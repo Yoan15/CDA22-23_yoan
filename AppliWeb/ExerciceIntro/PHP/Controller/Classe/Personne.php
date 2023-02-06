@@ -14,9 +14,9 @@ class Personne
         return $this->_id;
     }
 
-    public function setId(int $id)
+    public function setId($id)
     {
-        $this->_id = $id;
+        $this->_id = (int) $id;
     }
 
     public function getNom()

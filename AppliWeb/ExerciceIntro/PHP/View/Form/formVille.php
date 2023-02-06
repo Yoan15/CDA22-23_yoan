@@ -1,9 +1,10 @@
 <?php
 
-function formVille()
-{
+// function formVille()
+// {
     global $regex;
     $mode = $_GET['mode'];
+    //var_dump($_GET["mode"]);
     $disabled = " ";
     switch ($mode) {
         case "voir":
@@ -17,41 +18,39 @@ function formVille()
     } else {
         $elm = new Ville();
     }
-    $form = '<main class="column">';
+    echo '<main class="column">';
     // if (isset($_GET["action"]) && $_GET["action"] == "modifier")
     // {
         
     // }
     
-    $form .= '<form class="GridForm" action="index.php?page=actionVilles&mode='.$_GET['mode'].'" method="post"/>';
+    echo '<form class="GridForm" action="index.php?page=actionVilles&mode='.$_GET['mode'].'" method="post"/>';
 
-    $form .= '<div>
+    echo '<div>
                 <h1>Formulaire d\'ajout de Ville</h1>
             </div>';
-    $form .= '<div class="espaceHMedium"></div>';
+    echo '<div class="espaceHMedium"></div>';
     // foreach ($nomColonnes as $col) 
     // {
-        $form.='<div class="noDisplay"><input type="hidden" value="'.$elm->getIdVille().'" name=IdVille></div>';
-        $form .= '<section>';
-        $form .= '<label>Nom ville : </label>';
-        $form .= '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille">';
-        $form .= '</section>';
-        $form .= '<div class="espaceHMedium"></div>';
+        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getIdVille().'" name=IdVille></div>';
+        echo '<section>';
+        echo '<label>Nom ville : </label>';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille">';
+        echo '</section>';
+        echo '<div class="espaceHMedium"></div>';
     //}
-    $form .= '<div class="espaceHMedium"></div>';
-    $form .= '<div>';
-    $form .= '<section>
+    echo '<div class="espaceHMedium"></div>';
+    echo '<div>';
+    echo '<section>
                 <a href="index.php?page=listeVille">
                     <button class="delete">Annuler</button>
                 </a>
             </section>';
-    $form .= ($mode == "voir") ? " " : '<section>
-                <a >
-                    <button class="ajouter">Valider</button>
-                </a>
+    echo ($mode == "voir") ? " " : '<section>
+                <button type="submit" class="ajouter">Valider</button>
             </section>';
-    $form.='</div>';
-    $form.='</form>';
-    $form .= '</main>';
-    return $form;
-}
+    echo '</div>';
+    echo '</form>';
+    echo '</main>';
+//     return $form;
+// }

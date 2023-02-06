@@ -1,7 +1,7 @@
 <?php
 
-function formPersonne()
-{
+// function formPersonne()
+// {
     global $regex;
     $mode = $_GET['mode'];
     $disabled = " ";
@@ -18,45 +18,46 @@ function formPersonne()
         $elm = new Personne();
     }
 
-    $form = '<main class="column">';
+    echo '<main class="column">';
     // if (isset($_GET["action"]) && $_GET["action"] == "modifier")
     // {
         
     // }
 
-    $form .= '<form class="GridForm" action="index.php?page=actionPersonnes&mode='.$_GET['mode'].'" method="post"/>';
+    echo '<form class="GridForm" action="index.php?page=actionPersonnes&mode='.$_GET['mode'].'" method="post"/>';
     
-    $form .= '<div>
+    echo '<div>
                 <h1>Formulaire d\'ajout de Personne</h1>
             </div>';
-    $form .= '<div class="espaceHMedium"></div>';
+    echo '<div class="espaceHMedium"></div>';
     // foreach ($nomColonnes as $col) 
     // {
-        $form.='<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=Id></div>';
-        $form .= '<section>';
-        $form .= '<label>Nom : </label>';
-        $form .= '<input type="text">';
-        $form .= '<label>Prénom : </label>';
-        $form .= '<input type="text">';
-        $form .= '<label>Nom : </label>';
-        $form .= '<input type="text">';
-        $form .= '</section>';
-        $form .= '<div class="espaceHMedium"></div>';
+        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=Id></div>';
+        echo '<section>';
+        echo '<label>Nom : </label>';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'">';
+        echo '<label>Prénom : </label>';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'">';
+        echo '<label>Ville : </label>';
+
+        echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
+        echo '</section>';
+        echo '<div class="espaceHMedium"></div>';
     //}
-    $form .= '<div class="espaceHMedium"></div>';
-    $form .= '<div>';
-    $form .= '<section>
+    echo '<div class="espaceHMedium"></div>';
+    echo '<div>';
+    echo '<section>
                 <a href="index.php?page=listePersonne">
                     <button class="delete">Annuler</button>
                 </a>
             </section>';
-    $form .= '<section>
+    echo '<section>
                 <a >
                     <button class="ajouter">Valider</button>
                 </a>
             </section>';
-    $form .= '</div>';
-    $form .= '</form>';
-    $form .= '</main>';
-    return $form;
-}
+    echo '</div>';
+    echo '</form>';
+    echo '</main>';
+//     return $form;
+// }

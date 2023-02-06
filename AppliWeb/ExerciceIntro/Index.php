@@ -5,11 +5,11 @@ require "./PHP/View/General/head.php";
 require "./PHP/View/General/header.php";
 require "./PHP/View/General/nav.php";
 require "./PHP/View/General/footer.php";
-require "./PHP/View/Liste/listePersonne.php";
-require "./PHP/View/Liste/listeVille.php";
-require "./PHP/View/Form/formPersonne.php";
-require "./PHP/View/Form/formVille.php";
-require "./PHP/View/Form/form.php";
+// require "./PHP/View/Liste/listePersonne.php";
+// require "./PHP/View/Liste/listeVille.php";
+// require "./PHP/View/Form/formPersonne.php";
+// require "./PHP/View/Form/formVille.php";
+// require "./PHP/View/Form/form.php";
 
 //appel de l'autoload
 spl_autoload_register('chargerClasse');
@@ -20,34 +20,69 @@ Parametres::init();
 DBConnect::Connect();
 
 $routes = [
+    //route pour accueil
+    "Default" => ["PHP/View/General/", "accueil", "Accueil", false],
+
     //routes pour la liste
-    "listePersonne" => "?page=listePersonne",
-    "listeVille" => "?page=listeVille",
+    "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", false],
+    "listeVille" => ["PHP/View/Liste/", "listeVille", "Liste de villes", false],
 
     //routes pour le formulaire
-    "ajouterPersonne" => "?page=formPersonne&action=ajouter",
-    "modifierPersonne" => "?page=formPersonne&action=modifier",
-    "supprimerPersonne" => "?page=formPersonne&action=supprimer",
-    "ajouterVille" => "?page=formVille&action=ajouter",
-    "modifierVille" => "?page=formVille&action=modifier",
-    "supprimerVille" => "?page=formVille&action=supprimer",
+    "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", false],
+    "actionPersonnes" => ["PHP/CONTROLLER/ACTION/", "actionPersonnes", "Actions personne", false],
+
+    "formVille" => ["PHP/View/Form/", "formVille", "Formulaire ville", false],
+    "actionVilles" => ["PHP/CONTROLLER/ACTION/", "actionVilles", "Actions ville", false]
 ];
 
 echo startHtml();
 
 //echo combobox(null, "Ville", ["idVille", "nomVille"]);
 
-if (isset($_GET["page"]) && $_GET["page"] == "formVille")
+// if (isset($_GET["page"]) && $_GET["page"] == "formPersonne")
+// {
+//     echo formPersonne();
+// }
+// elseif (isset($_GET["page"]) && $_GET["page"] == "listePersonne") 
+// {
+//     echo ListePersonne();
+// }
+// else 
+// {
+//     echo ListePersonne();
+// }
+
+// if (isset($_GET["page"]) && $_GET["page"] == "formVille")
+// {
+//     echo formVille();
+// }
+// elseif (isset($_GET["page"]) && $_GET["page"] == "listeVille") 
+// {
+//     echo ListeVille();
+// }
+// else 
+// {
+//     echo ListeVille();
+// }
+
+if(isset($_GET["page"]))
 {
-    echo formVille();
+    $page = $_GET["page"];
+    //var_dump($page);
+
+    if(isset($routes[$page]))
+    {
+        afficherPage($routes[$page]);
+        //var_dump($routes[$page]);
+    }
+    else
+    {
+        afficherPage($routes["Default"]);
+    }
 }
-elseif (isset($_GET["page"]) && $_GET["page"] == "listeVille") 
+else
 {
-    echo ListeVille();
-}
-else 
-{
-    echo ListeVille();
+    afficherPage($routes["Default"]);
 }
 
 echo footer();
