@@ -24,7 +24,7 @@
         echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getIdVille().'" name=idVille></div>';
         echo '<section>';
         echo '<label>Nom ville : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille">';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille" pattern="'. $regex["alpha"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
     echo '<div class="espaceHMedium"></div>';

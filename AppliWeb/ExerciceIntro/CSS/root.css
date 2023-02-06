@@ -1,3 +1,9 @@
+:root
+{
+    --inputCorrect: #21a107;
+    --inputIncorrect: #c22912;
+}
+
 html, body 
 {
     font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;

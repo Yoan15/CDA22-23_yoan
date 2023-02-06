@@ -9,3 +9,12 @@ label
     margin-right: 0.5em;
 }
 
+.inputCorrect
+{
+    box-shadow: 2px 2px 3px var(--inputCorrect);
+}
+
+.inputIncorrect
+{
+    box-shadow: 2px 2px 3px var(--inputIncorrect);
+}

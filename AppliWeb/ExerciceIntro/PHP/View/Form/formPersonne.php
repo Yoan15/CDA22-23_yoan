@@ -26,9 +26,9 @@
         echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=id></div>';
         echo '<section>';
         echo '<label>Nom : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'" name="nom">';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'" name="nom" pattern="'. $regex["*"] .'">';
         echo '<label>Prénom : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom">';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom" pattern="'. $regex["*"] .'">';
         echo '<label>Ville : </label>';
         if ($mode == "voir" || $mode == "supprimer") {
             echo combobox($elm->getIdVille(), "Ville", ["nomVille"], null, "disabled");
