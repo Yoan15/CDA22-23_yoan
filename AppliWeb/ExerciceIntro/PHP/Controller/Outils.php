@@ -14,6 +14,11 @@ function chargerClasse($classe)
     }
 }
 
+function crypte($mdp)
+{
+    return md5(md5($mdp));
+}
+
 function decode($texte)
 {
     return $texte;

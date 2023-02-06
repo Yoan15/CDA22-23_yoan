@@ -17,7 +17,7 @@ class UtilisateurManager
      */
     public static function GetUtilisateurById($id)
     {
-        return DAO::select(Utilisateur::getAttributes(), "Utilisateur", ["id" => $id])[0];
+        return DAO::select(Utilisateur::getAttributes(), "Utilisateur", ["idUtilisateur" => $id])[0];
     }
 
     /**

@@ -24,7 +24,7 @@ class Utilisateur
 
     public function set_id($_id)
     {
-        $this->_id = $_id;
+        $this->_id = (int) $_id;
 
         return $this;
     }
@@ -34,7 +34,7 @@ class Utilisateur
         return $this->_nom;
     }
 
-    public function set_nom($_nom)
+    public function set_nom(string $_nom)
     {
         $this->_nom = $_nom;
 
@@ -46,7 +46,7 @@ class Utilisateur
         return $this->_prenom;
     }
 
-    public function set_prenom($_prenom)
+    public function set_prenom(string $_prenom)
     {
         $this->_prenom = $_prenom;
 
