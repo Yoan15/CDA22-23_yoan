@@ -35,27 +35,24 @@
         echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=Id></div>';
         echo '<section>';
         echo '<label>Nom : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'">';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'" name="nom">';
         echo '<label>Prénom : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'">';
+        echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom">';
         echo '<label>Ville : </label>';
-
         echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
     //}
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
-    echo '<section>
+        echo '<section>
                 <a href="index.php?page=listePersonne">
                     <button class="delete">Annuler</button>
                 </a>
             </section>';
-    echo '<section>
-                <a >
-                    <button class="ajouter">Valider</button>
-                </a>
-            </section>';
+    echo ($mode == "voir") ? " " : '<section>
+                                        <button type="submit" class="ajouter">Valider</button>
+                                    </section>';
     echo '</div>';
     echo '</form>';
     echo '</main>';

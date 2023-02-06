@@ -59,11 +59,13 @@ class DAO
     /**
      * Fonction qui permet de supprimer une personne de la BDD
      */
-    public static function Delete($table, $id)
+    public static function Delete($obj)
     {
-        $stmt = DBConnect::getDb()->prepare("DELETE FROM " . $table . " WHERE id=?");
-        $stmt->bindParam(1, $id, PDO::PARAM_INT);
-        $stmt->execute();
+        $stmt = DBConnect::getDb()->prepare("DELETE FROM " . get_class($obj) . " WHERE ". $obj->getAttributes()[0] ."=?");
+        $get = "get" . ucfirst($obj->getAttributes()[0]);
+        $get = $obj->$get();
+        $stmt->bindParam(1, $get, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 
     /**

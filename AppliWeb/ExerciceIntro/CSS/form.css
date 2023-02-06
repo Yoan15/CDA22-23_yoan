@@ -1,5 +1,10 @@
 input
 {
-    margin-left: 0.5em;
+    margin-right: 0.5em;
     border: 3px solid black;
+}
+
+label
+{
+    margin-right: 0.5em;
 }

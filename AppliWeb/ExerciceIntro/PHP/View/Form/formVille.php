@@ -32,7 +32,7 @@
     echo '<div class="espaceHMedium"></div>';
     // foreach ($nomColonnes as $col) 
     // {
-        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getIdVille().'" name=IdVille></div>';
+        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getIdVille().'" name=idVille></div>';
         echo '<section>';
         echo '<label>Nom ville : </label>';
         echo '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille">';
@@ -42,9 +42,9 @@
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
     echo '<section>
-                <a href="index.php?page=listeVille">
-                    <button class="delete">Annuler</button>
-                </a>
+    <button class="delete"><a href="index.php?page=listeVille">
+                    Annuler
+                </a></button>
             </section>';
     echo ($mode == "voir") ? " " : '<section>
                 <button type="submit" class="ajouter">Valider</button>

@@ -21,18 +21,15 @@ DBConnect::Connect();
 
 $routes = [
     //route pour accueil
-    "Default" => ["PHP/View/General/", "accueil", "Accueil", false],
+    "Default" => ["PHP/View/General/", "accueil", "Accueil", 0, false],
 
-    //routes pour la liste
-    "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", false],
-    "listeVille" => ["PHP/View/Liste/", "listeVille", "Liste de villes", false],
+    "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", 0, false],
+    "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", 0, false],
+    "actionPersonnes" => ["PHP/Controller/Action/", "actionPersonnes", "Actions personne", 0, false],
 
-    //routes pour le formulaire
-    "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", false],
-    "actionPersonnes" => ["PHP/CONTROLLER/ACTION/", "actionPersonnes", "Actions personne", false],
-
-    "formVille" => ["PHP/View/Form/", "formVille", "Formulaire ville", false],
-    "actionVilles" => ["PHP/CONTROLLER/ACTION/", "actionVilles", "Actions ville", false]
+    "listeVille" => ["PHP/View/Liste/", "listeVille", "Liste de villes", 0, false],
+    "formVille" => ["PHP/View/Form/", "formVille", "Formulaire ville", 0, false],
+    "actionVilles" => ["PHP/Controller/Action/", "actionVilles", "Actions ville", 0, false]
 ];
 
 echo startHtml();
@@ -65,23 +62,17 @@ echo startHtml();
 //     echo ListeVille();
 // }
 
-if(isset($_GET["page"]))
-{
+if (isset($_GET["page"])) {
     $page = $_GET["page"];
     //var_dump($page);
 
-    if(isset($routes[$page]))
-    {
+    if (isset($routes[$page])) {
         afficherPage($routes[$page]);
         //var_dump($routes[$page]);
-    }
-    else
-    {
+    } else {
         afficherPage($routes["Default"]);
     }
-}
-else
-{
+} else {
     afficherPage($routes["Default"]);
 }
 

@@ -1,5 +1,6 @@
 <?php
 $elm = new Personne($_POST);
+var_dump($elm,$_POST);
 
 switch ($_GET['mode']) {
 	case "ajouter": {
@@ -11,9 +12,9 @@ switch ($_GET['mode']) {
 		break;
 	}
 	case "supprimer": {
-		$elm = PersonnesManager::DeletePersonne($elm);
+		$elm = PersonnesManager::DeletePersonne($elm->getId());
 		break;
 	}
 }
 
-header("location:index.php?page=listePersonnes");
+//header("location:index.php?page=listePersonnes");

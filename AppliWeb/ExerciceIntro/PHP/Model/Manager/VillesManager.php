@@ -31,9 +31,9 @@ class VillesManager
     /**
      * Fonction qui permet de supprimer une ville de la BDD
      */
-    public static function DeleteVille($id)
+    public static function DeleteVille($obj)
     {
-        return DAO::Delete("Ville", $id);
+        return DAO::Delete($obj);
     }
 
     /**

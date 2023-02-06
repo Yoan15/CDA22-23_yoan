@@ -113,7 +113,8 @@ function afficherPage($page)
     $chemin = $page[0];
     $nom = $page[1];
     $titre = $page[2];
-    $api = $page[3];
+    $roleRequis = $page[3];
+    $api = $page[4];
 
     include $chemin . $nom . '.php';
 
