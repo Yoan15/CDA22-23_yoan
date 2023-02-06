@@ -1,7 +1,4 @@
 <?php
-
-// function formPersonne()
-// {
     global $regex;
     $mode = $_GET['mode'];
     $disabled = " ";
@@ -19,10 +16,6 @@
     }
 
     echo '<main class="column">';
-    // if (isset($_GET["action"]) && $_GET["action"] == "modifier")
-    // {
-        
-    // }
 
     echo '<form class="GridForm" action="index.php?page=actionPersonnes&mode='.$_GET['mode'].'" method="post"/>';
     
@@ -30,9 +23,7 @@
                 <h1>Formulaire d\'ajout de Personne</h1>
             </div>';
     echo '<div class="espaceHMedium"></div>';
-    // foreach ($nomColonnes as $col) 
-    // {
-        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=Id></div>';
+        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=id></div>';
         echo '<section>';
         echo '<label>Nom : </label>';
         echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'" name="nom">';
@@ -42,7 +33,6 @@
         echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
-    //}
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
         echo '<section>
@@ -51,10 +41,8 @@
                 </a>
             </section>';
     echo ($mode == "voir") ? " " : '<section>
-                                        <button type="submit" class="ajouter">Valider</button>
-                                    </section>';
+                <button type="submit" class="ajouter">Valider</button>
+            </section>';
     echo '</div>';
     echo '</form>';
     echo '</main>';
-//     return $form;
-// }

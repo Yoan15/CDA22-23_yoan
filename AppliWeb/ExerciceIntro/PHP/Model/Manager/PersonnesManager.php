@@ -33,9 +33,9 @@ class PersonnesManager
     /**
      * Fonction qui permet de supprimer une personne de la BDD
      */
-    public static function DeletePersonne($id)
+    public static function DeletePersonne($obj)
     {
-        return DAO::Delete("Personne", $id);
+        return DAO::Delete($obj);
     }
 
     /**

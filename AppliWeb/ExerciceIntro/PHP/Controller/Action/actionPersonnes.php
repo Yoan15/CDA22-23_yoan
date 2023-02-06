@@ -12,9 +12,9 @@ switch ($_GET['mode']) {
 		break;
 	}
 	case "supprimer": {
-		$elm = PersonnesManager::DeletePersonne($elm->getId());
+		$elm = PersonnesManager::DeletePersonne($elm);
 		break;
 	}
 }
 
-//header("location:index.php?page=listePersonnes");
+header("location:index.php?page=listePersonnes");
