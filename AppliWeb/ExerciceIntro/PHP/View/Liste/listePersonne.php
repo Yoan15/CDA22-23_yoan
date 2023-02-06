@@ -1,8 +1,4 @@
 <?php
-
-//function listePersonne()
-//{
-    //$liste = "";
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = PersonnesManager::getList();
 
@@ -21,11 +17,9 @@
     echo  '<div class="espaceHMedium"></div>';
     echo  '<div>';
         //affichage des nom des colonnes
-        //foreach ($nomColonnes as $col) {
             echo  '<section class="nomColonnes">nom</section>';
             echo  '<section class="nomColonnes">prénom</section>';
             echo  '<section class="nomColonnes">Ville</section>';
-        //}
         //sections pour les colonnes les boutons détails, modifier et supprimer
         echo  '<section class="nomColonnes"></section>';
         echo  '<section class="nomColonnes"></section>';
@@ -37,12 +31,9 @@
     //affichage des données
     foreach ($data as $value) {
         echo  '<div>';
-            // foreach ($nomColonnes as $col) 
-            // {
-                echo  '<section>'. $value->getNom() .'</section>';
-                echo  '<section>'. $value->getPrenom() .'</section>';
-                echo  '<section>'. PersonnesManager::GetPersonneById($value->getId())->getNom() .'</section>';
-            //}
+            echo  '<section>'. $value->getNom() .'</section>';
+            echo  '<section>'. $value->getPrenom() .'</section>';
+            echo  '<section>'. VillesManager::GetVilleById($value->getIdVille())->getNomVille() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo  '<section>
                             <a href="index.php?page=formPersonne&mode=voir&id='. $value->getId() .'">

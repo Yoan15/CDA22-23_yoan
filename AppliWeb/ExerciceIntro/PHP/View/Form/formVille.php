@@ -30,11 +30,11 @@
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
     echo '<section>
-                <a href="index.php?page=listeVille">
-                    <button class="delete">
+                <button class="delete">
+                    <a href="index.php?page=listeVille">
                         Annuler
-                    </button>
-                </a>
+                    </a>
+                </button>
             </section>';
     echo ($mode == "voir") ? " " : '<section>
                 <button type="submit" class="ajouter">Valider</button>

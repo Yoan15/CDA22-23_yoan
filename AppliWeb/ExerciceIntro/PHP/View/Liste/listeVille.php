@@ -1,8 +1,4 @@
 <?php
-
-// function ListeVille()
-// {
-    //$liste = "";
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = VillesManager::getList();
 
@@ -21,10 +17,7 @@
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
         //affichage des nom des colonnes
-        //foreach ($nomColonnes as $col) {
-            echo '<section class="nomColonnes">idVille</section>';
             echo '<section class="nomColonnes">nomVille</section>';
-        //}
         //sections pour les colonnes les boutons détails, modifier et supprimer
         echo '<section class="nomColonnes"></section>';
         echo '<section class="nomColonnes"></section>';
@@ -36,11 +29,7 @@
     //affichage des données
     foreach ($data as $value) {
         echo '<div>';
-            // foreach ($nomColonnes as $col) 
-            // {
-                echo '<section>'. $value->getIdVille() .'</section>';
                 echo '<section>'. $value->getNomVille() .'</section>';
-            //}
             //affichage des boutons détails, modifier et supprimer
             echo '<section>
                             <a href="index.php?page=formVille&mode=voir&id='. $value->getIdVille() .'">
@@ -67,5 +56,3 @@
                     <button class="detail">Retour vers l\'accueil</button>
                 </a>';
     echo '</main>';
-//     return $liste;
-// }

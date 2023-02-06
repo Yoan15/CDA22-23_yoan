@@ -30,15 +30,21 @@
         echo '<label>Prénom : </label>';
         echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom">';
         echo '<label>Ville : </label>';
-        echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
+        if ($mode == "voir" || $mode == "supprimer") {
+            echo '<input type="text" '. $disabled .' value="'. VillesManager::GetVilleById($elm->getIdVille())->getNomVille() .'" name="idVille">';
+        } else {
+            echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
+        }
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
         echo '<section>
-                <a href="index.php?page=listePersonne">
-                    <button class="delete">Annuler</button>
-                </a>
+                <button class="delete">
+                    <a href="index.php?page=listePersonne">
+                        Annuler
+                    </a>
+                </button>
             </section>';
     echo ($mode == "voir") ? " " : '<section>
                 <button type="submit" class="ajouter">Valider</button>
