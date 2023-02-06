@@ -81,8 +81,8 @@ class DAO
             //On concatène ":" avec le nom des attributs 
         }
         //$stmt = DBConnect::getDb()->prepare("UPDATE " . $class . " SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id");
-        var_dump("UPDATE " . $class . " SET ". substr($listeColonnes, 0, -2) . " WHERE `id`=".$id);
-        $stmt = DBConnect::getDb()->prepare("UPDATE " . $class . " SET ". substr($listeColonnes, 0, -2) . " WHERE `id`=".$id);
+        var_dump("UPDATE " . $class . " SET ". substr($listeColonnes, 0, -2) . " WHERE ". $obj->getAttributes()[0] ."=".$id);
+        $stmt = DBConnect::getDb()->prepare("UPDATE " . $class . " SET ". substr($listeColonnes, 0, -2) . " WHERE ". $obj->getAttributes()[0] ."=".$id);
         for ($i=1; $i < count($obj->getAttributes()); $i++)
         { 
             //On met dans la variable $get la concaténation du mot "get" avec le nom de l'attribut en mettant la première lettre de l'attribut en majuscule.
