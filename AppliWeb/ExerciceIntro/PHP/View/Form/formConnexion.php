@@ -6,10 +6,9 @@ echo '<main class="column">';
     echo '<form class="GridForm" action="index.php?page=actionConnexion" method="post"/>';
 
     echo '<div>
-                <h1>Formulaire d\'ajout de Ville</h1>
+                <h1>Formulaire de connexion</h1>
             </div>';
     echo '<div class="espaceHMedium"></div>';
-        echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getIdVille().'" name=idVille></div>';
         echo '<section>';
         echo '<label>E-mail : </label>';
         echo '<input type="text" name="email" pattern="'. $regex["email"] .'">';
