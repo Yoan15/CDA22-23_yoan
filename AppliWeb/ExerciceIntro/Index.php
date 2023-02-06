@@ -5,11 +5,6 @@ require "./PHP/View/General/head.php";
 require "./PHP/View/General/header.php";
 require "./PHP/View/General/nav.php";
 require "./PHP/View/General/footer.php";
-// require "./PHP/View/Liste/listePersonne.php";
-// require "./PHP/View/Liste/listeVille.php";
-// require "./PHP/View/Form/formPersonne.php";
-// require "./PHP/View/Form/formVille.php";
-// require "./PHP/View/Form/form.php";
 
 //appel de l'autoload
 spl_autoload_register('chargerClasse');
@@ -34,41 +29,11 @@ $routes = [
 
 echo startHtml();
 
-//echo combobox(null, "Ville", ["idVille", "nomVille"]);
-
-// if (isset($_GET["page"]) && $_GET["page"] == "formPersonne")
-// {
-//     echo formPersonne();
-// }
-// elseif (isset($_GET["page"]) && $_GET["page"] == "listePersonne") 
-// {
-//     echo ListePersonne();
-// }
-// else 
-// {
-//     echo ListePersonne();
-// }
-
-// if (isset($_GET["page"]) && $_GET["page"] == "formVille")
-// {
-//     echo formVille();
-// }
-// elseif (isset($_GET["page"]) && $_GET["page"] == "listeVille") 
-// {
-//     echo ListeVille();
-// }
-// else 
-// {
-//     echo ListeVille();
-// }
-
 if (isset($_GET["page"])) {
     $page = $_GET["page"];
-    //var_dump($page);
 
     if (isset($routes[$page])) {
         afficherPage($routes[$page]);
-        //var_dump($routes[$page]);
     } else {
         afficherPage($routes["Default"]);
     }
