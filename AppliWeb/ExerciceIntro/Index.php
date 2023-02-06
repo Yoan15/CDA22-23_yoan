@@ -5,6 +5,7 @@ require "./PHP/View/General/head.php";
 require "./PHP/View/General/header.php";
 require "./PHP/View/General/nav.php";
 require "./PHP/View/General/footer.php";
+require "./PHP/Model/Manager/UtilisateursManager.php";
 
 //appel de l'autoload
 spl_autoload_register('chargerClasse');
@@ -15,8 +16,11 @@ Parametres::init();
 DBConnect::Connect();
 
 $routes = [
+    //routes pour connexion et inscription
+    "Default" => ["PHP/View/Form/", "formInscription", "Formulaire d'inscription", 0, false],
+    "formConnexion" => ["PHP/View/Form/", "formConnexion", "Formulaire de connexion", 0, false],
     //route pour accueil
-    "Default" => ["PHP/View/General/", "accueil", "Accueil", 0, false],
+    "Accueil" => ["PHP/View/General/", "accueil", "Accueil", 0, false],
 
     "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", 0, false],
     "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", 0, false],
