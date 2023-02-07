@@ -1,25 +1,27 @@
 <?php
+
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
-    $data = PersonnesManager::getList();
+    $data = UtilisateursManager::getList();
 
     
     echo  '<main class="column borderBlack">';
     //affichage du titre de la liste
     echo  '<div>
-                    <h1>Liste de Personnes</h1>
+                    <h1>Liste d\'utilisateurs</h1>
                 </div>';
     //affichage du bouton ajouter
     echo  '<div><section>
-                    <a href="index.php?page=formPersonne&mode=ajouter">
+                    <a href="index.php?page=formUtilisateur&mode=ajouter">
                         <button class="ajouter">Ajouter</button>
                     </a>
                 </section></div>';
     echo  '<div class="espaceHMedium"></div>';
     echo  '<div>';
         //affichage des nom des colonnes
-            echo  '<section class="nomColonnes">nom</section>';
-            echo  '<section class="nomColonnes">prénom</section>';
-            echo  '<section class="nomColonnes">Ville</section>';
+            echo  '<section class="nomColonnes">Nom</section>';
+            echo  '<section class="nomColonnes">Prénom</section>';
+            echo  '<section class="nomColonnes">Email</section>';
+            echo  '<section class="nomColonnes">Role</section>';
         //sections pour les colonnes les boutons détails, modifier et supprimer
         echo  '<section class="nomColonnes"></section>';
         echo  '<section class="nomColonnes"></section>';
@@ -33,22 +35,23 @@
         echo  '<div>';
             echo  '<section>'. $value->getNom() .'</section>';
             echo  '<section>'. $value->getPrenom() .'</section>';
-            echo  '<section>'. VillesManager::GetVilleById($value->getIdVille())->getNomVille() .'</section>';
+            echo  '<section>'. $value->getEmail() .'</section>';
+            echo  '<section>'. $value->getRole() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo  '<section>
-                            <a href="index.php?page=formPersonne&mode=voir&id='. $value->getId() .'">
+                            <a href="index.php?page=formUtilisateur&mode=voir&id='. $value->getId() .'">
                                 <button class="detail">Voir</button>
                             </a>
                         </section>';
 
             echo  '<section>
-                            <a href="index.php?page=formPersonne&mode=modifier&id='. $value->getId() .'">
+                            <a href="index.php?page=formUtilisateur&mode=modifier&id='. $value->getId() .'">
                                 <button class="update">Modifier</button>
                             </a>
                         </section>';
                         
             echo  '<section>
-                            <a href="index.php?page=formPersonne&mode=supprimer&id='. $value->getId() .'">
+                            <a href="index.php?page=formUtilisateur&mode=supprimer&id='. $value->getId() .'">
                                 <button class="delete">Supprimer</button>
                             </a>
                         </section>';

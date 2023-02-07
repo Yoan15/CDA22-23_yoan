@@ -52,7 +52,7 @@
         echo '<div class="espaceHMedium"></div>';
     }
     echo  '<div class="espaceHMedium"></div>';
-    echo '<a href="index.php">
+    echo '<a href="index.php?page=Accueil">
                     <button class="detail">Retour vers l\'accueil</button>
                 </a>';
     echo '</main>';

@@ -17,72 +17,72 @@ class Utilisateur
     ////////////////////////////////////
     #region Accesseurs
 
-    public function get_id()
+    public function getId()
     {
         return $this->_id;
     }
 
-    public function set_id($_id)
+    public function setId($_id)
     {
         $this->_id = (int) $_id;
 
         return $this;
     }
 
-    public function get_nom()
+    public function getNom()
     {
         return $this->_nom;
     }
 
-    public function set_nom(string $_nom)
+    public function setNom(string $_nom)
     {
         $this->_nom = $_nom;
 
         return $this;
     }
 
-    public function get_prenom()
+    public function getPrenom()
     {
         return $this->_prenom;
     }
 
-    public function set_prenom(string $_prenom)
+    public function setPrenom(string $_prenom)
     {
         $this->_prenom = $_prenom;
 
         return $this;
     }
 
-    public function get_email()
+    public function getEmail()
     {
         return $this->_email;
     }
 
-    public function set_email($_email)
+    public function setEmail($_email)
     {
         $this->_email = $_email;
 
         return $this;
     }
 
-    public function get_mdp()
+    public function getMdp()
     {
         return $this->_mdp;
     }
 
-    public function set_mdp($_mdp)
+    public function setMdp($_mdp)
     {
         $this->_mdp = $_mdp;
 
         return $this;
     }
 
-    public function get_role()
+    public function getRole()
     {
         return $this->_role;
     }
 
-    public function set_role($_role)
+    public function setRole($_role)
     {
         $this->_role = $_role;
 

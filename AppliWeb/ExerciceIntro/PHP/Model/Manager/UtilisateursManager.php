@@ -1,6 +1,6 @@
 <?php
 
-class UtilisateurManager 
+class UtilisateursManager 
 {
     /**
      * permet de récupérer la liste des utilisateurs
