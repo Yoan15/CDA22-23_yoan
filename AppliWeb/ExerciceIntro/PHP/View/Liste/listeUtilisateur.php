@@ -39,19 +39,19 @@
             echo  '<section>'. $value->getRole() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo  '<section>
-                            <a href="index.php?page=formUtilisateur&mode=voir&id='. $value->getId() .'">
+                            <a href="index.php?page=formUtilisateur&mode=voir&id='. $value->getIdUtilisateur() .'">
                                 <button class="detail">Voir</button>
                             </a>
                         </section>';
 
             echo  '<section>
-                            <a href="index.php?page=formUtilisateur&mode=modifier&id='. $value->getId() .'">
+                            <a href="index.php?page=formUtilisateur&mode=modifier&id='. $value->getIdUtilisateur() .'">
                                 <button class="update">Modifier</button>
                             </a>
                         </section>';
                         
             echo  '<section>
-                            <a href="index.php?page=formUtilisateur&mode=supprimer&id='. $value->getId() .'">
+                            <a href="index.php?page=formUtilisateur&mode=supprimer&id='. $value->getIdUtilisateur() .'">
                                 <button class="delete">Supprimer</button>
                             </a>
                         </section>';

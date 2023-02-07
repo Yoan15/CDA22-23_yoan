@@ -5,7 +5,7 @@ class Utilisateur
     ////////////////////////////////////
     // Attributs
 
-    private $_id;
+    private $_idUtilisateur;
     private $_nom;
     private $_prenom;
     private $_email;
@@ -17,14 +17,14 @@ class Utilisateur
     ////////////////////////////////////
     #region Accesseurs
 
-    public function getId()
+    public function getIdUtilisateur()
     {
-        return $this->_id;
+        return $this->_idUtilisateur;
     }
 
-    public function setId($_id)
+    public function setIdUtilisateur($_idUtilisateur)
     {
-        $this->_id = (int) $_id;
+        $this->_idUtilisateur = (int) $_idUtilisateur;
 
         return $this;
     }
