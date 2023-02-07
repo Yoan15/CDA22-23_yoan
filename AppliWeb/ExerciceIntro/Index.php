@@ -17,6 +17,13 @@ DBConnect::Connect();
 
 session_start();
 
+/**
+ * guide des roles:
+ * 0 - visiteur
+ * 1 - utilisateur
+ * 2 - manager
+ * 3 - admin 
+ */
 $routes = [
     //routes pour connexion et inscription
     "Default" => ["PHP/View/Form/", "formInscription", "Formulaire d'inscription", 0, false],
@@ -24,6 +31,8 @@ $routes = [
     "formConnexion" => ["PHP/View/Form/", "formConnexion", "Formulaire de connexion", 0, false],
     "actionConnexion" => ["PHP/Controller/Action/", "actionConnexion", "Actions connexion", 0, false],
     "actionDeconnexion" => ["PHP/Controller/Action/", "actionDeconnexion", "Actions Deconnexion", 0, false],
+    "formChangeMdp" => ["PHP/View/Form/", "formChangeMdp", "Formulaire de changement de mot de passe", 0, false],
+    "actionChangeMdp" => ["PHP/Controller/Action/", "actionChangeMdp", "Actions Changement de Mot de Passe", 0, false],
     //route pour accueil
     "Accueil" => ["PHP/View/General/", "accueil", "Accueil", 0, false],
 

@@ -1,4 +1,10 @@
 <?php
+    // if (!isset($_SESSION)) {
+    //     header('location:index.php?page=Default');
+    // }
+    // else if ($_SESSION['role'] !== 3) {
+    //     header('location:index.php?page=Accueil');
+    // }
 
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = UtilisateursManager::getList();

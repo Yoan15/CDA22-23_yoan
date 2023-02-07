@@ -14,6 +14,11 @@ function headerHtml()
                                         Déconnexion
                                     </a>
                                 </section>';
+                    $header .= '<section>
+                                    <a href="index.php?page=formChangeMdp" class="center header">
+                                        Changer de mot de passe
+                                    </a>
+                                </section>';
                 }
                 else
                 {

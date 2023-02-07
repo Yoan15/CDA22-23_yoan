@@ -9,6 +9,7 @@ switch ($_GET['mode']) {
 		break;
 	}
 	case "modifier": {
+        //$elm->setMdp(crypte('Default-Mdp1'));
 		$elm = UtilisateursManager::UpdateUtilisateur($elm, $elm->getIdUtilisateur());
 		break;
 	}

@@ -5,7 +5,9 @@ if ($_POST['mdp'] == $_POST['confirmMdp']) {
     $addresseUtilisee = UtilisateursManager::getList(['email'], ['email' => $_POST['email']]);
     if ($addresseUtilisee == null) {
         $utilisateur = new Utilisateur($_POST);
+        //on met le role à 1 par défaut
         $utilisateur -> setRole(1);
+        //on hash le mot de passe
         $utilisateur -> setMdp(crypte($utilisateur->getMdp()));
         UtilisateursManager::AddUtilisateur($utilisateur);
         $_SESSION['utilisateur'] = $utilisateur;
