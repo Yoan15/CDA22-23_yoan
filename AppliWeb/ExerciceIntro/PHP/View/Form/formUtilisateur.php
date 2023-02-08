@@ -55,9 +55,11 @@ echo '<main class="column center">';
         echo '<section>';
             echo '<label>Rôle : </label>';
             echo '<input type="text" '. $disabled .' value="'. $elm->getRole() .'" name="role" pattern="'. $regex["num"] .'">';
-            //<select name=role id=role>
-            //<>
-            //</select>
+            //echo '<select name=role id=role>
+                //<option value="1">1</option>
+                //<option value="2">2</option>
+                //<option value="3">3</option>
+            //</select>';
             echo '</section>';
         echo '<div class="espaceHMedium"></div>';
     echo '<div class="espaceHMedium"></div>';
