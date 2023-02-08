@@ -15,7 +15,7 @@
         $elm = new Personne();
     }
 
-    echo '<main class="column center">';
+echo '<main class="column center">';
 
     echo '<form class="GridForm" action="index.php?page=actionPersonnes&mode='.$_GET['mode'].'" method="post"/>';
     
@@ -25,13 +25,13 @@
     echo '<div class="espaceHMedium"></div>';
         echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getId().'" name=id></div>';
         echo '<section>';
-        echo '<label>Nom : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'" name="nom" pattern="'. $regex["*"] .'">';
+            echo '<label>Nom : </label>';
+            echo '<input type="text" '. $disabled .' value="'. $elm->getNom() .'" name="nom" pattern="'. $regex["*"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
         echo '<section>';
-        echo '<label>Prénom : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom" pattern="'. $regex["*"] .'">';
+            echo '<label>Prénom : </label>';
+            echo '<input type="text" '. $disabled .' value="'. $elm->getPrenom() .'" name="prenom" pattern="'. $regex["*"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
         echo '<section>';
@@ -41,7 +41,6 @@
         } else {
             echo combobox($elm->getIdVille(), "Ville", ["nomVille"]);
         }
-        echo '</section>';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
     echo '<div class="espaceHMedium"></div>';
@@ -58,4 +57,4 @@
             </section>';
     echo '</div>';
     echo '</form>';
-    echo '</main>';
+echo '</main>';
