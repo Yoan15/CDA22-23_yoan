@@ -13,6 +13,7 @@ $mode = $_GET['mode'];
 
 if (isset($_GET['id'])) {
     $elm = UtilisateursManager::GetUtilisateurById($_GET['id']);
+    var_dump($elm);
 } else {
     $elm = new Utilisateur();
 }
@@ -43,7 +44,7 @@ echo '<main class="column">';
        // echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getMdp().'" name=mdp></div>';
         echo '<section>';
         echo '<label>Mot de passe : </label>';
-        echo '<input type="text" '. $disabled .' value="'. $elm->getMdp() .'" name="mdp" pattern="'. $regex["pwd"] .'">';
+        echo '<input type="hidden" '. $disabled .' value="Nouveau-Utilisateur1" name="mdp" pattern="'. $regex["pwd"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
         echo '<section>';

@@ -15,7 +15,7 @@ function headerHtml()
                                     </a>
                                 </section>';
                     $header .= '<section>
-                                    <a href="index.php?page=formChangeMdp" class="center header">
+                                    <a href="index.php?page=formChangeMdp&id='. $_SESSION['utilisateur']->getIdUtilisateur() .'" class="center header">
                                         Changer de mot de passe
                                     </a>
                                 </section>';

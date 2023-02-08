@@ -5,6 +5,7 @@ var_dump($elm,$_POST);
 
 switch ($_GET['mode']) {
 	case "ajouter": {
+		
 		$elm = UtilisateursManager::AddUtilisateur($elm);
 		break;
 	}
