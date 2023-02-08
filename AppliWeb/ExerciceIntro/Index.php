@@ -34,19 +34,19 @@ $routes = [
     "formChangeMdp" => ["PHP/View/Form/", "formChangeMdp", "Formulaire de changement de mot de passe", 0, false],
     "actionChangeMdp" => ["PHP/Controller/Action/", "actionChangeMdp", "Actions Changement de Mot de Passe", 0, false],
     //route pour accueil
-    "Accueil" => ["PHP/View/General/", "accueil", "Accueil", 0, false],
+    "Accueil" => ["PHP/View/General/", "accueil", "Accueil", 1, false],
 
-    "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", 0, false],
-    "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", 0, false],
-    "actionPersonnes" => ["PHP/Controller/Action/", "actionPersonnes", "Actions personne", 0, false],
+    "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", 1, false],
+    "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", 1, false],
+    "actionPersonnes" => ["PHP/Controller/Action/", "actionPersonnes", "Actions personne", 1, false],
 
-    "listeVille" => ["PHP/View/Liste/", "listeVille", "Liste de villes", 0, false],
-    "formVille" => ["PHP/View/Form/", "formVille", "Formulaire ville", 0, false],
-    "actionVilles" => ["PHP/Controller/Action/", "actionVilles", "Actions ville", 0, false],
+    "listeVille" => ["PHP/View/Liste/", "listeVille", "Liste de villes", 2, false],
+    "formVille" => ["PHP/View/Form/", "formVille", "Formulaire ville", 2, false],
+    "actionVilles" => ["PHP/Controller/Action/", "actionVilles", "Actions ville", 2, false],
 
-    "listeUtilisateur" => ["PHP/View/Liste/", "listeUtilisateur", "Liste des utilisateurs", 0, false],
-    "formUtilisateur" => ["PHP/View/Form/", "formUtilisateur", "Formulaire utilisateur", 0, false],
-    "actionUtilisateurs" => ["PHP/Controller/Action/", "actionUtilisateurs", "Actions utilisateur", 0, false]
+    "listeUtilisateur" => ["PHP/View/Liste/", "listeUtilisateur", "Liste des utilisateurs", 3, false],
+    "formUtilisateur" => ["PHP/View/Form/", "formUtilisateur", "Formulaire utilisateur", 3, false],
+    "actionUtilisateurs" => ["PHP/Controller/Action/", "actionUtilisateurs", "Actions utilisateur", 3, false]
 ];
 
 // echo startHtml($nom, $titre);

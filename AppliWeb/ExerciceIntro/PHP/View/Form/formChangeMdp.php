@@ -11,7 +11,6 @@ if (isset($_GET['id'])) {
 
 echo '<main class="column">';
     echo '<form class="GridForm" action="index.php?page=actionChangeMdp" method="post"/>';
-
     echo '<div>
                 <h1>Changement de mot de passe</h1>
             </div>';

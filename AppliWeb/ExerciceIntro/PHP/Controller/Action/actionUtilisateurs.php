@@ -5,12 +5,12 @@ var_dump($elm,$_POST);
 
 switch ($_GET['mode']) {
 	case "ajouter": {
-		//$elm->setMdp(crypte('Default-Mdp1'));
+		$elm->setMdp(crypte('Default-Mdp1'.$elm->getPrenom()));
 		$elm = UtilisateursManager::AddUtilisateur($elm);
 		break;
 	}
 	case "modifier": {
-		//$elm->setMdp(crypte($_POST['mdp']));
+		$elm->setMdp(crypte($_POST['mdp']));
 		$elm = UtilisateursManager::UpdateUtilisateur($elm, $elm->getIdUtilisateur());
 		break;
 	}

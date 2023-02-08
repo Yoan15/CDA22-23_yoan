@@ -137,8 +137,14 @@ function afficherPage($page)
         $titre = "Accès non autorisé";
         echo startHtml($nom, $titre);
         echo headerHtml();
-        include "PHP/View/Form/formInscription.php";
-        include "PHP/View/Form/formConnexion.php";
+        if ($roleUtilisateur >= 1) {
+            include "PHP/View/General/accueil.php";
+        }
+        else
+        {
+            include "PHP/View/Form/formInscription.php";
+            include "PHP/View/Form/formConnexion.php";
+        }
         echo footer();
     }
     

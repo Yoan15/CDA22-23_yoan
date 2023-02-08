@@ -43,12 +43,13 @@ echo '<main class="column">';
         echo '<div class="espaceHMedium"></div>';
         if ($mode == "ajouter") {
             echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getMdp().'" name=mdp></div>';
+            echo '<p>Le mot de passe sera "Default-Mdp1" suivi du prénom de l\'utilisateur. N\'oubliez pas de le changer dès votre première connexion!</p>';
         }
         else
         {
             echo '<section>';
             echo '<label>Mot de passe : </label>';
-            echo '<input type="text" '. $disabled .' value="'. $elm->getMdp() .'" name="mdp" pattern="'. $regex["pwd"] .'">';
+            echo '<input type="password" '. $disabled .' value="'. $elm->getMdp() .'" name="mdp" pattern="'. $regex["pwd"] .'">';
             echo '</section>';
             echo '<div class="espaceHMedium"></div>';
         }
