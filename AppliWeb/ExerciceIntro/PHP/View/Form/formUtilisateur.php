@@ -9,16 +9,14 @@ $mode = $_GET['mode'];
             $disabled = " disabled ";
             break;
     }
-//var_dump($_GET);
 
 if (isset($_GET['id'])) {
     $elm = UtilisateursManager::GetUtilisateurById($_GET['id']);
-    var_dump($elm);
 } else {
     $elm = new Utilisateur();
 }
 
-echo '<main class="column">';
+echo '<main class="column center">';
     echo '<form class="GridForm" action="index.php?page=actionUtilisateurs&mode='.$_GET['mode'].'" method="post"/>';
 
     echo '<div>
@@ -43,7 +41,7 @@ echo '<main class="column">';
         echo '<div class="espaceHMedium"></div>';
         if ($mode == "ajouter") {
             echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getMdp().'" name=mdp></div>';
-            echo '<p>Le mot de passe sera "Default-Mdp1" suivi du prénom de l\'utilisateur. N\'oubliez pas de le changer dès votre première connexion!</p>';
+            echo '<p>Le mot de passe sera "Default-Mdp1" suivi du prénom de l\'utilisateur. <br>N\'oubliez pas de le changer dès votre première connexion!</p>';
         }
         else
         {

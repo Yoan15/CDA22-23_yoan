@@ -14,7 +14,7 @@
     } else {
         $elm = new Ville();
     }
-    echo '<main class="column">';
+    echo '<main class="column center">';
     echo '<form class="GridForm" action="index.php?page=actionVilles&mode='.$_GET['mode'].'" method="post"/>';
 
     echo '<div>

@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $elm = new Utilisateur();
 }
 
-echo '<main class="column">';
+echo '<main class="column center">';
     echo '<form class="GridForm" action="index.php?page=actionChangeMdp" method="post"/>';
     echo '<div>
                 <h1>Changement de mot de passe</h1>
