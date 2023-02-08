@@ -2,7 +2,7 @@
 
 global $regex;
 
-echo '<main class="column">';
+echo '<main class="column center">';
     echo '<form class="GridForm" action="index.php?page=actionConnexion" method="post"/>';
 
     echo '<div>
@@ -31,6 +31,13 @@ echo '<main class="column">';
     echo '<section>
                 <button type="submit" class="ajouter">Se connecter</button>
             </section>';
+            echo '<section>
+            <button class="detail">
+                <a href="index.php?page=formInscription">
+                    Cliquez ici pour accéder à l\'inscription
+                </a>
+            </button>
+        </section>';
     echo '</div>';
     echo '</form>';
     echo '</main>';
