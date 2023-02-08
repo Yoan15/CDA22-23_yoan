@@ -138,12 +138,13 @@ function afficherPage($page)
         echo startHtml($nom, $titre);
         echo headerHtml();
         if ($roleUtilisateur >= 1) {
-            include "PHP/View/General/accueil.php";
+            header('location:index.php?page=Accueil');
+            //include "PHP/View/General/accueil.php";
         }
         else
         {
-            include "PHP/View/Form/formInscription.php";
-            include "PHP/View/Form/formConnexion.php";
+            //include "PHP/View/Form/formInscription.php";
+            header('location:index.php?page=formInscription');
         }
         echo footer();
     }
