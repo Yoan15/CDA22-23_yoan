@@ -5,7 +5,7 @@ require "./PHP/View/General/head.php";
 require "./PHP/View/General/header.php";
 require "./PHP/View/General/nav.php";
 require "./PHP/View/General/footer.php";
-require "./PHP/Model/Manager/UtilisateursManager.php";
+// require "./PHP/Model/Manager/UtilisateursManager.php";
 
 //appel de l'autoload
 spl_autoload_register('chargerClasse');
@@ -49,9 +49,9 @@ $routes = [
     "actionUtilisateurs" => ["PHP/Controller/Action/", "actionUtilisateurs", "Actions utilisateur", 0, false]
 ];
 
-echo startHtml();
+// echo startHtml($nom, $titre);
 
-echo headerHtml();
+// echo headerHtml();
 
 if (isset($_GET["page"])) {
     $page = $_GET["page"];
@@ -65,4 +65,4 @@ if (isset($_GET["page"])) {
     afficherPage($routes["Default"]);
 }
 
-echo footer();
+// echo footer();

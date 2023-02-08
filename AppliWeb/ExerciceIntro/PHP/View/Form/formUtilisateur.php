@@ -41,12 +41,18 @@ echo '<main class="column">';
         echo '<input type="text" '. $disabled .' value="'. $elm->getEmail() .'" name="email" pattern="'. $regex["email"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
-       // echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getMdp().'" name=mdp></div>';
-        echo '<section>';
-        echo '<label>Mot de passe : </label>';
-        echo '<input type="hidden" '. $disabled .' value="Nouveau-Utilisateur1" name="mdp" pattern="'. $regex["pwd"] .'">';
-        echo '</section>';
-        echo '<div class="espaceHMedium"></div>';
+        if ($mode == "ajouter") {
+            echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getMdp().'" name=mdp></div>';
+        }
+        else
+        {
+            echo '<section>';
+            echo '<label>Mot de passe : </label>';
+            echo '<input type="text" '. $disabled .' value="'. $elm->getMdp() .'" name="mdp" pattern="'. $regex["pwd"] .'">';
+            echo '</section>';
+            echo '<div class="espaceHMedium"></div>';
+        }
+        
         echo '<section>';
         echo '<label>Rôle : </label>';
         echo '<input type="text" '. $disabled .' value="'. $elm->getRole() .'" name="role" pattern="'. $regex["num"] .'">';

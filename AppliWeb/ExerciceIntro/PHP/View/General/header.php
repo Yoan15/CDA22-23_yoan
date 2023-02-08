@@ -6,7 +6,7 @@ function headerHtml()
                 <div>';
                 if(isset($_SESSION['utilisateur']))
                 {
-                    $header .= '<section>
+                    $header .= '<section class=welcomeHeader>
                                     Bonjour, '. $_SESSION['utilisateur']->getNom() .' '. $_SESSION['utilisateur']->getPrenom() .'
                                 </section>';
                     $header .= '<section>
@@ -27,7 +27,7 @@ function headerHtml()
                                         Connexion
                                     </a>
                                 </section>';
-                    $header .= '<div class="espaceHMedium"></div>';
+                    //$header .= '<div class="espaceHMedium"></div>';
                 }
     $header .= '</div>
                 </header>';

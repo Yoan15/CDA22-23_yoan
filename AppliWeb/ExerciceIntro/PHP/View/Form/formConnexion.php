@@ -16,7 +16,7 @@ echo '<main class="column">';
         echo '<div class="espaceHMedium"></div>';
         echo '<section>';
         echo '<label>Mot de passe : </label>';
-        echo '<input type="text" name="mdp" pattern="'. $regex["pwd"] .'">';
+        echo '<input type="password" name="mdp" pattern="'. $regex["pwd"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
     echo '<div class="espaceHMedium"></div>';

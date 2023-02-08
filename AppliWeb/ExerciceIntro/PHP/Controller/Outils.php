@@ -121,6 +121,25 @@ function afficherPage($page)
     $roleRequis = $page[3];
     $api = $page[4];
 
-    include $chemin . $nom . '.php';
-
+    
+    // if (isset($_SESSION['utilisateur'])) {
+    //     echo nav();
+    // }
+    $roleUtilisateur = (isset($_SESSION['utilisateur'])) ? $_SESSION['utilisateur']->getRole() : 0 ;
+    if ($roleUtilisateur >= $roleRequis) {
+        echo startHtml($nom, $titre);
+        echo headerHtml();
+        include $chemin . $nom . '.php';
+        echo footer();
+    }
+    else
+    {
+        $titre = "Accès non autorisé";
+        echo startHtml($nom, $titre);
+        echo headerHtml();
+        include "PHP/View/Form/formInscription.php";
+        include "PHP/View/Form/formConnexion.php";
+        echo footer();
+    }
+    
 }

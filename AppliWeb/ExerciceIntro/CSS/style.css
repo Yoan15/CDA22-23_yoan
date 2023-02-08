@@ -1,16 +1,71 @@
+div, a, footer, nav, article, section, body, html,main 
+{
+    display: flex;
+    flex: 1;
+}
+
+button
+{
+    cursor: pointer;
+}
+
+a
+{
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+.welcomeHeader
+{
+    padding: 1em;
+}
+
 .boutonAccueil
 {
-    width: auto;
+    width: 100%;
     height: auto;
-    border-radius: 20%;
 }
 
 .lienAccueil
 {
     height: 50%;
+    width: 100%;
 }
 
 .sectionAccueil
 {
     margin: 1em;
+    justify-content: space-evenly;
+}
+
+.detail
+{
+    background-color: blue;
+    color: white;
+    border-color: rgb(63, 63, 250);
+}
+
+.center 
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.column
+{
+    flex-direction: column;
+}
+
+
+header
+{
+    background-color: lavender;
+}
+
+.divAccueil
+{
+    flex: none;
+    width: 100%;
+    justify-content: center;
 }

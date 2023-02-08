@@ -10,8 +10,9 @@ if ($utilisateur != null) {
     {
         echo 'connexion réussie';
         $_SESSION['utilisateur'] = $utilisateur[0];
+        header("location: index.php?page=Accueil");
     }
-    header("location: index.php?page=Accueil");
+    header("location: index.php?page=Default");
 }
 else
 {

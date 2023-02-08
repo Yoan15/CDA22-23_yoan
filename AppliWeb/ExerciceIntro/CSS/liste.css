@@ -4,17 +4,6 @@
     padding: 0;
 } */
 
-div, a, footer, nav, article, section, body, html,main 
-{
-    display: flex;
-    flex: 1;
-}
-
-.column
-{
-    flex-direction: column;
-}
-
 .borderBlack
 {
     border: 3px solid black;
@@ -32,12 +21,6 @@ div, a, footer, nav, article, section, body, html,main
 {
     flex: none;
     height: 2.5vh;
-}
-
-.center 
-{
-    justify-content: center;
-    align-items: center;
 }
 
 .ajouter
@@ -75,15 +58,4 @@ div, a, footer, nav, article, section, body, html,main
     background-color: black;
     color: white;
     font-weight: bold;
-}
-
-button
-{
-    cursor: pointer;
-}
-
-a
-{
-    text-decoration: none;
-    color: white;
 }
