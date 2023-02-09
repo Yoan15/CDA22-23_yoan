@@ -33,7 +33,7 @@ echo '<main class="column center">';
         echo '<div>';
         echo '<section>
                     <button class="delete">
-                        <a href="index.php?page=listeUtilisateur">
+                        <a href="index.php?page=Accueil">
                             Annuler
                         </a>
                     </button>

@@ -10,9 +10,11 @@
                 </div>';
     //affichage du bouton ajouter
     echo  '<div><section>
-                    <a href="index.php?page=formPersonne&mode=ajouter">
-                        <button class="ajouter">Ajouter</button>
-                    </a>
+                    <button class="ajouter">
+                        <a href="index.php?page=formPersonne&mode=ajouter">
+                            Ajouter
+                        </a>
+                    </button>
                 </section></div>';
     echo  '<div class="espaceHMedium"></div>';
     echo  '<div>';
@@ -31,27 +33,33 @@
     //affichage des données
     foreach ($data as $value) {
         echo  '<div>';
-            echo  '<section>'. $value->getNom() .'</section>';
-            echo  '<section>'. $value->getPrenom() .'</section>';
-            echo  '<section>'. VillesManager::GetVilleById($value->getIdVille())->getNomVille() .'</section>';
+            echo  '<section class="alignTextCenter">'. $value->getNom() .'</section>';
+            echo  '<section class="alignTextCenter">'. $value->getPrenom() .'</section>';
+            echo  '<section class="alignTextCenter">'. VillesManager::GetVilleById($value->getIdVille())->getNomVille() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo  '<section>
+                        <button class="detail">
                             <a href="index.php?page=formPersonne&mode=voir&id='. $value->getId() .'">
-                                <button class="detail">Voir</button>
+                                Voir
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
 
             echo  '<section>
+                        <button class="update">
                             <a href="index.php?page=formPersonne&mode=modifier&id='. $value->getId() .'">
-                                <button class="update">Modifier</button>
+                                Modifier
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
                         
             echo  '<section>
+                        <button class="delete">
                             <a href="index.php?page=formPersonne&mode=supprimer&id='. $value->getId() .'">
-                                <button class="delete">Supprimer</button>
+                                Supprimer
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
         echo  '</div>';
         echo  '<div class="espaceHMedium"></div>';
     }

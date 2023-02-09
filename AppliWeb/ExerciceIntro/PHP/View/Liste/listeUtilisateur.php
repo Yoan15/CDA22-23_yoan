@@ -1,10 +1,4 @@
 <?php
-    // if (!isset($_SESSION)) {
-    //     header('location:index.php?page=Default');
-    // }
-    // else if ($_SESSION['role'] !== 3) {
-    //     header('location:index.php?page=Accueil');
-    // }
 
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = UtilisateursManager::getList();
@@ -13,14 +7,18 @@
     echo  '<main class="column borderBlack">';
     //affichage du titre de la liste
     echo  '<div>
-                    <h1>Liste d\'utilisateurs</h1>
-                </div>';
+                <h1>Liste d\'utilisateurs</h1>
+            </div>';
     //affichage du bouton ajouter
-    echo  '<div><section>
-                    <a href="index.php?page=formUtilisateur&mode=ajouter">
-                        <button class="ajouter">Ajouter</button>
-                    </a>
-                </section></div>';
+    echo  '<div>
+                <section>
+                    <button class="ajouter">
+                        <a href="index.php?page=formUtilisateur&mode=ajouter">
+                            Ajouter
+                        </a>
+                    </button>
+                </section>
+            </div>';
     echo  '<div class="espaceHMedium"></div>';
     echo  '<div>';
         //affichage des nom des colonnes
@@ -39,28 +37,34 @@
     //affichage des données
     foreach ($data as $value) {
         echo  '<div>';
-            echo  '<section>'. $value->getNom() .'</section>';
-            echo  '<section>'. $value->getPrenom() .'</section>';
-            echo  '<section>'. $value->getEmail() .'</section>';
-            echo  '<section>'. $value->getRole() .'</section>';
+            echo  '<section class="alignTextCenter">'. $value->getNom() .'</section>';
+            echo  '<section class="alignTextCenter">'. $value->getPrenom() .'</section>';
+            echo  '<section class="alignTextCenter">'. $value->getEmail() .'</section>';
+            echo  '<section class="alignTextCenter">'. $value->getRole() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo  '<section>
+                        <button class="detail">
                             <a href="index.php?page=formUtilisateur&mode=voir&id='. $value->getIdUtilisateur() .'">
-                                <button class="detail">Voir</button>
+                                Voir
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
 
             echo  '<section>
+                        <button class="update">
                             <a href="index.php?page=formUtilisateur&mode=modifier&id='. $value->getIdUtilisateur() .'">
-                                <button class="update">Modifier</button>
+                                Modifier
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
                         
             echo  '<section>
+                        <button class="delete">
                             <a href="index.php?page=formUtilisateur&mode=supprimer&id='. $value->getIdUtilisateur() .'">
-                                <button class="delete">Supprimer</button>
+                                Supprimer
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
         echo  '</div>';
         echo  '<div class="espaceHMedium"></div>';
     }

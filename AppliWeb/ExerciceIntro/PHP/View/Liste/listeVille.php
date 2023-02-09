@@ -9,11 +9,15 @@
                     <h1>Liste de Villes</h1>
                 </div>';
     //affichage du bouton ajouter
-    echo '<div><section>
+    echo '<div>
+            <section>
+                <button class="ajouter">
                     <a href="index.php?page=formVille&mode=ajouter">
-                        <button class="ajouter">Ajouter</button>
+                        Ajouter
                     </a>
-                </section></div>';
+                </button>
+            </section>
+        </div>';
     echo '<div class="espaceHMedium"></div>';
     echo '<div>';
         //affichage des nom des colonnes
@@ -29,25 +33,31 @@
     //affichage des données
     foreach ($data as $value) {
         echo '<div>';
-                echo '<section>'. $value->getNomVille() .'</section>';
+                echo '<section class="alignTextCenter">'. $value->getNomVille() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo '<section>
+                        <button class="detail">
                             <a href="index.php?page=formVille&mode=voir&id='. $value->getIdVille() .'">
-                                <button class="detail">Voir</button>
+                                Voir
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
 
             echo '<section>
+                        <button class="update">
                             <a href="index.php?page=formVille&mode=modifier&id='. $value->getIdVille() .'">
-                                <button class="update">Modifier</button>
+                                Modifier
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
                         
             echo '<section>
+                        <button class="delete">
                             <a href="index.php?page=formVille&mode=supprimer&id='. $value->getIdVille() .'">
-                                <button class="delete">Supprimer</button>
+                                Supprimer
                             </a>
-                        </section>';
+                        </button>
+                    </section>';
         echo '</div>';
         echo '<div class="espaceHMedium"></div>';
     }

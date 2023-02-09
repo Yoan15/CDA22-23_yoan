@@ -59,6 +59,17 @@
     width: max-content;
 }
 
+.alignTextCenter
+{
+    align-items: center;
+}
+
+/* .btn-list
+{
+    min-height: min-content;
+    width:min-content;
+} */
+
 /* .bgListe
 {
     background-color: #EFDEF5;
