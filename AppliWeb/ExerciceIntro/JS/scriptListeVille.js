@@ -17,12 +17,12 @@ if (page == 'formVille') {
                 console.log(this.responseText);
                 reponse = JSON.parse(this.responseText);
                 reponse.forEach(element => {
-                    template = document.getElementsById("personne");
-                    cible = document.getElementById("pers");
+                    template = document.getElementById("perso");
+                    cible = document.getElementById("personne");
                     contenu = template.content.cloneNode(true);
                     cible.appendChild(contenu);
                     pers = document.querySelector(".pers")
-                    pers.innerHTML = element.nom + element.prenom
+                    pers.innerHTML = element.nom + " " + element.prenom
                     pers.classList.remove("pers")
                 });
             }

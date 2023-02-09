@@ -36,6 +36,8 @@ $routes = [
     //route pour accueil
     "Accueil" => ["PHP/View/General/", "accueil", "Accueil", 1, false],
 
+    "ListePersonneApi" => ["PHP/Model/API/", "ListePersonneApi", "ListePersonneApi", 1, true],
+
     "listePersonne" => ["PHP/View/Liste/", "listePersonne", "Liste de personnes", 1, false],
     "formPersonne" => ["PHP/View/Form/", "formPersonne", "Formulaire personne", 1, false],
     "actionPersonnes" => ["PHP/Controller/Action/", "actionPersonnes", "Actions personne", 1, false],

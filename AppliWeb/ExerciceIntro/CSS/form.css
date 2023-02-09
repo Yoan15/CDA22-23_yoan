@@ -18,3 +18,9 @@ label
 {
     box-shadow: 2px 2px 3px var(--inputIncorrect);
 }
+
+.GridForm
+{
+    justify-content: center;
+    align-items: center;
+}
