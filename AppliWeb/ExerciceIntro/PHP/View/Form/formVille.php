@@ -26,6 +26,14 @@
             echo '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille" pattern="'. $regex["alpha"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
+
+        echo '<div id=personne></div>';
+        echo '<template id="pers">
+                <div></div>
+                <div class="pers"></div>
+                <div></div>
+                <div></div>
+            </template>';
         echo '<div class="espaceHMedium"></div>';
         echo '<div>';
             echo '<section>
