@@ -127,10 +127,14 @@ function afficherPage($page)
     // }
     $roleUtilisateur = (isset($_SESSION['utilisateur'])) ? $_SESSION['utilisateur']->getRole() : 0 ;
     if ($roleUtilisateur >= $roleRequis) {
-        echo startHtml($nom, $titre);
-        echo headerHtml();
-        include $chemin . $nom . '.php';
-        echo footer();
+        if ($api) {
+            include $chemin . $nom . '.php';
+        } else {
+            echo startHtml($nom, $titre);
+            echo headerHtml();
+            include $chemin . $nom . '.php';
+            echo footer();
+        }
     }
     else
     {

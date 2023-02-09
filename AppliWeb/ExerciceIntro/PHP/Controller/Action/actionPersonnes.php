@@ -1,6 +1,5 @@
 <?php
 $elm = new Personne($_POST);
-var_dump($elm,$_POST);
 
 switch ($_GET['mode']) {
 	case "ajouter": {

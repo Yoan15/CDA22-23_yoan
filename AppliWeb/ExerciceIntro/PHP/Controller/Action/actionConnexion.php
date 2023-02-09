@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 
 //vérifie si l'adresse email utilisée pour l'inscription est déjà enregistrée dans la BDD
 $utilisateur = UtilisateursManager::getList(null, ['email' => $_POST['email']]);
