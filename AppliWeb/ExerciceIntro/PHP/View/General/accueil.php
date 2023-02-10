@@ -15,6 +15,12 @@ echo '<div>';
                         <button class="detail boutonAccueil">Liste des villes</button>
                 </a></div>';
 echo '</div>';
+echo '<div>';
+        echo '<div class=divAccueil>
+                <a href="?page=listeDepartement" class=lienAccueil>
+                        <button class="detail boutonAccueil">Liste des departements</button>
+                </a></div>';
+echo '</div>';
         //echo '</section>';
 echo '<div>';
 echo '<div class=divAccueil>

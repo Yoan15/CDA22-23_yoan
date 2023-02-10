@@ -46,6 +46,10 @@ $routes = [
     "formVille" => ["PHP/View/Form/", "formVille", "Formulaire ville", 2, false],
     "actionVilles" => ["PHP/Controller/Action/", "actionVilles", "Actions ville", 2, false],
 
+    "listeDepartement" => ["PHP/View/Liste/", "listeDepartement", "Liste de Département", 2, false],
+    "formDepartement" => ["PHP/View/Form/", "formDepartement", "Formulaire département", 2, false],
+    "actionDepartements" => ["PHP/Controller/Action/", "actionDepartements", "Actions départements", 2, false],
+
     "listeUtilisateur" => ["PHP/View/Liste/", "listeUtilisateur", "Liste des utilisateurs", 3, false],
     "formUtilisateur" => ["PHP/View/Form/", "formUtilisateur", "Formulaire utilisateur", 3, false],
     "actionUtilisateurs" => ["PHP/Controller/Action/", "actionUtilisateurs", "Actions utilisateur", 3, false]
