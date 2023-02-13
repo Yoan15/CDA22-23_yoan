@@ -14,7 +14,9 @@
     } else {
         $elm = new Departement();
     }
+
     echo '<main class="column center">';
+    
     echo '<form class="GridForm" action="index.php?page=actionDepartements&mode='.$_GET['mode'].'" method="post"/>';
         echo '<div>
                 <h1>Formulaire d\'ajout de Departement</h1>
@@ -26,14 +28,14 @@
             echo '<input type="text" '. $disabled .' value="'. $elm->getNomDepartement() .'" name="nomDepartement" pattern="'. $regex["*"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
-        // if ($mode == "voir") {
-        //     echo '<div><p>Personnes habitant dans cette ville : </p></div>';
-        //     echo '<div id=personne></div>';
-        // }
+        if ($mode == "voir") {
+            echo '<div><p>Villes de ce département : </p></div>';
+            echo '<div id=villes></div>';
+        }
         
-        // echo '<template id="perso">
-        //         <div class="pers"></div>
-        //     </template>';
+        echo '<template id="ville">
+                <div class="vil"></div>
+            </template>';
         echo '<div class="espaceHMedium"></div>';
         echo '<div>';
             echo '<section>

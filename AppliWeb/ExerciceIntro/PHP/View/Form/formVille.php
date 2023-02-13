@@ -26,6 +26,15 @@
             echo '<input type="text" '. $disabled .' value="'. $elm->getNomVille() .'" name="nomVille" pattern="'. $regex["alpha"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
+        echo '<section>';
+        echo '<label>Departement : </label>';
+        if ($mode == "voir" || $mode == "supprimer") {
+            echo combobox($elm->getIdDepartement(), "Departement", ["nomDepartement"], null, "disabled");
+        } else {
+            echo combobox($elm->getIdDepartement(), "Departement", ["nomDepartement"]);
+        }
+        echo '</section>';
+        echo '<div class="espaceHMedium"></div>';
         if ($mode == "voir") {
             echo '<div><p>Personnes habitant dans cette ville : </p></div>';
             echo '<div id=personne></div>';
