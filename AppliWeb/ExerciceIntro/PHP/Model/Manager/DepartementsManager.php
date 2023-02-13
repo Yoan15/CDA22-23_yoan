@@ -8,7 +8,7 @@ class DepartementsManager
     public static function getList(array $nomColonnes=null, array $conditions = null, string $orderBy = null, string $limit = null, bool $api = false, bool $debug = false)
 	{
 		$nomColonnes = ($nomColonnes==null)?Departement::getAttributes():$nomColonnes;
-		return DAO::select($nomColonnes, "Departement", $conditions, $orderBy, $limit, $api, $debug);
+		return DAO::select($nomColonnes, "departement", $conditions, $orderBy, $limit, $api, $debug);
 	}
 
     /**

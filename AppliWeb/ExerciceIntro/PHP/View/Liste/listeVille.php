@@ -22,6 +22,7 @@
     echo '<div>';
         //affichage des nom des colonnes
             echo '<section class="nomColonnes">nomVille</section>';
+            echo '<section class="nomColonnes">departement</section>';
         //sections pour les colonnes les boutons détails, modifier et supprimer
         echo '<section class="nomColonnes"></section>';
         echo '<section class="nomColonnes"></section>';
@@ -34,6 +35,7 @@
     foreach ($data as $value) {
         echo '<div>';
                 echo '<section class="alignTextCenter">'. $value->getNomVille() .'</section>';
+                echo '<section class="alignTextCenter">'. DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() .'</section>';
             //affichage des boutons détails, modifier et supprimer
             echo '<section>
                         <button class="detail">

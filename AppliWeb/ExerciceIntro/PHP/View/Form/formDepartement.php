@@ -23,7 +23,7 @@
         echo '<div class="noDisplay"><input type="hidden" value="'.$elm->getIdDepartement().'" name=idDepartement></div>';
         echo '<section>';
             echo '<label>Nom Departement : </label>';
-            echo '<input type="text" '. $disabled .' value="'. $elm->getNomDepartement() .'" name="nomDepartement" pattern="'. $regex["alpha"] .'">';
+            echo '<input type="text" '. $disabled .' value="'. $elm->getNomDepartement() .'" name="nomDepartement" pattern="'. $regex["*"] .'">';
         echo '</section>';
         echo '<div class="espaceHMedium"></div>';
         // if ($mode == "voir") {

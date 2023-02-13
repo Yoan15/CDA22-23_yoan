@@ -5,7 +5,8 @@ class ville
 
     private $_idVille;
     private $_nomVille;
-    private static $_attribut = ["idville", "nomVille"];
+    private $_idDepartement;
+    private static $_attribut = ["idville", "nomVille", "idDepartement"];
 
     public function getIdVille()
     {
@@ -25,6 +26,18 @@ class ville
     public function setNomVille($nomVille)
     {
         $this->_nomVille = $nomVille;
+    }
+
+    public function getIdDepartement()
+    {
+        return $this->_idDepartement;
+    }
+
+    public function setIdDepartement(?int $_idDepartement)
+    {
+        $this->_idDepartement = $_idDepartement;
+
+        return $this;
     }
 
     public static function getAttributes()
@@ -54,6 +67,6 @@ class ville
     
     public function __toString()
     {
-        return "[idVille]: ". $this->_idVille . "[nomVille]: ". $this->_nomVille;
+        return "[idVille]: ". $this->_idVille . "[nomVille]: ". $this->_nomVille . "[idDepartement]: " . $this->_idDepartement;
     }
 }
