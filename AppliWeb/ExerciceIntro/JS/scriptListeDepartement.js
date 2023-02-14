@@ -1,37 +1,3 @@
-//étudier les différences pour voir pourquoi ça ne fonctionnait pas la première fois
-
-// var getLocation = document.location.href;
-// var url = new URL(getLocation);
-// var page = url.searchParams.get('page');
-
-// if (page == "formDepartement") {
-//     var request = new XMLHttpRequest();
-//     request.open('POST', 'index.php?page=listeVillesApi', true);
-//     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//     idDepartement = document.getElementsByName('idDepartement')[0].value;
-//     args = "idDepartement=" + idDepartement;
-//     request.send(args);
-
-//     request.onreadystatechange = function (event) {
-//         if (this.readyState === XMLHttpRequest.DONE) {
-//             if (this.status === 200) {
-//                 //console.log(this.responseText);
-//                 reponse = JSON.parse(this.responseText);
-//                 //console.log(this.reponse);
-//                 reponse.forEach(element => {
-//                     template = document.getElementById("ville");
-//                     cible = document.getElementById("villes");
-//                     contenu = template.content.cloneNode(true);
-//                     cible.appendChild(contenu);
-//                     vil = document.querySelector(".vil");
-//                     vil.innerHTML = element.nomVille;
-//                     vil.classList.remove("vil");
-//                 });
-//             }
-//         }
-//     }
-// }
-
 var getlocation = document.location.href;
 var url = new URL(getlocation);
 var page = url.searchParams.get('page');
@@ -49,7 +15,7 @@ if (page == 'formDepartement') {
         if (this.readyState === XMLHttpRequest.DONE) {
             //si le status est le code 200
             if (this.status === 200) {
-                console.log(this.responseText);
+                //console.log(this.responseText);
                 //on scinde les données reçues en réponse
                 reponse = JSON.parse(this.responseText);
                 //pour chaque élément on insert les noms et prénoms des personnes habitants dans la ville sélectionnée 
