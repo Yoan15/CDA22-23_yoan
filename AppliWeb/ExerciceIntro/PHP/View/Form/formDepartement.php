@@ -30,7 +30,7 @@
         echo '<div class="espaceHMedium"></div>';
         if ($mode == "voir") {
             echo '<div><p>Villes de ce département : </p></div>';
-            echo '<div id=villes></div>';
+            echo '<div id="villes", class="listeVilles"></div>';
         }
         
         echo '<template id="ville">

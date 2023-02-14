@@ -37,7 +37,7 @@
         echo '<div class="espaceHMedium"></div>';
         if ($mode == "voir") {
             echo '<div><p>Personnes habitant dans cette ville : </p></div>';
-            echo '<div id=personne></div>';
+            echo '<div id=personne class="listePersonne"></div>';
         }
         
         echo '<template id="perso">

@@ -1,8 +1,10 @@
 var getlocation = document.location.href;
 var url = new URL(getlocation);
 var page = url.searchParams.get('page');
+var mode = url.searchParams.get('mode');
+console.log(mode);
 
-if (page == 'formVille') {
+if (page == 'formVille' && mode == 'voir') {
     var request = new XMLHttpRequest();
     //on met à 'true' pour l'asynchrone
     request.open('POST', 'index.php?page=ListePersonneApi', true);
