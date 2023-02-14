@@ -2,8 +2,12 @@
     //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
     $data = VillesManager::getList();
 
+    $formDepartement = ($_GET['page'] == 'formDepartement' ? true : false);
+
+    if (!$formDepartement) {
+        echo '<main class="column borderBlack">';
+    }
     
-    echo '<main class="column borderBlack">';
     //affichage du titre de la liste
     echo '<div>
                     <h1>Liste de Villes</h1>
@@ -31,6 +35,13 @@
     echo '</div>';
     //ajout d'un espace entre l'en-tête et les données
     echo '<div class="espaceH"></div>';
+
+    // if (!formVille) {
+    //     
+    // }
+
+    
+
     //affichage des données
     foreach ($data as $value) {
         echo '<div>';
@@ -67,4 +78,6 @@
     echo '<a href="index.php?page=Accueil">
                     <button class="detail">Retour vers l\'accueil</button>
                 </a>';
-    echo '</main>';
+    if (!$formDepartement) {
+        echo '</main>';
+    }
