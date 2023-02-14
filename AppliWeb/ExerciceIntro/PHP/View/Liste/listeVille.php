@@ -36,78 +36,78 @@ echo '</div>';
 //ajout d'un espace entre l'en-tête et les données
 echo '<div class="espaceH"></div>';
 
-// if (!$formDepartement) {
-//     foreach ($data as $value) {
-//         echo '<div>';
-//         echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
-//         echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
-//         //affichage des boutons détails, modifier et supprimer
-//         echo '<section>
-//                 <button class="detail">
-//                     <a href="index.php?page=formVille&mode=voir&id=' . $value->getIdVille() . '">
-//                         Voir
-//                     </a>
-//                 </button>
-//             </section>';
+if (!$formDepartement) {
+    foreach ($data as $value) {
+        echo '<div>';
+        echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
+        echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
+        //affichage des boutons détails, modifier et supprimer
+        echo '<section>
+                <button class="detail">
+                    <a href="index.php?page=formVille&mode=voir&id=' . $value->getIdVille() . '">
+                        Voir
+                    </a>
+                </button>
+            </section>';
 
-//         echo '<section>
-//                 <button class="update">
-//                     <a href="index.php?page=formVille&mode=modifier&id=' . $value->getIdVille() . '">
-//                         Modifier
-//                     </a>
-//                 </button>
-//             </section>';
+        echo '<section>
+                <button class="update">
+                    <a href="index.php?page=formVille&mode=modifier&id=' . $value->getIdVille() . '">
+                        Modifier
+                    </a>
+                </button>
+            </section>';
 
-//         echo '<section>
-//                 <button class="delete">
-//                     <a href="index.php?page=formVille&mode=supprimer&id=' . $value->getIdVille() . '">
-//                         Supprimer
-//                     </a>
-//                 </button>
-//             </section>';
-//         echo '</div>';
-//         echo '<div class="espaceHMedium"></div>';
-//     }
-// }
+        echo '<section>
+                <button class="delete">
+                    <a href="index.php?page=formVille&mode=supprimer&id=' . $value->getIdVille() . '">
+                        Supprimer
+                    </a>
+                </button>
+            </section>';
+        echo '</div>';
+        echo '<div class="espaceHMedium"></div>';
+    }
+    echo '<a href="index.php?page=Accueil">
+                            <button class="detail">Retour vers l\'accueil</button>
+                        </a>';
+} else {
+    //affichage des données
+    foreach ($data as $value) {
+        echo '<div>';
+        echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
+        echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
+        //     //affichage des boutons détails, modifier et supprimer
+        //     echo '<section>
+        //                         <button class="detail">
+        //                             <a href="index.php?page=formVille&mode=voir&id=' . $value->getIdVille() . '">
+        //                                 Voir
+        //                             </a>
+        //                         </button>
+        //                     </section>';
 
+        //     echo '<section>
+        //                         <button class="update">
+        //                             <a href="index.php?page=formVille&mode=modifier&id=' . $value->getIdVille() . '">
+        //                                 Modifier
+        //                             </a>
+        //                         </button>
+        //                     </section>';
 
-
-//affichage des données
-foreach ($data as $value) {
-    echo '<div>';
-    echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
-    echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
-    //affichage des boutons détails, modifier et supprimer
-    echo '<section>
-                        <button class="detail">
-                            <a href="index.php?page=formVille&mode=voir&id=' . $value->getIdVille() . '">
-                                Voir
-                            </a>
-                        </button>
-                    </section>';
-
-    echo '<section>
-                        <button class="update">
-                            <a href="index.php?page=formVille&mode=modifier&id=' . $value->getIdVille() . '">
-                                Modifier
-                            </a>
-                        </button>
-                    </section>';
-
-    echo '<section>
-                        <button class="delete">
-                            <a href="index.php?page=formVille&mode=supprimer&id=' . $value->getIdVille() . '">
-                                Supprimer
-                            </a>
-                        </button>
-                    </section>';
-    echo '</div>';
-    echo '<div class="espaceHMedium"></div>';
+        //     echo '<section>
+        //                         <button class="delete">
+        //                             <a href="index.php?page=formVille&mode=supprimer&id=' . $value->getIdVille() . '">
+        //                                 Supprimer
+        //                             </a>
+        //                         </button>
+        //                     </section>';
+        //     echo '</div>';
+        //     echo '<div class="espaceHMedium"></div>';
+        // }
+        // echo  '<div class="espaceHMedium"></div>';
+    }
 }
-echo  '<div class="espaceHMedium"></div>';
-echo '<a href="index.php?page=Accueil">
-                    <button class="detail">Retour vers l\'accueil</button>
-                </a>';
+
 if (!$formDepartement) {
     echo '</main>';
 }
