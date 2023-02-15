@@ -1,20 +1,13 @@
 <?php
 //On appelle la fonction getList du manager de la table et on la stocke dans la variable $data
 $data = VillesManager::getList();
-
-$formDepartement = ($_GET['page'] == 'formDepartement' ? true : false);
-
-//si on est pas dans le formDepartement on affiche ce qu'il y a dans le if
-if (!$formDepartement) {
     echo '<main class="column borderBlack">';
-}
 
 //affichage du titre de la liste
 echo '<div>
                     <h1>Liste de Villes</h1>
                 </div>';
 //affichage du bouton ajouter
-if (!$formDepartement) {
     echo '<div>
             <section>
                 <button class="ajouter">
@@ -24,11 +17,8 @@ if (!$formDepartement) {
                 </button>
             </section>
         </div>';
-}
 
 echo '<div class="espaceHMedium"></div>';
-
-if (!$formDepartement) {
     echo '<div>';
     //affichage des nom des colonnes
     echo '<section class="nomColonnes">nomVille</section>';
@@ -39,16 +29,12 @@ if (!$formDepartement) {
     echo '<section class="nomColonnes"></section>';
 
     echo '</div>';
-}
 
 //ajout d'un espace entre l'en-tête et les données
 echo '<div class="espaceH"></div>';
-
-if (!$formDepartement) {
     foreach ($data as $value) {
         echo '<div>';
         echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
-        //on récupère le nom du département grâce à l'idDepartement de la table ville
         echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
         //affichage des boutons détails, modifier et supprimer
         echo '<section>
@@ -80,24 +66,4 @@ if (!$formDepartement) {
     echo '<a href="index.php?page=Accueil">
                             <button class="detail">Retour vers l\'accueil</button>
                         </a>';
-} else {
-    //affichage des données
-    foreach ($data as $value) {
-        $ville = VillesManager::getList(['idVille'], ['idDepartement' => $_GET['id'], 'idVille' => $value->getIdVille()]);
-        //var_dump($ville);
-
-        // $villeDepart = VillesManager::getList(['idVille'], ['idDepartement' => $value->getIdDepartement(), 'idVille' => $value->getIdVille()]);
-        // //var_dump($villeDepart);
-        // $idVille = $villeDepart[0]->getIdVille();
-        // var_dump($idVille);
-
-        echo '<div class="listeVilles center">';
-        //le ternaire permet de savoir quelles villes sont dans quel département
-        echo '<section><input type=checkbox class="test" '. ($ville ? ($ville[0]->getIdVille() == $value->getIdVille()?' checked ':'') : '').' data-id="'. $value->getIdVille() .'" /></section>';
-        echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
-    }
-}
-
-if (!$formDepartement) {
     echo '</main>';
-}

@@ -64,6 +64,11 @@
     align-items: center;
 }
 
+.checkboxesVilles{
+    display: flex;
+    flex-direction: column;
+}
+
 /* .btn-list
 {
     min-height: min-content;

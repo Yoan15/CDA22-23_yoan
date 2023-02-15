@@ -50,4 +50,10 @@
                 </section>';
         echo '</div>';
     echo '</form>';
+
+    if ($_GET['mode'] == "modifier") {
+        echo '<div class="checkboxesVilles">';
+        include 'PHP/View/Liste/listeVille.php';
+        echo '</div>';
+    }
 echo '</main>';
