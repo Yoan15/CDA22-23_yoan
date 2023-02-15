@@ -67,6 +67,11 @@
 .checkboxesVilles{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.checkVilles{
+    align-items: flex-start;
 }
 
 /* .btn-list

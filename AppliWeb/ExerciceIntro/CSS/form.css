@@ -5,7 +5,7 @@ input
 }
 
 .listePersonne, .listeVilles{
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
 }
 

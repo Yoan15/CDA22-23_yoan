@@ -40,6 +40,7 @@ checkboxes.forEach(element => {
 function checkVille(event) {
     checkbox = event.target;
     idVille = checkbox.getAttribute("data-id");
+    nomVille = checkbox.getAttribute("data-name");
     var requete = new XMLHttpRequest();
     if (checkbox.checked == true) {
         action = 0;
@@ -49,6 +50,6 @@ function checkVille(event) {
 
     requete.open("POST", "index.php?page=MajVillesDepartementApi", true);
     requete.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    args = "mode=" + action + "&idDepartement=" + idDepartement + "&idVille=" + idVille;
+    args = "mode=" + action + "&idDepartement=" + idDepartement + "&idVille=" + idVille + "&nomVille=" + nomVille;
     requete.send(args); 
 }

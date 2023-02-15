@@ -91,10 +91,12 @@ if (!$formDepartement) {
         // $idVille = $villeDepart[0]->getIdVille();
         // var_dump($idVille);
 
-        echo '<div class="listeVilles center">';
+        echo '<div class="listeVilles">';
         //le ternaire permet de savoir quelles villes sont dans quel département
-        echo '<section><input type=checkbox class="test" '. ($ville ? ($ville[0]->getIdVille() == $value->getIdVille()?' checked ':'') : '').' data-id="'. $value->getIdVille() .'" /></section>';
-        echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
+        echo '<div class="checkVille">';
+        echo '<section><input type=checkbox class="test" ' . ($ville ? ($ville[0]->getIdVille() == $value->getIdVille() ? ' checked ' : '') : '') . ' data-id="' . $value->getIdVille() . '" /></section>';
+        echo '<section class="alignTextCenter" data-name="' . $value->getNomVille() . '">' . $value->getNomVille() . '</section>';
+        echo '</div>';
     }
 }
 

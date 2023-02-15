@@ -21,13 +21,16 @@
 // }
 
 $elm = new Ville($_POST);
+echo $elm;
 
 switch ($_POST['mode']) {
     case '0':
         echo 'ajout';
+        $elm = VillesManager::UpdateVille($elm, $elm->getIdVille());
+        echo $elm;
         break;
     
     case '1':
-        echo 'ajout';
+        echo 'suppression';
         break;
 }
