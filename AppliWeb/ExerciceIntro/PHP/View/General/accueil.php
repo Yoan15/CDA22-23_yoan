@@ -3,7 +3,6 @@
 echo '<main class="column">';
 echo '<h1>Accueil</h1>';
 echo '<div>';
-        //echo '<section class=sectionAccueil>';
         echo '<div class=divAccueil>
                 <a href="?page=listePersonne" class=lienAccueil>
                         <button class="detail boutonAccueil">Liste des personnes</button>
@@ -21,7 +20,6 @@ echo '<div>';
                         <button class="detail boutonAccueil">Liste des departements</button>
                 </a></div>';
 echo '</div>';
-        //echo '</section>';
 echo '<div>';
 echo '<div class=divAccueil>
         <a href="?page=listeUtilisateur" class=lienAccueil>

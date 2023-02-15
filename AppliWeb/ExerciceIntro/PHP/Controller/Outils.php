@@ -143,11 +143,9 @@ function afficherPage($page)
         echo headerHtml();
         if ($roleUtilisateur >= 1) {
             header('location:index.php?page=Accueil');
-            //include "PHP/View/General/accueil.php";
         }
         else
         {
-            //include "PHP/View/Form/formInscription.php";
             header('location:index.php?page=formInscription');
         }
         echo footer();

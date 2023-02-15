@@ -17,7 +17,6 @@ if (page == 'formVille' && mode == 'voir') {
         if (this.readyState === XMLHttpRequest.DONE) {
             //si le status est le code 200
             if (this.status === 200) {
-                //console.log(this.responseText);
                 //on scinde les données reçues en réponse
                 reponse = JSON.parse(this.responseText);
                 //pour chaque élément on insert les noms et prénoms des personnes habitants dans la ville sélectionnée 

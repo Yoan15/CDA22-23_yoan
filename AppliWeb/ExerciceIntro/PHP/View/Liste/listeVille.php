@@ -11,8 +11,8 @@ if (!$formDepartement) {
 
 //affichage du titre de la liste
 echo '<div>
-                    <h1>Liste de Villes</h1>
-                </div>';
+            <h1>Liste de Villes</h1>
+        </div>';
 //affichage du bouton ajouter
 if (!$formDepartement) {
     echo '<div>
@@ -30,13 +30,13 @@ echo '<div class="espaceHMedium"></div>';
 
 if (!$formDepartement) {
     echo '<div>';
-    //affichage des nom des colonnes
-    echo '<section class="nomColonnes">nomVille</section>';
-    echo '<section class="nomColonnes">departement</section>';
-    //sections pour les colonnes les boutons détails, modifier et supprimer
-    echo '<section class="nomColonnes"></section>';
-    echo '<section class="nomColonnes"></section>';
-    echo '<section class="nomColonnes"></section>';
+        //affichage des nom des colonnes
+        echo '<section class="nomColonnes">nomVille</section>';
+        echo '<section class="nomColonnes">departement</section>';
+        //sections pour les colonnes les boutons détails, modifier et supprimer
+        echo '<section class="nomColonnes"></section>';
+        echo '<section class="nomColonnes"></section>';
+        echo '<section class="nomColonnes"></section>';
 
     echo '</div>';
 }
@@ -83,17 +83,16 @@ if (!$formDepartement) {
         echo '<div class="espaceHMedium"></div>';
     }
     echo '<a href="index.php?page=Accueil">
-                            <button class="detail">Retour vers l\'accueil</button>
-                        </a>';
+                <button class="detail">Retour vers l\'accueil</button>
+            </a>';
 } else {
     //affichage des données
     foreach ($data as $value) {
         $ville = VillesManager::getList(['idVille'], ['idDepartement' => $_GET['id'], 'idVille' => $value->getIdVille()]);
-        //var_dump($ville);
 
         echo '<div class="listeVilles">';
-        //le ternaire permet de savoir quelles villes sont dans quel département
         echo '<div class="checkVille">';
+        //le ternaire permet de savoir quelle(s) villes sont dans quel département
         echo '<section><input type=checkbox class="test" ' . ($ville ? ($ville[0]->getIdVille() == $value->getIdVille() ? ' checked ' : '') : '') . ' data-id="' . $value->getIdVille() . '" data-name="' . $value->getNomVille() . '"/></section>';
         echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
         echo '</div>';

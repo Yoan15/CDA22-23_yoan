@@ -1,7 +1,6 @@
 <?php
 
 global $regex;
-//var_dump($_GET);
 
 if (isset($_GET['id'])) {
     $elm = UtilisateursManager::GetUtilisateurById($_GET['id']);

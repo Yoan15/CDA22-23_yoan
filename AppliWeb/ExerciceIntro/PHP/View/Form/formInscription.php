@@ -1,7 +1,6 @@
 <?php
 
 global $regex;
-//var_dump($_SESSION);
 
 echo '<main class="column center">';
     echo '<form class="GridForm" action="index.php?page=actionInscription" method="post"/>';
