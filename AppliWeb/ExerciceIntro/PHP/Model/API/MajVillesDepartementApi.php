@@ -32,5 +32,7 @@ switch ($_POST['mode']) {
     
     case '1':
         echo 'suppression';
+        $elm->setIdDepartement(null);
+        $elm = VillesManager::UpdateVille($elm, $elm->getIdVille());
         break;
 }

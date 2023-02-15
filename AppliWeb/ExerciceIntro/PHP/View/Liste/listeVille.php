@@ -49,7 +49,12 @@ if (!$formDepartement) {
         echo '<div>';
         echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
         //on récupère le nom du département grâce à l'idDepartement de la table ville
-        echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
+        if ($value->getIdDepartement() != null) {
+            echo '<section class="alignTextCenter">' . DepartementsManager::GetDepartementById($value->getIdDepartement())->getNomDepartement() . '</section>';
+        } else {
+            echo '<section class="alignTextCenter"></section>';
+        }
+        
         //affichage des boutons détails, modifier et supprimer
         echo '<section>
                 <button class="detail">
@@ -86,16 +91,11 @@ if (!$formDepartement) {
         $ville = VillesManager::getList(['idVille'], ['idDepartement' => $_GET['id'], 'idVille' => $value->getIdVille()]);
         //var_dump($ville);
 
-        // $villeDepart = VillesManager::getList(['idVille'], ['idDepartement' => $value->getIdDepartement(), 'idVille' => $value->getIdVille()]);
-        // //var_dump($villeDepart);
-        // $idVille = $villeDepart[0]->getIdVille();
-        // var_dump($idVille);
-
         echo '<div class="listeVilles">';
         //le ternaire permet de savoir quelles villes sont dans quel département
         echo '<div class="checkVille">';
-        echo '<section><input type=checkbox class="test" ' . ($ville ? ($ville[0]->getIdVille() == $value->getIdVille() ? ' checked ' : '') : '') . ' data-id="' . $value->getIdVille() . '" /></section>';
-        echo '<section class="alignTextCenter" data-name="' . $value->getNomVille() . '">' . $value->getNomVille() . '</section>';
+        echo '<section><input type=checkbox class="test" ' . ($ville ? ($ville[0]->getIdVille() == $value->getIdVille() ? ' checked ' : '') : '') . ' data-id="' . $value->getIdVille() . '" data-name="' . $value->getNomVille() . '"/></section>';
+        echo '<section class="alignTextCenter">' . $value->getNomVille() . '</section>';
         echo '</div>';
     }
 }
