@@ -18,6 +18,7 @@ if (page == 'formDepartement') {
                 //console.log(this.responseText);
                 //on scinde les données reçues en réponse
                 reponse = JSON.parse(this.responseText);
+                console.log(reponse);
                 //pour chaque élément on insert les noms et prénoms des personnes habitants dans la ville sélectionnée 
                 //dans une "div" à partir d'un "template" puis on retire la classe du template
                 reponse.forEach(element => {
