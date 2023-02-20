@@ -60,25 +60,17 @@ namespace multicoucheVoteCSharp.Data
 
                 entity.ToTable("resultats");
 
-                entity.HasIndex(e => e.IdVote, "FK_Resultats_Votes");
-
                 entity.Property(e => e.IdResultat)
                     .HasColumnType("int(11)")
                     .HasColumnName("idResultat");
-
-                entity.Property(e => e.IdVote)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("idVote");
 
                 entity.Property(e => e.NbVotes)
                     .HasColumnType("int(11)")
                     .HasColumnName("nbVotes");
 
-                entity.HasOne(d => d.IdVoteNavigation)
-                    .WithMany(p => p.Resultats)
-                    .HasForeignKey(d => d.IdVote)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Resultats_Votes");
+                entity.Property(e => e.Reponse)
+                    .HasMaxLength(50)
+                    .HasColumnName("reponse");
             });
 
             modelBuilder.Entity<Vote>(entity =>
@@ -103,7 +95,7 @@ namespace multicoucheVoteCSharp.Data
                     .HasMaxLength(50)
                     .HasColumnName("reponse");
 
-                entity.HasOne(d => d.IdCodeNavigation)
+                entity.HasOne(d => d.Code)
                     .WithMany(p => p.Votes)
                     .HasForeignKey(d => d.IdCode)
                     .OnDelete(DeleteBehavior.ClientSetNull)

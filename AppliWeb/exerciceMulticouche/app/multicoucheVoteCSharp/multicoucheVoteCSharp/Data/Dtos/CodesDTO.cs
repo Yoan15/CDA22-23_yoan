@@ -7,7 +7,7 @@ namespace multicoucheVoteCSharp.Data.Dtos
 {
     public class CodesDTO
     {
-        public string reponse { get; set; }
-        public int idCode { get; set; }
+        public string Code1 { get; set; }
+        public bool Utilise { get; set; }
     }
 }
