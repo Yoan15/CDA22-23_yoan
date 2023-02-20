@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using multicoucheVoteCSharp.Data.Dtos;
 using multicoucheVoteCSharp.Data.Services;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,10 @@ namespace multicoucheVoteCSharp.Data.Controller
 
         //GET
         [HttpGet]
-        public ActionResult<IEnumerable<>>
+        public ActionResult<IEnumerable<ResultatsDTO>> getAllResultats()
+        {
+            var listeResultats = _service.GetAllResultats();
+            return Ok(_mapper.Map<IEnumerable<ResultatsDTO>>(listeResultats));
+        }
     }
 }

@@ -1,0 +1,75 @@
+.borderBlack
+{
+    border: 3px solid black;
+    padding: 1em;
+    margin: 1em;
+}
+
+.espaceH
+{
+    flex: none;
+    height: 5vh;
+}
+
+.espaceHMedium
+{
+    flex: none;
+    height: 2.5vh;
+}
+
+.ajouter
+{
+    background-color: green;
+    color: white;
+    border-color: rgb(6, 161, 6);
+}
+
+.detail
+{
+    background-color: blue;
+    color: white;
+    border-color: rgb(63, 63, 250);
+}
+
+.update
+{
+    background-color: rgb(218, 178, 4);
+    border-color: rgb(228, 188, 9);
+    color: white;
+}
+
+.delete
+{
+    background-color: rgb(153, 7, 7);
+    border-color: rgb(182, 12, 12);
+    color: white;
+}
+
+.nomColonnes
+{
+    display: flex;
+    flex: 1;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.boutonsListe
+{
+    width: max-content;
+}
+
+.alignTextCenter
+{
+    align-items: center;
+}
+
+.checkboxesVilles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkVilles{
+    align-items: flex-start;
+}

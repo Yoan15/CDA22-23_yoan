@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using multicoucheVoteCSharp.Data.Dtos;
+using multicoucheVoteCSharp.Data.Models;
 using multicoucheVoteCSharp.Data.Services;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,26 @@ namespace multicoucheVoteCSharp.Data.Controller
         {
             var listeVotes = _service.GetAllVotes();
             return Ok(_mapper.Map<IEnumerable<VotesDTO>>(listeVotes));
+        }
+
+        //GET api/Votes/{id}
+        [HttpGet("{id}", Name = "GetVoteById")]
+        public ActionResult<VotesDTO> GetVoteById(int id)
+        {
+            var commandItem = _service.GetVoteById(id);
+            if (commandItem != null)
+            {
+                return Ok(_mapper.Map<VotesDTO>(commandItem));
+            }
+            return NotFound();
+        }
+
+        //POST api/Votes
+        [HttpPost]
+        public ActionResult<VotesDTO> CreateVote(Vote vote)
+        {
+            _service.AddVotes(vote);
+            return CreatedAtRoute(nameof(GetVoteById), new { Id = vote.IdVote }, vote);
         }
     }
 }
