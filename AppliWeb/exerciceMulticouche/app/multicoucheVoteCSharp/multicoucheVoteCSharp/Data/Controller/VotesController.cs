@@ -38,11 +38,10 @@ namespace multicoucheVoteCSharp.Data.Controller
         public ActionResult<VotesDTO> GetVoteById(int id)
         {
             var commandItem = _service.GetVoteById(id);
-            var code = _serviceCode.GetCodeById(commandItem.IdCode);
+            
             if (commandItem != null)
             {
-                code.Utilise = true;
-                _serviceCode.UpdateCode(code);
+                
                 return Ok(_mapper.Map<VotesDTO>(commandItem));
             }
             return NotFound();
@@ -52,6 +51,9 @@ namespace multicoucheVoteCSharp.Data.Controller
         [HttpPost]
         public ActionResult<VotesDTO> CreateVote(Vote vote)
         {
+            var code = _serviceCode.GetCodeById(commandItem.IdCode);
+            code.Utilise = true;
+            _serviceCode.UpdateCode(code);
             _service.AddVotes(vote);
             return CreatedAtRoute(nameof(GetVoteById), new { Id = vote.IdVote }, vote);
         }
