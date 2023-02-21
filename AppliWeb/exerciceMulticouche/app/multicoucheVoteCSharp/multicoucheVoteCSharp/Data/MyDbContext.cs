@@ -80,7 +80,8 @@ namespace multicoucheVoteCSharp.Data
 
                 entity.ToTable("votes");
 
-                entity.HasIndex(e => e.IdCode, "FK_Votes_Codes");
+                entity.HasIndex(e => e.IdCode, "idCode")
+                    .IsUnique();
 
                 entity.Property(e => e.IdVote)
                     .HasColumnType("int(11)")
@@ -96,8 +97,8 @@ namespace multicoucheVoteCSharp.Data
                     .HasColumnName("reponse");
 
                 entity.HasOne(d => d.Code)
-                    .WithMany(p => p.Votes)
-                    .HasForeignKey(d => d.IdCode)
+                    .WithOne(p => p.Vote)
+                    .HasForeignKey<Vote>(d => d.IdCode)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Votes_Codes");
             });

@@ -12,8 +12,9 @@ namespace multicoucheVoteCSharp.Data.Profiles
     {
         public VotesProfile()
         {
-            CreateMap<Vote, VotesDTO>();
-            CreateMap<VotesDTO, Vote>();
+            CreateMap<Vote, VotesDTOout>();
+            //CreateMap<Vote, VotesDTOAvecCode>().ForMember(vD => vD.Code, act => act.MapFrom(v => v.Code));
+            CreateMap<VotesDTOout, Vote>();
         }
     }
 }

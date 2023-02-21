@@ -1,4 +1,5 @@
-﻿using multicoucheVoteCSharp.Data.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using multicoucheVoteCSharp.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace multicoucheVoteCSharp.Data.Services
 
         public Vote GetVoteById(int id)
         {
-            return _context.Votes.FirstOrDefault(v => v.IdVote == id);
+            return _context.Votes.Include("Code").FirstOrDefault(v => v.IdVote == id);
         }
     }
 }

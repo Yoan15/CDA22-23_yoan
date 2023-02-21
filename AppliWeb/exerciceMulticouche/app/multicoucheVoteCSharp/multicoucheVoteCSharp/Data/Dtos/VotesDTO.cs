@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace multicoucheVoteCSharp.Data.Dtos
 {
-    public class VotesDTO
+    public class VotesDTOout
     {
         public string Reponse { get; set; }
         public int IdCode { get; set; }
+
+        //public CodesDTO Code { get; set; }
+    }
+
+    public class VotesDTOAvecCode
+    {
+        public string Reponse { get; set; }
+        //public int IdCode { get; set; }
+        public CodesDTOout Code { get; set; }
+
     }
 }

@@ -1,5 +1,5 @@
 <?php
-
+// on fait venir les regex du fichier Outils
 global $regex;
 
 if (isset($_GET['id'])) {
@@ -25,7 +25,7 @@ echo '<form class="GridForm action="index.php?page=actionArticles&mode='. $_GET[
     echo '</section>';
     echo '<section>';
         echo '<label>Prix Article : </label>';
-        echo '<input type="number" value="'. $elm->getPrix() .'" name="prixArticle" pattern="'. $regex["num"] .'">';
+        echo '<input type="number" value="'. $elm->getPrix() .'" name="prix" pattern="'. $regex["num"] .'">';
     echo '</section>';
 
     echo '<section>

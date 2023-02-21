@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace multicoucheVoteCSharp.Data.Controller
+namespace multicoucheVoteCSharp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,31 +27,31 @@ namespace multicoucheVoteCSharp.Data.Controller
 
         //GET api/votes
         [HttpGet]
-        public ActionResult<IEnumerable<VotesDTO>> getAllVotes()
+        public ActionResult<IEnumerable<VotesDTOout>> getAllVotes()
         {
             var listeVotes = _service.GetAllVotes();
-            return Ok(_mapper.Map<IEnumerable<VotesDTO>>(listeVotes));
+            return Ok(_mapper.Map<IEnumerable<VotesDTOout>>(listeVotes));
         }
 
         //GET api/Votes/{id}
         [HttpGet("{id}", Name = "GetVoteById")]
-        public ActionResult<VotesDTO> GetVoteById(int id)
+        public ActionResult<VotesDTOout> GetVoteById(int id)
         {
             var commandItem = _service.GetVoteById(id);
             
             if (commandItem != null)
             {
                 
-                return Ok(_mapper.Map<VotesDTO>(commandItem));
+                return Ok(_mapper.Map<VotesDTOout>(commandItem));
             }
             return NotFound();
         }
 
         //POST api/Votes
         [HttpPost]
-        public ActionResult<VotesDTO> CreateVote(Vote vote)
+        public ActionResult<VotesDTOout> CreateVote(Vote vote)
         {
-            var code = _serviceCode.GetCodeById(commandItem.IdCode);
+            var code = _serviceCode.GetCodeById(vote.IdCode);
             code.Utilise = true;
             _serviceCode.UpdateCode(code);
             _service.AddVotes(vote);

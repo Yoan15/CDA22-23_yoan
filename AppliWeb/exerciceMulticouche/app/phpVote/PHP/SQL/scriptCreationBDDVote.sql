@@ -1,7 +1,6 @@
-DROP DATABASE IF EXISTS multicouchevote;
-CREATE DATABASE multicouchevote DEFAULT CHARACTER SET utf8;
-USE multicouchevote;
-
+DROP DATABASE IF EXISTS nom_base;
+CREATE DATABASE nom_base DEFAULT CHARACTER SET utf8;
+USE nom_base;
 CREATE TABLE codes(
    idCode INT AUTO_INCREMENT,
    code VARCHAR(30) ,
@@ -20,7 +19,8 @@ CREATE TABLE Votes(
    idVote INT AUTO_INCREMENT,
    reponse VARCHAR(50)  NOT NULL,
    idCode INT NOT NULL,
-   PRIMARY KEY(idVote)
+   PRIMARY KEY(idVote),
+   UNIQUE(idCode)
 )ENGINE=InnoDB;
 
 ALTER TABLE Votes ADD CONSTRAINT FK_Votes_Codes FOREIGN KEY(idCode) REFERENCES codes(idCode);

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace multicoucheVoteCSharp.Data.Controller
+namespace multicoucheVoteCSharp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,20 +23,20 @@ namespace multicoucheVoteCSharp.Data.Controller
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<CodesDTO>> getAllCodes()
+        public ActionResult<IEnumerable<CodesDTOout>> getAllCodes()
         {
             var listeCodes = _service.GetAllCodes();
-            return Ok(_mapper.Map<IEnumerable<CodesDTO>>(listeCodes));
+            return Ok(_mapper.Map<IEnumerable<CodesDTOout>>(listeCodes));
         }
 
         [HttpGet("{id}", Name = "GetCodeById")]
-        public ActionResult<CodesDTO> GetCodeById(int id)
+        public ActionResult<CodesDTOout> GetCodeById(int id)
         {
             var commandItem = _service.GetCodeById(id);
 
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<CodesDTO>(commandItem));
+                return Ok(_mapper.Map<CodesDTOout>(commandItem));
             }
             return NotFound();
         }
