@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using multicoucheVoteCSharp.Data;
 using multicoucheVoteCSharp.Data.Dtos;
 using multicoucheVoteCSharp.Data.Models;
 using multicoucheVoteCSharp.Data.Services;
@@ -15,14 +16,14 @@ namespace multicoucheVoteCSharp.Controllers
     public class VotesController: ControllerBase
     {
         private readonly VotesService _service;
-        private readonly CodesService _serviceCode;
+        private readonly MyDbContext _context;
         private readonly IMapper _mapper;
 
-        public VotesController(VotesService service, IMapper mapper, CodesService serviceCode)
+        public VotesController(VotesService service, IMapper mapper, MyDbContext context)
         {
             _service = service;
-            _serviceCode = serviceCode;
             _mapper = mapper;
+            _context = context;
         }
 
         //GET api/votes
@@ -49,13 +50,22 @@ namespace multicoucheVoteCSharp.Controllers
 
         //POST api/Votes
         [HttpPost]
-        public ActionResult<VotesDTOout> CreateVote(Vote vote)
+        public void CreateVote(VotesDTOIn obj)
         {
-            var code = _serviceCode.GetCodeById(vote.IdCode);
-            code.Utilise = true;
-            _serviceCode.UpdateCode(code);
-            _service.AddVotes(vote);
-            return CreatedAtRoute(nameof(GetVoteById), new { Id = vote.IdVote }, vote);
+            Vote vote = new Vote();
+            CodesService codeServ = new CodesService(_context);
+            var code = codeServ.GetCodeByName(obj.Code1);
+
+            if (code.Utilise == false)
+            {
+                vote.IdCode = code.IdCode;
+                vote.Reponse = obj.Reponse;
+
+                _service.AddVotes(vote);
+
+                code.Utilise = true;
+                codeServ.UpdateCode(code);
+            }
         }
     }
 }

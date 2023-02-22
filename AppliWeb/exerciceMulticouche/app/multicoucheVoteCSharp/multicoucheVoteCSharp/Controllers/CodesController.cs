@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using multicoucheVoteCSharp.Data.Dtos;
+using multicoucheVoteCSharp.Data.Models;
 using multicoucheVoteCSharp.Data.Services;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,19 @@ namespace multicoucheVoteCSharp.Controllers
                 return Ok(_mapper.Map<CodesDTOout>(commandItem));
             }
             return NotFound();
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateCode(int id, Code obj)
+        {
+            var objFromRepo = _service.GetCodeById(id);
+            if (objFromRepo == null)
+            {
+                return NotFound();
+            }
+            _mapper.Map(obj, objFromRepo);
+            _service.UpdateCode(objFromRepo);
+            return NoContent();
         }
 
 

@@ -10,15 +10,19 @@ namespace multicoucheVoteCSharp.Data.Dtos
     {
         public string Reponse { get; set; }
         public int IdCode { get; set; }
-
-        //public CodesDTO Code { get; set; }
     }
 
     public class VotesDTOAvecCode
     {
         public string Reponse { get; set; }
-        //public int IdCode { get; set; }
-        public CodesDTOout Code { get; set; }
+        public CodesDTOout Code1 { get; set; }
 
+    }
+
+    public class VotesDTOIn
+    {
+        public string Reponse { get; set; }
+
+        public string Code1 { get; set; }
     }
 }

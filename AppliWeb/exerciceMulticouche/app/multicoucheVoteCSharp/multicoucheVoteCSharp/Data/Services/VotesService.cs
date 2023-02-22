@@ -35,5 +35,19 @@ namespace multicoucheVoteCSharp.Data.Services
         {
             return _context.Votes.Include("Code").FirstOrDefault(v => v.IdVote == id);
         }
+
+        public void UpdateVote(Vote obj)
+        {
+            _context.SaveChanges();
+        }
+
+        public void MajResult()
+        {
+            //on récupère les votes sous forme de liste
+            var liste = _context.Votes.ToList();
+            //voir explications de Thierry sur discord dans le canal astuces
+            var listeOccurences = liste.GroupBy(x => x.Reponse).ToDictionary(y => y.Key, z => z.Count());
+            var reponse = new List<Resultat>();
+        }
     }
 }

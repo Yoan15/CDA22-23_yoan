@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace multicoucheVoteCSharp.Data.Profiles
 {
-    public class VotesProfile: Profile
+    public class CodesProfile: Profile
     {
-        public VotesProfile()
+        public CodesProfile()
         {
-            CreateMap<Vote, VotesDTOout>();
-            CreateMap<VotesDTOout, Vote>();
+            CreateMap<Code, CodesDTOout>();
+            CreateMap<CodesDTOout, Code>();
         }
     }
 }

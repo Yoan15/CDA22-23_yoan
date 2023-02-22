@@ -25,6 +25,11 @@ namespace multicoucheVoteCSharp.Data.Services
             return _context.Codes.FirstOrDefault(c => c.IdCode == id);
         }
 
+        public Code GetCodeByName(string nom)
+        {
+            return _context.Codes.FirstOrDefault(obj => obj.Code1 == nom);
+        }
+
         public void UpdateCode(Code c)
         {
             if (c == null)
