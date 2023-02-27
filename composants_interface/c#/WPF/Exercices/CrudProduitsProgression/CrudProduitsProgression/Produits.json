@@ -1,16 +1,1 @@
-[
-  {
-    "IdProduit": 1,
-    "LibelleProduit": "modif",
-    "NumeroProduit": 100,
-    "Quantite": 1,
-    "IdCategorie": 2
-  },
-  {
-    "IdProduit": 2,
-    "LibelleProduit": "prod2",
-    "NumeroProduit": 12,
-    "Quantite": 50,
-    "IdCategorie": 4
-  }
-]
+[{"IdProduit":1,"LibelleProduit":"modif","NumeroProduit":100,"Quantite":1,"IdCategorie":2},{"IdProduit":2,"LibelleProduit":"prod2","NumeroProduit":12,"Quantite":50,"IdCategorie":4},{"IdProduit":0,"LibelleProduit":"test 2","NumeroProduit":4343,"Quantite":653,"IdCategorie":0}]
