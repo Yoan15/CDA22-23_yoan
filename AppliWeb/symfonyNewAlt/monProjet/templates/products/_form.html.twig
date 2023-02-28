@@ -1,4 +1,45 @@
+<div class="container-fluid">
 {{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{form_row(form.ProductName)}}
+        </div>
+        <div class="col">
+            {{form_row(form.SupplierID)}}
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            {{form_row(form.CategoryID)}}
+        </div>
+        <div class="col">
+            {{form_row(form.QuantityPerUnit)}}
+        </div>
+        <div class="col">
+            {{form_row(form.UnitPrice)}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{form_row(form.UnitsInStock)}}
+        </div>
+        <div class="col">
+            {{form_row(form.UnitsOnOrder)}}
+        </div>
+        <div class="col">
+            {{form_row(form.ReoderLevel)}}
+        </div>
+    </div>
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <a class="btn btn-secondary" href="{{ path('app_products_index') }}">back to list</a>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary d-flex justify-content-center">{{ button_label|default('Sauvegarder') }}</button>
+        </div>
+    </div>
 {{ form_end(form) }}
+</div>

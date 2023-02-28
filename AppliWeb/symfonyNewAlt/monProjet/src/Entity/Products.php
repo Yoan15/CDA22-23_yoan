@@ -35,9 +35,10 @@ class Products
     private $QuantityPerUnit;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=4, nullable=true, options={default: 0.0000})
-     */
+    * @ORM\Column(type="decimal", precision=10, scale=4, nullable=true, options={"default": 0.0000})
+    */
     private $UnitPrice;
+
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
