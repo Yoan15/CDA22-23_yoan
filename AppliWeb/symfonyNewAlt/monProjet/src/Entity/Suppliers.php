@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\SuppliersRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Repository\SuppliersRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=SuppliersRepository::class)
@@ -21,16 +22,31 @@ class Suppliers
 
     /**
      * @ORM\Column(type="string", length=40)
+     * @Assert\NotBlank(
+     *      message="Veuillez renseigner le nom du fournisseur"
+     * )
+     * @Assert\Regex(
+     *      pattern="/^[\s\w\#\_\-éèàçâêîôûùäaëïüö]+$/",
+     *      message="Caractère(s) non valide(s)"
+     * )
      */
     private $CompanyName;
 
     /**
      * @ORM\Column(type="string", length=30, nullable=true)
+     * @Assert\Regex(
+     *      pattern="/^[\s\w\#\_\-éèàçâêîôûùäaëïüö]+$/",
+     *      message="Caractère(s) non valide(s)"
+     * )
      */
     private $ContactName;
 
     /**
      * @ORM\Column(type="string", length=30, nullable=true)
+     * @Assert\Regex(
+     *      pattern="/^[\s\w\#\_\-éèàçâêîôûùäaëïüö]+$/",
+     *      message="Caractère(s) non valide(s)"
+     * )
      */
     private $ContactTitle;
 

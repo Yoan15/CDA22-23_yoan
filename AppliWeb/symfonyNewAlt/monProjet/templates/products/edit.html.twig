@@ -5,6 +5,7 @@
 {% block body %}
     <h1>Edit Products</h1>
 
+    {{ form_row(form.picture2) }}
     {{ include('products/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_products_index') }}">back to list</a>

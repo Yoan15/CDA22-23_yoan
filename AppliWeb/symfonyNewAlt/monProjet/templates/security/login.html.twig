@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <form action="{{ path('login') }}" method="post">
+                    <label for="email">Adresse Mail</label>
+                    <input type="text" id="email" name="_username" class="form-control" value="{{ last_username }}">
+                    <label for="mdp"> Mot de passe</label>
+                    <input type="password" id="mdp" name="_password" class="form-control">
+                    <input type="submit" class="btn btn-primary mt-3" value="Se connecter">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
