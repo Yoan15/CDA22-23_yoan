@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CompteRenduWagon"
         mc:Ignorable="d"
-        Title="Maintenance Wagons Tablette" Height="650" Width="900">
+        Title="Maintenance Wagons Tablette" Height="650" Width="1200">
     <Grid x:Name="All">
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <Grid>
