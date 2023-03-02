@@ -1,4 +1,22 @@
+<div class="container-fluid">
 {{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{form_row(form.email)}}
+        </div>
+
+        <div class="col">
+            {{form_row(form.password)}}
+        </div>
+    </div>
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-secondary" href="{{ path('app_user_index') }}">back to list</a>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button>
+        </div>
+    </div>
 {{ form_end(form) }}
+</div>
