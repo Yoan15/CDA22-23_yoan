@@ -25,7 +25,20 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ path('profil') }}">Profil <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_products_index') }}">Produits <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_user_index') }}">Utilisateurs <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <p class="mr-4">Bonjour, <em>{{ app.user.email }}</em></p>
+                    <a class="btn btn-primary" href="{{ path('app_logout') }}">Se déconnecter</a>
+                {% else %}
+                    <a class="btn btn-primary mr-2" href="{{ path('app_login') }}">Se connecter</a>
+                    <a class="btn btn-primary" href="{{ path('app_register') }}">S'inscrire</a>
+                {% endif %}
             </div>
         </nav>
         {% for message in app.flashes('success') %}
