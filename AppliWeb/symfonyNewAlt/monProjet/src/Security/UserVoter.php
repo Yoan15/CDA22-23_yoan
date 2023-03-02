@@ -8,13 +8,36 @@ use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 class UserVoter extends Voter
 {
+    const EDIT = 'edit';
+
     protected function supports(string $attribute, $subject)
     {
-        //TODO: Implement supports() method
+        if (!in_array($attribute, [self::EDIT])) {
+            return false;
+        }
+
+        if (!$subject instanceof User) {
+            return false;
+        }
+
+        return true;
     }
 
     protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token)
     {
-        //TODO: Implement voteOnAttribute() method
+        $user = $token->getUser();
+
+        if (!$user instanceof User) {
+            return false;
+        }
+
+        $utilisateur = $subject;
+
+        switch ($attribute) {
+            case self::EDIT:
+                return $user->getId() == $utilisateur->getId();
+        }
+
+        throw new \LogicException("This code should not be reached!");
     }
 }
