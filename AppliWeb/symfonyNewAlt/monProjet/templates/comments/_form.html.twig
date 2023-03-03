@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    {{ form_start(form, {'attr' : {'novalidate' : 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.content) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.date) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.updateDate) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.products) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.UserID) }}
+            </div>
+        </div>
+        <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+    {{ form_end(form) }}
+</div>

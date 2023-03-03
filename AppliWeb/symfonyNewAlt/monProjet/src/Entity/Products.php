@@ -75,9 +75,15 @@ class Products
      */
     private $picture;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="products")
+     */
+    private $CommentID;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
+        $this->CommentID = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -233,5 +239,40 @@ class Products
         $this->picture = $picture;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getCommentID(): Collection
+    {
+        return $this->CommentID;
+    }
+
+    public function addCommentID(Comments $commentID): self
+    {
+        if (!$this->CommentID->contains($commentID)) {
+            $this->CommentID[] = $commentID;
+            $commentID->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentID(Comments $commentID): self
+    {
+        if ($this->CommentID->removeElement($commentID)) {
+            // set the owning side to null (unless already changed)
+            if ($commentID->getProducts() === $this) {
+                $commentID->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->ProductName;
     }
 }
