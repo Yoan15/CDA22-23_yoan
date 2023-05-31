@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Documents\cda_22_23\CDA22-23_yoan\composants_interface\c#\testsUnitaires\testsUnitaires\testsUnitaires\testsUnitaires.xml</DocumentationFile>
+    <DocumentationFile>C:\Documents\CDA22-23_yoan\composants_interface\c#\testsUnitaires\testsUnitaires\testsUnitaires\testsUnitaires.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
