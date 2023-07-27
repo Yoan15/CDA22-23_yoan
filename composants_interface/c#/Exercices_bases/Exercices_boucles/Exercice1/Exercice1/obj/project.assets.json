@@ -8,23 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\59011-14-05\\.nuget\\packages\\": {},
+    "C:\\Users\\night\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_boucles\\Exercice1\\Exercice1\\Exercice1.csproj",
+      "projectUniqueName": "D:\\Documents\\cda_22_23\\CDA22-23_yoan\\composants_interface\\c#\\Exercices_bases\\Exercices_boucles\\Exercice1\\Exercice1\\Exercice1.csproj",
       "projectName": "Exercice1",
-      "projectPath": "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_boucles\\Exercice1\\Exercice1\\Exercice1.csproj",
-      "packagesPath": "C:\\Users\\59011-14-05\\.nuget\\packages\\",
-      "outputPath": "U:\\59011-14-05\\composants_interface\\c#\\Exercices_bases\\Exercices_boucles\\Exercice1\\Exercice1\\obj\\",
+      "projectPath": "D:\\Documents\\cda_22_23\\CDA22-23_yoan\\composants_interface\\c#\\Exercices_bases\\Exercices_boucles\\Exercice1\\Exercice1\\Exercice1.csproj",
+      "packagesPath": "C:\\Users\\night\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\cda_22_23\\CDA22-23_yoan\\composants_interface\\c#\\Exercices_bases\\Exercices_boucles\\Exercice1\\Exercice1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\59011-14-05\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\night\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }
